@@ -1,0 +1,10 @@
+*~
+.DS_STORE
+
+package-lock.json
+node_modules/
+
+test/.env
+.env
+dist/
+coverage/
