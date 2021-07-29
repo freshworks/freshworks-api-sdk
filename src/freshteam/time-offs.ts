@@ -2,38 +2,31 @@ import { Client, Nullable } from "../http-client";
 
 export interface TimeOff {
   id?: number;
-  created_at: Date;
-  updated_at: Date;
-  user_id: number;
-  start_date: string;
-  end_date: string;
-  status: "pending" | "approved" | "declined" | "cancelled";
-  leave_units: number;
-  optional_leave_units: number;
+  created_at?: Date;
+  updated_at?: Date;
+  user_id?: number;
+  start_date: Date;
+  end_date: Date;
+  status?: "pending" | "approved" | "declined" | "cancelled";
+  leave_units?: number;
+  optional_leave_units?: number;
   leave_type_id: number;
-  status_comments: string;
-  approved_by_id: number;
-  applied_by_id: number;
-  cancelled_by_id: number;
-  rejected_by_id: number;
+  status_comments?: string;
+  approved_by_id?: number;
+  applied_by_id?: number;
+  cancelled_by_id?: number;
+  rejected_by_id?: number;
   comments: string;
-  rejected_at: string;
-  cancelled_at: string;
-}
-
-export interface TimeOffCreate {
-  start_date: string;
-  end_date: string;
+  rejected_at?: string;
+  cancelled_at?: string;
   optional_leave_days?: Date[];
   notify_to?: string[];
   add_to_calendar?: boolean;
   auto_decline_events?: boolean;
-  leave_type_id: number;
-  comments: string;
 }
 
 export interface TimeOffUpdate {
-  comments: string
+  comments: string;
 }
 
 export interface TimeOffType {
@@ -79,9 +72,9 @@ export default function timeOffs(client: Client) {
      * @param timeOff {TimeOff} - A time off request data
      * @returns Time off freshly created
      */
-    async create(timeOff: TimeOffCreate): Promise<Nullable<TimeOffCreate>> {
+    async create(timeOff: TimeOff): Promise<Nullable<TimeOff>> {
       // TODO
-      const res = await client.request<TimeOffCreate>({
+      const res = await client.request<TimeOff>({
         method: "POST",
         endpoint: "/time_offs",
         body: timeOff
@@ -139,7 +132,7 @@ export default function timeOffs(client: Client) {
       const res = await client.request<null>({
         method: "PUT",
         endpoint: "/time_offs/" + id + "/approve",
-        body: { leave_request: timeOff }
+        body: { leave_request: timeOff } // Non-standard description
       });
       // Check for error
 
@@ -157,7 +150,7 @@ export default function timeOffs(client: Client) {
       const res = await client.request<null>({
         method: "PUT",
         endpoint: "/time_offs/" + id + "/reject",
-        body: { leave_request: timeOff }
+        body: { leave_request: timeOff } // Non-standard description
       });
       // Check for error
 
@@ -172,7 +165,7 @@ export default function timeOffs(client: Client) {
      * @method
      * @returns Array of time off types
      */
-    async getTypes(): Promise<Nullable<TimeOffType[]>> {
+    async types(): Promise<Nullable<TimeOffType[]>> {
       const res = await client.get<TimeOffType[]>("/time_off_types");
 
       // Check for error
@@ -192,8 +185,8 @@ export default function timeOffs(client: Client) {
      * @param id {number} - Timeoff type identifier
      * @returns The time off type detail
      */
-    async getType(id: number): Promise<Nullable<TimeOffType>> {
-      const res = await client.get<TimeOffType>("/time_off_types" + id);
+    async type(typeId: number): Promise<Nullable<TimeOffType>> {
+      const res = await client.get<TimeOffType>("/time_off_types" + typeId);
 
       // Check for error
       if (res.error instanceof Error) {

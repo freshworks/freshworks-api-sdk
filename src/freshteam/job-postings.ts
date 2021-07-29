@@ -94,7 +94,7 @@ export interface JobPosting {
   branch: Branch;
   department: Department;
   requisitions: Requisitions;
-  interview_process: InterviewProcess
+  interview_process: InterviewProcess;
 }
 
 export interface CustomRadioField {
@@ -104,7 +104,7 @@ export interface CustomRadioField {
 
 export interface CustomField {
   text_fields: string;
-  radio_or_dropdown_fields: CustomRadioField
+  radio_or_dropdown_fields: CustomRadioField;
 }
 
 export interface JobDetail {
@@ -156,21 +156,21 @@ export interface Candidate {
   source_category_id: number;
   profile_links: ProfileLink[];
   location: Location;
-  skype_id: string
+  skype_id: string;
   eeo_ethnicity: string;
   eeo_gender: string;
   eeo_veteran: string;
   eeo_disabled: string;
   resumes: Array<string>;
   cover_letters: Array<string>;
-  portfolios: Array<string>
+  portfolios: Array<string>;
 }
 
 export interface ApplicantCreate {
   custom_fields: object;
   column_name: string;
   candidate_id: number;
-  candidate: Candidate
+  candidate: Candidate;
 }
 
 export interface ApplicantCustomField {
@@ -201,8 +201,8 @@ export interface ApplicantDetail {
   job_title: string;
   requisition_id: number;
   custom_fields: ApplicantCustomField;
-  candidate: Candidate
-  followers: Array<Follower>
+  candidate: Candidate;
+  followers: Array<Follower>;
 }
 
 export interface EmployeeFieldPicklist {
@@ -220,7 +220,20 @@ export interface ApplicantField {
   applicant_form_id: number;
   name: string;
   label: string;
-  field_type: "text" | "dropdown" | "email" | "phone_number" | "checkbox" | "paragraph" | "date_time" | "number" | "url_set" | "url" | "attachment" | "radio" | "label";
+  field_type:
+    | "text"
+    | "dropdown"
+    | "email"
+    | "phone_number"
+    | "checkbox"
+    | "paragraph"
+    | "date_time"
+    | "number"
+    | "url_set"
+    | "url"
+    | "attachment"
+    | "radio"
+    | "label";
   position: number;
   default: boolean;
   group_label: string;
@@ -234,7 +247,7 @@ export interface ApplicantField {
   required_in_recruiter_form: boolean;
   viewable_by: string;
   base_model: string;
-  picklist_values: Array<EmployeeFieldPicklist>
+  picklist_values: Array<EmployeeFieldPicklist>;
 }
 
 export default function jobPostings(client: Client) {
@@ -265,8 +278,8 @@ export default function jobPostings(client: Client) {
      * @method
      * @returns Job posting detail
      */
-    async get(id: number): Promise<Nullable<JobDetail>> {
-      const res = await client.get<JobDetail>("/job_postings/" + id);
+    async job(jobId: number): Promise<Nullable<JobDetail>> {
+      const res = await client.get<JobDetail>("/job_postings/" + jobId);
 
       // Check for error
 
@@ -282,11 +295,11 @@ export default function jobPostings(client: Client) {
      * @param applicant {ApplicantCreate} - Applicant profile to be created
      * @returns Detail of applicant freshly created
      */
-    async create(id: number, applicant: ApplicantCreate): Promise<Nullable<ApplicantDetail>> {
+    async createApplicant(jobId: number, applicant: ApplicantCreate): Promise<Nullable<ApplicantDetail>> {
       // TODO
       const res = await client.request<ApplicantDetail>({
         method: "POST",
-        endpoint: "/job_postings/" + id + "/applicants",
+        endpoint: "/job_postings/" + jobId + "/applicants",
         body: { employee: applicant }
       });
 
@@ -306,7 +319,7 @@ export default function jobPostings(client: Client) {
      * @method
      * @returns List of applicant fields
      */
-    async getApplicantFields(id: number): Promise<Nullable<ApplicantField>> {
+    async applicantFields(id: number): Promise<Nullable<ApplicantField>> {
       const res = await client.get<ApplicantField>("/job_postings/" + id);
 
       // TODO: Check for error
