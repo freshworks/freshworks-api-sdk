@@ -4,24 +4,24 @@
  * @module http-client
  */
 
-/**
- * Create a new URL instance from a given domain name
- *
- * @param {string} domain - Domain of the Freshworks application, e.g. "xxxx.freshteam.com"
- * @returns {URL} - The domain string converted to a URL
- * @private
- */
-function toBaseUrl(domain) {
-  return new URL(
-    `https://${domain
-      .trim()
-      .replace(/^https?\:\/\//, "")
-      .replace(/\/$/, "")}`
-  );
+const axios = require("axios").default;
+
+function toBaseUrl(hostname) {
+  return `https://${hostname
+    .trim()
+    .replace(/^https?\:\/\//, "")
+    .replace(/\/$/, "")}`;
 }
 
 /**
  * HTTP request configuration
+ *
+ * @param {object} opts - Request constructor options
+ * @param {string} [opts.method = "GET"] - HTTP request method, e.g., "GET", "POST", "PUT", "PATCH", "DELETE"
+ * @param {string} [opts.endpoint = "/"] - HTTP API endpoint to call, beginning with a "/". Don't include basePath in this.
+ * @param {object | null} [opts.body = null] - Request body
+ * @param {object} [opts.headers = {}] - Request headers
+ * @param {object} [opts.query = {}] - Query parameters to add to the URL
  *
  * @constructor
  * @example
@@ -63,14 +63,10 @@ function Request(opts = {}) {
    * @property {object} [headers] - Key-value pairs for headers in the request
    * @property {string} [headers.Content-Type = "application/json"] - Content-Type header
    * @member
-   * @default {
-   *  "Content-Type": "application/json"
-   * }
+   * @default {}
    * @type {object}
    */
-  this.headers = opts.headers || {
-    "Content-Type": "application/json"
-  };
+  this.headers = opts.headers || {};
 
   /**
    * @property {object} [query] - Key-value pairs for query string
@@ -82,6 +78,13 @@ function Request(opts = {}) {
 
 /**
  * The Response type returned by {@link module:http-client~Client|Client} for every {@link module:http-client~Request|Request}.
+ *
+ * @param {object} [opts = {}] - Response constructor options
+ * @param {Error | null} [opts.error = null] - Error object if an error has occurred
+ * @param {number} [opts.statusCode = 200] - HTTP response status code
+ * @param {string} [opts.statusMessage = "OK"] - HTTP response status message
+ * @param {object} [opts.headers = {}] - HTTP response headers
+ * @param {object | null} [opts.body = null] - Response body
  *
  * @constructor
  * @example
@@ -104,39 +107,55 @@ function Response(opts = {}) {
   /**
    * Error in the API response.
    *
-   * @property {Error|null} [error] - Check this field to ensure there were no errors returned
+   * Check this field to ensure there were no errors returned.
+   *
    * @default null
-   * @type {Error|null}
+   * @type {Error}
+   * @inner
    */
   this.error = opts.error || null;
 
   /**
-   * @property {number} [statusCode] - HTTP status code of the Response
+   * HTTP status code of the Response
+   *
    * @default 200
    * @type {number}
+   * @inner
    */
   this.statusCode = opts.statusCode || 200;
 
   /**
-   * @property {string} [statusMessage] - HTTP status message
+   * HTTP status message
+   *
    * @default "OK"
    * @type {string}
+   * @inner
    */
   this.statusMessage = opts.statusMessage || "OK";
 
   /**
-   * @property {object} [headers] - An object containing all HTTP response headers
+   * An object containing all HTTP response headers
+   *
    * @default {}
    * @type {object}
+   * @inner
    */
   this.headers = opts.headers || {};
 
   /**
-   * @property {object | null} [body] - JavaScript object representation of the Response body received from the API
+   * JavaScript object representation of the Response body received from the API
+   *
    * @default null
    * @type {object|null}
+   * @inner
    */
   this.body = opts.body || null;
+
+  /**
+   * Response object from underlying HTTP client
+   * @private
+   */
+  this._res = null;
 }
 
 /**
@@ -144,7 +163,11 @@ function Response(opts = {}) {
  *
  * @example
  * async function sendAPIRequest(body) {
- *  const client = new Client("example.freshteam.com", apiKey);
+ * const domain = "example.freshteam.com";
+ * const basePath = "/api/v2";
+ * const apiKey = "xxxx";
+ *
+ *  const client = new Client({ domain, basePath, apiKey });
  *  // Send a POST request to "/employees"
  *  const res = await client.send(new Request({
  *    method: "POST",
@@ -157,46 +180,92 @@ class Client {
   /**
    * Create a new Client
    *
-   * @param {string} domain - Domain of the Freshworks application, e.g. "xxxx.freshteam.com"
-   * @param {string} apiKey - API Key for the same domain
+   * @param {object} opts - Client options
+   * @param {string} opts.domain - Domain of the Freshworks application, e.g. "xxxx.freshteam.com"
+   * @param {string} opts.apiKey - API Key for the same domain
+   * @param {string} [opts.basePath = ""] - API base path, e.g., "/api/v2". Should be empty string or begin with a forward slash. Should not contain only a slash.
+   * @param {number} [opts.timeout = 5000] - Request timeout in ms
    */
-  constructor(domain, apiKey) {
-    this.domain = domain;
-    this.apiKey = apiKey;
+  constructor(opts = {}) {
+    if (!opts.domain || !opts.apiKey) {
+      throw new Error("'domain' and 'apiKey' are required in options");
+    }
+    this._httpClient = new axios.create({
+      baseURL: `${toBaseUrl(opts.domain)}${opts.basePath}`,
+      timeout: opts.timeout || 5000,
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${opts.apiKey}`
+      }
+    });
   }
 
   /**
    * Send a request and receive response returned
    *
-   * @param {module:http-client~Request} req - Request parameters
-   * @returns {module:http-client~Response} - A Response object
+   * @todo Handle paginated response
+   * @param {Request} req - Request parameters
+   * @returns {Response} - A Response object
    */
   async send(req) {
-    let url = toBaseUrl(this.domain);
-    url.pathname = req.endpoint;
-    // TODO: send the request
-    return new Response({
-      error: new Error("Not implemented"),
-      body: null
-    });
+    return this._httpClient
+      .request({
+        method: req.method,
+        url: req.endpoint,
+        params: req.query,
+        data: req.body,
+        responseType: "json",
+        responseEncoding: "utf-8",
+        maxContentLength: 64000, // 64 KB
+        maxBodyLength: 64000, // 64 KB
+        validateStatus: status => status === 200 || status === 201 // These are the only two success status codes sent by Freshteam REST API
+      })
+      .then(
+        res =>
+          new Response({
+            body: res.data,
+            headers: res.headers,
+            _res: res
+          })
+      )
+      .catch(e => new Response({ error: e }));
   }
 
   /**
    * Shorthand for HTTP GET requests. Calls {@link Client#send} internally
    *
-   * @param {string} pathname - URL pathname of the endpoint, beginning with a "/"
+   * @todo Handle paginated response
+   * @param {string} endpoint - URL pathname of the endpoint, beginning with a "/"
+   * @param {object} [query = {}] - Query string as object
    * @returns {module:http-client~Response} - A Response object
    */
-  async get(endpoint) {
-    return this.send({
+  async get(endpoint, query = {}) {
+    return this.send(new Request({
       method: "GET",
+      query,
       endpoint
-    });
+    }));
+  }
+
+  /**
+   * Shorthand for HTTP POST requests. Calls {@link Client#send} internally
+   *
+   * @param {string} endpoint - URL pathname of the endpoint, beginning with a "/"
+   * @param {object} [body = {}] - Request body as a JSON serializable object
+   * @returns {module:http-client~Response} - A Response object
+   */
+   async post(endpoint, body = {}) {
+    return this.send(new Request({
+      method: "POST",
+      data: body,
+      endpoint
+    }));
   }
 }
 
 module.exports = {
+  Client,
   Request,
-  Response,
-  Client
+  Response
 };

@@ -26,10 +26,14 @@
     "jest": "^27.0.6",
     "jsdoc": "^3.6.7",
     "prettier": "^2.3.2",
+    "ts-jest": "^27.0.4",
     "typescript": "^4.3.5"
   },
   "jest": {
     "verbose": true,
     "preset": "ts-jest/presets/js-with-ts"
+  },
+  "dependencies": {
+    "axios": "^0.21.1"
   }
 }

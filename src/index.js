@@ -1,5 +1,4 @@
-const Freshteam = require("./freshteam");
-
 module.exports = {
-  Freshteam
-};
+  freshteam: require("./freshteam"),
+  client: require("./http-client")
+}

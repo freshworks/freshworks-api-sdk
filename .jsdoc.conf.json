@@ -1,14 +1,9 @@
 {
   "opts": {
-    "recurseDepth": 5,
+    "recurse": true,
     "destination": "api-docs"
   },
   "source": {
-    "include": ["dist/"],
-    "includePattern": ".js$"
-  },
-  "templates": {
-    "cleverLinks": false,
-    "monospaceLinks": false
+    "include": ["dist/"]
   }
 }
