@@ -1,4 +1,4 @@
-import { Client, Nullable } from "../http-client";
+import { Client } from "../http-client";
 
 type EmployeeBloodGroup =
   | "A−"
@@ -86,8 +86,8 @@ export default function employeeFn(client: Client) {
      * @method
      * @returns Array of Employee
      */
-    async all(): Promise<Nullable<Employee[]>> {
-      const res = await client.get<Employee[]>("/employees");
+    async all(): Promise<Employee[]> {
+      const res = await client.get("/employees");
 
       // Check for error
       if (res.error instanceof Error) {
@@ -105,9 +105,9 @@ export default function employeeFn(client: Client) {
      * @param emp {Employee} - An employee data without Employee.id
      * @returns Employee freshly created
      */
-    async create(emp: Employee): Promise<Nullable<Employee>> {
+    async create(emp: Employee): Promise<Employee> {
       // TODO
-      const res = await client.send<Employee>({
+      const res = await client.send({
         method: "POST",
         endpoint: "/employees",
         body: emp

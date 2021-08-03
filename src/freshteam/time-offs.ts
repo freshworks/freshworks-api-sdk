@@ -1,4 +1,4 @@
-import { Client, Nullable } from "../http-client";
+import { Client } from "../http-client";
 
 export interface TimeOff {
   id?: number;
@@ -53,8 +53,8 @@ export default function timeOffs(client: Client) {
      * @method
      * @returns Array of time off requests
      */
-    async all(): Promise<Nullable<TimeOff[]>> {
-      const res = await client.get<TimeOff[]>("/time_offs");
+    async all(): Promise<TimeOff[]> {
+      const res = await client.get("/time_offs");
 
       // Check for error
       if (res.error instanceof Error) {
@@ -72,9 +72,9 @@ export default function timeOffs(client: Client) {
      * @param timeOff {TimeOff} - A time off request data
      * @returns Time off freshly created
      */
-    async create(timeOff: TimeOff): Promise<Nullable<TimeOff>> {
+    async create(timeOff: TimeOff): Promise<TimeOff> {
       // TODO
-      const res = await client.send<TimeOff>({
+      const res = await client.send({
         method: "POST",
         endpoint: "/time_offs",
         body: timeOff
@@ -97,8 +97,8 @@ export default function timeOffs(client: Client) {
      * @param id {number} - Timeoff request identifier
      * @returns Time off request details
      */
-    async get(id: number): Promise<Nullable<TimeOff>> {
-      const res = await client.get<TimeOff>("/time_offs/" + id);
+    async get(id: number): Promise<TimeOff> {
+      const res = await client.get("/time_offs/" + id);
 
       // Check for error
 
@@ -112,7 +112,7 @@ export default function timeOffs(client: Client) {
      * @param id {number} - Timeoff request identifier
      */
     async cancel(id: number): Promise<null> {
-      const res = await client.send<null>({
+      const res = await client.send({
         method: "PUT",
         endpoint: "/time_offs/" + id + "/cancel"
       });
@@ -129,7 +129,7 @@ export default function timeOffs(client: Client) {
      * @param timeOff {TimeOffUpdate} - Timeoff request notes
      */
     async approve(id: number, timeOff: TimeOffUpdate): Promise<null> {
-      const res = await client.send<null>({
+      const res = await client.send({
         method: "PUT",
         endpoint: "/time_offs/" + id + "/approve",
         body: { leave_request: timeOff } // Non-standard description
@@ -147,7 +147,7 @@ export default function timeOffs(client: Client) {
      * @param timeOff {TimeOffUpdate} - Timeoff request notes
      */
     async reject(id: number, timeOff: TimeOffUpdate): Promise<null> {
-      const res = await client.send<null>({
+      const res = await client.send({
         method: "PUT",
         endpoint: "/time_offs/" + id + "/reject",
         body: { leave_request: timeOff } // Non-standard description
@@ -165,8 +165,8 @@ export default function timeOffs(client: Client) {
      * @method
      * @returns Array of time off types
      */
-    async types(): Promise<Nullable<TimeOffType[]>> {
-      const res = await client.get<TimeOffType[]>("/time_off_types");
+    async types(): Promise<TimeOffType[]> {
+      const res = await client.get("/time_off_types");
 
       // Check for error
       if (res.error instanceof Error) {
@@ -185,8 +185,8 @@ export default function timeOffs(client: Client) {
      * @param id {number} - Timeoff type identifier
      * @returns The time off type detail
      */
-    async type(typeId: number): Promise<Nullable<TimeOffType>> {
-      const res = await client.get<TimeOffType>("/time_off_types" + typeId);
+    async type(typeId: number): Promise<TimeOffType> {
+      const res = await client.get("/time_off_types" + typeId);
 
       // Check for error
       if (res.error instanceof Error) {

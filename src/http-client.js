@@ -41,18 +41,21 @@ function Request(opts = {}) {
   /**
    * @property {string} [method] - HTTP request method
    * @default "GET"
+   * @type {string}
    */
   this.method = opts.method || "GET";
 
   /**
    * @property {string} [endpoint] - URL pathname beginning with a "/"
    * @default "/"
+   * @type {string}
    */
   this.endpoint = opts.endpoint || "/";
 
   /**
    * @property {object|null} [body] - Body of the HTTP request. Given object will be serialized to a string
    * @default null
+   * @type {object|null}
    */
   this.body = opts.body || null;
 
@@ -63,6 +66,7 @@ function Request(opts = {}) {
    * @default {
    *  "Content-Type": "application/json"
    * }
+   * @type {object}
    */
   this.headers = opts.headers || {
     "Content-Type": "application/json"
@@ -71,6 +75,7 @@ function Request(opts = {}) {
   /**
    * @property {object} [query] - Key-value pairs for query string
    * @default {}
+   * @type {object}
    */
   this.query = opts.query || {};
 }
@@ -101,30 +106,35 @@ function Response(opts = {}) {
    *
    * @property {Error|null} [error] - Check this field to ensure there were no errors returned
    * @default null
+   * @type {Error|null}
    */
   this.error = opts.error || null;
 
   /**
    * @property {number} [statusCode] - HTTP status code of the Response
    * @default 200
+   * @type {number}
    */
   this.statusCode = opts.statusCode || 200;
 
   /**
    * @property {string} [statusMessage] - HTTP status message
    * @default "OK"
+   * @type {string}
    */
   this.statusMessage = opts.statusMessage || "OK";
 
   /**
    * @property {object} [headers] - An object containing all HTTP response headers
    * @default {}
+   * @type {object}
    */
   this.headers = opts.headers || {};
 
   /**
    * @property {object | null} [body] - JavaScript object representation of the Response body received from the API
    * @default null
+   * @type {object|null}
    */
   this.body = opts.body || null;
 }
@@ -172,7 +182,7 @@ class Client {
   }
 
   /**
-   * Shorthand for HTTP GET requests. Calls {@link Client#request} internally
+   * Shorthand for HTTP GET requests. Calls {@link Client#send} internally
    *
    * @param {string} pathname - URL pathname of the endpoint, beginning with a "/"
    * @returns {module:http-client~Response} - A Response object

@@ -1,4 +1,4 @@
-import { Client, Nullable } from "../http-client";
+import { Client } from "../http-client";
 
 export interface JobPostingQuery {
   status: "draft" | "internal" | "private" | "on_hold" | "closed";
@@ -259,8 +259,8 @@ export default function jobPostings(client: Client) {
      * @method
      * @returns Array of job postings
      */
-    async all(query: JobPostingQuery): Promise<Nullable<JobPosting[]>> {
-      const res = await client.get<JobPosting[]>("/job_postings");
+    async all(query: JobPostingQuery): Promise<JobPosting[]> {
+      const res = await client.get("/job_postings");
 
       // Check for error
       if (res.error instanceof Error) {
@@ -278,8 +278,8 @@ export default function jobPostings(client: Client) {
      * @method
      * @returns Job posting detail
      */
-    async job(jobId: number): Promise<Nullable<JobDetail>> {
-      const res = await client.get<JobDetail>("/job_postings/" + jobId);
+    async job(jobId: number): Promise<JobDetail> {
+      const res = await client.get("/job_postings/" + jobId);
 
       // Check for error
 
@@ -295,9 +295,9 @@ export default function jobPostings(client: Client) {
      * @param applicant {ApplicantCreate} - Applicant profile to be created
      * @returns Detail of applicant freshly created
      */
-    async createApplicant(jobId: number, applicant: ApplicantCreate): Promise<Nullable<ApplicantDetail>> {
+    async createApplicant(jobId: number, applicant: ApplicantCreate): Promise<ApplicantDetail> {
       // TODO
-      const res = await client.send<ApplicantDetail>({
+      const res = await client.send({
         method: "POST",
         endpoint: "/job_postings/" + jobId + "/applicants",
         body: { employee: applicant }
@@ -319,8 +319,8 @@ export default function jobPostings(client: Client) {
      * @method
      * @returns List of applicant fields
      */
-    async applicantFields(id: number): Promise<Nullable<ApplicantField>> {
-      const res = await client.get<ApplicantField>("/job_postings/" + id);
+    async applicantFields(id: number): Promise<ApplicantField> {
+      const res = await client.get("/job_postings/" + id);
 
       // TODO: Check for error
       if (res.error instanceof Error) {
