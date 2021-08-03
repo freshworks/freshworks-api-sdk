@@ -74,7 +74,7 @@ export default function timeOffs(client: Client) {
      */
     async create(timeOff: TimeOff): Promise<Nullable<TimeOff>> {
       // TODO
-      const res = await client.request<TimeOff>({
+      const res = await client.send<TimeOff>({
         method: "POST",
         endpoint: "/time_offs",
         body: timeOff
@@ -112,7 +112,7 @@ export default function timeOffs(client: Client) {
      * @param id {number} - Timeoff request identifier
      */
     async cancel(id: number): Promise<null> {
-      const res = await client.request<null>({
+      const res = await client.send<null>({
         method: "PUT",
         endpoint: "/time_offs/" + id + "/cancel"
       });
@@ -129,7 +129,7 @@ export default function timeOffs(client: Client) {
      * @param timeOff {TimeOffUpdate} - Timeoff request notes
      */
     async approve(id: number, timeOff: TimeOffUpdate): Promise<null> {
-      const res = await client.request<null>({
+      const res = await client.send<null>({
         method: "PUT",
         endpoint: "/time_offs/" + id + "/approve",
         body: { leave_request: timeOff } // Non-standard description
@@ -147,7 +147,7 @@ export default function timeOffs(client: Client) {
      * @param timeOff {TimeOffUpdate} - Timeoff request notes
      */
     async reject(id: number, timeOff: TimeOffUpdate): Promise<null> {
-      const res = await client.request<null>({
+      const res = await client.send<null>({
         method: "PUT",
         endpoint: "/time_offs/" + id + "/reject",
         body: { leave_request: timeOff } // Non-standard description

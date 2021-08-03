@@ -77,7 +77,7 @@ export interface Employee {
   blood_group: EmployeeBloodGroup; // This field is present in the example for Create Employee, but not in the List All Employees endpoint.
 }
 
-export default function employee(client: Client) {
+export default function employeeFn(client: Client) {
   return {
     /**
      * Get a list of all employees
@@ -107,7 +107,7 @@ export default function employee(client: Client) {
      */
     async create(emp: Employee): Promise<Nullable<Employee>> {
       // TODO
-      const res = await client.request<Employee>({
+      const res = await client.send<Employee>({
         method: "POST",
         endpoint: "/employees",
         body: emp

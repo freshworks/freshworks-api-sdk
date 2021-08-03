@@ -8,3 +8,5 @@ test/.env
 .env
 dist/
 coverage/
+/api-docs/
+/out/

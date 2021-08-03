@@ -297,7 +297,7 @@ export default function jobPostings(client: Client) {
      */
     async createApplicant(jobId: number, applicant: ApplicantCreate): Promise<Nullable<ApplicantDetail>> {
       // TODO
-      const res = await client.request<ApplicantDetail>({
+      const res = await client.send<ApplicantDetail>({
         method: "POST",
         endpoint: "/job_postings/" + jobId + "/applicants",
         body: { employee: applicant }

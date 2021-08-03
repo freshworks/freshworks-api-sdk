@@ -1,0 +1,13 @@
+{
+  "opts": {
+    "recurseDepth": 3,
+    "destination": "api-docs"
+  },
+  "source": {
+    "include": ["src/"]
+  },
+  "templates": {
+    "cleverLinks": false,
+    "monospaceLinks": false
+  }
+}

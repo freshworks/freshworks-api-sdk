@@ -16,4 +16,3 @@ async function allEmployees() {
   const res = await ft.employee.all();
 }
 ```
-
