@@ -1,6 +1,6 @@
 import { Client } from "../http-client";
 
-export interface JobPostingQuery {
+export type JobPostingQuery = {
   status: "draft" | "internal" | "private" | "on_hold" | "closed";
   title: string;
   type: string;
@@ -12,13 +12,13 @@ export interface JobPostingQuery {
   location_state: Array<string>;
 }
 
-export interface JobPostingSalery {
+export type JobPostingSalery = {
   min: number;
   max: number;
   currency: string;
 }
 
-export interface Branch {
+export type Branch = {
   id: number;
   created_at: Date;
   updated_at: Date;
@@ -37,7 +37,7 @@ export interface Branch {
   date_format: string;
 }
 
-export interface Department {
+export type Department = {
   id: number;
   created_at: Date;
   updated_at: Date;
@@ -45,14 +45,14 @@ export interface Department {
   name: string;
 }
 
-export interface UserLite {
+export type UserLite = {
   id: number;
   first_name: string;
   last_name: string;
   official_email: string;
 }
 
-export interface Requisitions {
+export type Requisitions = {
   id: number;
   deleted: boolean;
   title: string;
@@ -61,7 +61,7 @@ export interface Requisitions {
   panel_members: UserLite;
 }
 
-export interface SubStages {
+export type SubStages = {
   id: number;
   name: string;
   position: number;
@@ -70,13 +70,13 @@ export interface SubStages {
   deleted: boolean;
 }
 
-export interface InterviewProcess {
+export type InterviewProcess = {
   id: number;
   name: string;
   sub_stages: SubStages;
 }
 
-export interface JobPosting {
+export type JobPosting = {
   id: number;
   created_at: string;
   updated_at: Date;
@@ -97,17 +97,17 @@ export interface JobPosting {
   interview_process: InterviewProcess;
 }
 
-export interface CustomRadioField {
+export type CustomRadioField = {
   id: number;
   value: string;
 }
 
-export interface CustomField {
+export type CustomField = {
   text_fields: string;
   radio_or_dropdown_fields: CustomRadioField;
 }
 
-export interface JobDetail {
+export type JobDetail = {
   id: number;
   created_at: string;
   updated_at: Date;
@@ -130,12 +130,12 @@ export interface JobDetail {
   skills?: Array<string>;
 }
 
-export interface ProfileLink {
+export type ProfileLink = {
   name: string;
   url: string;
 }
 
-export interface Location {
+export type Location = {
   city: string;
   state: string;
   street: string;
@@ -143,7 +143,7 @@ export interface Location {
   zip_code: string;
 }
 
-export interface Candidate {
+export type Candidate = {
   date_of_birth: Date;
   gender: "male" | "female";
   first_name: string;
@@ -166,25 +166,25 @@ export interface Candidate {
   portfolios: Array<string>;
 }
 
-export interface ApplicantCreate {
+export type ApplicantCreate = {
   custom_fields: object;
   column_name: string;
   candidate_id: number;
   candidate: Candidate;
 }
 
-export interface ApplicantCustomField {
+export type ApplicantCustomField = {
   column_name: string;
 }
 
-export interface Follower {
+export type Follower = {
   id: number;
   user_id: number;
   name: string;
   email: string;
 }
 
-export interface ApplicantDetail {
+export type ApplicantDetail = {
   id: number;
   created_at: Date;
   updated_at: Date;
@@ -205,7 +205,7 @@ export interface ApplicantDetail {
   followers: Array<Follower>;
 }
 
-export interface EmployeeFieldPicklist {
+export type EmployeeFieldPicklist = {
   id: number;
   value: string;
   position: number;
@@ -213,7 +213,7 @@ export interface EmployeeFieldPicklist {
   pickable_id: number;
 }
 
-export interface ApplicantField {
+export type ApplicantField = {
   id: number;
   created_at: Date;
   updated_at: Date;
@@ -255,7 +255,7 @@ export default function jobPostings(client: Client) {
     /**
      * Get a list of all job postings
      *
-     * @todo
+     * @todo Implement
      * @method
      * @returns Array of job postings
      */
@@ -274,7 +274,7 @@ export default function jobPostings(client: Client) {
     /**
      * Get a job posting with given identifier
      *
-     * @todo
+     * @todo Implement
      * @method
      * @returns Job posting detail
      */
@@ -290,7 +290,7 @@ export default function jobPostings(client: Client) {
     /**
      * Add an applicant for a job posting
      *
-     * @todo
+     * @todo Implement
      * @param id {number} - Job posting identifier
      * @param applicant {ApplicantCreate} - Applicant profile to be created
      * @returns Detail of applicant freshly created
@@ -315,7 +315,7 @@ export default function jobPostings(client: Client) {
     /**
      * Get applicant fields for the job posting
      *
-     * @todo
+     * @todo Implement
      * @method
      * @returns List of applicant fields
      */

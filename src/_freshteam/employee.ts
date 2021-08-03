@@ -1,6 +1,6 @@
 import { Client } from "../http-client";
 
-type EmployeeBloodGroup =
+export type EmployeeBloodGroup =
   | "A−"
   | "B−"
   | "O−"
@@ -17,11 +17,11 @@ type EmployeeBloodGroup =
   | "A2B+"
   | "A1-";
 
-export interface EmployeeWorkPhoneNumber {}
+export type EmployeeWorkPhoneNumber = {}
 
-export interface EmployeePhoneNumber {}
+export type EmployeePhoneNumber = {}
 
-export interface EmployeeAddress {
+export type EmployeeAddress = {
   street: string;
   state: string;
   city: string;
@@ -29,7 +29,7 @@ export interface EmployeeAddress {
   zip_code: string;
 }
 
-export interface EmployeeCommunicationAddress {
+export type EmployeeCommunicationAddress = {
   communication_street: string;
   communication_state: string;
   communication_city: string;
@@ -38,7 +38,7 @@ export interface EmployeeCommunicationAddress {
   same_as_residential: true;
 }
 
-export interface Employee {
+export type Employee = {
   id?: number;
   created_at: Date;
   updated_at: Date;
@@ -82,7 +82,7 @@ export default function employeeFn(client: Client) {
     /**
      * Get a list of all employees
      *
-     * @todo
+     * @todo Implement
      * @method
      * @returns Array of Employee
      */
@@ -101,7 +101,7 @@ export default function employeeFn(client: Client) {
     /**
      * Create a new employee
      *
-     * @todo
+     * @todo Implement
      * @param emp {Employee} - An employee data without Employee.id
      * @returns Employee freshly created
      */

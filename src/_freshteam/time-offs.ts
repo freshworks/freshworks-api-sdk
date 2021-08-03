@@ -1,6 +1,6 @@
 import { Client } from "../http-client";
 
-export interface TimeOff {
+export type TimeOff = {
   id?: number;
   created_at?: Date;
   updated_at?: Date;
@@ -25,11 +25,11 @@ export interface TimeOff {
   auto_decline_events?: boolean;
 }
 
-export interface TimeOffUpdate {
+export type TimeOffUpdate = {
   comments: string;
 }
 
-export interface TimeOffType {
+export type TimeOffType = {
   id: number;
   created_at: Date;
   updated_at: Date;
@@ -49,7 +49,7 @@ export default function timeOffs(client: Client) {
     /**
      * Get a list of all timeoff requests of users in the account
      *
-     * @todo
+     * @todo Implement
      * @method
      * @returns Array of time off requests
      */
@@ -68,7 +68,7 @@ export default function timeOffs(client: Client) {
     /**
      * Applies time off request for logged in user
      *
-     * @todo
+     * @todo Implement
      * @param timeOff {TimeOff} - A time off request data
      * @returns Time off freshly created
      */
@@ -92,7 +92,7 @@ export default function timeOffs(client: Client) {
     /**
      * Get timeoff request with the given identifier
      *
-     * @todo
+     * @todo Implement
      * @method
      * @param id {number} - Timeoff request identifier
      * @returns Time off request details
@@ -161,7 +161,7 @@ export default function timeOffs(client: Client) {
     /**
      * Get a list of all timeoff types
      *
-     * @todo
+     * @todo Implement
      * @method
      * @returns Array of time off types
      */
@@ -180,7 +180,7 @@ export default function timeOffs(client: Client) {
     /**
      * Get a timeoff type with the given identifier
      *
-     * @todo
+     * @todo Implement
      * @method
      * @param id {number} - Timeoff type identifier
      * @returns The time off type detail
