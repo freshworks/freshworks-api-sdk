@@ -1,4 +1,4 @@
-import { Client } from "../http-client";
+import { Client, Request } from "../http-client";
 
 export type JobPostingQuery = {
   status: "draft" | "internal" | "private" | "on_hold" | "closed";
@@ -297,11 +297,11 @@ export default function jobPostings(client: Client) {
      */
     async createApplicant(jobId: number, applicant: ApplicantCreate): Promise<ApplicantDetail> {
       // TODO
-      const res = await client.send({
+      const res = await client.send(new Request({
         method: "POST",
         endpoint: "/job_postings/" + jobId + "/applicants",
         body: { employee: applicant }
-      });
+      }));
 
       // TODO: Check for error
       if (res.error instanceof Error) {

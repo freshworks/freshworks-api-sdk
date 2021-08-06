@@ -1,4 +1,4 @@
-module.exports = function (client) {
+export default function employees(client) {
   return {
     /**
      * List all employees
@@ -61,4 +61,4 @@ module.exports = function (client) {
       return client.post("/employee_fields", data);
     }
   };
-};
+}

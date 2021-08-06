@@ -4,7 +4,7 @@
  * @module http-client
  */
 
-const axios = require("axios").default;
+import { default as axios } from "axios";
 
 function toBaseUrl(hostname) {
   return `https://${hostname
@@ -37,7 +37,7 @@ function toBaseUrl(hostname) {
  *  body: payload
  * });
  */
-function Request(opts = {}) {
+export function Request(opts = {}) {
   /**
    * @property {string} [method] - HTTP request method
    * @default "GET"
@@ -103,7 +103,7 @@ function Request(opts = {}) {
  *  }
  * });
  */
-function Response(opts = {}) {
+export function Response(opts = {}) {
   /**
    * Error in the API response.
    *
@@ -176,7 +176,7 @@ function Response(opts = {}) {
  *  }));
  * }
  */
-class Client {
+export class Client {
   /**
    * Create a new Client
    *
@@ -190,7 +190,7 @@ class Client {
     if (!opts.domain || !opts.apiKey) {
       throw new Error("'domain' and 'apiKey' are required in options");
     }
-    this._httpClient = new axios.create({
+    this._httpClient = axios.create({
       baseURL: `${toBaseUrl(opts.domain)}${opts.basePath}`,
       timeout: opts.timeout || 5000,
       headers: {
@@ -241,11 +241,13 @@ class Client {
    * @returns {module:http-client~Response} - A Response object
    */
   async get(endpoint, query = {}) {
-    return this.send(new Request({
-      method: "GET",
-      query,
-      endpoint
-    }));
+    return this.send(
+      new Request({
+        method: "GET",
+        query,
+        endpoint
+      })
+    );
   }
 
   /**
@@ -255,17 +257,13 @@ class Client {
    * @param {object} [body = {}] - Request body as a JSON serializable object
    * @returns {module:http-client~Response} - A Response object
    */
-   async post(endpoint, body = {}) {
-    return this.send(new Request({
-      method: "POST",
-      data: body,
-      endpoint
-    }));
+  async post(endpoint, body = {}) {
+    return this.send(
+      new Request({
+        method: "POST",
+        data: body,
+        endpoint
+      })
+    );
   }
 }
-
-module.exports = {
-  Client,
-  Request,
-  Response
-};

@@ -1,4 +1,4 @@
-import { Client } from "../http-client";
+import { Client, Request } from "../http-client";
 
 export type TimeOff = {
   id?: number;
@@ -74,11 +74,11 @@ export default function timeOffs(client: Client) {
      */
     async create(timeOff: TimeOff): Promise<TimeOff> {
       // TODO
-      const res = await client.send({
+      const res = await client.send(new Request({
         method: "POST",
         endpoint: "/time_offs",
         body: timeOff
-      });
+      }));
 
       // TODO: Check for error
       if (res.error instanceof Error) {
@@ -112,10 +112,10 @@ export default function timeOffs(client: Client) {
      * @param id {number} - Timeoff request identifier
      */
     async cancel(id: number): Promise<null> {
-      const res = await client.send({
+      const res = await client.send(new Request({
         method: "PUT",
         endpoint: "/time_offs/" + id + "/cancel"
-      });
+      }));
       // Check for error
 
       // Parse res.body
@@ -129,11 +129,11 @@ export default function timeOffs(client: Client) {
      * @param timeOff {TimeOffUpdate} - Timeoff request notes
      */
     async approve(id: number, timeOff: TimeOffUpdate): Promise<null> {
-      const res = await client.send({
+      const res = await client.send(new Request({
         method: "PUT",
         endpoint: "/time_offs/" + id + "/approve",
         body: { leave_request: timeOff } // Non-standard description
-      });
+      }));
       // Check for error
 
       // Parse res.body
@@ -147,11 +147,11 @@ export default function timeOffs(client: Client) {
      * @param timeOff {TimeOffUpdate} - Timeoff request notes
      */
     async reject(id: number, timeOff: TimeOffUpdate): Promise<null> {
-      const res = await client.send({
+      const res = await client.send(new Request({
         method: "PUT",
         endpoint: "/time_offs/" + id + "/reject",
         body: { leave_request: timeOff } // Non-standard description
-      });
+      }));
       // Check for error
 
       // Parse res.body

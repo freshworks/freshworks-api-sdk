@@ -1,4 +1,2 @@
-module.exports = {
-  freshteam: require("./freshteam"),
-  client: require("./http-client")
-}
+export * from "./freshteam";
+export * from "./http-client";
