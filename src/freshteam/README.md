@@ -3,16 +3,13 @@
 Get started:
 
 ```js
-const { Freshteam } = require("@freshworks/freshworks-api-sdk");
+const { freshteam } = require("@freshworks/freshworks-api-sdk");
 
-const ft = new Freshteam("xxxx.freshteam.com");
+const ft = freshteam("xxxx.freshteam.com", apiKey);
 ```
 
-Call a method, e.g., list all employees:
+Call a method, e.g., list all employees (who match a search criteria):
 
 ```js
-async function allEmployees() {
-  // Use a try-catch here
-  const res = await ft.employee.all();
-}
+const res = await ft.employees.list({ first_name: "Arthur", last_name: "Dent" });
 ```
