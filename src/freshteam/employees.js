@@ -21,13 +21,13 @@ export default function employees(client) {
     },
 
     /**
-     * Find an employee by ID
+     * Find the details of an employee by ID
      *
      * @param {number} id - Employee ID
      * @param {object} [query = {}] - Query parameters
      * @returns {module.http-client~Response} - Response with an employee object in the response body, if found
      */
-    async find(id, query = {}) {
+    async detail(id, query = {}) {
       return client.get(`/employees/${id}`, query);
     },
 
