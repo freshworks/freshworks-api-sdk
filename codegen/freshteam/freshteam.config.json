@@ -1,0 +1,15 @@
+{
+  "apiPackage": "api",
+  "modelPackage": "model",
+  "projectName": "freshteam-api-sdk-codegen",
+  "projectDescription": "Auto-generated JavaScript client code from Freshteam OpenAPI spec using OpenAPI Generator",
+  "licenseName": "MIT",
+  "useInheritance": true,
+  "usePromises" : true,
+  "supportsES6": true,
+  "emitModelMethods": false,
+  "ensureUniqueParams": true,
+  "modelPropertyNaming": "camelCase",
+  "disallowAdditionalPropertiesIfNotPresent": false,
+  "prependFormOrBodyParameters": true
+}
