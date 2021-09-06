@@ -31,9 +31,10 @@ function generate_freshteam_client()
   npm install
   npm test
   cd ..
-  mv build/dist gen/freshteam
+  mv build/src gen/freshteam
   mv build/docs gen/freshteam/
   rm -rf build/
+  npm run format
 }
 
 while [[ $# > 0 ]] ; do
