@@ -2,11 +2,9 @@
 
 All URIs are relative to *https://adityasharma2519.freshteam.com/api*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**createApplicantConversation**](ApplicantConversationApi.md#createApplicantConversation) | **POST** /applicants/{id}/conversations | Create an Applicant Conversation
-
-
+| Method                                                                                     | HTTP request                            | Description                      |
+| ------------------------------------------------------------------------------------------ | --------------------------------------- | -------------------------------- |
+| [**createApplicantConversation**](ApplicantConversationApi.md#createApplicantConversation) | **POST** /applicants/{id}/conversations | Create an Applicant Conversation |
 
 ## createApplicantConversation
 
@@ -19,32 +17,33 @@ Create an Applicant Conversation
 ### Example
 
 ```javascript
-import FreshteamApiSdkCodegen from 'freshteam-api-sdk-codegen';
+import FreshteamApiSdkCodegen from "freshteam-api-sdk-codegen";
 let defaultClient = FreshteamApiSdkCodegen.ApiClient.instance;
 // Configure API key authorization: ApiKeyAuth
-let ApiKeyAuth = defaultClient.authentications['ApiKeyAuth'];
-ApiKeyAuth.apiKey = 'YOUR API KEY';
+let ApiKeyAuth = defaultClient.authentications["ApiKeyAuth"];
+ApiKeyAuth.apiKey = "YOUR API KEY";
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKeyAuth.apiKeyPrefix = 'Token';
 
 let apiInstance = new FreshteamApiSdkCodegen.ApplicantConversationApi();
-let applicantConversation = new FreshteamApiSdkCodegen.ApplicantConversationCreate(); // ApplicantConversationCreate | 
+let applicantConversation = new FreshteamApiSdkCodegen.ApplicantConversationCreate(); // ApplicantConversationCreate |
 let id = 56; // Number | the applicant identifier, as id
-apiInstance.createApplicantConversation(applicantConversation, id).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
-
+apiInstance.createApplicantConversation(applicantConversation, id).then(
+  data => {
+    console.log("API called successfully. Returned data: " + data);
+  },
+  error => {
+    console.error(error);
+  }
+);
 ```
 
 ### Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **applicantConversation** | [**ApplicantConversationCreate**](ApplicantConversationCreate.md)|  | 
- **id** | **Number**| the applicant identifier, as id | 
+| Name                      | Type                                                              | Description                     | Notes |
+| ------------------------- | ----------------------------------------------------------------- | ------------------------------- | ----- |
+| **applicantConversation** | [**ApplicantConversationCreate**](ApplicantConversationCreate.md) |                                 |
+| **id**                    | **Number**                                                        | the applicant identifier, as id |
 
 ### Return type
 
@@ -58,4 +57,3 @@ Name | Type | Description  | Notes
 
 - **Content-Type**: application/json
 - **Accept**: application/json
-

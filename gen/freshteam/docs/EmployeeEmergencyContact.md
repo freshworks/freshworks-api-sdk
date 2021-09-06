@@ -2,42 +2,35 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**name** | **String** |  | [optional] 
-**relationship** | **String** |  | [optional] 
-**contactNumber** | **String** |  | [optional] 
-**address** | **String** |  | [optional] 
-
-
+| Name              | Type       | Description | Notes      |
+| ----------------- | ---------- | ----------- | ---------- |
+| **name**          | **String** |             | [optional] |
+| **relationship**  | **String** |             | [optional] |
+| **contactNumber** | **String** |             | [optional] |
+| **address**       | **String** |             | [optional] |
 
 ## Enum: RelationshipEnum
 
+- `parent` (value: `"parent"`)
 
-* `parent` (value: `"parent"`)
+- `spouse` (value: `"spouse"`)
 
-* `spouse` (value: `"spouse"`)
+- `child` (value: `"child"`)
 
-* `child` (value: `"child"`)
+- `sibling` (value: `"sibling"`)
 
-* `sibling` (value: `"sibling"`)
+- `father` (value: `"father"`)
 
-* `father` (value: `"father"`)
+- `mother` (value: `"mother"`)
 
-* `mother` (value: `"mother"`)
+- `husband` (value: `"husband"`)
 
-* `husband` (value: `"husband"`)
+- `wife` (value: `"wife"`)
 
-* `wife` (value: `"wife"`)
+- `son` (value: `"son"`)
 
-* `son` (value: `"son"`)
+- `daughter` (value: `"daughter"`)
 
-* `daughter` (value: `"daughter"`)
+- `brother` (value: `"brother"`)
 
-* `brother` (value: `"brother"`)
-
-* `sister` (value: `"sister"`)
-
-
-
-
+- `sister` (value: `"sister"`)

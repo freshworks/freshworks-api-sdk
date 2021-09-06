@@ -2,10 +2,8 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**code** | **String** |  | [optional] 
-**message** | **String** |  | [optional] 
-**field** | **String** |  | [optional] 
-
-
+| Name        | Type       | Description | Notes      |
+| ----------- | ---------- | ----------- | ---------- |
+| **code**    | **String** |             | [optional] |
+| **message** | **String** |             | [optional] |
+| **field**   | **String** |             | [optional] |

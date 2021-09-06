@@ -2,8 +2,6 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**label** | **String** |  | 
-
-
+| Name      | Type       | Description | Notes |
+| --------- | ---------- | ----------- | ----- |
+| **label** | **String** |             |

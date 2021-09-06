@@ -2,26 +2,19 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**userId** | **Number** |  | [optional] 
-**relationship** | **String** |  | [optional] 
-
-
+| Name             | Type       | Description | Notes      |
+| ---------------- | ---------- | ----------- | ---------- |
+| **userId**       | **Number** |             | [optional] |
+| **relationship** | **String** |             | [optional] |
 
 ## Enum: RelationshipEnum
 
+- `personal` (value: `"personal"`)
 
-* `personal` (value: `"personal"`)
+- `former_colleague` (value: `"former_colleague"`)
 
-* `former_colleague` (value: `"former_colleague"`)
+- `mail_forward` (value: `"mail_forward"`)
 
-* `mail_forward` (value: `"mail_forward"`)
+- `social` (value: `"social"`)
 
-* `social` (value: `"social"`)
-
-* `other` (value: `"other"`)
-
-
-
-
+- `other` (value: `"other"`)

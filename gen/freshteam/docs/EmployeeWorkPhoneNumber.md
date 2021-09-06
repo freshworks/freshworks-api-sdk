@@ -2,24 +2,17 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**name** | **String** |  | [optional] 
-**number** | **String** |  | [optional] 
-
-
+| Name       | Type       | Description | Notes      |
+| ---------- | ---------- | ----------- | ---------- |
+| **name**   | **String** |             | [optional] |
+| **number** | **String** |             | [optional] |
 
 ## Enum: NameEnum
 
+- `Mobile` (value: `"Mobile"`)
 
-* `Mobile` (value: `"Mobile"`)
+- `Fax` (value: `"Fax"`)
 
-* `Fax` (value: `"Fax"`)
+- `Others` (value: `"Others"`)
 
-* `Others` (value: `"Others"`)
-
-* `Work` (value: `"Work"`)
-
-
-
-
+- `Work` (value: `"Work"`)

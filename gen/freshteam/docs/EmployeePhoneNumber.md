@@ -2,24 +2,17 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**name** | **String** |  | [optional] 
-**number** | **String** |  | [optional] 
-
-
+| Name       | Type       | Description | Notes      |
+| ---------- | ---------- | ----------- | ---------- |
+| **name**   | **String** |             | [optional] |
+| **number** | **String** |             | [optional] |
 
 ## Enum: NameEnum
 
+- `Home` (value: `"Home"`)
 
-* `Home` (value: `"Home"`)
+- `Main` (value: `"Main"`)
 
-* `Main` (value: `"Main"`)
+- `Others` (value: `"Others"`)
 
-* `Others` (value: `"Others"`)
-
-* `Mobile` (value: `"Mobile"`)
-
-
-
-
+- `Mobile` (value: `"Mobile"`)

@@ -2,8 +2,6 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**errors** | [**[Model404Error]**](Model404Error.md) |  | [optional] 
-
-
+| Name       | Type                                    | Description | Notes      |
+| ---------- | --------------------------------------- | ----------- | ---------- |
+| **errors** | [**[Model404Error]**](Model404Error.md) |             | [optional] |

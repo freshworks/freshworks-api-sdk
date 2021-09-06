@@ -1,1071 +1,845 @@
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-Object.defineProperty(exports, "ApiClient", {
-  enumerable: true,
-  get: function get() {
-    return _ApiClient["default"];
-  }
-});
-Object.defineProperty(exports, "Address", {
-  enumerable: true,
-  get: function get() {
-    return _Address["default"];
-  }
-});
-Object.defineProperty(exports, "Applicant", {
-  enumerable: true,
-  get: function get() {
-    return _Applicant["default"];
-  }
-});
-Object.defineProperty(exports, "ApplicantCandidate", {
-  enumerable: true,
-  get: function get() {
-    return _ApplicantCandidate["default"];
-  }
-});
-Object.defineProperty(exports, "ApplicantConversation", {
-  enumerable: true,
-  get: function get() {
-    return _ApplicantConversation["default"];
-  }
-});
-Object.defineProperty(exports, "ApplicantConversationCreate", {
-  enumerable: true,
-  get: function get() {
-    return _ApplicantConversationCreate["default"];
-  }
-});
-Object.defineProperty(exports, "ApplicantCreate", {
-  enumerable: true,
-  get: function get() {
-    return _ApplicantCreate["default"];
-  }
-});
-Object.defineProperty(exports, "ApplicantCreateCandidate", {
-  enumerable: true,
-  get: function get() {
-    return _ApplicantCreateCandidate["default"];
-  }
-});
-Object.defineProperty(exports, "ApplicantDetail", {
-  enumerable: true,
-  get: function get() {
-    return _ApplicantDetail["default"];
-  }
-});
-Object.defineProperty(exports, "ApplicantDetailCandidate", {
-  enumerable: true,
-  get: function get() {
-    return _ApplicantDetailCandidate["default"];
-  }
-});
-Object.defineProperty(exports, "ApplicantDetailCandidateLocation", {
-  enumerable: true,
-  get: function get() {
-    return _ApplicantDetailCandidateLocation["default"];
-  }
-});
-Object.defineProperty(exports, "ApplicantDetailCandidateProfileLinks", {
-  enumerable: true,
-  get: function get() {
-    return _ApplicantDetailCandidateProfileLinks["default"];
-  }
-});
-Object.defineProperty(exports, "ApplicantDetailCandidateReferrals", {
-  enumerable: true,
-  get: function get() {
-    return _ApplicantDetailCandidateReferrals["default"];
-  }
-});
-Object.defineProperty(exports, "ApplicantDetailCandidateResumes", {
-  enumerable: true,
-  get: function get() {
-    return _ApplicantDetailCandidateResumes["default"];
-  }
-});
-Object.defineProperty(exports, "ApplicantDetailFollowers", {
-  enumerable: true,
-  get: function get() {
-    return _ApplicantDetailFollowers["default"];
-  }
-});
-Object.defineProperty(exports, "ApplicantField", {
-  enumerable: true,
-  get: function get() {
-    return _ApplicantField["default"];
-  }
-});
-Object.defineProperty(exports, "ApplicantUpdate", {
-  enumerable: true,
-  get: function get() {
-    return _ApplicantUpdate["default"];
-  }
-});
-Object.defineProperty(exports, "BonusType", {
-  enumerable: true,
-  get: function get() {
-    return _BonusType["default"];
-  }
-});
-Object.defineProperty(exports, "Branch", {
-  enumerable: true,
-  get: function get() {
-    return _Branch["default"];
-  }
-});
-Object.defineProperty(exports, "BusinessUnit", {
-  enumerable: true,
-  get: function get() {
-    return _BusinessUnit["default"];
-  }
-});
-Object.defineProperty(exports, "Candidate", {
-  enumerable: true,
-  get: function get() {
-    return _Candidate["default"];
-  }
-});
-Object.defineProperty(exports, "CandidateCreate", {
-  enumerable: true,
-  get: function get() {
-    return _CandidateCreate["default"];
-  }
-});
-Object.defineProperty(exports, "CandidateCreatePositions", {
-  enumerable: true,
-  get: function get() {
-    return _CandidateCreatePositions["default"];
-  }
-});
-Object.defineProperty(exports, "CandidatePositions", {
-  enumerable: true,
-  get: function get() {
-    return _CandidatePositions["default"];
-  }
-});
-Object.defineProperty(exports, "CandidateQualifications", {
-  enumerable: true,
-  get: function get() {
-    return _CandidateQualifications["default"];
-  }
-});
-Object.defineProperty(exports, "CompensationReason", {
-  enumerable: true,
-  get: function get() {
-    return _CompensationReason["default"];
-  }
-});
-Object.defineProperty(exports, "CostCenter", {
-  enumerable: true,
-  get: function get() {
-    return _CostCenter["default"];
-  }
-});
-Object.defineProperty(exports, "CustomField", {
-  enumerable: true,
-  get: function get() {
-    return _CustomField["default"];
-  }
-});
-Object.defineProperty(exports, "CustomRadioFields", {
-  enumerable: true,
-  get: function get() {
-    return _CustomRadioFields["default"];
-  }
-});
-Object.defineProperty(exports, "Department", {
-  enumerable: true,
-  get: function get() {
-    return _Department["default"];
-  }
-});
-Object.defineProperty(exports, "Employee", {
-  enumerable: true,
-  get: function get() {
-    return _Employee["default"];
-  }
-});
-Object.defineProperty(exports, "EmployeeAddress", {
-  enumerable: true,
-  get: function get() {
-    return _EmployeeAddress["default"];
-  }
-});
-Object.defineProperty(exports, "EmployeeAward", {
-  enumerable: true,
-  get: function get() {
-    return _EmployeeAward["default"];
-  }
-});
-Object.defineProperty(exports, "EmployeeBackGroundVerificationDetail", {
-  enumerable: true,
-  get: function get() {
-    return _EmployeeBackGroundVerificationDetail["default"];
-  }
-});
-Object.defineProperty(exports, "EmployeeBankAccount", {
-  enumerable: true,
-  get: function get() {
-    return _EmployeeBankAccount["default"];
-  }
-});
-Object.defineProperty(exports, "EmployeeBonus", {
-  enumerable: true,
-  get: function get() {
-    return _EmployeeBonus["default"];
-  }
-});
-Object.defineProperty(exports, "EmployeeCertificate", {
-  enumerable: true,
-  get: function get() {
-    return _EmployeeCertificate["default"];
-  }
-});
-Object.defineProperty(exports, "EmployeeCommunicationAddress", {
-  enumerable: true,
-  get: function get() {
-    return _EmployeeCommunicationAddress["default"];
-  }
-});
-Object.defineProperty(exports, "EmployeeCompensationDetail", {
-  enumerable: true,
-  get: function get() {
-    return _EmployeeCompensationDetail["default"];
-  }
-});
-Object.defineProperty(exports, "EmployeeCreate", {
-  enumerable: true,
-  get: function get() {
-    return _EmployeeCreate["default"];
-  }
-});
-Object.defineProperty(exports, "EmployeeCreateCustomFields", {
-  enumerable: true,
-  get: function get() {
-    return _EmployeeCreateCustomFields["default"];
-  }
-});
-Object.defineProperty(exports, "EmployeeDependent", {
-  enumerable: true,
-  get: function get() {
-    return _EmployeeDependent["default"];
-  }
-});
-Object.defineProperty(exports, "EmployeeDetail", {
-  enumerable: true,
-  get: function get() {
-    return _EmployeeDetail["default"];
-  }
-});
-Object.defineProperty(exports, "EmployeeDetailAddress", {
-  enumerable: true,
-  get: function get() {
-    return _EmployeeDetailAddress["default"];
-  }
-});
-Object.defineProperty(exports, "EmployeeDetailCommunicationAddress", {
-  enumerable: true,
-  get: function get() {
-    return _EmployeeDetailCommunicationAddress["default"];
-  }
-});
-Object.defineProperty(exports, "EmployeeDocumentType", {
-  enumerable: true,
-  get: function get() {
-    return _EmployeeDocumentType["default"];
-  }
-});
-Object.defineProperty(exports, "EmployeeEmergencyContact", {
-  enumerable: true,
-  get: function get() {
-    return _EmployeeEmergencyContact["default"];
-  }
-});
-Object.defineProperty(exports, "EmployeeField", {
-  enumerable: true,
-  get: function get() {
-    return _EmployeeField["default"];
-  }
-});
-Object.defineProperty(exports, "EmployeeFieldPicklistValues", {
-  enumerable: true,
-  get: function get() {
-    return _EmployeeFieldPicklistValues["default"];
-  }
-});
-Object.defineProperty(exports, "EmployeeFieldScopes", {
-  enumerable: true,
-  get: function get() {
-    return _EmployeeFieldScopes["default"];
-  }
-});
-Object.defineProperty(exports, "EmployeeGovernmentDocument", {
-  enumerable: true,
-  get: function get() {
-    return _EmployeeGovernmentDocument["default"];
-  }
-});
-Object.defineProperty(exports, "EmployeeHonor", {
-  enumerable: true,
-  get: function get() {
-    return _EmployeeHonor["default"];
-  }
-});
-Object.defineProperty(exports, "EmployeeLeaveType", {
-  enumerable: true,
-  get: function get() {
-    return _EmployeeLeaveType["default"];
-  }
-});
-Object.defineProperty(exports, "EmployeeLicense", {
-  enumerable: true,
-  get: function get() {
-    return _EmployeeLicense["default"];
-  }
-});
-Object.defineProperty(exports, "EmployeeLiteModel", {
-  enumerable: true,
-  get: function get() {
-    return _EmployeeLiteModel["default"];
-  }
-});
-Object.defineProperty(exports, "EmployeePhoneNumber", {
-  enumerable: true,
-  get: function get() {
-    return _EmployeePhoneNumber["default"];
-  }
-});
-Object.defineProperty(exports, "EmployeePosition", {
-  enumerable: true,
-  get: function get() {
-    return _EmployeePosition["default"];
-  }
-});
-Object.defineProperty(exports, "EmployeeQualification", {
-  enumerable: true,
-  get: function get() {
-    return _EmployeeQualification["default"];
-  }
-});
-Object.defineProperty(exports, "EmployeeReference", {
-  enumerable: true,
-  get: function get() {
-    return _EmployeeReference["default"];
-  }
-});
-Object.defineProperty(exports, "EmployeeSocialProfiles", {
-  enumerable: true,
-  get: function get() {
-    return _EmployeeSocialProfiles["default"];
-  }
-});
-Object.defineProperty(exports, "EmployeeStock", {
-  enumerable: true,
-  get: function get() {
-    return _EmployeeStock["default"];
-  }
-});
-Object.defineProperty(exports, "EmployeeTimeoff", {
-  enumerable: true,
-  get: function get() {
-    return _EmployeeTimeoff["default"];
-  }
-});
-Object.defineProperty(exports, "EmployeeWorkPhoneNumber", {
-  enumerable: true,
-  get: function get() {
-    return _EmployeeWorkPhoneNumber["default"];
-  }
-});
-Object.defineProperty(exports, "FieldOption", {
-  enumerable: true,
-  get: function get() {
-    return _FieldOption["default"];
-  }
-});
-Object.defineProperty(exports, "GrantType", {
-  enumerable: true,
-  get: function get() {
-    return _GrantType["default"];
-  }
-});
-Object.defineProperty(exports, "InlineObject", {
-  enumerable: true,
-  get: function get() {
-    return _InlineObject["default"];
-  }
-});
-Object.defineProperty(exports, "InlineObject1", {
-  enumerable: true,
-  get: function get() {
-    return _InlineObject2["default"];
-  }
-});
-Object.defineProperty(exports, "InlineObject2", {
-  enumerable: true,
-  get: function get() {
-    return _InlineObject3["default"];
-  }
-});
-Object.defineProperty(exports, "InlineObject3", {
-  enumerable: true,
-  get: function get() {
-    return _InlineObject4["default"];
-  }
-});
-Object.defineProperty(exports, "InlineObject4", {
-  enumerable: true,
-  get: function get() {
-    return _InlineObject5["default"];
-  }
-});
-Object.defineProperty(exports, "InlineResponse400", {
-  enumerable: true,
-  get: function get() {
-    return _InlineResponse["default"];
-  }
-});
-Object.defineProperty(exports, "InlineResponse401", {
-  enumerable: true,
-  get: function get() {
-    return _InlineResponse2["default"];
-  }
-});
-Object.defineProperty(exports, "InlineResponse403", {
-  enumerable: true,
-  get: function get() {
-    return _InlineResponse3["default"];
-  }
-});
-Object.defineProperty(exports, "InlineResponse404", {
-  enumerable: true,
-  get: function get() {
-    return _InlineResponse4["default"];
-  }
-});
-Object.defineProperty(exports, "InlineResponse422", {
-  enumerable: true,
-  get: function get() {
-    return _InlineResponse5["default"];
-  }
-});
-Object.defineProperty(exports, "InlineResponse500", {
-  enumerable: true,
-  get: function get() {
-    return _InlineResponse6["default"];
-  }
-});
-Object.defineProperty(exports, "InterviewProcess", {
-  enumerable: true,
-  get: function get() {
-    return _InterviewProcess["default"];
-  }
-});
-Object.defineProperty(exports, "Job", {
-  enumerable: true,
-  get: function get() {
-    return _Job["default"];
-  }
-});
-Object.defineProperty(exports, "JobDetail", {
-  enumerable: true,
-  get: function get() {
-    return _JobDetail["default"];
-  }
-});
-Object.defineProperty(exports, "JobDetailSalary", {
-  enumerable: true,
-  get: function get() {
-    return _JobDetailSalary["default"];
-  }
-});
-Object.defineProperty(exports, "JobField", {
-  enumerable: true,
-  get: function get() {
-    return _JobField["default"];
-  }
-});
-Object.defineProperty(exports, "JobSalary", {
-  enumerable: true,
-  get: function get() {
-    return _JobSalary["default"];
-  }
-});
-Object.defineProperty(exports, "LeaveRequest", {
-  enumerable: true,
-  get: function get() {
-    return _LeaveRequest["default"];
-  }
-});
-Object.defineProperty(exports, "LeaveRequestCreate", {
-  enumerable: true,
-  get: function get() {
-    return _LeaveRequestCreate["default"];
-  }
-});
-Object.defineProperty(exports, "LeaveType", {
-  enumerable: true,
-  get: function get() {
-    return _LeaveType["default"];
-  }
-});
-Object.defineProperty(exports, "Level", {
-  enumerable: true,
-  get: function get() {
-    return _Level["default"];
-  }
-});
-Object.defineProperty(exports, "Model400Error", {
-  enumerable: true,
-  get: function get() {
-    return _Model400Error["default"];
-  }
-});
-Object.defineProperty(exports, "Model401Error", {
-  enumerable: true,
-  get: function get() {
-    return _Model401Error["default"];
-  }
-});
-Object.defineProperty(exports, "Model403Error", {
-  enumerable: true,
-  get: function get() {
-    return _Model403Error["default"];
-  }
-});
-Object.defineProperty(exports, "Model404Error", {
-  enumerable: true,
-  get: function get() {
-    return _Model404Error["default"];
-  }
-});
-Object.defineProperty(exports, "Model422Error", {
-  enumerable: true,
-  get: function get() {
-    return _Model422Error["default"];
-  }
-});
-Object.defineProperty(exports, "Model500Error", {
-  enumerable: true,
-  get: function get() {
-    return _Model500Error["default"];
-  }
-});
-Object.defineProperty(exports, "NewHire", {
-  enumerable: true,
-  get: function get() {
-    return _NewHire["default"];
-  }
-});
-Object.defineProperty(exports, "NewHireCreate", {
-  enumerable: true,
-  get: function get() {
-    return _NewHireCreate["default"];
-  }
-});
-Object.defineProperty(exports, "NewHireCreateCustomFields", {
-  enumerable: true,
-  get: function get() {
-    return _NewHireCreateCustomFields["default"];
-  }
-});
-Object.defineProperty(exports, "NewHireDetail", {
-  enumerable: true,
-  get: function get() {
-    return _NewHireDetail["default"];
-  }
-});
-Object.defineProperty(exports, "PayGroup", {
-  enumerable: true,
-  get: function get() {
-    return _PayGroup["default"];
-  }
-});
-Object.defineProperty(exports, "PayMethod", {
-  enumerable: true,
-  get: function get() {
-    return _PayMethod["default"];
-  }
-});
-Object.defineProperty(exports, "PayRate", {
-  enumerable: true,
-  get: function get() {
-    return _PayRate["default"];
-  }
-});
-Object.defineProperty(exports, "PaySchedule", {
-  enumerable: true,
-  get: function get() {
-    return _PaySchedule["default"];
-  }
-});
-Object.defineProperty(exports, "Requisitions", {
-  enumerable: true,
-  get: function get() {
-    return _Requisitions["default"];
-  }
-});
-Object.defineProperty(exports, "Role", {
-  enumerable: true,
-  get: function get() {
-    return _Role["default"];
-  }
-});
-Object.defineProperty(exports, "Source", {
-  enumerable: true,
-  get: function get() {
-    return _Source["default"];
-  }
-});
-Object.defineProperty(exports, "SourceCategory", {
-  enumerable: true,
-  get: function get() {
-    return _SourceCategory["default"];
-  }
-});
-Object.defineProperty(exports, "SourceCreate", {
-  enumerable: true,
-  get: function get() {
-    return _SourceCreate["default"];
-  }
-});
-Object.defineProperty(exports, "StockGrantReason", {
-  enumerable: true,
-  get: function get() {
-    return _StockGrantReason["default"];
-  }
-});
-Object.defineProperty(exports, "SubDepartment", {
-  enumerable: true,
-  get: function get() {
-    return _SubDepartment["default"];
-  }
-});
-Object.defineProperty(exports, "SubStages", {
-  enumerable: true,
-  get: function get() {
-    return _SubStages["default"];
-  }
-});
-Object.defineProperty(exports, "Team", {
-  enumerable: true,
-  get: function get() {
-    return _Team["default"];
-  }
-});
-Object.defineProperty(exports, "UserFunction", {
-  enumerable: true,
-  get: function get() {
-    return _UserFunction["default"];
-  }
-});
-Object.defineProperty(exports, "UserLite", {
-  enumerable: true,
-  get: function get() {
-    return _UserLite["default"];
-  }
-});
-Object.defineProperty(exports, "VariablePayFrequency", {
-  enumerable: true,
-  get: function get() {
-    return _VariablePayFrequency["default"];
-  }
-});
-Object.defineProperty(exports, "WorkHourRate", {
-  enumerable: true,
-  get: function get() {
-    return _WorkHourRate["default"];
-  }
-});
-Object.defineProperty(exports, "ApplicantApi", {
-  enumerable: true,
-  get: function get() {
-    return _ApplicantApi["default"];
-  }
-});
-Object.defineProperty(exports, "ApplicantConversationApi", {
-  enumerable: true,
-  get: function get() {
-    return _ApplicantConversationApi["default"];
-  }
-});
-Object.defineProperty(exports, "BusinessUnitsApi", {
-  enumerable: true,
-  get: function get() {
-    return _BusinessUnitsApi["default"];
-  }
-});
-Object.defineProperty(exports, "CandidateApi", {
-  enumerable: true,
-  get: function get() {
-    return _CandidateApi["default"];
-  }
-});
-Object.defineProperty(exports, "DepartmentsApi", {
-  enumerable: true,
-  get: function get() {
-    return _DepartmentsApi["default"];
-  }
-});
-Object.defineProperty(exports, "EmployeeApi", {
-  enumerable: true,
-  get: function get() {
-    return _EmployeeApi["default"];
-  }
-});
-Object.defineProperty(exports, "EmployeeFieldsApi", {
-  enumerable: true,
-  get: function get() {
-    return _EmployeeFieldsApi["default"];
-  }
-});
-Object.defineProperty(exports, "JobApi", {
-  enumerable: true,
-  get: function get() {
-    return _JobApi["default"];
-  }
-});
-Object.defineProperty(exports, "JobFieldsApi", {
-  enumerable: true,
-  get: function get() {
-    return _JobFieldsApi["default"];
-  }
-});
-Object.defineProperty(exports, "LevelsApi", {
-  enumerable: true,
-  get: function get() {
-    return _LevelsApi["default"];
-  }
-});
-Object.defineProperty(exports, "LocationsApi", {
-  enumerable: true,
-  get: function get() {
-    return _LocationsApi["default"];
-  }
-});
-Object.defineProperty(exports, "NewHireApi", {
-  enumerable: true,
-  get: function get() {
-    return _NewHireApi["default"];
-  }
-});
-Object.defineProperty(exports, "RolesApi", {
-  enumerable: true,
-  get: function get() {
-    return _RolesApi["default"];
-  }
-});
-Object.defineProperty(exports, "SourceApi", {
-  enumerable: true,
-  get: function get() {
-    return _SourceApi["default"];
-  }
-});
-Object.defineProperty(exports, "SourceCategoriesApi", {
-  enumerable: true,
-  get: function get() {
-    return _SourceCategoriesApi["default"];
-  }
-});
-Object.defineProperty(exports, "SourcesApi", {
-  enumerable: true,
-  get: function get() {
-    return _SourcesApi["default"];
-  }
-});
-Object.defineProperty(exports, "SubDepartmentsApi", {
-  enumerable: true,
-  get: function get() {
-    return _SubDepartmentsApi["default"];
-  }
-});
-Object.defineProperty(exports, "TeamsApi", {
-  enumerable: true,
-  get: function get() {
-    return _TeamsApi["default"];
-  }
-});
-Object.defineProperty(exports, "TimeoffApi", {
-  enumerable: true,
-  get: function get() {
-    return _TimeoffApi["default"];
-  }
-});
-Object.defineProperty(exports, "UserFunctionsApi", {
-  enumerable: true,
-  get: function get() {
-    return _UserFunctionsApi["default"];
-  }
-});
-
-var _ApiClient = _interopRequireDefault(require("./ApiClient"));
-
-var _Address = _interopRequireDefault(require("./model/Address"));
-
-var _Applicant = _interopRequireDefault(require("./model/Applicant"));
-
-var _ApplicantCandidate = _interopRequireDefault(require("./model/ApplicantCandidate"));
-
-var _ApplicantConversation = _interopRequireDefault(require("./model/ApplicantConversation"));
-
-var _ApplicantConversationCreate = _interopRequireDefault(require("./model/ApplicantConversationCreate"));
-
-var _ApplicantCreate = _interopRequireDefault(require("./model/ApplicantCreate"));
-
-var _ApplicantCreateCandidate = _interopRequireDefault(require("./model/ApplicantCreateCandidate"));
-
-var _ApplicantDetail = _interopRequireDefault(require("./model/ApplicantDetail"));
-
-var _ApplicantDetailCandidate = _interopRequireDefault(require("./model/ApplicantDetailCandidate"));
-
-var _ApplicantDetailCandidateLocation = _interopRequireDefault(require("./model/ApplicantDetailCandidateLocation"));
-
-var _ApplicantDetailCandidateProfileLinks = _interopRequireDefault(require("./model/ApplicantDetailCandidateProfileLinks"));
-
-var _ApplicantDetailCandidateReferrals = _interopRequireDefault(require("./model/ApplicantDetailCandidateReferrals"));
-
-var _ApplicantDetailCandidateResumes = _interopRequireDefault(require("./model/ApplicantDetailCandidateResumes"));
-
-var _ApplicantDetailFollowers = _interopRequireDefault(require("./model/ApplicantDetailFollowers"));
-
-var _ApplicantField = _interopRequireDefault(require("./model/ApplicantField"));
-
-var _ApplicantUpdate = _interopRequireDefault(require("./model/ApplicantUpdate"));
-
-var _BonusType = _interopRequireDefault(require("./model/BonusType"));
-
-var _Branch = _interopRequireDefault(require("./model/Branch"));
-
-var _BusinessUnit = _interopRequireDefault(require("./model/BusinessUnit"));
-
-var _Candidate = _interopRequireDefault(require("./model/Candidate"));
-
-var _CandidateCreate = _interopRequireDefault(require("./model/CandidateCreate"));
-
-var _CandidateCreatePositions = _interopRequireDefault(require("./model/CandidateCreatePositions"));
-
-var _CandidatePositions = _interopRequireDefault(require("./model/CandidatePositions"));
-
-var _CandidateQualifications = _interopRequireDefault(require("./model/CandidateQualifications"));
-
-var _CompensationReason = _interopRequireDefault(require("./model/CompensationReason"));
-
-var _CostCenter = _interopRequireDefault(require("./model/CostCenter"));
-
-var _CustomField = _interopRequireDefault(require("./model/CustomField"));
-
-var _CustomRadioFields = _interopRequireDefault(require("./model/CustomRadioFields"));
-
-var _Department = _interopRequireDefault(require("./model/Department"));
-
-var _Employee = _interopRequireDefault(require("./model/Employee"));
-
-var _EmployeeAddress = _interopRequireDefault(require("./model/EmployeeAddress"));
-
-var _EmployeeAward = _interopRequireDefault(require("./model/EmployeeAward"));
-
-var _EmployeeBackGroundVerificationDetail = _interopRequireDefault(require("./model/EmployeeBackGroundVerificationDetail"));
-
-var _EmployeeBankAccount = _interopRequireDefault(require("./model/EmployeeBankAccount"));
-
-var _EmployeeBonus = _interopRequireDefault(require("./model/EmployeeBonus"));
-
-var _EmployeeCertificate = _interopRequireDefault(require("./model/EmployeeCertificate"));
-
-var _EmployeeCommunicationAddress = _interopRequireDefault(require("./model/EmployeeCommunicationAddress"));
-
-var _EmployeeCompensationDetail = _interopRequireDefault(require("./model/EmployeeCompensationDetail"));
-
-var _EmployeeCreate = _interopRequireDefault(require("./model/EmployeeCreate"));
-
-var _EmployeeCreateCustomFields = _interopRequireDefault(require("./model/EmployeeCreateCustomFields"));
-
-var _EmployeeDependent = _interopRequireDefault(require("./model/EmployeeDependent"));
-
-var _EmployeeDetail = _interopRequireDefault(require("./model/EmployeeDetail"));
-
-var _EmployeeDetailAddress = _interopRequireDefault(require("./model/EmployeeDetailAddress"));
-
-var _EmployeeDetailCommunicationAddress = _interopRequireDefault(require("./model/EmployeeDetailCommunicationAddress"));
-
-var _EmployeeDocumentType = _interopRequireDefault(require("./model/EmployeeDocumentType"));
-
-var _EmployeeEmergencyContact = _interopRequireDefault(require("./model/EmployeeEmergencyContact"));
-
-var _EmployeeField = _interopRequireDefault(require("./model/EmployeeField"));
-
-var _EmployeeFieldPicklistValues = _interopRequireDefault(require("./model/EmployeeFieldPicklistValues"));
-
-var _EmployeeFieldScopes = _interopRequireDefault(require("./model/EmployeeFieldScopes"));
-
-var _EmployeeGovernmentDocument = _interopRequireDefault(require("./model/EmployeeGovernmentDocument"));
-
-var _EmployeeHonor = _interopRequireDefault(require("./model/EmployeeHonor"));
-
-var _EmployeeLeaveType = _interopRequireDefault(require("./model/EmployeeLeaveType"));
-
-var _EmployeeLicense = _interopRequireDefault(require("./model/EmployeeLicense"));
-
-var _EmployeeLiteModel = _interopRequireDefault(require("./model/EmployeeLiteModel"));
-
-var _EmployeePhoneNumber = _interopRequireDefault(require("./model/EmployeePhoneNumber"));
-
-var _EmployeePosition = _interopRequireDefault(require("./model/EmployeePosition"));
-
-var _EmployeeQualification = _interopRequireDefault(require("./model/EmployeeQualification"));
-
-var _EmployeeReference = _interopRequireDefault(require("./model/EmployeeReference"));
-
-var _EmployeeSocialProfiles = _interopRequireDefault(require("./model/EmployeeSocialProfiles"));
-
-var _EmployeeStock = _interopRequireDefault(require("./model/EmployeeStock"));
-
-var _EmployeeTimeoff = _interopRequireDefault(require("./model/EmployeeTimeoff"));
-
-var _EmployeeWorkPhoneNumber = _interopRequireDefault(require("./model/EmployeeWorkPhoneNumber"));
-
-var _FieldOption = _interopRequireDefault(require("./model/FieldOption"));
-
-var _GrantType = _interopRequireDefault(require("./model/GrantType"));
-
-var _InlineObject = _interopRequireDefault(require("./model/InlineObject"));
-
-var _InlineObject2 = _interopRequireDefault(require("./model/InlineObject1"));
-
-var _InlineObject3 = _interopRequireDefault(require("./model/InlineObject2"));
-
-var _InlineObject4 = _interopRequireDefault(require("./model/InlineObject3"));
-
-var _InlineObject5 = _interopRequireDefault(require("./model/InlineObject4"));
-
-var _InlineResponse = _interopRequireDefault(require("./model/InlineResponse400"));
-
-var _InlineResponse2 = _interopRequireDefault(require("./model/InlineResponse401"));
-
-var _InlineResponse3 = _interopRequireDefault(require("./model/InlineResponse403"));
-
-var _InlineResponse4 = _interopRequireDefault(require("./model/InlineResponse404"));
-
-var _InlineResponse5 = _interopRequireDefault(require("./model/InlineResponse422"));
-
-var _InlineResponse6 = _interopRequireDefault(require("./model/InlineResponse500"));
-
-var _InterviewProcess = _interopRequireDefault(require("./model/InterviewProcess"));
-
-var _Job = _interopRequireDefault(require("./model/Job"));
-
-var _JobDetail = _interopRequireDefault(require("./model/JobDetail"));
-
-var _JobDetailSalary = _interopRequireDefault(require("./model/JobDetailSalary"));
-
-var _JobField = _interopRequireDefault(require("./model/JobField"));
-
-var _JobSalary = _interopRequireDefault(require("./model/JobSalary"));
-
-var _LeaveRequest = _interopRequireDefault(require("./model/LeaveRequest"));
-
-var _LeaveRequestCreate = _interopRequireDefault(require("./model/LeaveRequestCreate"));
-
-var _LeaveType = _interopRequireDefault(require("./model/LeaveType"));
-
-var _Level = _interopRequireDefault(require("./model/Level"));
-
-var _Model400Error = _interopRequireDefault(require("./model/Model400Error"));
-
-var _Model401Error = _interopRequireDefault(require("./model/Model401Error"));
-
-var _Model403Error = _interopRequireDefault(require("./model/Model403Error"));
-
-var _Model404Error = _interopRequireDefault(require("./model/Model404Error"));
-
-var _Model422Error = _interopRequireDefault(require("./model/Model422Error"));
-
-var _Model500Error = _interopRequireDefault(require("./model/Model500Error"));
-
-var _NewHire = _interopRequireDefault(require("./model/NewHire"));
-
-var _NewHireCreate = _interopRequireDefault(require("./model/NewHireCreate"));
-
-var _NewHireCreateCustomFields = _interopRequireDefault(require("./model/NewHireCreateCustomFields"));
-
-var _NewHireDetail = _interopRequireDefault(require("./model/NewHireDetail"));
-
-var _PayGroup = _interopRequireDefault(require("./model/PayGroup"));
-
-var _PayMethod = _interopRequireDefault(require("./model/PayMethod"));
-
-var _PayRate = _interopRequireDefault(require("./model/PayRate"));
-
-var _PaySchedule = _interopRequireDefault(require("./model/PaySchedule"));
-
-var _Requisitions = _interopRequireDefault(require("./model/Requisitions"));
-
-var _Role = _interopRequireDefault(require("./model/Role"));
-
-var _Source = _interopRequireDefault(require("./model/Source"));
-
-var _SourceCategory = _interopRequireDefault(require("./model/SourceCategory"));
-
-var _SourceCreate = _interopRequireDefault(require("./model/SourceCreate"));
-
-var _StockGrantReason = _interopRequireDefault(require("./model/StockGrantReason"));
-
-var _SubDepartment = _interopRequireDefault(require("./model/SubDepartment"));
-
-var _SubStages = _interopRequireDefault(require("./model/SubStages"));
-
-var _Team = _interopRequireDefault(require("./model/Team"));
-
-var _UserFunction = _interopRequireDefault(require("./model/UserFunction"));
-
-var _UserLite = _interopRequireDefault(require("./model/UserLite"));
-
-var _VariablePayFrequency = _interopRequireDefault(require("./model/VariablePayFrequency"));
-
-var _WorkHourRate = _interopRequireDefault(require("./model/WorkHourRate"));
-
-var _ApplicantApi = _interopRequireDefault(require("./api/ApplicantApi"));
-
-var _ApplicantConversationApi = _interopRequireDefault(require("./api/ApplicantConversationApi"));
-
-var _BusinessUnitsApi = _interopRequireDefault(require("./api/BusinessUnitsApi"));
-
-var _CandidateApi = _interopRequireDefault(require("./api/CandidateApi"));
-
-var _DepartmentsApi = _interopRequireDefault(require("./api/DepartmentsApi"));
-
-var _EmployeeApi = _interopRequireDefault(require("./api/EmployeeApi"));
-
-var _EmployeeFieldsApi = _interopRequireDefault(require("./api/EmployeeFieldsApi"));
-
-var _JobApi = _interopRequireDefault(require("./api/JobApi"));
-
-var _JobFieldsApi = _interopRequireDefault(require("./api/JobFieldsApi"));
-
-var _LevelsApi = _interopRequireDefault(require("./api/LevelsApi"));
-
-var _LocationsApi = _interopRequireDefault(require("./api/LocationsApi"));
-
-var _NewHireApi = _interopRequireDefault(require("./api/NewHireApi"));
-
-var _RolesApi = _interopRequireDefault(require("./api/RolesApi"));
-
-var _SourceApi = _interopRequireDefault(require("./api/SourceApi"));
-
-var _SourceCategoriesApi = _interopRequireDefault(require("./api/SourceCategoriesApi"));
-
-var _SourcesApi = _interopRequireDefault(require("./api/SourcesApi"));
-
-var _SubDepartmentsApi = _interopRequireDefault(require("./api/SubDepartmentsApi"));
-
-var _TeamsApi = _interopRequireDefault(require("./api/TeamsApi"));
-
-var _TimeoffApi = _interopRequireDefault(require("./api/TimeoffApi"));
-
-var _UserFunctionsApi = _interopRequireDefault(require("./api/UserFunctionsApi"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+/**
+ * Freshteam Public APIs
+ * Freshteam public APIs
+ *
+ * The version of the OpenAPI document: 1.0.0
+ * Contact: support@freshteam.com
+ *
+ * NOTE: This class is auto generated by OpenAPI Generator (https://openapi-generator.tech).
+ * https://openapi-generator.tech
+ * Do not edit the class manually.
+ *
+ */
+
+import ApiClient from "./ApiClient";
+import Address from "./model/Address";
+import Applicant from "./model/Applicant";
+import ApplicantCandidate from "./model/ApplicantCandidate";
+import ApplicantConversation from "./model/ApplicantConversation";
+import ApplicantConversationCreate from "./model/ApplicantConversationCreate";
+import ApplicantCreate from "./model/ApplicantCreate";
+import ApplicantCreateCandidate from "./model/ApplicantCreateCandidate";
+import ApplicantDetail from "./model/ApplicantDetail";
+import ApplicantDetailCandidate from "./model/ApplicantDetailCandidate";
+import ApplicantDetailCandidateLocation from "./model/ApplicantDetailCandidateLocation";
+import ApplicantDetailCandidateProfileLinks from "./model/ApplicantDetailCandidateProfileLinks";
+import ApplicantDetailCandidateReferrals from "./model/ApplicantDetailCandidateReferrals";
+import ApplicantDetailCandidateResumes from "./model/ApplicantDetailCandidateResumes";
+import ApplicantDetailFollowers from "./model/ApplicantDetailFollowers";
+import ApplicantField from "./model/ApplicantField";
+import ApplicantUpdate from "./model/ApplicantUpdate";
+import BonusType from "./model/BonusType";
+import Branch from "./model/Branch";
+import BusinessUnit from "./model/BusinessUnit";
+import Candidate from "./model/Candidate";
+import CandidateCreate from "./model/CandidateCreate";
+import CandidateCreatePositions from "./model/CandidateCreatePositions";
+import CandidatePositions from "./model/CandidatePositions";
+import CandidateQualifications from "./model/CandidateQualifications";
+import CompensationReason from "./model/CompensationReason";
+import CostCenter from "./model/CostCenter";
+import CustomField from "./model/CustomField";
+import CustomRadioFields from "./model/CustomRadioFields";
+import Department from "./model/Department";
+import Employee from "./model/Employee";
+import EmployeeAddress from "./model/EmployeeAddress";
+import EmployeeAward from "./model/EmployeeAward";
+import EmployeeBackGroundVerificationDetail from "./model/EmployeeBackGroundVerificationDetail";
+import EmployeeBankAccount from "./model/EmployeeBankAccount";
+import EmployeeBonus from "./model/EmployeeBonus";
+import EmployeeCertificate from "./model/EmployeeCertificate";
+import EmployeeCommunicationAddress from "./model/EmployeeCommunicationAddress";
+import EmployeeCompensationDetail from "./model/EmployeeCompensationDetail";
+import EmployeeCreate from "./model/EmployeeCreate";
+import EmployeeCreateCustomFields from "./model/EmployeeCreateCustomFields";
+import EmployeeDependent from "./model/EmployeeDependent";
+import EmployeeDetail from "./model/EmployeeDetail";
+import EmployeeDetailAddress from "./model/EmployeeDetailAddress";
+import EmployeeDetailCommunicationAddress from "./model/EmployeeDetailCommunicationAddress";
+import EmployeeDocumentType from "./model/EmployeeDocumentType";
+import EmployeeEmergencyContact from "./model/EmployeeEmergencyContact";
+import EmployeeField from "./model/EmployeeField";
+import EmployeeFieldPicklistValues from "./model/EmployeeFieldPicklistValues";
+import EmployeeFieldScopes from "./model/EmployeeFieldScopes";
+import EmployeeGovernmentDocument from "./model/EmployeeGovernmentDocument";
+import EmployeeHonor from "./model/EmployeeHonor";
+import EmployeeLeaveType from "./model/EmployeeLeaveType";
+import EmployeeLicense from "./model/EmployeeLicense";
+import EmployeeLiteModel from "./model/EmployeeLiteModel";
+import EmployeePhoneNumber from "./model/EmployeePhoneNumber";
+import EmployeePosition from "./model/EmployeePosition";
+import EmployeeQualification from "./model/EmployeeQualification";
+import EmployeeReference from "./model/EmployeeReference";
+import EmployeeSocialProfiles from "./model/EmployeeSocialProfiles";
+import EmployeeStock from "./model/EmployeeStock";
+import EmployeeTimeoff from "./model/EmployeeTimeoff";
+import EmployeeWorkPhoneNumber from "./model/EmployeeWorkPhoneNumber";
+import FieldOption from "./model/FieldOption";
+import GrantType from "./model/GrantType";
+import InlineObject from "./model/InlineObject";
+import InlineObject1 from "./model/InlineObject1";
+import InlineObject2 from "./model/InlineObject2";
+import InlineObject3 from "./model/InlineObject3";
+import InlineObject4 from "./model/InlineObject4";
+import InlineResponse400 from "./model/InlineResponse400";
+import InlineResponse401 from "./model/InlineResponse401";
+import InlineResponse403 from "./model/InlineResponse403";
+import InlineResponse404 from "./model/InlineResponse404";
+import InlineResponse422 from "./model/InlineResponse422";
+import InlineResponse500 from "./model/InlineResponse500";
+import InterviewProcess from "./model/InterviewProcess";
+import Job from "./model/Job";
+import JobDetail from "./model/JobDetail";
+import JobDetailSalary from "./model/JobDetailSalary";
+import JobField from "./model/JobField";
+import JobSalary from "./model/JobSalary";
+import LeaveRequest from "./model/LeaveRequest";
+import LeaveRequestCreate from "./model/LeaveRequestCreate";
+import LeaveType from "./model/LeaveType";
+import Level from "./model/Level";
+import Model400Error from "./model/Model400Error";
+import Model401Error from "./model/Model401Error";
+import Model403Error from "./model/Model403Error";
+import Model404Error from "./model/Model404Error";
+import Model422Error from "./model/Model422Error";
+import Model500Error from "./model/Model500Error";
+import NewHire from "./model/NewHire";
+import NewHireCreate from "./model/NewHireCreate";
+import NewHireCreateCustomFields from "./model/NewHireCreateCustomFields";
+import NewHireDetail from "./model/NewHireDetail";
+import PayGroup from "./model/PayGroup";
+import PayMethod from "./model/PayMethod";
+import PayRate from "./model/PayRate";
+import PaySchedule from "./model/PaySchedule";
+import Requisitions from "./model/Requisitions";
+import Role from "./model/Role";
+import Source from "./model/Source";
+import SourceCategory from "./model/SourceCategory";
+import SourceCreate from "./model/SourceCreate";
+import StockGrantReason from "./model/StockGrantReason";
+import SubDepartment from "./model/SubDepartment";
+import SubStages from "./model/SubStages";
+import Team from "./model/Team";
+import UserFunction from "./model/UserFunction";
+import UserLite from "./model/UserLite";
+import VariablePayFrequency from "./model/VariablePayFrequency";
+import WorkHourRate from "./model/WorkHourRate";
+import ApplicantApi from "./api/ApplicantApi";
+import ApplicantConversationApi from "./api/ApplicantConversationApi";
+import BusinessUnitsApi from "./api/BusinessUnitsApi";
+import CandidateApi from "./api/CandidateApi";
+import DepartmentsApi from "./api/DepartmentsApi";
+import EmployeeApi from "./api/EmployeeApi";
+import EmployeeFieldsApi from "./api/EmployeeFieldsApi";
+import JobApi from "./api/JobApi";
+import JobFieldsApi from "./api/JobFieldsApi";
+import LevelsApi from "./api/LevelsApi";
+import LocationsApi from "./api/LocationsApi";
+import NewHireApi from "./api/NewHireApi";
+import RolesApi from "./api/RolesApi";
+import SourceApi from "./api/SourceApi";
+import SourceCategoriesApi from "./api/SourceCategoriesApi";
+import SourcesApi from "./api/SourcesApi";
+import SubDepartmentsApi from "./api/SubDepartmentsApi";
+import TeamsApi from "./api/TeamsApi";
+import TimeoffApi from "./api/TimeoffApi";
+import UserFunctionsApi from "./api/UserFunctionsApi";
+
+/**
+ * Auto-generated JavaScript client code from Freshteam OpenAPI spec using OpenAPI Generator.<br>
+ * The <code>index</code> module provides access to constructors for all the classes which comprise the public API.
+ * <p>
+ * An AMD (recommended!) or CommonJS application will generally do something equivalent to the following:
+ * <pre>
+ * var FreshteamApiSdkCodegen = require('index'); // See note below*.
+ * var xxxSvc = new FreshteamApiSdkCodegen.XxxApi(); // Allocate the API class we're going to use.
+ * var yyyModel = new FreshteamApiSdkCodegen.Yyy(); // Construct a model instance.
+ * yyyModel.someProperty = 'someValue';
+ * ...
+ * var zzz = xxxSvc.doSomething(yyyModel); // Invoke the service.
+ * ...
+ * </pre>
+ * <em>*NOTE: For a top-level AMD script, use require(['index'], function(){...})
+ * and put the application logic within the callback function.</em>
+ * </p>
+ * <p>
+ * A non-AMD browser application (discouraged) might do something like this:
+ * <pre>
+ * var xxxSvc = new FreshteamApiSdkCodegen.XxxApi(); // Allocate the API class we're going to use.
+ * var yyy = new FreshteamApiSdkCodegen.Yyy(); // Construct a model instance.
+ * yyyModel.someProperty = 'someValue';
+ * ...
+ * var zzz = xxxSvc.doSomething(yyyModel); // Invoke the service.
+ * ...
+ * </pre>
+ * </p>
+ * @module index
+ * @version 1.0.0
+ */
+export {
+  /**
+   * The ApiClient constructor.
+   * @property {module:ApiClient}
+   */
+  ApiClient,
+  /**
+   * The Address model constructor.
+   * @property {module:model/Address}
+   */
+  Address,
+  /**
+   * The Applicant model constructor.
+   * @property {module:model/Applicant}
+   */
+  Applicant,
+  /**
+   * The ApplicantCandidate model constructor.
+   * @property {module:model/ApplicantCandidate}
+   */
+  ApplicantCandidate,
+  /**
+   * The ApplicantConversation model constructor.
+   * @property {module:model/ApplicantConversation}
+   */
+  ApplicantConversation,
+  /**
+   * The ApplicantConversationCreate model constructor.
+   * @property {module:model/ApplicantConversationCreate}
+   */
+  ApplicantConversationCreate,
+  /**
+   * The ApplicantCreate model constructor.
+   * @property {module:model/ApplicantCreate}
+   */
+  ApplicantCreate,
+  /**
+   * The ApplicantCreateCandidate model constructor.
+   * @property {module:model/ApplicantCreateCandidate}
+   */
+  ApplicantCreateCandidate,
+  /**
+   * The ApplicantDetail model constructor.
+   * @property {module:model/ApplicantDetail}
+   */
+  ApplicantDetail,
+  /**
+   * The ApplicantDetailCandidate model constructor.
+   * @property {module:model/ApplicantDetailCandidate}
+   */
+  ApplicantDetailCandidate,
+  /**
+   * The ApplicantDetailCandidateLocation model constructor.
+   * @property {module:model/ApplicantDetailCandidateLocation}
+   */
+  ApplicantDetailCandidateLocation,
+  /**
+   * The ApplicantDetailCandidateProfileLinks model constructor.
+   * @property {module:model/ApplicantDetailCandidateProfileLinks}
+   */
+  ApplicantDetailCandidateProfileLinks,
+  /**
+   * The ApplicantDetailCandidateReferrals model constructor.
+   * @property {module:model/ApplicantDetailCandidateReferrals}
+   */
+  ApplicantDetailCandidateReferrals,
+  /**
+   * The ApplicantDetailCandidateResumes model constructor.
+   * @property {module:model/ApplicantDetailCandidateResumes}
+   */
+  ApplicantDetailCandidateResumes,
+  /**
+   * The ApplicantDetailFollowers model constructor.
+   * @property {module:model/ApplicantDetailFollowers}
+   */
+  ApplicantDetailFollowers,
+  /**
+   * The ApplicantField model constructor.
+   * @property {module:model/ApplicantField}
+   */
+  ApplicantField,
+  /**
+   * The ApplicantUpdate model constructor.
+   * @property {module:model/ApplicantUpdate}
+   */
+  ApplicantUpdate,
+  /**
+   * The BonusType model constructor.
+   * @property {module:model/BonusType}
+   */
+  BonusType,
+  /**
+   * The Branch model constructor.
+   * @property {module:model/Branch}
+   */
+  Branch,
+  /**
+   * The BusinessUnit model constructor.
+   * @property {module:model/BusinessUnit}
+   */
+  BusinessUnit,
+  /**
+   * The Candidate model constructor.
+   * @property {module:model/Candidate}
+   */
+  Candidate,
+  /**
+   * The CandidateCreate model constructor.
+   * @property {module:model/CandidateCreate}
+   */
+  CandidateCreate,
+  /**
+   * The CandidateCreatePositions model constructor.
+   * @property {module:model/CandidateCreatePositions}
+   */
+  CandidateCreatePositions,
+  /**
+   * The CandidatePositions model constructor.
+   * @property {module:model/CandidatePositions}
+   */
+  CandidatePositions,
+  /**
+   * The CandidateQualifications model constructor.
+   * @property {module:model/CandidateQualifications}
+   */
+  CandidateQualifications,
+  /**
+   * The CompensationReason model constructor.
+   * @property {module:model/CompensationReason}
+   */
+  CompensationReason,
+  /**
+   * The CostCenter model constructor.
+   * @property {module:model/CostCenter}
+   */
+  CostCenter,
+  /**
+   * The CustomField model constructor.
+   * @property {module:model/CustomField}
+   */
+  CustomField,
+  /**
+   * The CustomRadioFields model constructor.
+   * @property {module:model/CustomRadioFields}
+   */
+  CustomRadioFields,
+  /**
+   * The Department model constructor.
+   * @property {module:model/Department}
+   */
+  Department,
+  /**
+   * The Employee model constructor.
+   * @property {module:model/Employee}
+   */
+  Employee,
+  /**
+   * The EmployeeAddress model constructor.
+   * @property {module:model/EmployeeAddress}
+   */
+  EmployeeAddress,
+  /**
+   * The EmployeeAward model constructor.
+   * @property {module:model/EmployeeAward}
+   */
+  EmployeeAward,
+  /**
+   * The EmployeeBackGroundVerificationDetail model constructor.
+   * @property {module:model/EmployeeBackGroundVerificationDetail}
+   */
+  EmployeeBackGroundVerificationDetail,
+  /**
+   * The EmployeeBankAccount model constructor.
+   * @property {module:model/EmployeeBankAccount}
+   */
+  EmployeeBankAccount,
+  /**
+   * The EmployeeBonus model constructor.
+   * @property {module:model/EmployeeBonus}
+   */
+  EmployeeBonus,
+  /**
+   * The EmployeeCertificate model constructor.
+   * @property {module:model/EmployeeCertificate}
+   */
+  EmployeeCertificate,
+  /**
+   * The EmployeeCommunicationAddress model constructor.
+   * @property {module:model/EmployeeCommunicationAddress}
+   */
+  EmployeeCommunicationAddress,
+  /**
+   * The EmployeeCompensationDetail model constructor.
+   * @property {module:model/EmployeeCompensationDetail}
+   */
+  EmployeeCompensationDetail,
+  /**
+   * The EmployeeCreate model constructor.
+   * @property {module:model/EmployeeCreate}
+   */
+  EmployeeCreate,
+  /**
+   * The EmployeeCreateCustomFields model constructor.
+   * @property {module:model/EmployeeCreateCustomFields}
+   */
+  EmployeeCreateCustomFields,
+  /**
+   * The EmployeeDependent model constructor.
+   * @property {module:model/EmployeeDependent}
+   */
+  EmployeeDependent,
+  /**
+   * The EmployeeDetail model constructor.
+   * @property {module:model/EmployeeDetail}
+   */
+  EmployeeDetail,
+  /**
+   * The EmployeeDetailAddress model constructor.
+   * @property {module:model/EmployeeDetailAddress}
+   */
+  EmployeeDetailAddress,
+  /**
+   * The EmployeeDetailCommunicationAddress model constructor.
+   * @property {module:model/EmployeeDetailCommunicationAddress}
+   */
+  EmployeeDetailCommunicationAddress,
+  /**
+   * The EmployeeDocumentType model constructor.
+   * @property {module:model/EmployeeDocumentType}
+   */
+  EmployeeDocumentType,
+  /**
+   * The EmployeeEmergencyContact model constructor.
+   * @property {module:model/EmployeeEmergencyContact}
+   */
+  EmployeeEmergencyContact,
+  /**
+   * The EmployeeField model constructor.
+   * @property {module:model/EmployeeField}
+   */
+  EmployeeField,
+  /**
+   * The EmployeeFieldPicklistValues model constructor.
+   * @property {module:model/EmployeeFieldPicklistValues}
+   */
+  EmployeeFieldPicklistValues,
+  /**
+   * The EmployeeFieldScopes model constructor.
+   * @property {module:model/EmployeeFieldScopes}
+   */
+  EmployeeFieldScopes,
+  /**
+   * The EmployeeGovernmentDocument model constructor.
+   * @property {module:model/EmployeeGovernmentDocument}
+   */
+  EmployeeGovernmentDocument,
+  /**
+   * The EmployeeHonor model constructor.
+   * @property {module:model/EmployeeHonor}
+   */
+  EmployeeHonor,
+  /**
+   * The EmployeeLeaveType model constructor.
+   * @property {module:model/EmployeeLeaveType}
+   */
+  EmployeeLeaveType,
+  /**
+   * The EmployeeLicense model constructor.
+   * @property {module:model/EmployeeLicense}
+   */
+  EmployeeLicense,
+  /**
+   * The EmployeeLiteModel model constructor.
+   * @property {module:model/EmployeeLiteModel}
+   */
+  EmployeeLiteModel,
+  /**
+   * The EmployeePhoneNumber model constructor.
+   * @property {module:model/EmployeePhoneNumber}
+   */
+  EmployeePhoneNumber,
+  /**
+   * The EmployeePosition model constructor.
+   * @property {module:model/EmployeePosition}
+   */
+  EmployeePosition,
+  /**
+   * The EmployeeQualification model constructor.
+   * @property {module:model/EmployeeQualification}
+   */
+  EmployeeQualification,
+  /**
+   * The EmployeeReference model constructor.
+   * @property {module:model/EmployeeReference}
+   */
+  EmployeeReference,
+  /**
+   * The EmployeeSocialProfiles model constructor.
+   * @property {module:model/EmployeeSocialProfiles}
+   */
+  EmployeeSocialProfiles,
+  /**
+   * The EmployeeStock model constructor.
+   * @property {module:model/EmployeeStock}
+   */
+  EmployeeStock,
+  /**
+   * The EmployeeTimeoff model constructor.
+   * @property {module:model/EmployeeTimeoff}
+   */
+  EmployeeTimeoff,
+  /**
+   * The EmployeeWorkPhoneNumber model constructor.
+   * @property {module:model/EmployeeWorkPhoneNumber}
+   */
+  EmployeeWorkPhoneNumber,
+  /**
+   * The FieldOption model constructor.
+   * @property {module:model/FieldOption}
+   */
+  FieldOption,
+  /**
+   * The GrantType model constructor.
+   * @property {module:model/GrantType}
+   */
+  GrantType,
+  /**
+   * The InlineObject model constructor.
+   * @property {module:model/InlineObject}
+   */
+  InlineObject,
+  /**
+   * The InlineObject1 model constructor.
+   * @property {module:model/InlineObject1}
+   */
+  InlineObject1,
+  /**
+   * The InlineObject2 model constructor.
+   * @property {module:model/InlineObject2}
+   */
+  InlineObject2,
+  /**
+   * The InlineObject3 model constructor.
+   * @property {module:model/InlineObject3}
+   */
+  InlineObject3,
+  /**
+   * The InlineObject4 model constructor.
+   * @property {module:model/InlineObject4}
+   */
+  InlineObject4,
+  /**
+   * The InlineResponse400 model constructor.
+   * @property {module:model/InlineResponse400}
+   */
+  InlineResponse400,
+  /**
+   * The InlineResponse401 model constructor.
+   * @property {module:model/InlineResponse401}
+   */
+  InlineResponse401,
+  /**
+   * The InlineResponse403 model constructor.
+   * @property {module:model/InlineResponse403}
+   */
+  InlineResponse403,
+  /**
+   * The InlineResponse404 model constructor.
+   * @property {module:model/InlineResponse404}
+   */
+  InlineResponse404,
+  /**
+   * The InlineResponse422 model constructor.
+   * @property {module:model/InlineResponse422}
+   */
+  InlineResponse422,
+  /**
+   * The InlineResponse500 model constructor.
+   * @property {module:model/InlineResponse500}
+   */
+  InlineResponse500,
+  /**
+   * The InterviewProcess model constructor.
+   * @property {module:model/InterviewProcess}
+   */
+  InterviewProcess,
+  /**
+   * The Job model constructor.
+   * @property {module:model/Job}
+   */
+  Job,
+  /**
+   * The JobDetail model constructor.
+   * @property {module:model/JobDetail}
+   */
+  JobDetail,
+  /**
+   * The JobDetailSalary model constructor.
+   * @property {module:model/JobDetailSalary}
+   */
+  JobDetailSalary,
+  /**
+   * The JobField model constructor.
+   * @property {module:model/JobField}
+   */
+  JobField,
+  /**
+   * The JobSalary model constructor.
+   * @property {module:model/JobSalary}
+   */
+  JobSalary,
+  /**
+   * The LeaveRequest model constructor.
+   * @property {module:model/LeaveRequest}
+   */
+  LeaveRequest,
+  /**
+   * The LeaveRequestCreate model constructor.
+   * @property {module:model/LeaveRequestCreate}
+   */
+  LeaveRequestCreate,
+  /**
+   * The LeaveType model constructor.
+   * @property {module:model/LeaveType}
+   */
+  LeaveType,
+  /**
+   * The Level model constructor.
+   * @property {module:model/Level}
+   */
+  Level,
+  /**
+   * The Model400Error model constructor.
+   * @property {module:model/Model400Error}
+   */
+  Model400Error,
+  /**
+   * The Model401Error model constructor.
+   * @property {module:model/Model401Error}
+   */
+  Model401Error,
+  /**
+   * The Model403Error model constructor.
+   * @property {module:model/Model403Error}
+   */
+  Model403Error,
+  /**
+   * The Model404Error model constructor.
+   * @property {module:model/Model404Error}
+   */
+  Model404Error,
+  /**
+   * The Model422Error model constructor.
+   * @property {module:model/Model422Error}
+   */
+  Model422Error,
+  /**
+   * The Model500Error model constructor.
+   * @property {module:model/Model500Error}
+   */
+  Model500Error,
+  /**
+   * The NewHire model constructor.
+   * @property {module:model/NewHire}
+   */
+  NewHire,
+  /**
+   * The NewHireCreate model constructor.
+   * @property {module:model/NewHireCreate}
+   */
+  NewHireCreate,
+  /**
+   * The NewHireCreateCustomFields model constructor.
+   * @property {module:model/NewHireCreateCustomFields}
+   */
+  NewHireCreateCustomFields,
+  /**
+   * The NewHireDetail model constructor.
+   * @property {module:model/NewHireDetail}
+   */
+  NewHireDetail,
+  /**
+   * The PayGroup model constructor.
+   * @property {module:model/PayGroup}
+   */
+  PayGroup,
+  /**
+   * The PayMethod model constructor.
+   * @property {module:model/PayMethod}
+   */
+  PayMethod,
+  /**
+   * The PayRate model constructor.
+   * @property {module:model/PayRate}
+   */
+  PayRate,
+  /**
+   * The PaySchedule model constructor.
+   * @property {module:model/PaySchedule}
+   */
+  PaySchedule,
+  /**
+   * The Requisitions model constructor.
+   * @property {module:model/Requisitions}
+   */
+  Requisitions,
+  /**
+   * The Role model constructor.
+   * @property {module:model/Role}
+   */
+  Role,
+  /**
+   * The Source model constructor.
+   * @property {module:model/Source}
+   */
+  Source,
+  /**
+   * The SourceCategory model constructor.
+   * @property {module:model/SourceCategory}
+   */
+  SourceCategory,
+  /**
+   * The SourceCreate model constructor.
+   * @property {module:model/SourceCreate}
+   */
+  SourceCreate,
+  /**
+   * The StockGrantReason model constructor.
+   * @property {module:model/StockGrantReason}
+   */
+  StockGrantReason,
+  /**
+   * The SubDepartment model constructor.
+   * @property {module:model/SubDepartment}
+   */
+  SubDepartment,
+  /**
+   * The SubStages model constructor.
+   * @property {module:model/SubStages}
+   */
+  SubStages,
+  /**
+   * The Team model constructor.
+   * @property {module:model/Team}
+   */
+  Team,
+  /**
+   * The UserFunction model constructor.
+   * @property {module:model/UserFunction}
+   */
+  UserFunction,
+  /**
+   * The UserLite model constructor.
+   * @property {module:model/UserLite}
+   */
+  UserLite,
+  /**
+   * The VariablePayFrequency model constructor.
+   * @property {module:model/VariablePayFrequency}
+   */
+  VariablePayFrequency,
+  /**
+   * The WorkHourRate model constructor.
+   * @property {module:model/WorkHourRate}
+   */
+  WorkHourRate,
+  /**
+   * The ApplicantApi service constructor.
+   * @property {module:api/ApplicantApi}
+   */
+  ApplicantApi,
+  /**
+   * The ApplicantConversationApi service constructor.
+   * @property {module:api/ApplicantConversationApi}
+   */
+  ApplicantConversationApi,
+  /**
+   * The BusinessUnitsApi service constructor.
+   * @property {module:api/BusinessUnitsApi}
+   */
+  BusinessUnitsApi,
+  /**
+   * The CandidateApi service constructor.
+   * @property {module:api/CandidateApi}
+   */
+  CandidateApi,
+  /**
+   * The DepartmentsApi service constructor.
+   * @property {module:api/DepartmentsApi}
+   */
+  DepartmentsApi,
+  /**
+   * The EmployeeApi service constructor.
+   * @property {module:api/EmployeeApi}
+   */
+  EmployeeApi,
+  /**
+   * The EmployeeFieldsApi service constructor.
+   * @property {module:api/EmployeeFieldsApi}
+   */
+  EmployeeFieldsApi,
+  /**
+   * The JobApi service constructor.
+   * @property {module:api/JobApi}
+   */
+  JobApi,
+  /**
+   * The JobFieldsApi service constructor.
+   * @property {module:api/JobFieldsApi}
+   */
+  JobFieldsApi,
+  /**
+   * The LevelsApi service constructor.
+   * @property {module:api/LevelsApi}
+   */
+  LevelsApi,
+  /**
+   * The LocationsApi service constructor.
+   * @property {module:api/LocationsApi}
+   */
+  LocationsApi,
+  /**
+   * The NewHireApi service constructor.
+   * @property {module:api/NewHireApi}
+   */
+  NewHireApi,
+  /**
+   * The RolesApi service constructor.
+   * @property {module:api/RolesApi}
+   */
+  RolesApi,
+  /**
+   * The SourceApi service constructor.
+   * @property {module:api/SourceApi}
+   */
+  SourceApi,
+  /**
+   * The SourceCategoriesApi service constructor.
+   * @property {module:api/SourceCategoriesApi}
+   */
+  SourceCategoriesApi,
+  /**
+   * The SourcesApi service constructor.
+   * @property {module:api/SourcesApi}
+   */
+  SourcesApi,
+  /**
+   * The SubDepartmentsApi service constructor.
+   * @property {module:api/SubDepartmentsApi}
+   */
+  SubDepartmentsApi,
+  /**
+   * The TeamsApi service constructor.
+   * @property {module:api/TeamsApi}
+   */
+  TeamsApi,
+  /**
+   * The TimeoffApi service constructor.
+   * @property {module:api/TimeoffApi}
+   */
+  TimeoffApi,
+  /**
+   * The UserFunctionsApi service constructor.
+   * @property {module:api/UserFunctionsApi}
+   */
+  UserFunctionsApi
+};

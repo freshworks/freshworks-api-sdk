@@ -2,8 +2,6 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**customFields** | [**NewHireCreateCustomFields**](NewHireCreateCustomFields.md) |  | [optional] 
-
-
+| Name             | Type                                                          | Description | Notes      |
+| ---------------- | ------------------------------------------------------------- | ----------- | ---------- |
+| **customFields** | [**NewHireCreateCustomFields**](NewHireCreateCustomFields.md) |             | [optional] |

@@ -2,22 +2,15 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**label** | **String** |  | 
-**required** | **Boolean** |  | [optional] 
-**sectionName** | **String** |  | 
-**fieldType** | **String** |  | 
-
-
+| Name            | Type        | Description | Notes      |
+| --------------- | ----------- | ----------- | ---------- |
+| **label**       | **String**  |             |
+| **required**    | **Boolean** |             | [optional] |
+| **sectionName** | **String**  |             |
+| **fieldType**   | **String**  |             |
 
 ## Enum: FieldTypeEnum
 
+- `text` (value: `"text"`)
 
-* `text` (value: `"text"`)
-
-* `number` (value: `"number"`)
-
-
-
-
+- `number` (value: `"number"`)

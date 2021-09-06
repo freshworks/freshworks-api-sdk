@@ -2,12 +2,10 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**id** | **Number** |  | [optional] 
-**userId** | **Number** |  | [optional] 
-**name** | **String** |  | [optional] 
-**awardedBy** | **String** |  | [optional] 
-**deleted** | **Boolean** |  | [optional] 
-
-
+| Name          | Type        | Description | Notes      |
+| ------------- | ----------- | ----------- | ---------- |
+| **id**        | **Number**  |             | [optional] |
+| **userId**    | **Number**  |             | [optional] |
+| **name**      | **String**  |             | [optional] |
+| **awardedBy** | **String**  |             | [optional] |
+| **deleted**   | **Boolean** |             | [optional] |

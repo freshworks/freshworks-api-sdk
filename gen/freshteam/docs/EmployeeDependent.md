@@ -2,56 +2,44 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**id** | **Number** |  | [optional] 
-**userId** | **Number** |  | [optional] 
-**name** | **String** |  | [optional] 
-**relationship** | **String** |  | [optional] 
-**dateOfBirth** | **String** |  | [optional] 
-**gender** | **String** |  | [optional] 
-**deleted** | **String** |  | [optional] 
-
-
+| Name             | Type       | Description | Notes      |
+| ---------------- | ---------- | ----------- | ---------- |
+| **id**           | **Number** |             | [optional] |
+| **userId**       | **Number** |             | [optional] |
+| **name**         | **String** |             | [optional] |
+| **relationship** | **String** |             | [optional] |
+| **dateOfBirth**  | **String** |             | [optional] |
+| **gender**       | **String** |             | [optional] |
+| **deleted**      | **String** |             | [optional] |
 
 ## Enum: RelationshipEnum
 
+- `parent` (value: `"parent"`)
 
-* `parent` (value: `"parent"`)
+- `father` (value: `"father"`)
 
-* `father` (value: `"father"`)
+- `mother` (value: `"mother"`)
 
-* `mother` (value: `"mother"`)
+- `sibling` (value: `"sibling"`)
 
-* `sibling` (value: `"sibling"`)
+- `brother` (value: `"brother"`)
 
-* `brother` (value: `"brother"`)
+- `sister` (value: `"sister"`)
 
-* `sister` (value: `"sister"`)
+- `spouse` (value: `"spouse"`)
 
-* `spouse` (value: `"spouse"`)
+- `husband` (value: `"husband"`)
 
-* `husband` (value: `"husband"`)
+- `wife` (value: `"wife"`)
 
-* `wife` (value: `"wife"`)
+- `child` (value: `"child"`)
 
-* `child` (value: `"child"`)
+- `son` (value: `"son"`)
 
-* `son` (value: `"son"`)
-
-* `daughter` (value: `"daughter"`)
-
-
-
-
+- `daughter` (value: `"daughter"`)
 
 ## Enum: GenderEnum
 
+- `male` (value: `"male"`)
 
-* `male` (value: `"male"`)
-
-* `female` (value: `"female"`)
-
-
-
-
+- `female` (value: `"female"`)
