@@ -23,11 +23,11 @@ export type TimeOff = {
   notify_to?: string[];
   add_to_calendar?: boolean;
   auto_decline_events?: boolean;
-}
+};
 
 export type TimeOffUpdate = {
   comments: string;
-}
+};
 
 export type TimeOffType = {
   id: number;
@@ -42,7 +42,7 @@ export type TimeOffType = {
   auto_approve_after: number;
   auto_approve_limit: number;
   marital_status: "single" | "married" | "all";
-}
+};
 
 export default function timeOffs(client: Client) {
   return {
@@ -74,11 +74,13 @@ export default function timeOffs(client: Client) {
      */
     async create(timeOff: TimeOff): Promise<TimeOff> {
       // TODO
-      const res = await client.send(new Request({
-        method: "POST",
-        endpoint: "/time_offs",
-        body: timeOff
-      }));
+      const res = await client.send(
+        new Request({
+          method: "POST",
+          endpoint: "/time_offs",
+          body: timeOff
+        })
+      );
 
       // TODO: Check for error
       if (res.error instanceof Error) {
@@ -112,10 +114,12 @@ export default function timeOffs(client: Client) {
      * @param id {number} - Timeoff request identifier
      */
     async cancel(id: number): Promise<null> {
-      const res = await client.send(new Request({
-        method: "PUT",
-        endpoint: "/time_offs/" + id + "/cancel"
-      }));
+      const res = await client.send(
+        new Request({
+          method: "PUT",
+          endpoint: "/time_offs/" + id + "/cancel"
+        })
+      );
       // Check for error
 
       // Parse res.body
@@ -129,11 +133,13 @@ export default function timeOffs(client: Client) {
      * @param timeOff {TimeOffUpdate} - Timeoff request notes
      */
     async approve(id: number, timeOff: TimeOffUpdate): Promise<null> {
-      const res = await client.send(new Request({
-        method: "PUT",
-        endpoint: "/time_offs/" + id + "/approve",
-        body: { leave_request: timeOff } // Non-standard description
-      }));
+      const res = await client.send(
+        new Request({
+          method: "PUT",
+          endpoint: "/time_offs/" + id + "/approve",
+          body: { leave_request: timeOff } // Non-standard description
+        })
+      );
       // Check for error
 
       // Parse res.body
@@ -147,11 +153,13 @@ export default function timeOffs(client: Client) {
      * @param timeOff {TimeOffUpdate} - Timeoff request notes
      */
     async reject(id: number, timeOff: TimeOffUpdate): Promise<null> {
-      const res = await client.send(new Request({
-        method: "PUT",
-        endpoint: "/time_offs/" + id + "/reject",
-        body: { leave_request: timeOff } // Non-standard description
-      }));
+      const res = await client.send(
+        new Request({
+          method: "PUT",
+          endpoint: "/time_offs/" + id + "/reject",
+          body: { leave_request: timeOff } // Non-standard description
+        })
+      );
       // Check for error
 
       // Parse res.body

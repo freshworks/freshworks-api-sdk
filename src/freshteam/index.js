@@ -21,4 +21,4 @@ export default function Freshteam(domain, apiKey) {
     time_offs: require("./time-offs")(client),
     job_postings: require("./job-postings")(client)
   };
-};
+}

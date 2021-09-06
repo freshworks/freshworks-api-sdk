@@ -5,7 +5,7 @@
   "projectDescription": "Auto-generated JavaScript client code from Freshteam OpenAPI spec using OpenAPI Generator",
   "licenseName": "MIT",
   "useInheritance": true,
-  "usePromises" : true,
+  "usePromises": true,
   "supportsES6": true,
   "emitModelMethods": false,
   "ensureUniqueParams": true,

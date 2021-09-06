@@ -10,13 +10,13 @@ export type JobPostingQuery = {
   location_city: Array<string>;
   location_country: Array<string>;
   location_state: Array<string>;
-}
+};
 
 export type JobPostingSalery = {
   min: number;
   max: number;
   currency: string;
-}
+};
 
 export type Branch = {
   id: number;
@@ -35,7 +35,7 @@ export type Branch = {
   main_office: boolean;
   contact_info: string;
   date_format: string;
-}
+};
 
 export type Department = {
   id: number;
@@ -43,14 +43,14 @@ export type Department = {
   updated_at: Date;
   deleted: boolean;
   name: string;
-}
+};
 
 export type UserLite = {
   id: number;
   first_name: string;
   last_name: string;
   official_email: string;
-}
+};
 
 export type Requisitions = {
   id: number;
@@ -59,7 +59,7 @@ export type Requisitions = {
   recruiters: UserLite;
   hiring_managers: UserLite;
   panel_members: UserLite;
-}
+};
 
 export type SubStages = {
   id: number;
@@ -68,13 +68,13 @@ export type SubStages = {
   default: boolean;
   stage: string;
   deleted: boolean;
-}
+};
 
 export type InterviewProcess = {
   id: number;
   name: string;
   sub_stages: SubStages;
-}
+};
 
 export type JobPosting = {
   id: number;
@@ -95,17 +95,17 @@ export type JobPosting = {
   department: Department;
   requisitions: Requisitions;
   interview_process: InterviewProcess;
-}
+};
 
 export type CustomRadioField = {
   id: number;
   value: string;
-}
+};
 
 export type CustomField = {
   text_fields: string;
   radio_or_dropdown_fields: CustomRadioField;
-}
+};
 
 export type JobDetail = {
   id: number;
@@ -128,12 +128,12 @@ export type JobDetail = {
   interview_process: InterviewProcess;
   custom_field_values?: CustomField;
   skills?: Array<string>;
-}
+};
 
 export type ProfileLink = {
   name: string;
   url: string;
-}
+};
 
 export type Location = {
   city: string;
@@ -141,7 +141,7 @@ export type Location = {
   street: string;
   country_code: string;
   zip_code: string;
-}
+};
 
 export type Candidate = {
   date_of_birth: Date;
@@ -164,25 +164,25 @@ export type Candidate = {
   resumes: Array<string>;
   cover_letters: Array<string>;
   portfolios: Array<string>;
-}
+};
 
 export type ApplicantCreate = {
   custom_fields: object;
   column_name: string;
   candidate_id: number;
   candidate: Candidate;
-}
+};
 
 export type ApplicantCustomField = {
   column_name: string;
-}
+};
 
 export type Follower = {
   id: number;
   user_id: number;
   name: string;
   email: string;
-}
+};
 
 export type ApplicantDetail = {
   id: number;
@@ -203,7 +203,7 @@ export type ApplicantDetail = {
   custom_fields: ApplicantCustomField;
   candidate: Candidate;
   followers: Array<Follower>;
-}
+};
 
 export type EmployeeFieldPicklist = {
   id: number;
@@ -211,7 +211,7 @@ export type EmployeeFieldPicklist = {
   position: number;
   pickable_type: string;
   pickable_id: number;
-}
+};
 
 export type ApplicantField = {
   id: number;
@@ -248,7 +248,7 @@ export type ApplicantField = {
   viewable_by: string;
   base_model: string;
   picklist_values: Array<EmployeeFieldPicklist>;
-}
+};
 
 export default function jobPostings(client: Client) {
   return {
@@ -297,11 +297,13 @@ export default function jobPostings(client: Client) {
      */
     async createApplicant(jobId: number, applicant: ApplicantCreate): Promise<ApplicantDetail> {
       // TODO
-      const res = await client.send(new Request({
-        method: "POST",
-        endpoint: "/job_postings/" + jobId + "/applicants",
-        body: { employee: applicant }
-      }));
+      const res = await client.send(
+        new Request({
+          method: "POST",
+          endpoint: "/job_postings/" + jobId + "/applicants",
+          body: { employee: applicant }
+        })
+      );
 
       // TODO: Check for error
       if (res.error instanceof Error) {
