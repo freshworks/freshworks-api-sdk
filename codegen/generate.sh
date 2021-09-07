@@ -17,7 +17,7 @@ function build_openapi_generator()
 
 function generate_freshteam_client()
 {
-  rm -rf gen/freshteam
+  rm -rf src/gen/freshteam
   rm -rf build/
   docker run --rm --network="host" \
     -v "${PWD}:/local" openapi-generator generate --skip-validate-spec \
@@ -31,8 +31,8 @@ function generate_freshteam_client()
   npm install
   npm test
   cd ..
-  mv build/src gen/freshteam
-  mv build/docs gen/freshteam/
+  mv build/src src/gen/freshteam
+  mv build/docs src/gen/freshteam/
   rm -rf build/
   npm run format
 }

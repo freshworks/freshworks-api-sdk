@@ -4,8 +4,6 @@
  * @module http-client
  */
 
-import { default as axios } from "axios";
-
 function toBaseUrl(hostname) {
   return `https://${hostname
     .trim()

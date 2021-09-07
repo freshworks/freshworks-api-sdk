@@ -12,7 +12,9 @@
   "types": "dist/index.d.ts",
   "main": "dist/index.js",
   "scripts": {
-    "build": "tsc",
+    "build:client": "./codegen/generate.sh --generate",
+    "build:lib": "rm -rf dist && tsc",
+    "build": "npm run build:client && npm run build:lib",
     "start": "tsc --watch",
     "test": "jest --coverage",
     "format": "prettier -w .",
@@ -34,6 +36,6 @@
     "preset": "ts-jest/presets/js-with-ts"
   },
   "dependencies": {
-    "axios": "^0.21.1"
+    "superagent": "^6.1.0"
   }
 }
