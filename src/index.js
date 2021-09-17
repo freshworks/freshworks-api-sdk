@@ -1,3 +1,3 @@
-export * from "./freshteam";
-export * from "./http-client";
-export * from "./gen/freshteam";
+import Freshteam from "./freshteam";
+
+export { Freshteam };
