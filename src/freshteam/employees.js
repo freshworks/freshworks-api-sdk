@@ -1,23 +1,29 @@
+import { EmployeeApi, EmployeeDetail, EmployeeFieldsApi } from "../gen/freshteam";
+
 export default function employees(client) {
+
+  let api = new EmployeeApi();
+  let fieldsApi = new EmployeeFieldsApi()
+
   return {
     /**
      * List all employees
      *
      * @param {object} [query = {}] - Query parameters
-     * @returns {module.http-client~Response} - Response with array of employees in the response body
+     * @returns {Promise<Employee[]>} - Response with array of employees in the response body
      */
     async list(query = {}) {
-      return client.get("/employees", query);
+      return api.getEmployees(query);
     },
 
     /**
      * Create an employee
      *
-     * @param {object} data - Request body
-     * @returns {module.http-client~Response} - Response with create employee object in the response body
+     * @param {Employee} data - Request body
+     * @returns {Promise<Employee>} - Response with create employee object in the response body
      */
     async create(data) {
-      return client.post("/employees", data);
+      return api.createEmployee(data);
     },
 
     /**
@@ -25,10 +31,10 @@ export default function employees(client) {
      *
      * @param {number} id - Employee ID
      * @param {object} [query = {}] - Query parameters
-     * @returns {module.http-client~Response} - Response with an employee object in the response body, if found
+     * @returns {Promise<EmployeeDetail>} - Response with an employee object in the response body, if found
      */
     async detail(id, query = {}) {
-      return client.get(`/employees/${id}`, query);
+      return api.getEmployee(id, query);
     },
 
     /**
@@ -39,16 +45,16 @@ export default function employees(client) {
      * @returns {module.http-client~Response} - Response with updated employee object in the response body, if found
      */
     async update(id, data) {
-      return client.post(`/employees/${id}`, data);
+      return api.updateEmployee(id, data);
     },
 
     /**
      * List all employee fields
      *
-     * @returns {module.http-client~Response} - Response with list of employee fields
+     * @returns {Promise<T>} - Response with list of employee fields
      */
     async fields() {
-      return client.get("/employee_fields");
+      return fieldsApi.getEmployeeFields();
     },
 
     /**
@@ -58,7 +64,7 @@ export default function employees(client) {
      * @returns {module.http-client~Response}
      */
     async createField(data) {
-      return client.post("/employee_fields", data);
+      return fieldsApi.createEmployeeFiled(data);
     }
   };
 }
