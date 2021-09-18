@@ -1,31 +1,29 @@
-import FreshteamApiClient from "./../gen/freshteam/ApiClient";
 import CandidateApi from "./../gen/freshteam/api/CandidateApi";
 
 const candidateApiInstance = new CandidateApi.CandidateApi();
 
-const freshteam = {
-  candidate: {
-    getCandidate: function (id, options) {
-      return candidateApiInstance.getCandidate(id, options);
+export default function candidate() {
+  return {
+    /**
+     * Get the details of a candidate
+     *
+     * @param {number} id - Candidate identifier
+     * @param {string[]} include - Additional options to include - skills, qualifications, positions
+     * @returns {module.http-client~Response} - Response with candidate object in the response body
+     */
+    async get(id, include) {
+      return candidateApiInstance.getCandidate(id, { include });
     },
-    updateCandidate: function (id, candidate) {
-      return candidateApiInstance.updateCandidate(id, candidate);
+
+    /**
+     * Update a candidate
+     *
+     * @param {number} id - Candidate identifier
+     * @param {object} candidate - candidate details
+     * @returns {module.http-client~Response} - Response with candidate object in the response body
+     */
+    async update(id, candidate) {
+      return candidateApiInstance.updateCandidate(candidate, id);
     }
-  }
-};
-
-export default class Freshteam {
-  constructor(options) {
-    const defaultClient = FreshteamApiClient.instance;
-
-    defaultClient.setBasePath(`https://${options.domain}/api/`);
-    const basicAuth = defaultClient.authentications["basicAuth"];
-
-    if (options.api_key) {
-      basicAuth.username = options.api_key;
-      basicAuth.password = "X";
-    }
-
-    return freshteam;
-  }
+  };
 }
