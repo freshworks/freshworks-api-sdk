@@ -1,14 +1,14 @@
-import CandidateApi from "./../gen/freshteam/api/CandidateApi";
+import CandidateApi from "../gen/freshteam/api/CandidateApi";
 
 const candidateApiInstance = new CandidateApi.CandidateApi();
 
-export default function candidate() {
+export default function candidates() {
   return {
     /**
      * Get the details of a candidate
      *
      * @param {number} id - Candidate identifier
-     * @param {string[]} include - Additional options to include - skills, qualifications, positions
+     * @param {string[]} include - Additional properties to include - skills, qualifications, positions
      * @returns {module.http-client~Response} - Response with candidate object in the response body
      */
     async get(id, include) {
