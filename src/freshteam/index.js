@@ -5,6 +5,8 @@
 import { Client } from "../http-client";
 import { ApiClient } from "../gen/freshteam";
 import models from "./models";
+import employees from "./employees";
+import timeOffs from "./time-offs";
 
 /**
  * Freshteam API client builder
@@ -14,13 +16,12 @@ import models from "./models";
  */
 export default function Freshteam(domain, apiKey) {
   const basePath = "/api";
-  const instance = ApiClient.instance
+  const instance = ApiClient.instance;
   const client = new Client({ domain, apiKey, basePath, instance });
 
   return {
-    employees: require("./employees")(client),
-    time_offs: require("./time-offs")(client),
-    job_postings: require("./job-postings")(client)
+    employees: employees(client),
+    time_offs: timeOffs(client)
   };
 }
 
