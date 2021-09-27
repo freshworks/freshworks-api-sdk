@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e;
+
 function usage()
 {
     echo "Supported Commands"
@@ -17,7 +19,6 @@ function build_openapi_generator()
 
 function generate_freshteam_client()
 {
-  rm -rf src/gen/freshteam
   rm -rf build/
   docker run --rm --network="host" \
     -v "${PWD}:/local" openapi-generator generate --skip-validate-spec \
@@ -31,6 +32,7 @@ function generate_freshteam_client()
   npm install
   npm test
   cd ..
+  rm -rf src/gen/freshteam
   mv build/src src/gen/freshteam
   mv build/docs src/gen/freshteam/
   rm -rf build/
