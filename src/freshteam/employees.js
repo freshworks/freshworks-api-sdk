@@ -1,9 +1,13 @@
-import { EmployeeApi, EmployeeDetail, EmployeeFieldsApi } from "../gen/freshteam";
+import { EmployeeApi, EmployeeCreate, EmployeeFieldsApi } from "../gen/freshteam";
+import { Client } from "../http-client";
+import { Employee, EmployeeDetail, EmployeeField } from "./models";
 
-export default function employees(client) {
-
+/**
+ * @param {Client} _client
+ */
+export default function employees(_client) {
   let api = new EmployeeApi();
-  let fieldsApi = new EmployeeFieldsApi()
+  let fieldsApi = new EmployeeFieldsApi();
 
   return {
     /**
@@ -19,11 +23,11 @@ export default function employees(client) {
     /**
      * Create an employee
      *
-     * @param {Employee} data - Request body
+     * @param {EmployeeCreate} employee - Request body
      * @returns {Promise<Employee>} - Response with create employee object in the response body
      */
-    async create(data) {
-      return api.createEmployee(data);
+    async create(employee) {
+      return api.createEmployee(employee);
     },
 
     /**
@@ -41,17 +45,17 @@ export default function employees(client) {
      * Update an existing employee data
      *
      * @param {number} id - Employee ID
-     * @param {object} data - Request body
-     * @returns {module.http-client~Response} - Response with updated employee object in the response body, if found
+     * @param {Employee} employee - Employee to update
+     * @returns {Promise<Employee>} - Response with updated employee object in the response body, if found
      */
-    async update(id, data) {
-      return api.updateEmployee(id, data);
+    async update(id, employee) {
+      return api.updateEmployee(id, employee);
     },
 
     /**
      * List all employee fields
      *
-     * @returns {Promise<T>} - Response with list of employee fields
+     * @returns {Promise<EmployeeField[]>} - Response with list of employee fields
      */
     async fields() {
       return fieldsApi.getEmployeeFields();
@@ -60,11 +64,11 @@ export default function employees(client) {
     /**
      * Create employee field
      *
-     * @param {object} data - Request body
-     * @returns {module.http-client~Response}
+     * @param {EmployeeFieldCreate} field - Request body
+     * @returns {Promise<EmployeeField>}
      */
-    async createField(data) {
-      return fieldsApi.createEmployeeFiled(data);
+    async createField(field) {
+      return fieldsApi.createEmployeeFiled(field); // It's a typo in the spec
     }
   };
 }

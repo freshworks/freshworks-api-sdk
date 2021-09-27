@@ -4,13 +4,13 @@
 
 import { Client } from "../http-client";
 import { ApiClient } from "../gen/freshteam";
-import models from "./models";
+import * as models from "./models";
 import employees from "./employees";
-import timeOffs from "./time-offs";
 
 /**
  * Freshteam API client builder
  *
+ * @constructor
  * @param {string} domain - Freshteam domain
  * @param {string} apiKey - API Key for the same Freshteam domain
  */
@@ -20,8 +20,7 @@ export default function Freshteam(domain, apiKey) {
   const client = new Client({ domain, apiKey, basePath, instance });
 
   return {
-    employees: employees(client),
-    time_offs: timeOffs(client)
+    employees: employees(client)
   };
 }
 

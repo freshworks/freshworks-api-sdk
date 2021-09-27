@@ -1,12 +1,1 @@
-/**
- * @module models
- */
-
-import { Address, Applicant, ApplicantCandidate, ApplicantConversation } from "../gen/freshteam";
-
-export default {
-  Address,
-  Applicant,
-  ApplicantCandidate,
-  ApplicantConversation
-};
+export { Employee, EmployeeCreate, EmployeeDetail, InlineObject2 as EmployeeFieldCreate } from "../gen/freshteam";
