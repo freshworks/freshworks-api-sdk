@@ -27,13 +27,18 @@ import querystring from "querystring";
  * @class
  */
 class ApiClient {
-  constructor() {
+  /**
+   * The base URL against which to resolve every API call's (relative) path.
+   * Overrides the default value set in spec file if present
+   * @param {String} basePath
+   */
+  constructor(basePath = "https://adityasharma2519.freshteam.com/api") {
     /**
      * The base URL against which to resolve every API call's (relative) path.
      * @type {String}
      * @default https://adityasharma2519.freshteam.com/api
      */
-    this.basePath = "https://adityasharma2519.freshteam.com/api".replace(/\/+$/, "");
+    this.basePath = basePath.replace(/\/+$/, "");
 
     /**
      * The authentication methods to be included for all API calls.
@@ -652,6 +657,15 @@ class ApiClient {
         if (data.hasOwnProperty(k)) obj[k] = ApiClient.convertToType(data[k], itemType);
       }
     }
+  }
+
+  /**
+   * Set base path
+   *
+   * @param {String} basePath The URL to use as API base path
+   */
+  setBasePath(basePath) {
+    this.basePath = basePath.replace(/\/+$/, "");
   }
 }
 
