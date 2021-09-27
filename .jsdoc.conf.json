@@ -1,9 +1,0 @@
-{
-  "opts": {
-    "recurse": true,
-    "destination": "api-docs"
-  },
-  "source": {
-    "include": ["dist/"]
-  }
-}
