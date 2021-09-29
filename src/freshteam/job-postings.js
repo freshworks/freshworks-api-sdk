@@ -23,7 +23,7 @@ export default function JobApi() {
      * @returns {module.http-client~Response} - Response with job posting object in the response body
      */
     async get(id) {
-      return jobApiInstance.getJob(id)
+      return jobApiInstance.getJob(id);
     },
 
     /**
