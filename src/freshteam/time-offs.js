@@ -49,7 +49,7 @@ export default function TimeOffsApi() {
      * @returns {module.http-client~Response} - Response with time off request object in the response body
      */
     async get(id) {
-      return timeOffsApiInstance.getTimeoff(id)
+      return timeOffsApiInstance.getTimeoff(id);
     },
 
     /**
@@ -58,7 +58,7 @@ export default function TimeOffsApi() {
      * @returns {module.http-client~Response} - Response with an empty response body
      */
     async cancel(id) {
-      return timeOffsApiInstance.cancelTimeoff(id)
+      return timeOffsApiInstance.cancelTimeoff(id);
     },
 
     /**
@@ -68,7 +68,7 @@ export default function TimeOffsApi() {
      * @returns {module.http-client~Response} - Response with an empty response body
      */
     async approve(id, options) {
-      return timeOffsApiInstance.cancelTimeoff(id, { leaveRequest: options })
+      return timeOffsApiInstance.cancelTimeoff(id, { leaveRequest: options });
     },
 
     /**
@@ -78,7 +78,7 @@ export default function TimeOffsApi() {
      * @returns {module.http-client~Response} - Response with an empty response body
      */
     async reject(id, options) {
-      return timeOffsApiInstance.rejectTimeoff(id, { leaveRequest: options })
+      return timeOffsApiInstance.rejectTimeoff(id, { leaveRequest: options });
     }
   };
 }

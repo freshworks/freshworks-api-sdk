@@ -5,7 +5,6 @@ export {
   ApplicantUpdate,
   InlineObject3 as ApplicantArchive,
   InlineObject4 as ApplicantSubStage,
-
   // Employee models
   Employee,
   EmployeeCreate,

@@ -30,7 +30,7 @@ export default function candidateSourcesApi() {
     /**
      * Fetches the list of candidate source categories
      *
-    * @returns {module.http-client~Response} - Response with candidate source categories list in the response body
+     * @returns {module.http-client~Response} - Response with candidate source categories list in the response body
      */
     async listCategories() {
       return candidateSourceCategoriesApiInstance.getSourceCategories();

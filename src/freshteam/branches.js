@@ -1,8 +1,12 @@
 import LocationsApi from "../gen/freshteam/api/LocationsApi";
+import { Client } from "../http-client";
 
-const branchesApiInstance = new LocationsApi.LocationsApi();
+/**
+ * @param {Client} _client
+ */
+export default function branches(_client) {
+  const branchesApiInstance = new LocationsApi.LocationsApi();
 
-export default function branches() {
   return {
     /**
      * Fetches the list of branches
