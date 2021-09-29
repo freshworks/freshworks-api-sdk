@@ -21,16 +21,6 @@ export default function employees(_client) {
     },
 
     /**
-     * Create an employee
-     *
-     * @param {EmployeeCreate} employee - Request body
-     * @returns {Promise<Employee>} - Response with create employee object in the response body
-     */
-    async create(employee) {
-      return api.createEmployee(employee);
-    },
-
-    /**
      * Find the details of an employee by ID
      *
      * @param {number} id - Employee ID
@@ -39,6 +29,16 @@ export default function employees(_client) {
      */
     async detail(id, query = {}) {
       return api.getEmployee(id, query);
+    },
+
+    /**
+     * Create an employee
+     *
+     * @param {EmployeeCreate} employee - Request body
+     * @returns {Promise<Employee>} - Response with create employee object in the response body
+     */
+    async create(employee) {
+      return api.createEmployee(employee);
     },
 
     /**
