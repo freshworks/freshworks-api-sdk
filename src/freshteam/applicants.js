@@ -1,36 +1,41 @@
 import ApplicantApi from "../gen/freshteam/api/ApplicantApi";
+import { Client } from "../http-client";
+import { Applicant, ApplicantArchive, ApplicantDetail, ApplicantSubStage, ApplicantUpdate } from "./models";
 
-const applicantApiInstance = new ApplicantApi.ApplicantApi();
+/**
+ * @param {Client} _client
+ */
+export default function applicants(_client) {
+  const applicantApiInstance = new ApplicantApi.ApplicantApi();
 
-export default function ApplicantApi() {
   return {
     /**
      * Fetches the list of applicants
      *
-     * @param {number} jobPostingId - Identifier of the applicant
-     * @param {object} options - Options to filter applicants
-     * @returns {module.http-client~Response} - Response with applicants list in the response body
+     * @param {number} jobPostingId - ID of the job posting to search applicants for
+     * @param {object} query - Options to filter applicants
+     * @returns {Promise<Applicant[]>} - Response with applicants list in the response body
      */
-    async list(jobPostingId, options) {
-      return applicantApiInstance.getApplicants(jobPostingId, options);
+    async list(jobPostingId, query) {
+      return applicantApiInstance.getApplicants(jobPostingId, query);
     },
 
     /**
      * Fetches the applicant
      *
      * @param {number} id - Identifier of the applicant
-     * @returns {module.http-client~Response} - Response with applicant object in the response body
+     * @returns {Promise<ApplicantDetail>} - Response with applicant object in the response body
      */
-    async get(id) {
-      return applicantApiInstance.getApplicant(id)
+    async detail(id) {
+      return applicantApiInstance.getApplicant(id);
     },
 
     /**
      * Create an applicant for a applicant
      *
      * @param {number} id - Identifier of the applicant
-     * @param {object} applicant - Properties for the applicant
-     * @returns {module.http-client~Response} - Response with applicant object in the response body
+     * @param {ApplicantUpdate} applicant - Properties for the applicant
+     * @returns {Promise<ApplicantDetail>} - Response with applicant object in the response body
      */
     async update(id, applicant) {
       return applicantApiInstance.updateApplicant(applicant, id);
@@ -40,8 +45,8 @@ export default function ApplicantApi() {
      * Fetches the lit of applicant fields
      *
      * @param {object} id - Identifier of the applicant
-     * @param {object} options - Properties to filter the applicant
-     * @returns {module.http-client~Response} - Response with applicant fields list in the response body
+     * @param {ApplicantArchive} options - Properties to filter the applicant
+     * @returns {Promise<ApplicantDetail>} - Response with applicant fields list in the response body
      */
     async archive(id, options) {
       return applicantApiInstance.archiveApplicant(id, { applicant: options });
@@ -51,8 +56,8 @@ export default function ApplicantApi() {
      * Fetches the list of applicant fields
      *
      * @param {number} id - Identifier of the applicant
-     * @param {object} options - Properties to update sub stage
-     * @returns {module.http-client~Response} - Response with applicant fields list in the response body
+     * @param {ApplicantSubStage} options - Properties to update sub stage
+     * @returns {Promise<ApplicantDetail>} - Response with applicant fields list in the response body
      */
     async updateSubStage(id, options) {
       return applicantApiInstance.moveSubStage(id, { applicant: options });

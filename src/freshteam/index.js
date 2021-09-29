@@ -6,6 +6,7 @@ import { Client } from "../http-client";
 import { ApiClient } from "../gen/freshteam";
 import * as models from "./models";
 import employees from "./employees";
+import applicants from "./applicants";
 
 /**
  * Freshteam API client builder
@@ -21,7 +22,7 @@ export default function Freshteam(domain, apiKey) {
 
   return {
     employees: employees(client),
-    applicants: require("./applicants")(client),
+    applicants: applicants(client),
     branches: require("./branches")(client),
     business_units: require("./business-units")(client),
     candidate_sources: require("./candidate-sources")(client),
