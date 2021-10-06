@@ -1,12 +1,12 @@
-import ApplicantApi from "../gen/freshteam/api/ApplicantApi";
+import { ApplicantApi } from "../gen/freshteam";
 import { Client } from "../http-client";
 import { Applicant, ApplicantArchive, ApplicantDetail, ApplicantSubStage, ApplicantUpdate } from "./models";
 
 /**
- * @param {Client} _client
+ * @param {Client} client
  */
-export default function applicants(_client) {
-  const applicantApiInstance = new ApplicantApi.ApplicantApi();
+export default function applicants(client) {
+  const applicantApiInstance = new ApplicantApi(client.instance);
 
   return {
     /**
