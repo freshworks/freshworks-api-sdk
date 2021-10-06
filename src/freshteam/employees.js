@@ -1,13 +1,13 @@
-import { EmployeeApi, EmployeeCreate, EmployeeFieldsApi } from "../gen/freshteam";
+import { EmployeeApi, EmployeeFieldsApi } from "../gen/freshteam";
 import { Client } from "../http-client";
-import { Employee, EmployeeDetail, EmployeeField } from "./models";
+import { Employee, EmployeeCreate, EmployeeDetail, EmployeeField } from "./models";
 
 /**
- * @param {Client} _client
+ * @param {Client} client
  */
-export default function employees(_client) {
-  let api = new EmployeeApi();
-  let fieldsApi = new EmployeeFieldsApi();
+export default function employees(client) {
+  let api = new EmployeeApi(client.instance);
+  let fieldsApi = new EmployeeFieldsApi(client.instance);
 
   return {
     /**
