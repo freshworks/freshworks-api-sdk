@@ -9,5 +9,11 @@ export {
   Employee,
   EmployeeCreate,
   EmployeeDetail,
-  InlineObject2 as EmployeeFieldCreate
+  InlineObject2 as EmployeeFieldCreate,
+  // Time Off models
+  LeaveType,
+  LeaveRequest,
+  LeaveRequestCreate,
+  InlineObject as LeaveRequestApprove,
+  InlineObject1 as LeaveRequestReject
 } from "../gen/freshteam";

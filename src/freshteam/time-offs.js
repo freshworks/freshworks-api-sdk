@@ -1,84 +1,94 @@
-import TimeOffsApi from "../gen/freshteam/api/TimeOffsApi";
+import { TimeoffApi } from "../gen/freshteam";
+import { Client } from "../http-client";
+import { LeaveType, LeaveRequest, LeaveRequestCreate, LeaveRequestApprove, LeaveRequestReject } from "./models";
 
-const timeOffsApiInstance = new TimeOffsApi.TimeOffsApi();
+/**
+ *
+ * @param {Client} client
+ */
+export default function timeOffs(client) {
+  const api = new TimeoffApi(client.instance);
 
-export default function TimeOffsApi() {
   return {
     /**
      * Fetches the list of time off types in the account
      *
-     * @returns {module.http-client~Response} - Response with time off types list in the response body
+     * @returns {Promise<LeaveType[]>} - Array of time off types
      */
-    async listTypes() {
-      return timeOffsApiInstance.getTimeoffTypes();
+    async types() {
+      return api.getTimeoffTypes();
     },
 
     /**
-     * Fetches the time off request type
+     * Fetches the time off request type by ID
      *
      * @param {number} id - Identifier of the time off type
-     * @returns {module.http-client~Response} - Response with time off type in the response body
+     * @returns {Promise<LeaveType>} - The time off type
      */
-    async getType(id) {
-      return timeOffsApiInstance.getTimeoffType(id);
+    async type(id) {
+      return api.getTimeoffType(id);
     },
 
     /**
      * Fetches the list of time off requests of employees in the account
      *
-     * @param {object} options - Options to get time off requests based on it
-     * @returns {module.http-client~Response} - Response with time off requests list in the response body
+     * @param {object} [query = {}] - Query parameters
+     * @returns {Promise<LeaveRequest>} - Response with time off requests list in the response body
      */
-    async list(options) {
-      return timeOffsApiInstance.getTimeoffs(options);
+    async list(query = {}) {
+      return api.getTimeoffs(query);
     },
 
     /**
      * Create a leave request
      *
-     * @param {object} leaveRequest - Properties of the leave request
-     * @returns {module.http-client~Response} - Response with leave request object in the response body
+     * @param {LeaveRequestCreate} leaveRequest - A leave request object
+     * @returns {Promise<LeaveRequest>} - A leave request object
      */
     async create(leaveRequest) {
-      return timeOffsApiInstance.createTimeOff({ leave_request: leaveRequest });
+      return api.createTimeOff(leaveRequest);
     },
 
     /**
+     * Fetches a leave request by id
      *
      * @param {number} id - Identifier of the time off request
-     * @returns {module.http-client~Response} - Response with time off request object in the response body
+     * @returns {Promise<LeaveRequest>} - A leave request object
      */
-    async get(id) {
-      return timeOffsApiInstance.getTimeoff(id);
+    async detail(id) {
+      return api.getTimeoff(id);
     },
 
     /**
+     * Cancels a leave request by id
      *
      * @param {number} id - Identifier of the time off request
-     * @returns {module.http-client~Response} - Response with an empty response body
+     * @returns {Promise<null>} - Returns null if successful
      */
     async cancel(id) {
-      return timeOffsApiInstance.cancelTimeoff(id);
+      return api.cancelTimeoff(id);
     },
 
     /**
+     * Approve a leave request by id
      *
      * @param {number} id - Identifier of the time off request
-     * @param {object} options - Additional properties to approve the time off request
-     * @returns {module.http-client~Response} - Response with an empty response body
+     * @param {LeaveRequestApprove} options - Additional properties to approve the time off request
+     * @returns {Promise<null>} - Returns null if successful
      */
     async approve(id, options) {
-      return timeOffsApiInstance.cancelTimeoff(id, { leaveRequest: options });
+      return api.cancelTimeoff(id, options);
     },
 
     /**
+     * Reject a leave request by id
      *
      * @param {number} id - Identifier of the time off request
-     * @param {object} options - Additional properties to approve the time off request
-     * @returns {module.http-client~Response} - Response with an empty response body
+     * @param {LeaveRequestReject} options - Additional properties to reject the time off request
+     * @returns {Promise<null>} - Returns null if successful
      */
     async reject(id, options) {
-      return timeOffsApiInstance.rejectTimeoff(id, { leaveRequest: options });
+      return api.rejectTimeoff(id, options);
     }
   };
 }
