@@ -1,39 +1,45 @@
-import NewHireApi from "../gen/freshteam/api/NewHireApi.js";
+import { NewHireApi } from "../gen/freshteam";
+import { Client } from "../http-client";
+import { NewHire, NewHireCreate, NewHireDetail } from "./models";
 
-const newHireApiInstance = new NewHireApi.NewHireApi();
 
-export default function newHires() {
+/**
+ * @param {Client} client
+ */
+export default function newHires(client) {
+  const api = new NewHireApi.NewHireApi(client.instance);
+
   return {
     /**
-     * Create a NewHire
+     * Creates a NewHire
      *
-     * @param {object} newHire - Details of a NewHire
-     * @returns {module.http-client~Response} - Response with candidate object in the response body
+     * @param {NewHireCreate} newHire - Details of a NewHire
+     * @returns {Promise.<NewHire>} - New Hire object
      */
     async create(newHire) {
-      return newHireApiInstance.createNewHire(newHire);
+      return api.createNewHire(newHire);
     },
 
     /**
-     * Get the details of a NewHire
+     * Gets the details of a NewHire
      *
-     * @param {number} id - Candidate identifier
-     * @param {string[]} include - Additional properties to include
-     * @returns {module.http-client~Response} - Response with NewHire object in the response body
+     * @param {number} id - Identifier of the NewHire
+     * @param {object} options - Additional options to add include properties
+     * @returns {Promise.<NewHireDetail>} - Response with NewHire object in the response body
      */
-    async get(id, include) {
-      return candidateApiInstance.getNewHire(id, { include });
+    async detail(id, options) {
+      return api.getNewHire(id, options);
     },
 
     /**
      * Update a NewHire
      *
-     * @param {number} id - NewHire identifier
-     * @param {object} newHire - NewHire details
-     * @returns {module.http-client~Response} - Response with candidate object in the response body
+     * @param {number} id - Identifier of the NewHire
+     * @param {NewHireCreate} newHire - NewHire details
+     * @returns {Promise.<NewHire>} - NewHire object
      */
     async update(id, newHire) {
-      return candidateApiInstance.updateNewHire(newHire, id);
+      return api.updateNewHire(newHire, id);
     }
   };
 }
