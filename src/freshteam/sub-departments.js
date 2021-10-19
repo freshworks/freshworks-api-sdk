@@ -2,13 +2,12 @@ import { SubDepartmentsApi } from "../gen/freshteam";
 import { Client } from "../http-client";
 import { SubDepartment } from "./models";
 
-
 /**
  * @param {Client} client
  */
 export default function subDepartments(client) {
   const api = new SubDepartmentsApi.SubDepartmentsApi(client.instance);
-  
+
   return {
     /**
      * Fetches the list of sub-departments
