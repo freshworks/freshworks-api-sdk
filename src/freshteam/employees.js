@@ -34,7 +34,7 @@ export default function employees(client) {
     /**
      * Create an employee
      *
-     * @param {EmployeeCreate} employee - Request body
+     * @param {EmployeeCreate} employee - An Employee object
      * @returns {Promise<Employee>} - Response with create employee object in the response body
      */
     async create(employee) {
