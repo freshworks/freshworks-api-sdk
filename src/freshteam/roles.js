@@ -2,7 +2,6 @@ import { RolesApi } from "../gen/freshteam";
 import { Client } from "../http-client";
 import { Role } from "./models";
 
-
 /**
  * @param {Client} client
  */

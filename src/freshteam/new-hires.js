@@ -2,7 +2,6 @@ import { NewHireApi } from "../gen/freshteam";
 import { Client } from "../http-client";
 import { NewHire, NewHireCreate, NewHireDetail } from "./models";
 
-
 /**
  * @param {Client} client
  */
