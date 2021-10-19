@@ -1,26 +1,32 @@
-import SubDepartmentsApi from "../gen/freshteam/api/SubDepartmentsApi";
+import { SubDepartmentsApi } from "../gen/freshteam";
+import { Client } from "../http-client";
+import { SubDepartment } from "./models";
 
-const subDepartmentsApiInstance = new SubDepartmentsApi.SubDepartmentsApi();
 
-export default function subDepartments() {
+/**
+ * @param {Client} client
+ */
+export default function subDepartments(client) {
+  const api = new SubDepartmentsApi.SubDepartmentsApi(client.instance);
+  
   return {
     /**
      * Fetches the list of sub-departments
      *
-     * @returns {module.http-client~Response} - Response with sub-departments list in the response body
+     * @returns {Promise.<SubDepartment[]>} - Array of Sub-Departments
      */
     async list() {
-      return subDepartmentsApiInstance.getSubDepartments();
+      return api.getSubDepartments();
     },
 
     /**
      * Get the details of a sub-department
      *
      * @param {number} id - Identifier of the sub-department
-     * @returns {module.http-client~Response} - Response with sub-department object in the response body
+     * @returns {Promise.<SubDepartment>} - Sub-department object
      */
-    async get(id) {
-      return subDepartmentsApiInstance.getSubDepartment(id);
+    async detail(id) {
+      return api.getSubDepartment(id);
     }
   };
 }

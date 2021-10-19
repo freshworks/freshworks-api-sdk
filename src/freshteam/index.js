@@ -8,6 +8,10 @@ import * as models from "./models";
 import employees from "./employees";
 import applicants from "./applicants";
 import timeOffs from "./time-offs";
+import userFunctions from "./user-functions";
+import subDepartments from "./sub-departments";
+import roles from "./roles";
+import newHires from "./new-hires";
 
 /**
  * Freshteam API client builder
@@ -24,7 +28,11 @@ export default function Freshteam(domain, apiKey) {
   return {
     employees: employees(client),
     applicants: applicants(client),
-    time_offs: timeOffs(client)
+    time_offs: timeOffs(client),
+    user_functions: userFunctions(client),
+    sub_departments: subDepartments(client),
+    roles: roles(client),
+    new_hires: newHires(client)
     // == Uncomment below as each feature is updated to use `import` syntax ==
     // branches: require("./branches")(client),
     // business_units: require("./business-units")(client),
@@ -33,11 +41,7 @@ export default function Freshteam(domain, apiKey) {
     // departments: require("./departments")(client),
     // job_postings: require("./job-postings")(client),
     // levels: require("./levels")(client),
-    // newHires: require("./new-hires")(client),
-    // roles: require("./roles")(client),
-    // subDepartments: require("./sub-departments")(client),
     // teams: require("./teams")(client),
-    // user_functions: require("./user-functions")(client)
   };
 }
 

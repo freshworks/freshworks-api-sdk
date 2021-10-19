@@ -15,5 +15,15 @@ export {
   LeaveRequest,
   LeaveRequestCreate,
   InlineObject as LeaveRequestApprove,
-  InlineObject1 as LeaveRequestReject
+  InlineObject1 as LeaveRequestReject,
+  // User Function models
+  UserFunction,
+  // Sub-Department models
+  SubDepartment,
+  // Role models
+  Role,
+  // New Hire models
+  NewHire,
+  NewHireCreate,
+  NewHireDetail
 } from "../gen/freshteam";
