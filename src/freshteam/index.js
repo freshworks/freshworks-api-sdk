@@ -7,6 +7,7 @@ import { ApiClient } from "../gen/freshteam";
 import * as models from "./models";
 import employees from "./employees";
 import applicants from "./applicants";
+import timeOffs from "./time-offs";
 
 /**
  * Freshteam API client builder
@@ -22,21 +23,20 @@ export default function Freshteam(domain, apiKey) {
 
   return {
     employees: employees(client),
-    applicants: applicants(client)
+    applicants: applicants(client),
+    time_offs: timeOffs(client)
     // == Uncomment below as each feature is updated to use `import` syntax ==
     // branches: require("./branches")(client),
     // business_units: require("./business-units")(client),
     // candidate_sources: require("./candidate-sources")(client),
     // candidates: require("./candidates")(client),
     // departments: require("./departments")(client),
-    // employeeFields: require("./employee-fields")(client),
     // job_postings: require("./job-postings")(client),
     // levels: require("./levels")(client),
     // newHires: require("./new-hires")(client),
     // roles: require("./roles")(client),
     // subDepartments: require("./sub-departments")(client),
     // teams: require("./teams")(client),
-    // time_offs: require("./time-offs")(client),
     // user_functions: require("./user-functions")(client)
   };
 }
