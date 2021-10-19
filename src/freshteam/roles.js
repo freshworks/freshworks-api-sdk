@@ -1,26 +1,32 @@
-import RolesApi from "../gen/freshteam/api/RolesApi";
+import { RolesApi } from "../gen/freshteam";
+import { Client } from "../http-client";
+import { Role } from "./models";
 
-const rolesApiInstance = new RolesApi.RolesApi();
 
-export default function RolesApi() {
+/**
+ * @param {Client} client
+ */
+export default function RolesApi(client) {
+  const api = new RolesApi.RolesApi(client.instance);
+
   return {
     /**
      * Fetches the list of roles
      *
-     * @returns {module.http-client~Response} - Response with roles list in the response body
+     * @returns {Promise.<Role[]>} - Array of roles
      */
     async list() {
-      return rolesApiInstance.getRoles();
+      return api.getRoles();
     },
 
     /**
      * Get the details of a role
      *
      * @param {number} id - Identifier of the role
-     * @returns {module.http-client~Response} - Response with role object in the response body
+     * @returns {Promise.<Role>} - Role object
      */
-    async get(id) {
-      return rolesApiInstance.getRole(id);
+    async detail(id) {
+      return api.getRole(id);
     }
   };
 }
