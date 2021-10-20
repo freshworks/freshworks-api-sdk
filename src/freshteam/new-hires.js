@@ -6,7 +6,7 @@ import { NewHire, NewHireCreate, NewHireDetail } from "./models";
  * @param {Client} client
  */
 export default function newHires(client) {
-  const api = new NewHireApi.NewHireApi(client.instance);
+  const api = new NewHireApi(client.instance);
 
   return {
     /**

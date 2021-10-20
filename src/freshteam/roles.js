@@ -5,8 +5,8 @@ import { Role } from "./models";
 /**
  * @param {Client} client
  */
-export default function RolesApi(client) {
-  const api = new RolesApi.RolesApi(client.instance);
+export default function Roles(client) {
+  const api = new RolesApi(client.instance);
 
   return {
     /**

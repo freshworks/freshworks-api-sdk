@@ -6,7 +6,7 @@ import { SubDepartment } from "./models";
  * @param {Client} client
  */
 export default function subDepartments(client) {
-  const api = new SubDepartmentsApi.SubDepartmentsApi(client.instance);
+  const api = new SubDepartmentsApi(client.instance);
 
   return {
     /**
