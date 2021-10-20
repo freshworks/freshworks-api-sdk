@@ -16,7 +16,9 @@
     "build:lib": "rm -rf dist && tsc",
     "build": "npm run build:client && npm run build:lib",
     "start": "tsc --watch",
-    "test": "jest --coverage",
+    "lint": "eslint .",
+    "test:unit": "jest --coverage",
+    "test": "npm run lint && npm run test:unit",
     "format": "prettier -w .",
     "clean": "rm -rf coverage/ dist/"
   },
@@ -24,6 +26,9 @@
   "license": "MIT",
   "devDependencies": {
     "@types/jest": "^26.0.24",
+    "@typescript-eslint/eslint-plugin": "^5.1.0",
+    "@typescript-eslint/parser": "^5.1.0",
+    "eslint": "^8.0.1",
     "jest": "^27.0.6",
     "prettier": "^2.3.2",
     "ts-jest": "^27.0.4",
