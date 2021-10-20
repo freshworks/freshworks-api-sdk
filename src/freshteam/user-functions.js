@@ -5,8 +5,8 @@ import { UserFunction } from "./models";
 /**
  * @param {Client} client
  */
-export default function UserFunctionsApi(client) {
-  const api = new UserFunctionsApi.UserFunctionsApi(client.instance);
+export default function UserFunctions(client) {
+  const api = new UserFunctionsApi(client.instance);
 
   return {
     /**
