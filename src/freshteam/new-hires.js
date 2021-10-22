@@ -13,7 +13,7 @@ export default function newHires(client) {
      * Creates a NewHire
      *
      * @param {NewHireCreate} newHire - Details of a NewHire
-     * @returns {Promise.<NewHire>} - New Hire object
+     * @returns {Promise<NewHire>} - New Hire object
      */
     async create(newHire) {
       return api.createNewHire(newHire);
@@ -24,7 +24,7 @@ export default function newHires(client) {
      *
      * @param {number} id - Identifier of the NewHire
      * @param {object} options - Additional options to add include properties
-     * @returns {Promise.<NewHireDetail>} - Response with NewHire object in the response body
+     * @returns {Promise<NewHireDetail>} - Response with NewHire object in the response body
      */
     async detail(id, options) {
       return api.getNewHire(id, options);
@@ -35,7 +35,7 @@ export default function newHires(client) {
      *
      * @param {number} id - Identifier of the NewHire
      * @param {NewHireCreate} newHire - NewHire details
-     * @returns {Promise.<NewHire>} - NewHire object
+     * @returns {Promise<NewHire>} - NewHire object
      */
     async update(id, newHire) {
       return api.updateNewHire(newHire, id);
