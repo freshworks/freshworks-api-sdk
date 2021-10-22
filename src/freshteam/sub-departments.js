@@ -12,7 +12,7 @@ export default function subDepartments(client) {
     /**
      * Fetches the list of sub-departments
      *
-     * @returns {Promise.<SubDepartment[]>} - Array of Sub-Departments
+     * @returns {Promise<SubDepartment[]>} - Array of Sub-Departments
      */
     async list() {
       return api.getSubDepartments();
@@ -22,7 +22,7 @@ export default function subDepartments(client) {
      * Get the details of a sub-department
      *
      * @param {number} id - Identifier of the sub-department
-     * @returns {Promise.<SubDepartment>} - Sub-department object
+     * @returns {Promise<SubDepartment>} - Sub-department object
      */
     async detail(id) {
       return api.getSubDepartment(id);

@@ -12,7 +12,7 @@ export default function Roles(client) {
     /**
      * Fetches the list of roles
      *
-     * @returns {Promise.<Role[]>} - Array of roles
+     * @returns {Promise<Role[]>} - Array of roles
      */
     async list() {
       return api.getRoles();
@@ -22,7 +22,7 @@ export default function Roles(client) {
      * Get the details of a role
      *
      * @param {number} id - Identifier of the role
-     * @returns {Promise.<Role>} - Role object
+     * @returns {Promise<Role>} - Role object
      */
     async detail(id) {
       return api.getRole(id);
