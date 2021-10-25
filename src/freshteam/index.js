@@ -32,17 +32,17 @@ export default function Freshteam(domain, apiKey) {
     employees: employees(client),
     branches: branches(client),
     departments: departments(client),
-    sub_departments: subDepartments(client),
-    business_units: businessUnits(client),
+    subDepartments: subDepartments(client),
+    businessUnits: businessUnits(client),
     // teams: require("./teams")(client),
     // levels: require("./levels")(client),
-    time_offs: timeOffs(client),
+    timeOffs: timeOffs(client),
     roles: roles(client),
-    // job_postings: require("./job-postings")(client),
+    // jobPostings: require("./job-postings")(client),
     applicants: applicants(client),
-    // candidate_sources: require("./candidate-sources")(client),
-    user_functions: userFunctions(client),
-    new_hires: newHires(client)
+    // candidateSources: require("./candidate-sources")(client),
+    userFunctions: userFunctions(client),
+    newHires: newHires(client)
     // candidates: require("./candidates")(client),
   };
 }
