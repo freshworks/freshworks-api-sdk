@@ -29,5 +29,7 @@ export {
   // Branches models
   Branch,
   // Business Units models
-  BusinessUnit
+  BusinessUnit,
+  // Department models
+  Department
 } from "../gen/freshteam";
