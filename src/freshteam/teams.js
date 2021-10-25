@@ -1,26 +1,33 @@
-import TeamsApi from "../gen/freshteam/api/TeamsApi";
+import { TeamsApi } from "../gen/freshteam";
+import { Client } from "../http-client";
+import { Team } from "./models";
 
-const teamsApiInstance = new TeamsApi.TeamsApi();
+/**
+ *
+ * @param {Client} client
+ * @returns
+ */
+export default function teams(client) {
+  const api = new TeamsApi(client.instance);
 
-export default function teams() {
   return {
     /**
      * Fetches the list of teams in the account
      *
-     * @returns {module.http-client~Response} - Response with teams list in the response body
+     * @returns {Promise<Team[]>} - Response with teams list in the response body
      */
     async list() {
-      return teamsApiInstance.getTeams();
+      return api.getTeams();
     },
 
     /**
      * Get the details of a team
      *
      * @param {number} id - Identifier of the team
-     * @returns {module.http-client~Response} - Response with Team object in the response body
+     * @returns {Promise<Team>} - Response with Team object in the response body
      */
     async get(id) {
-      return teamsApiInstance.getTeam(id);
+      return api.getTeam(id);
     }
   };
 }

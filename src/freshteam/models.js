@@ -31,5 +31,7 @@ export {
   // Business Units models
   BusinessUnit,
   // Department models
-  Department
+  Department,
+  // Teams models
+  Team
 } from "../gen/freshteam";
