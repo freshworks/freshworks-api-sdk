@@ -5,7 +5,7 @@
 function toBaseUrl(hostname) {
   return `https://${hostname
     .trim()
-    .replace(/^https?\:\/\//, "")
+    .replace(/^https?:\/\//, "")
     .replace(/\/$/, "")}`;
 }
 
