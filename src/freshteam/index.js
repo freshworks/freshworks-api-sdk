@@ -14,6 +14,7 @@ import roles from "./roles";
 import newHires from "./new-hires";
 import branches from "./branches";
 import businessUnits from "./business-units";
+import departments from "./departments";
 
 /**
  * Freshteam API client builder
@@ -29,6 +30,7 @@ export default function Freshteam(domain, apiKey) {
 
   return {
     employees: employees(client),
+    departments: departments(client),
     applicants: applicants(client),
     branches: branches(client),
     business_units: businessUnits(client),
@@ -40,7 +42,6 @@ export default function Freshteam(domain, apiKey) {
     // == Uncomment below as each feature is updated to use `import` syntax ==
     // candidate_sources: require("./candidate-sources")(client),
     // candidates: require("./candidates")(client),
-    // departments: require("./departments")(client),
     // job_postings: require("./job-postings")(client),
     // levels: require("./levels")(client),
     // teams: require("./teams")(client),

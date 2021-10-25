@@ -1,26 +1,33 @@
-import DepartmentsApi from "../gen/freshteam/api/DepartmentsApi";
+import { DepartmentsApi } from "../gen/freshteam";
+import { Client } from "../http-client";
+import { Department } from "./models";
 
-const departmentsApiInstance = new DepartmentsApi.DepartmentsApi();
+/**
+ *
+ * @param {Client} client
+ * @returns
+ */
+export default function departments(client) {
+  const api = new DepartmentsApi(client.instance);
 
-export default function DepartmentsApi() {
   return {
     /**
      * Fetches the list of departments
      *
-     * @returns {module.http-client~Response} - Response with departments list in the response body
+     * @returns {Promise<Department[]>} - Response with departments list in the response body
      */
     async list() {
-      return departmentsApiInstance.getDepartments();
+      return api.getDepartments();
     },
 
     /**
      * Get the details of a department
      *
      * @param {number} id - Identifier of the department
-     * @returns {module.http-client~Response} - Response with department object in the response body
+     * @returns {Promise<Department>} - Response with department object in the response body
      */
-    async get(id) {
-      return departmentsApiInstance.getDepartment(id);
+    async detail(id) {
+      return api.getDepartment(id);
     }
   };
 }
