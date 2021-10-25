@@ -47,8 +47,7 @@ export default function Freshteam(domain, apiKey) {
     userFunctions: userFunctions(client),
     newHires: newHires(client),
     // -- The apis below here are not documented in REST API docs
-    applicants: applicants(client),
-    // candidates: require("./candidates")(client)
+    applicants: applicants(client)
   };
 }
 
