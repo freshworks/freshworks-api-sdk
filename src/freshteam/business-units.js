@@ -1,26 +1,31 @@
-import BusinessUnitsApi from "../gen/freshteam/api/BusinessUnitsApi";
+import { BusinessUnitsApi } from "../gen/freshteam";
+import { Client } from "../http-client";
+import { BusinessUnit } from "./models";
 
-const businessUnitsApiInstance = new BusinessUnitsApi.BusinessUnitsApi();
+/**
+ * @param {Client} client
+ */
+export default function businessUnits(client) {
+  const api = new BusinessUnitsApi(client.instance);
 
-export default function businessUnits() {
   return {
     /**
      * Fetches the list of business units in the account
      *
-     * @returns {module.http-client~Response} - Response with business units list in the response body
+     * @returns {BusinessUnit[]} - Response with business units list in the response body
      */
     async list() {
-      return businessUnitsApiInstance.getBusinessUnits();
+      return api.getBusinessUnits();
     },
 
     /**
      * Get the details of a business unit
      *
      * @param {number} id - Identifier of the business unit
-     * @returns {module.http-client~Response} - Response with business unit object in the response body
+     * @returns {BusinessUnit} - Response with business unit object in the response body
      */
-    async get(id) {
-      return teamsApiInstance.getBusinessUnit(id);
+    async detail(id) {
+      return api.getBusinessUnit(id);
     }
   };
 }

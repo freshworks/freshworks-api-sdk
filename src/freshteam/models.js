@@ -27,5 +27,7 @@ export {
   NewHireCreate,
   NewHireDetail,
   // Branches models
-  Branch
+  Branch,
+  // Business Units models
+  BusinessUnit
 } from "../gen/freshteam";
