@@ -18,6 +18,7 @@ import departments from "./departments";
 import teams from "./teams";
 import levels from "./levels";
 import jobPostings from "./job-postings";
+import candidateSources from "./candidate-sources";
 
 /**
  * Freshteam API client builder
@@ -42,7 +43,7 @@ export default function Freshteam(domain, apiKey) {
     timeOffs: timeOffs(client),
     roles: roles(client),
     jobPostings: jobPostings(client),
-    // candidateSources: require("./candidate-sources")(client),
+    candidateSources: candidateSources(client),
     userFunctions: userFunctions(client),
     newHires: newHires(client),
     // -- The apis below here are not documented in REST API docs

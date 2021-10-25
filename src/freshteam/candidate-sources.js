@@ -1,39 +1,43 @@
-import SourcesApi from "../gen/freshteam/api/SourcesApi";
-import SourceApi from "../gen/freshteam/api/SourceApi";
-import SourceCategoriesApi from "../gen/freshteam/api/SourceCategoriesApi";
+import { SourceApi, SourcesApi, SourceCategoriesApi } from "../gen/freshteam";
+import { Client } from "../http-client";
+import { Source, SourceCreate, SourceCategory } from "./models";
 
-const candidateSourcesApiInstance = new SourcesApi.SourcesApi();
-const candidateSourceApiInstance = new SourceApi.SourceApi();
-const candidateSourceCategoriesApiInstance = new SourceCategoriesApi.SourceCategoriesApi();
+/**
+ *
+ * @param {Client} client
+ */
+export default function candidateSources(client) {
+  const sourceApi = new SourceApi(client.instance);
+  const sourcesApi = new SourcesApi(client.instance); // IKR?
+  const categoriesApi = new SourceCategoriesApi(client.instance);
 
-export default function candidateSourcesApi() {
   return {
     /**
      * Fetches the list of candidate sources
      *
-     * @returns {module.http-client~Response} - Response with candidate sources list in the response body
+     * @returns {Promise<Source>} - Response with candidate sources list in the response body
      */
     async list() {
-      return candidateSourcesApiInstance.getCandidateSources();
+      return sourcesApi.getCandidateSources();
     },
 
     /**
      * Create a candidate source
      *
-     * @param {object} candidateSource - Properties of candidate source
-     * @returns {module.http-client~Response} - Response with candidate source object in the response body
+     * @param {SourceCreate} candidateSource - Properties of candidate source
+     * @returns {Promise<Source>} - Response with candidate source object in the response body
      */
     async create(candidateSource) {
-      return candidateSourceApiInstance.createCandidateSources(candidateSource);
+      return sourceApi.createCandidateSources(candidateSource);
     },
 
     /**
      * Fetches the list of candidate source categories
      *
-     * @returns {module.http-client~Response} - Response with candidate source categories list in the response body
+     * @returns {Promise<SourceCategory[]>} - Response with candidate source categories list in the response body
      */
     async listCategories() {
-      return candidateSourceCategoriesApiInstance.getSourceCategories();
+      return categoriesApi.getSourceCategories()
     }
   };
 }
