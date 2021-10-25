@@ -37,7 +37,7 @@ export default function candidateSources(client) {
      * @returns {Promise<SourceCategory[]>} - Response with candidate source categories list in the response body
      */
     async listCategories() {
-      return categoriesApi.getSourceCategories()
+      return categoriesApi.getSourceCategories();
     }
   };
 }
