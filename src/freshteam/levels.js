@@ -1,26 +1,32 @@
-import LevelsApi from "../gen/freshteam/api/LevelsApi";
+import { LevelsApi } from "../gen/freshteam";
+import { Client } from "../http-client";
+import { Level } from "./models";
 
-const levelsApiInstance = new LevelsApi.LevelsApi();
+/**
+ *
+ * @param {Client} client
+ */
+export default function levels(client) {
+  const api = new LevelsApi(client.instance);
 
-export default function LevelsApi() {
   return {
     /**
      * Fetches the list of levels
      *
-     * @returns {module.http-client~Response} - Response with levels list in the response body
+     * @returns {Promise<Level[]>} - Response with levels list in the response body
      */
     async list() {
-      return levelsApiInstance.getLevels();
+      return api.getLevels();
     },
 
     /**
      * Get the details of a level
      *
      * @param {number} id - Identifier of the level
-     * @returns {module.http-client~Response} - Response with level object in the response body
+     * @returns {Promise<Level>} - Response with level object in the response body
      */
     async get(id) {
-      return levelsApiInstance.getLevel(id);
+      return api.getLevel(id);
     }
   };
 }
