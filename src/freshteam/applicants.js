@@ -26,7 +26,7 @@ export default function applicants(client) {
      * @param {number} id - Identifier of the applicant
      * @returns {Promise<ApplicantDetail>} - Response with applicant object in the response body
      */
-    async detail(id) {
+    async get(id) {
       return applicantApiInstance.getApplicant(id);
     },
 

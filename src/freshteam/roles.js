@@ -24,7 +24,7 @@ export default function Roles(client) {
      * @param {number} id - Identifier of the role
      * @returns {Promise<Role>} - Role object
      */
-    async detail(id) {
+    async get(id) {
       return api.getRole(id);
     }
   };

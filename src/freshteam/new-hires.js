@@ -26,7 +26,7 @@ export default function newHires(client) {
      * @param {object} options - Additional options to add include properties
      * @returns {Promise<NewHireDetail>} - Response with NewHire object in the response body
      */
-    async detail(id, options) {
+    async get(id, options) {
       return api.getNewHire(id, options);
     },
 

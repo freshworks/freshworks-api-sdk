@@ -55,7 +55,7 @@ export default function timeOffs(client) {
      * @param {number} id - Identifier of the time off request
      * @returns {Promise<LeaveRequest>} - A leave request object
      */
-    async detail(id) {
+    async get(id) {
       return api.getTimeoff(id);
     },
 

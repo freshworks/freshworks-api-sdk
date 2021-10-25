@@ -27,7 +27,7 @@ export default function employees(client) {
      * @param {object} [query = {}] - Query parameters
      * @returns {Promise<EmployeeDetail>} - Response with an employee object in the response body, if found
      */
-    async detail(id, query = {}) {
+    async get(id, query = {}) {
       return api.getEmployee(id, query);
     },
 

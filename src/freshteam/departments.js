@@ -26,7 +26,7 @@ export default function departments(client) {
      * @param {number} id - Identifier of the department
      * @returns {Promise<Department>} - Response with department object in the response body
      */
-    async detail(id) {
+    async get(id) {
       return api.getDepartment(id);
     }
   };
