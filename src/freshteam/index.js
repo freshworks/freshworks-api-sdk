@@ -30,21 +30,20 @@ export default function Freshteam(domain, apiKey) {
 
   return {
     employees: employees(client),
-    departments: departments(client),
-    applicants: applicants(client),
     branches: branches(client),
-    business_units: businessUnits(client),
-    time_offs: timeOffs(client),
-    user_functions: userFunctions(client),
+    departments: departments(client),
     sub_departments: subDepartments(client),
-    roles: roles(client),
-    new_hires: newHires(client)
-    // == Uncomment below as each feature is updated to use `import` syntax ==
-    // candidate_sources: require("./candidate-sources")(client),
-    // candidates: require("./candidates")(client),
-    // job_postings: require("./job-postings")(client),
-    // levels: require("./levels")(client),
+    business_units: businessUnits(client),
     // teams: require("./teams")(client),
+    // levels: require("./levels")(client),
+    time_offs: timeOffs(client),
+    roles: roles(client),
+    // job_postings: require("./job-postings")(client),
+    applicants: applicants(client),
+    // candidate_sources: require("./candidate-sources")(client),
+    user_functions: userFunctions(client),
+    new_hires: newHires(client)
+    // candidates: require("./candidates")(client),
   };
 }
 
