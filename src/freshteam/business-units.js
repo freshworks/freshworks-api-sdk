@@ -24,7 +24,7 @@ export default function businessUnits(client) {
      * @param {number} id - Identifier of the business unit
      * @returns {BusinessUnit} - Response with business unit object in the response body
      */
-    async detail(id) {
+    async get(id) {
       return api.getBusinessUnit(id);
     }
   };

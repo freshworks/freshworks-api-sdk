@@ -24,7 +24,7 @@ export default function subDepartments(client) {
      * @param {number} id - Identifier of the sub-department
      * @returns {Promise<SubDepartment>} - Sub-department object
      */
-    async detail(id) {
+    async get(id) {
       return api.getSubDepartment(id);
     }
   };

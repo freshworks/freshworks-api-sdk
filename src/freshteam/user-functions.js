@@ -24,7 +24,7 @@ export default function UserFunctions(client) {
      * @param {number} id - Identifier of the user function
      * @returns {Promise<UserFunction>} - User function object
      */
-    async detail(id) {
+    async get(id) {
       return api.getUserFunction(id);
     }
   };
