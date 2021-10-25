@@ -40,5 +40,9 @@ export {
   Job,
   JobField,
   ApplicantCreate,
-  ApplicantField
+  ApplicantField,
+  // Candidate sources models
+  Source,
+  SourceCreate,
+  SourceCategory
 } from "../gen/freshteam";
