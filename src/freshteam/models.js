@@ -33,5 +33,7 @@ export {
   // Department models
   Department,
   // Teams models
-  Team
+  Team,
+  // Levels models
+  Level
 } from "../gen/freshteam";

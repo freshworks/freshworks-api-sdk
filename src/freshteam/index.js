@@ -16,6 +16,7 @@ import branches from "./branches";
 import businessUnits from "./business-units";
 import departments from "./departments";
 import teams from "./teams";
+import levels from "./levels";
 
 /**
  * Freshteam API client builder
@@ -36,7 +37,7 @@ export default function Freshteam(domain, apiKey) {
     subDepartments: subDepartments(client),
     businessUnits: businessUnits(client),
     teams: teams(client),
-    // levels: require("./levels")(client),
+    levels: levels(client),
     timeOffs: timeOffs(client),
     roles: roles(client),
     // jobPostings: require("./job-postings")(client),
