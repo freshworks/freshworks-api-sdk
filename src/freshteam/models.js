@@ -35,5 +35,10 @@ export {
   // Teams models
   Team,
   // Levels models
-  Level
+  Level,
+  // Job Postings models
+  Job,
+  JobField,
+  ApplicantCreate,
+  ApplicantField
 } from "../gen/freshteam";
