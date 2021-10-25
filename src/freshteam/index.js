@@ -17,6 +17,7 @@ import businessUnits from "./business-units";
 import departments from "./departments";
 import teams from "./teams";
 import levels from "./levels";
+import jobPostings from "./job-postings";
 
 /**
  * Freshteam API client builder
@@ -40,12 +41,13 @@ export default function Freshteam(domain, apiKey) {
     levels: levels(client),
     timeOffs: timeOffs(client),
     roles: roles(client),
-    // jobPostings: require("./job-postings")(client),
-    applicants: applicants(client), // Can be grouped under jobPostings
+    jobPostings: jobPostings(client),
     // candidateSources: require("./candidate-sources")(client),
     userFunctions: userFunctions(client),
-    newHires: newHires(client)
-    // candidates: require("./candidates")(client) // Not documented in REST API docs
+    newHires: newHires(client),
+    // -- The apis below here are not documented in REST API docs
+    applicants: applicants(client),
+    // candidates: require("./candidates")(client)
   };
 }
 
