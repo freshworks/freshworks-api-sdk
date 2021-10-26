@@ -5,7 +5,6 @@ import { Department } from "./models";
 /**
  *
  * @param {Client} client
- * @returns
  */
 export default function departments(client) {
   const api = new DepartmentsApi(client.instance);
