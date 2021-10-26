@@ -1,9 +1,14 @@
+/**
+ * @module Freshteam/branches
+ */
+
 import { LocationsApi } from "../gen/freshteam";
 import { Client } from "../http-client";
 import { Branch } from "./models";
 
 /**
  * @param {Client} client
+ * @hideconstructor
  */
 export default function branches(client) {
   const api = new LocationsApi(client.instance);

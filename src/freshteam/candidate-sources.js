@@ -1,3 +1,7 @@
+/**
+ * @module Freshteam/candidateSources
+ */
+
 import { SourceApi, SourcesApi, SourceCategoriesApi } from "../gen/freshteam";
 import { Client } from "../http-client";
 import { Source, SourceCreate, SourceCategory } from "./models";
@@ -5,6 +9,7 @@ import { Source, SourceCreate, SourceCategory } from "./models";
 /**
  *
  * @param {Client} client
+ * @hideconstructor
  */
 export default function candidateSources(client) {
   const sourceApi = new SourceApi(client.instance);

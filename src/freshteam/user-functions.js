@@ -1,9 +1,14 @@
+/**
+ * @module Freshteam/userFunctions
+ */
+
 import { UserFunctionsApi } from "../gen/freshteam";
 import { Client } from "../http-client";
 import { UserFunction } from "./models";
 
 /**
  * @param {Client} client
+ * @hideconstructor
  */
 export default function UserFunctions(client) {
   const api = new UserFunctionsApi(client.instance);

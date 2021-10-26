@@ -1,3 +1,7 @@
+/**
+ * @module Freshteam/teams
+ */
+
 import { TeamsApi } from "../gen/freshteam";
 import { Client } from "../http-client";
 import { Team } from "./models";
@@ -5,6 +9,7 @@ import { Team } from "./models";
 /**
  *
  * @param {Client} client
+ * @hideconstructor
  */
 export default function teams(client) {
   const api = new TeamsApi(client.instance);

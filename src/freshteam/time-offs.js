@@ -1,3 +1,7 @@
+/**
+ * @module Freshteam/timeOffs
+ */
+
 import { TimeoffApi } from "../gen/freshteam";
 import { Client } from "../http-client";
 import { LeaveType, LeaveRequest, LeaveRequestCreate, LeaveRequestApprove, LeaveRequestReject } from "./models";
@@ -5,6 +9,7 @@ import { LeaveType, LeaveRequest, LeaveRequestCreate, LeaveRequestApprove, Leave
 /**
  *
  * @param {Client} client
+ * @hideconstructor
  */
 export default function timeOffs(client) {
   const api = new TimeoffApi(client.instance);

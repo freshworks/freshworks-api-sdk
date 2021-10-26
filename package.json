@@ -20,7 +20,8 @@
     "test:unit": "jest --coverage",
     "test": "npm run lint && npm run test:unit",
     "format": "prettier -w .",
-    "clean": "rm -rf coverage/ dist/"
+    "clean": "rm -rf coverage/ dist/",
+    "docs:api": "rm -rf docs/api && jsdoc -c jsdoc.json"
   },
   "author": "Freshworks Inc",
   "license": "MIT",

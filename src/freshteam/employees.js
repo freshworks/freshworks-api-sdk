@@ -1,9 +1,14 @@
+/**
+ * @module Freshteam/employees
+ */
+
 import { EmployeeApi, EmployeeFieldsApi } from "../gen/freshteam";
 import { Client } from "../http-client";
 import { Employee, EmployeeCreate, EmployeeDetail, EmployeeField } from "./models";
 
 /**
  * @param {Client} client
+ * @hideconstructor
  */
 export default function employees(client) {
   let api = new EmployeeApi(client.instance);
