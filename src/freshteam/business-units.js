@@ -12,7 +12,7 @@ export default function businessUnits(client) {
     /**
      * Fetches the list of business units in the account
      *
-     * @returns {BusinessUnit[]} - Response with business units list in the response body
+     * @returns {Promise<BusinessUnit[]>} - Response with business units list in the response body
      */
     async list() {
       return api.getBusinessUnits();
@@ -22,7 +22,7 @@ export default function businessUnits(client) {
      * Get the details of a business unit
      *
      * @param {number} id - Identifier of the business unit
-     * @returns {BusinessUnit} - Response with business unit object in the response body
+     * @returns {Promise<BusinessUnit>} - Response with business unit object in the response body
      */
     async get(id) {
       return api.getBusinessUnit(id);
