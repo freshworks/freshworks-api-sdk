@@ -1,3 +1,7 @@
+/**
+ * @module Freshteam/levels
+ */
+
 import { LevelsApi } from "../gen/freshteam";
 import { Client } from "../http-client";
 import { Level } from "./models";
@@ -5,6 +9,7 @@ import { Level } from "./models";
 /**
  *
  * @param {Client} client
+ * @hideconstructor
  */
 export default function levels(client) {
   const api = new LevelsApi(client.instance);

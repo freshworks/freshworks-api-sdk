@@ -1,9 +1,14 @@
+/**
+ * @module Freshteam/newHires
+ */
+
 import { NewHireApi } from "../gen/freshteam";
 import { Client } from "../http-client";
 import { NewHire, NewHireCreate, NewHireDetail } from "./models";
 
 /**
  * @param {Client} client
+ * @hideconstructor
  */
 export default function newHires(client) {
   const api = new NewHireApi(client.instance);

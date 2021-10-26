@@ -1,9 +1,14 @@
+/**
+ * @module Freshteam/subDepartments
+ */
+
 import { SubDepartmentsApi } from "../gen/freshteam";
 import { Client } from "../http-client";
 import { SubDepartment } from "./models";
 
 /**
  * @param {Client} client
+ * @hideconstructor
  */
 export default function subDepartments(client) {
   const api = new SubDepartmentsApi(client.instance);

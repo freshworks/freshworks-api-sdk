@@ -1,9 +1,14 @@
+/**
+ * @module Freshteam/roles
+ */
+
 import { RolesApi } from "../gen/freshteam";
 import { Client } from "../http-client";
 import { Role } from "./models";
 
 /**
  * @param {Client} client
+ * @hideconstructor
  */
 export default function Roles(client) {
   const api = new RolesApi(client.instance);
