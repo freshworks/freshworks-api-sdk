@@ -1,0 +1,11 @@
+{
+  "name": "Freshworks API SDK",
+  "entryPoints": ["src/index.js", "src/freshteam/"],
+  "out": "docs/api",
+  "entryPointStrategy": "expand",
+  "excludePrivate": true,
+  "excludeExternals": false,
+  "emit": "docs",
+  "cleanOutputDir": true,
+  "categorizeByGroup": true
+}
