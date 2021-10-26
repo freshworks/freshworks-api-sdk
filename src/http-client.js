@@ -1,7 +1,6 @@
 /**
  * Abstraction for underlying HTTP client
  *
- * @module http-client
  * @private
  */
 
@@ -14,6 +13,8 @@ function toBaseUrl(hostname) {
 
 /**
  * Abstraction for HTTP request client for use by the rest of the lib
+ *
+ * @private
  */
 export class Client {
   /**

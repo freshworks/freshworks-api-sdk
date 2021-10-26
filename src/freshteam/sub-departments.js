@@ -1,36 +1,36 @@
-/**
- * @module Freshteam/subDepartments
- */
-
 import { SubDepartmentsApi } from "../gen/freshteam";
 import { Client } from "../http-client";
 import { SubDepartment } from "./models";
 
-/**
- * @param {Client} client
- * @hideconstructor
- */
-export default function subDepartments(client) {
-  const api = new SubDepartmentsApi(client.instance);
-
-  return {
+export class SubDepartments {
+  /**
+   *
+   * @param {Client} client
+   * @hidden
+   */
+  constructor(client) {
     /**
-     * Fetches the list of sub-departments
-     *
-     * @returns {Promise<SubDepartment[]>} - Array of Sub-Departments
+     * @private
      */
-    async list() {
-      return api.getSubDepartments();
-    },
+    this._api = new SubDepartmentsApi(client.instance);
+  }
 
-    /**
-     * Get the details of a sub-department
-     *
-     * @param {number} id - Identifier of the sub-department
-     * @returns {Promise<SubDepartment>} - Sub-department object
-     */
-    async get(id) {
-      return api.getSubDepartment(id);
-    }
-  };
+  /**
+   * Fetches the list of sub-departments
+   *
+   * @returns {Promise<SubDepartment[]>} - Array of Sub-Departments
+   */
+  async list() {
+    return this._api.getSubDepartments();
+  }
+
+  /**
+   * Get the details of a sub-department
+   *
+   * @param {number} id - Identifier of the sub-department
+   * @returns {Promise<SubDepartment>} - Sub-department object
+   */
+  async get(id) {
+    return this._api.getSubDepartment(id);
+  }
 }

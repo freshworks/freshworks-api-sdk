@@ -1,48 +1,53 @@
-/**
- * @module Freshteam/candidateSources
- */
-
 import { SourceApi, SourcesApi, SourceCategoriesApi } from "../gen/freshteam";
 import { Client } from "../http-client";
 import { Source, SourceCreate, SourceCategory } from "./models";
 
-/**
- *
- * @param {Client} client
- * @hideconstructor
- */
-export default function candidateSources(client) {
-  const sourceApi = new SourceApi(client.instance);
-  const sourcesApi = new SourcesApi(client.instance); // IKR?
-  const categoriesApi = new SourceCategoriesApi(client.instance);
-
-  return {
+export class CandidateSources {
+  /**
+   *
+   * @param {Client} client
+   * @hidden
+   */
+  constructor(client) {
     /**
-     * Fetches the list of candidate sources
-     *
-     * @returns {Promise<Source>} - Response with candidate sources list in the response body
+     * @private
      */
-    async list() {
-      return sourcesApi.getCandidateSources();
-    },
-
+    this._sourceApi = new SourceApi(client.instance);
     /**
-     * Create a candidate source
-     *
-     * @param {SourceCreate} candidateSource - Properties of candidate source
-     * @returns {Promise<Source>} - Response with candidate source object in the response body
+     * @private
      */
-    async create(candidateSource) {
-      return sourceApi.createCandidateSources(candidateSource);
-    },
-
+    this._sourcesApi = new SourcesApi(client.instance); // IKR?
     /**
-     * Fetches the list of candidate source categories
-     *
-     * @returns {Promise<SourceCategory[]>} - Response with candidate source categories list in the response body
+     * @private
      */
-    async listCategories() {
-      return categoriesApi.getSourceCategories();
-    }
-  };
+    this._categoriesApi = new SourceCategoriesApi(client.instance);
+  }
+
+  /**
+   * Fetches the list of candidate sources
+   *
+   * @returns {Promise<Source>} - Response with candidate sources list in the response body
+   */
+  async list() {
+    return this._sourcesApi.getCandidateSources();
+  }
+
+  /**
+   * Create a candidate source
+   *
+   * @param {SourceCreate} candidateSource - Properties of candidate source
+   * @returns {Promise<Source>} - Response with candidate source object in the response body
+   */
+  async create(candidateSource) {
+    return this._sourceApi.createCandidateSources(candidateSource);
+  }
+
+  /**
+   * Fetches the list of candidate source categories
+   *
+   * @returns {Promise<SourceCategory[]>} - Response with candidate source categories list in the response body
+   */
+  async listCategories() {
+    return this._categoriesApi.getSourceCategories();
+  }
 }

@@ -21,7 +21,7 @@
     "test": "npm run lint && npm run test:unit",
     "format": "prettier -w .",
     "clean": "rm -rf coverage/ dist/",
-    "docs:api": "rm -rf docs/api && jsdoc -c jsdoc.json"
+    "docs:api": "typedoc"
   },
   "author": "Freshworks Inc",
   "license": "MIT",
@@ -33,6 +33,7 @@
     "jest": "^27.0.6",
     "prettier": "^2.3.2",
     "ts-jest": "^27.0.4",
+    "typedoc": "^0.22.7",
     "typescript": "^4.3.5"
   },
   "jest": {

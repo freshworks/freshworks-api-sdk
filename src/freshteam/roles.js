@@ -1,36 +1,36 @@
-/**
- * @module Freshteam/roles
- */
-
 import { RolesApi } from "../gen/freshteam";
 import { Client } from "../http-client";
 import { Role } from "./models";
 
-/**
- * @param {Client} client
- * @hideconstructor
- */
-export default function Roles(client) {
-  const api = new RolesApi(client.instance);
-
-  return {
+export class Roles {
+  /**
+   *
+   * @param {Client} client
+   * @hidden
+   */
+  constructor(client) {
     /**
-     * Fetches the list of roles
-     *
-     * @returns {Promise<Role[]>} - Array of roles
+     * @private
      */
-    async list() {
-      return api.getRoles();
-    },
+    this._api = new RolesApi(client.instance);
+  }
 
-    /**
-     * Get the details of a role
-     *
-     * @param {number} id - Identifier of the role
-     * @returns {Promise<Role>} - Role object
-     */
-    async get(id) {
-      return api.getRole(id);
-    }
-  };
+  /**
+   * Fetches the list of roles
+   *
+   * @returns {Promise<Role[]>} - Array of roles
+   */
+  async list() {
+    return this._api.getRoles();
+  }
+
+  /**
+   * Get the details of a role
+   *
+   * @param {number} id - Identifier of the role
+   * @returns {Promise<Role>} - Role object
+   */
+  async get(id) {
+    return this._api.getRole(id);
+  }
 }
