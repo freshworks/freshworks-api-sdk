@@ -5,7 +5,6 @@ import { Team } from "./models";
 /**
  *
  * @param {Client} client
- * @returns
  */
 export default function teams(client) {
   const api = new TeamsApi(client.instance);
