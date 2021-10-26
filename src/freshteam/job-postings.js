@@ -1,69 +1,71 @@
-/**
- * @module Freshteam/jobPostings
- */
-
 import { JobApi, JobFieldsApi } from "../gen/freshteam";
 import { Client } from "../http-client";
 import { Job, JobField, ApplicantCreate, ApplicantDetail, ApplicantField } from "./models";
 
-/**
- *
- * @param {Client} client
- * @hideconstructor
- */
-export default function jobPostings(client) {
-  const jobs = new JobApi(client.instance);
-  const fields = new JobFieldsApi(client.instance);
-
-  return {
+export class JobPostings {
+  /**
+   *
+   * @param {Client} client
+   * @hidden
+   */
+  constructor(client) {
     /**
-     * Fetches the list of job postings
-     *
-     * @param {object} options - Options to filter job postings
-     * @returns {Promise<Job[]>} - Response with job postings list in the response body
+     * @private
      */
-    async list(options) {
-      return jobs.getJobs(options);
-    },
-
+    this._jobs = new JobApi(client.instance);
     /**
-     * Fetches the job posting
-     *
-     * @param {number} id - Identifier of the job posting
-     * @returns {Promise<Job>} - Response with job posting object in the response body
+     * @private
      */
-    async get(id) {
-      return jobs.getJob(id);
-    },
+    this._fields = new JobFieldsApi(client.instance);
+  }
 
-    /**
-     * Create an applicant for a job posting
-     *
-     * @param {number} jobPostingId - Identifier of the job posting
-     * @param {ApplicantCreate} applicant - Properties for the applicant
-     * @returns {Promise<ApplicantDetail>} - Response with applicant object in the response body
-     */
-    async createApplicant(jobPostingId, applicant) {
-      return jobs.createApplicant(applicant, jobPostingId);
-    },
+  /**
+   * Fetches the list of job postings
+   *
+   * @param {object} options - Options to filter job postings
+   * @returns {Promise<Job[]>} - Response with job postings list in the response body
+   */
+  async list(options) {
+    return this._jobs.getJobs(options);
+  }
 
-    /**
-     * Fetches the list of job posting fields
-     *
-     * @returns {Promise<JobField>} - Response with job posting fields list in the response body
-     */
-    async listFields() {
-      return fields.getJobFields();
-    },
+  /**
+   * Fetches the job posting
+   *
+   * @param {number} id - Identifier of the job posting
+   * @returns {Promise<Job>} - Response with job posting object in the response body
+   */
+  async get(id) {
+    return this._jobs.getJob(id);
+  }
 
-    /**
-     * Fetches the list of applicant fields
-     *
-     * @param {number} jobPostingId Identifier of the job posting
-     * @returns {Promise<ApplicantField>} - Response with applicant fields list in the response body
-     */
-    async listApplicantFields(jobPostingId) {
-      return jobs.getApplicantFields(jobPostingId);
-    }
-  };
+  /**
+   * Create an applicant for a job posting
+   *
+   * @param {number} jobPostingId - Identifier of the job posting
+   * @param {ApplicantCreate} applicant - Properties for the applicant
+   * @returns {Promise<ApplicantDetail>} - Response with applicant object in the response body
+   */
+  async createApplicant(jobPostingId, applicant) {
+    return this._jobs.createApplicant(applicant, jobPostingId);
+  }
+
+  /**
+   * Fetches the list of job posting fields
+   *
+   * @returns {Promise<JobField>} - Response with job posting fields list in the response body
+   */
+  async listFields() {
+    return this._fields.getJobFields();
+  }
+
+  /**
+   * Fetches the list of applicant fields
+   *
+   * @param {number} jobPostingId Identifier of the job posting
+   * @returns {Promise<ApplicantField>} - Response with applicant fields list in the response body
+   */
+  async listApplicantFields(jobPostingId) {
+    return this._jobs.getApplicantFields(jobPostingId);
+  }
 }

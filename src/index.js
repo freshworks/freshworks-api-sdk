@@ -1,3 +1,3 @@
-import Freshteam from "./freshteam";
+import { Freshteam } from "./freshteam";
 
 export { Freshteam };
