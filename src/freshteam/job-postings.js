@@ -1,3 +1,7 @@
+/**
+ * @module Freshteam/jobPostings
+ */
+
 import { JobApi, JobFieldsApi } from "../gen/freshteam";
 import { Client } from "../http-client";
 import { Job, JobField, ApplicantCreate, ApplicantDetail, ApplicantField } from "./models";
@@ -5,6 +9,7 @@ import { Job, JobField, ApplicantCreate, ApplicantDetail, ApplicantField } from 
 /**
  *
  * @param {Client} client
+ * @hideconstructor
  */
 export default function jobPostings(client) {
   const jobs = new JobApi(client.instance);

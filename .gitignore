@@ -8,6 +8,6 @@ test/.env
 .env
 dist/
 coverage/
-/api-docs/
+/docs/api/
 /out/
 /build/

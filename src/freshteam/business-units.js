@@ -1,9 +1,14 @@
+/**
+ * @module Freshteam/businessUnits
+ */
+
 import { BusinessUnitsApi } from "../gen/freshteam";
 import { Client } from "../http-client";
 import { BusinessUnit } from "./models";
 
 /**
  * @param {Client} client
+ * @hideconstructor
  */
 export default function businessUnits(client) {
   const api = new BusinessUnitsApi(client.instance);

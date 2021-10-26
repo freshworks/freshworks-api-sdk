@@ -1,5 +1,8 @@
 /**
  * Abstraction for underlying HTTP client
+ *
+ * @module http-client
+ * @private
  */
 
 function toBaseUrl(hostname) {

@@ -1,3 +1,7 @@
+/**
+ * @module Freshteam/departments
+ */
+
 import { DepartmentsApi } from "../gen/freshteam";
 import { Client } from "../http-client";
 import { Department } from "./models";
@@ -5,6 +9,7 @@ import { Department } from "./models";
 /**
  *
  * @param {Client} client
+ * @hideconstructor
  */
 export default function departments(client) {
   const api = new DepartmentsApi(client.instance);
