@@ -16,7 +16,7 @@ export class Applicants {
   }
 
   /**
-   * Fetches the list of applicants
+   * Fetches list of applicants
    *
    * ```js
    * const FT = new Freshteam(domain, apiKey);
@@ -32,7 +32,7 @@ export class Applicants {
   }
 
   /**
-   * Fetches the applicant
+   * Get an applicant by applicant ID
    *
    * @param {number} id - Identifier of the applicant
    * @returns {Promise<ApplicantDetail>} - Response with applicant object in the response body
@@ -42,7 +42,7 @@ export class Applicants {
   }
 
   /**
-   * Create an applicant for a applicant
+   * Update an existing applicant
    *
    * @param {number} id - Identifier of the applicant
    * @param {ApplicantUpdate} applicant - Properties for the applicant
@@ -53,7 +53,7 @@ export class Applicants {
   }
 
   /**
-   * Fetches the lit of applicant fields
+   * Archive an applicant
    *
    * @param {object} id - Identifier of the applicant
    * @param {ApplicantArchive} options - Properties to filter the applicant
@@ -64,7 +64,7 @@ export class Applicants {
   }
 
   /**
-   * Fetches the list of applicant fields
+   * Update sub-stage of an applicant
    *
    * @param {number} id - Identifier of the applicant
    * @param {ApplicantSubStage} options - Properties to update sub stage
