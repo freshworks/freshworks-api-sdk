@@ -1,6 +1,6 @@
 {
-  "name": "@ravirajsubramanian/awesome-test-package",
-  "version": "0.0.1-alpha.1",
+  "name": "@freshworks/api-sdk",
+  "version": "0.0.1",
   "private": true,
   "description": "Node.js SDK for Freshworks HTTP APIs",
   "engines": {
