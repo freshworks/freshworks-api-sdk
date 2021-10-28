@@ -1,4 +1,4 @@
-name: Check Build
+name: release-pipeline
 on:
   release:
     types: [created]
@@ -18,7 +18,7 @@ jobs:
         run: npm run lint
       - name: Build the library
         run: npm run build:lib
-      - name: Publish to NPM (dry-run)
-        run: npm run dopublish-dry-run
+      - name: Publish to NPM
+        run: npm run dopublish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
