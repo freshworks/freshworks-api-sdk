@@ -4,7 +4,7 @@ on:
     types: [created]
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, linux]
     steps:
       - uses: actions/checkout@v2
       # Setup .npmrc file to publish to npm
@@ -17,7 +17,7 @@ jobs:
       - name: Run linter
         run: npm run lint
       - name: Build the library
-        run: npm run build
+        run: npm run build:lib
       - name: Publish to NPM
         run: npm run dopublish
         env:
