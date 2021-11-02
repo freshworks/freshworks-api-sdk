@@ -1,10 +1,14 @@
-import { Freshteam } from "../src";
+import { Freshteam } from "../../src";
 
-const FT_DOMAIN = process.env["FT_DOMAIN"] || "example.freshteam.com";
-const FT_API_KEY = process.env["FT_API_KEY"] || "f_xkcd/222";
+const FT_DOMAIN = "example.freshteam.com";
+const FT_API_KEY = "f_xkcd_222";
 
-describe("Freshteam client init", function () {
-  it("Check properties", function () {
+describe("Freshteam client", function () {
+  it("should have a static models property", function () {
+    expect(Freshteam).toHaveProperty("models");
+  });
+
+  it("should have properties for all sub-APIs", function () {
     const ft = new Freshteam(FT_DOMAIN, FT_API_KEY);
     expect(ft).toHaveProperty("employees");
     expect(ft).toHaveProperty("branches");
