@@ -10,3 +10,7 @@ coverage/
 /docs/api/
 /out/
 /build/
+example/freshworks-app/log/
+example/freshworks-app/.fdk/localstore
+example/freshworks-app/.fdk/store.sqlite
+example/freshworks-app/.report.json
