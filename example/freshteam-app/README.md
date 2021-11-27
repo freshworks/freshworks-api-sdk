@@ -1,4 +1,4 @@
-# Sample app for Freshteam
+# Sample Freshteam app using API SDK
 
 This app showcases using the Freshteam API SDK on the Serverless component of the app.
 

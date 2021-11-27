@@ -11,16 +11,15 @@ exports = {
   listEmployees: async function(args) {
     const domain = args.iparams.freshteam_domain;
     const apiKey = args.iparams.freshteam_api_key;
-    console.log(domain, apiKey);
     const FT = new Freshteam(`${domain}.freshteam.com`, apiKey);
 
     try {
       const employeesList = await FT.employees.list();
-      console.log(employeesList);
+      console.info(employeesList);
       renderData(null,  employeesList);
     } catch (error) {
       console.error("Error: Failed to get employees list")
-      console.log(error);
+      console.error(error);
       renderData({message: "Error: Failed to get employees list"});
     }
   },
@@ -32,18 +31,17 @@ exports = {
    * @returns {object} - Employee details
    */
   getEmployee: async function(args) {
-    console.log(args);
     const domain = args.iparams.freshteam_domain;
     const apiKey = args.iparams.freshteam_api_key;
     const FT = new Freshteam(`${domain}.freshteam.com`, apiKey);
 
     try {
       const employee = await FT.employees.get(args.id);
-      console.log(employee);
+      console.info(employee);
       renderData(null,  employee);
     } catch (error) {
       console.error("Error: Failed to get employee details")
-      console.log(error);
+      console.error(error);
       renderData({message: "Error: Failed to get employee details"});
     }
     
@@ -60,15 +58,15 @@ exports = {
     const apiKey = args.iparams.freshteam_api_key;
     const FT = new Freshteam(`${domain}.freshteam.com`, apiKey);
 
-    const employee = new FT.models.EmployeeCreate(args.first_name, args.last_name, args.official_email, args.role_ids);
+    const employee = new Freshteam.models.EmployeeCreate(args.first_name, args.last_name, args.official_email, args.role_ids);
 
     try {
       const employeeCreate = await FT.employees.create(employee);
-      console.log(employeeCreate);
+      console.info(employeeCreate);
       renderData(null, employeeCreate)
     } catch(e){
-      console.log('Error: Create employee api failed');
-      console.log(e);
+      console.error('Error: Create employee api failed');
+      console.error(e);
       renderData({message: "Error: Failed to create employee"});
     }
   },
@@ -80,22 +78,21 @@ exports = {
    * @returns {object} - Employee details
    */
   updateEmployee: async function(args) {
-    console.log(args)
     const domain = args.iparams.freshteam_domain;
     const apiKey = args.iparams.freshteam_api_key;
     const FT = new Freshteam(`${domain}.freshteam.com`, apiKey);
 
-    const employee = new FT.models.EmployeeCreate(args.properties.first_name,
+    const employee = new Freshteam.models.EmployeeCreate(args.properties.first_name,
       args.properties.last_name,
       args.properties.official_email,
       args.properties.role_ids);
     try {
       const employeeUpdate = await FT.employees.update(args.properties.id, employee);
-      console.log(employeeUpdate);
+      console.info(employeeUpdate);
       renderData(null,  employeeUpdate);
     } catch(e){
-      console.log('Error: Update employee api failed');
-      console.log(e);
+      console.error('Error: Update employee api failed');
+      console.error(e);
       renderData({message: "Error: Failed to update employee"});
     }
   },
@@ -113,11 +110,11 @@ exports = {
 
     try {
       const employeeFields = await FT.employees.fields();
-      console.log(employeeFields);
+      console.info(employeeFields);
       renderData(null,  employeeFields);
     } catch(e){
-      console.log('Error: Get employee api failed');
-      console.log(e);
+      console.error('Error: Get employee api failed');
+      console.error(e);
       renderData({message: "Error: Failed to list employee fields"});
     }
   },
@@ -133,20 +130,21 @@ exports = {
     const apiKey = args.iparams.freshteam_api_key;
     const FT = new Freshteam(`${domain}.freshteam.com`, apiKey);
 
-    const fieldParameters = {
-      label: args.data.label,
-      type: args.data.type,
-      required: args.data.required,
-      section_name: args.data.section_name
+    const properties = {
+      label: args.label,
+      required: args.required,
+      section_name: args.section_name,
+      field_type: args.field_type
     }
+    const employeeField = new Freshteam.models.EmployeeFieldCreate(properties);
 
     try {
-      const employeeCreateField = await FT.employees.fields.create(fieldParameters);
-      console.log(employeeCreateField);
+      const employeeCreateField = await FT.employees.fields.create(employeeField);
+      console.info(employeeCreateField);
       renderData(null,  employeeCreateField);
-    } catch(e){
-      console.log('Error: Get employee api failed');
-      console.log(e);
+    } catch(error){
+      console.error('Error: Get employee api failed');
+      console.error(error);
       renderData({message: "Error: Failed to create employee field"});
     }
   }
