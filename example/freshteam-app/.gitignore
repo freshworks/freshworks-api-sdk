@@ -1,0 +1,6 @@
+log/
+.fdk/
+dist/
+coverage/
+**/node_modules/**
+.report.json

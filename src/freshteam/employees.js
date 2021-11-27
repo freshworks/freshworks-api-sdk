@@ -56,7 +56,7 @@ export class Employees {
    * @returns {Promise<Employee>} - Response with updated employee object in the response body, if found
    */
   async update(id, employee) {
-    return this._api.updateEmployee(id, employee);
+    return this._api.updateEmployee(employee, id);
   }
 
   /**

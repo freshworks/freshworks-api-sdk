@@ -1,7 +1,6 @@
 # Freshworks API SDK
 
 Node.js SDK for working with Freshworks HTTP APIs. Currently supports Freshteam.
-This repository is currently in closed beta (current version < 1.0.0).
 
 ## Installation
 

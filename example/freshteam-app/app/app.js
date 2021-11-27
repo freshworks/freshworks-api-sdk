@@ -94,8 +94,9 @@ function addEventListener(){
     role_ids: [6000116959]
   };
   const employeeFieldProperties = {
-    name: 'First Name',
-    type: 'text',
+    label: 'Additional Phone',
+    field_type: 'text',
+    section_name: 'Personal',
     required: true,
     unique: true
   };
@@ -120,7 +121,7 @@ function addEventListener(){
   });
 }
 
-$(document).ready( function() {
+document.addEventListener("DOMContentLoaded", function () {
   app.initialized().then(function(_client) {
     window.client = _client;
     client.events.on('app.activated', function() {

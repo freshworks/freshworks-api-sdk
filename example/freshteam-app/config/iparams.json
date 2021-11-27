@@ -13,10 +13,10 @@
         "display_name": "Freshteam API key",
         "description": "Please enter your Freshteam API key",
         "type": "api_key",
-        "required": true,
         "type_attributes": {
             "product": "freshteam"
         },
+        "required": true,
         "secure": true
       }
 }
