@@ -27,7 +27,7 @@ export class Freshteam {
    * @param {string} apiKey - API key for the domain
    *
    * ```js
-   * const { Freshteam } = require("@freshworks/freshworks-api-sdk");
+   * const { Freshteam } = require("@freshworks/api-sdk");
    * const FT = new Freshteam(domain, apiKey);
    * ```
    */
