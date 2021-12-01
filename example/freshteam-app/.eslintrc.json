@@ -1,0 +1,28 @@
+{
+  "env": {
+    "es2017": true
+  },
+  "overrides": [
+    {
+      "files": ["server/*.js"],
+      "globals": {
+        "renderData": "readonly"
+      }
+    },
+    {
+      "files": ["app/*.js"],
+      "env": {
+        "browser": true,
+        "node": false
+      },
+      "globals": {
+        "renderData": "readonly",
+        "client": "readonly",
+        "app": "readonly"
+      }
+    }
+  ],
+  "rules": {
+    "@typescript-eslint/no-var-requires": "off"
+  }
+}
