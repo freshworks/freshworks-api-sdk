@@ -4,8 +4,8 @@ This app showcases using the Freshteam API SDK on the Serverless component of th
 
 ## Functionality
 
-* The app has multiple buttons on the UI that has respective actions done in the Serverless app through Server Method Invocation (SMI) feature in the platform.
-* The SMI functions use the Freshteam API SDK to make API requests to Freshteam
+- The app has multiple buttons on the UI that has respective actions done in the Serverless app through Server Method Invocation (SMI) feature in the platform.
+- The SMI functions use the Freshteam API SDK to make API requests to Freshteam
 
 ### Steps to run app
 
