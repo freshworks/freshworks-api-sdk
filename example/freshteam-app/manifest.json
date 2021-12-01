@@ -29,9 +29,7 @@
       }
     }
   },
-  "whitelisted-domains": [
-    "https://*.freshteam.com"
-  ],
+  "whitelisted-domains": ["https://*.freshteam.com"],
   "dependencies": {
     "@freshworks/api-sdk": "0.0.1"
   },
