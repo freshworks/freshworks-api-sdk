@@ -2,7 +2,7 @@ export interface EmployeeListQuery {
   /**
    * Limits the response to employee objects whose status value matches the parameter value. Valid values: active, inactive
    */
-  status?: string;
+  status?: string[];
   /**
    * Limits the response to employee objects whose first_name value matches the parameter value.
    */
@@ -26,16 +26,16 @@ export interface EmployeeListQuery {
   /**
    * Limits the response to employee objects whose department_id value matches the parameter value. e.g. `3000016570`
    */
-  department?: number;
+  department?: number[];
   /**
    *
    * Limits the response to employee objects whose business_unit_id value matches the parameter value. e.g, `3000000015`
    */
-  business_unit?: number;
+  business_unit?: number[];
   /**
    * Limits the response to employee objects whose branch_id value matches the parameter value. e.g, `3000011495`
    */
-  location?: number;
+  location?: number[];
   /**
    * Limits the response to employee objects whose reporting_to_id value matches the parameter value.
    */
