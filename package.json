@@ -16,7 +16,7 @@
     "build:lib": "rm -rf dist && tsc",
     "build": "npm run build:lib && npm run build:docs",
     "start": "tsc --watch",
-    "lint": "./node_modules/.bin/eslint .",
+    "lint": "eslint .",
     "test:unit": "jest --coverage",
     "test": "npm run test:unit",
     "format": "prettier -w .",
