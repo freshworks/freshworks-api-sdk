@@ -10,10 +10,9 @@ npm install --save @freshworks/api-sdk
 
 ## Supported product APIs
 
-| Product     | Status  |
-|-------------|---------|
-| Freshteam   | ✅      |
-
+| Product   | Status |
+| --------- | ------ |
+| Freshteam | ✅     |
 
 ## Get started
 
@@ -182,7 +181,7 @@ const empList = await ft.employees.list(query);
 ```
 
 - Returns a `Promise` that resolves to an `Array` of `Freshteam.models.Employee` objects
-- The first argument is an `object` containing [query parameters accepted by the REST API](https://developers.freshteam.com/api/#list_all_employees), specified using a lowerCamelCase property naming convention. So, `first_name` becomes `firstName`. (TODO: Document the query parameters)
+- The first argument is an `object` containing [query parameters accepted by the REST API](https://developers.freshteam.com/api/#list_all_employees).
 
 #### Get employee by ID
 
@@ -237,7 +236,7 @@ const jobList = await ft.jobPostings.list(query);
 ```
 
 - Returns a `Promise` that resolves to an `Array` of `Freshteam.models.Job` objects
-- The first argument is an `object` containing [query parameters accepted by the REST API](https://developers.freshteam.com/api/#list_all_job_postings), specified using a lowerCamelCase property naming convention. So, `location_city` becomes `locationCity`. (TODO: Document the query parameters)
+- The first argument is an `object` containing [query parameters accepted by the REST API](https://developers.freshteam.com/api/#list_all_job_postings).
 
 #### Get job posting by ID
 
@@ -311,7 +310,7 @@ const newHireDetails = await ft.newHires.get(id, options);
 
 - Returns a `Promise` that resolves to a `Freshteam.models.EmployeeDetail` object
 - The first argument is ID of the new hire
-- The second argument is an `object` containing [query parameters accepted by the REST API](https://developers.freshteam.com/api/#retrieve_new_hire_information), specified using a lowerCamelCase property naming convention. So, `reporting_to` becomes `reportingTo`. (TODO: Document the query parameters)
+- The second argument is an `object` containing [query parameters accepted by the REST API](https://developers.freshteam.com/api/#retrieve_new_hire_information).
 
   - The property `options.include` can be added as an `Array` of `string` to include additional resources in the response, e.g.:
 
@@ -408,7 +407,7 @@ const leaveReqList = await ft.timeOffs.list(query);
 ```
 
 - Returns a `Promise` that resolves to an `Array` of `Freshteam.models.LeaveRequest` objects
-- The first argument is an `object` containing [query parameters accepted by the REST API](https://developers.freshteam.com/api/#list_all_leave_requests), specified using a lowerCamelCase property naming convention. So, `leave_type` becomes `leaveType`. (TODO: Document the query parameters)
+- The first argument is an `object` containing [query parameters accepted by the REST API](https://developers.freshteam.com/api/#list_all_leave_requests).
 
 #### Create a time-off
 
