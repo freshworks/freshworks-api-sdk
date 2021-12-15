@@ -103,18 +103,65 @@ export interface JobPostingsListQuery {
    * Limits the response to job posting objects whose branch.country_code value matches the parameter value.
    */
   location_country?: string[];
+  // Uncomment below when https://github.com/freshworksinc/freshworks-api-sdk/issues/43 is fixed
+  // /**
+  //  * Field to sort results on
+  //  */
+  // sort?: string;
+  // /**
+  //  * If the sort value is specified, sort_type specifies whether the list must be sorted in ascending or descending order. If sort_type is specified with no sort value, the list is sorted based on the first_name attribute. Valid values: `asc`, `desc`
+  //  */
+  // sort_type?: string;
+  // /**
+  //  * Page number starting from which the response data is retrieved. Each `page` contains maximum 50 entries. Use this parameter to paginate results.
+  //  */
+  // page?: number;
+}
+
+export interface TimeOffsListQuery {
   /**
-   * Field to sort results on
+   * Limits the response to time_off objects whose status value matches the parameter value.
+   *
+   * Valid parameter values: pending, approved, declined, cancelled
    */
-  sort?: string;
+  status?: string[];
   /**
-   * If the sort value is specified, sort_type specifies whether the list must be sorted in ascending or descending order. If sort_type is specified with no sort value, the list is sorted based on the first_name attribute. Valid values: `asc`, `desc`
+   * Limits the response to time_off objects whose user_id value matches the parameter value.
    */
-  sort_type?: string;
+  user?: string[];
   /**
-   * Page number starting from which the response data is retrieved. Each `page` contains maximum 50 entries. Use this parameter to paginate results.
+   * Limits the response to time_off objects whose leave_type_id value matches the parameter value.
    */
-  page?: number;
+  leave_type?: string[];
+  /**
+   * Limits the response to time-off requests that originate from a specific location, that is, requests from all employees whose branch.id value matches the parameter value. The employees are identified by applied_by_id.
+   */
+  location?: number[];
+  /**
+   * Limits the response to time_off objects whose start_date value matches the parameter value.
+   *
+   * Mandatory if the end_date filter is used.
+   */
+  start_date?: Date;
+  /**
+   * Limits the response to time_off objects whose end_date value matches the parameter value. Must be a value later than start_date.
+   *
+   * Mandatory if the start_date filter is used.
+   */
+  end_date?: Date;
+  // Uncomment below when https://github.com/freshworksinc/freshworks-api-sdk/issues/43 is fixed
+  // /**
+  //  * Field to sort results on
+  //  */
+  // sort?: string;
+  // /**
+  //  * If the sort value is specified, sort_type specifies whether the list must be sorted in ascending or descending order. If sort_type is specified with no sort value, the list is sorted based on the first_name attribute. Valid values: `asc`, `desc`
+  //  */
+  // sort_type?: string;
+  // /**
+  //  * Page number starting from which the response data is retrieved. Each `page` contains maximum 50 entries. Use this parameter to paginate results.
+  //  */
+  // page?: number;
 }
 
 export {
