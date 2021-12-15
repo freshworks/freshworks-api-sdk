@@ -9,7 +9,7 @@
   "supportsES6": true,
   "emitModelMethods": false,
   "ensureUniqueParams": true,
-  "modelPropertyNaming": "camelCase",
+  "modelPropertyNaming": "original",
   "disallowAdditionalPropertiesIfNotPresent": false,
   "prependFormOrBodyParameters": true
 }

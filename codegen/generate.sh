@@ -21,7 +21,7 @@ function generate_freshteam_client()
 {
   rm -rf build/
   docker run --rm --network="host" \
-    -v "${PWD}:/local" openapi-generator generate --skip-validate-spec \
+    -v "${PWD}:/local" openapitools/openapi-generator-cli:latest-release generate --skip-validate-spec \
     -i /local/codegen/freshteam/freshteam-v1.0.0.swagger.json \
     -g javascript \
     -o /local/build \
