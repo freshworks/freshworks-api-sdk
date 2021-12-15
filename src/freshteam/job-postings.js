@@ -1,6 +1,6 @@
 import { JobApi, JobFieldsApi } from "../gen/freshteam";
 import { Client } from "../http-client";
-import { Job, JobField, ApplicantCreate, ApplicantDetail, ApplicantField } from "./models";
+import { Job, JobField, ApplicantCreate, ApplicantDetail, ApplicantField, JobPostingsListQuery } from "./models";
 
 export class JobPostings {
   /**
@@ -22,11 +22,11 @@ export class JobPostings {
   /**
    * Fetches the list of job postings
    *
-   * @param {object} options - Options to filter job postings
+   * @param {JobPostingsListQuery} [query] - Options to filter job postings
    * @returns {Promise<Job[]>} - Response with job postings list in the response body
    */
-  async list(options) {
-    return this._jobs.getJobs(options);
+  async list(query = {}) {
+    return this._jobs.getJobs(query);
   }
 
   /**

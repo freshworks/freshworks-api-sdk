@@ -70,6 +70,53 @@ export interface EmployeeListQuery {
   page?: number;
 }
 
+export interface JobPostingsListQuery {
+  /**
+   * Limits the response to job posting objects whose status value matches the parameter value. Valid values: draft, published, internal, private, on_hold, closed
+   */
+  status?: string[];
+  /**
+   * Limits the response to job posting objects whose title value matches the parameter value.
+   */
+  title?: string;
+  /**
+   * Limits the response to job posting objects whose type value matches the parameter value.
+   */
+  type?: string;
+  /**
+   * Limits the response to job posting objects whose department.id value matches the parameter value.
+   */
+  department?: number[];
+  /**
+   * Limits the response to job postings objects whose branch.id value matches the parameter value.
+   */
+  location?: number[];
+  /**
+   * Limits the response to job postings objects whose remote value matches the parameter value.
+   */
+  remote?: boolean[];
+  /**
+   * Limits the response to job posting objects whose branch.city value matches the parameter value.
+   */
+  location_city?: string[];
+  /**
+   * Limits the response to job posting objects whose branch.country_code value matches the parameter value.
+   */
+  location_country?: string[];
+  /**
+   * Field to sort results on
+   */
+  sort?: string;
+  /**
+   * If the sort value is specified, sort_type specifies whether the list must be sorted in ascending or descending order. If sort_type is specified with no sort value, the list is sorted based on the first_name attribute. Valid values: `asc`, `desc`
+   */
+  sort_type?: string;
+  /**
+   * Page number starting from which the response data is retrieved. Each `page` contains maximum 50 entries. Use this parameter to paginate results.
+   */
+  page?: number;
+}
+
 export {
   // Applicant models
   Applicant,
