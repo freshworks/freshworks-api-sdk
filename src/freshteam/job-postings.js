@@ -22,6 +22,21 @@ export class JobPostings {
   /**
    * Fetches the list of job postings
    *
+   * ```js
+   * // Get the first page of list of job postings with default sort order
+   * const jobs = await ft.jobPostings.list()
+   *
+   * // Paginated search. Fetch page 1
+   * const page1 = await ft.jobPostings.list({
+   *   page: 1
+   * });
+   *
+   * // Get page 2 of the same query as above
+   * const page2 = await ft.jobPostings.list({
+   *   page: 2
+   * });
+   * ```
+   *
    * @param {JobPostingsListQuery} [query] - Options to filter job postings
    * @returns {Promise<Job[]>} - Response with job postings list in the response body
    */
