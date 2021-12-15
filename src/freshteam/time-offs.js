@@ -1,6 +1,13 @@
 import { TimeoffApi } from "../gen/freshteam";
 import { Client } from "../http-client";
-import { LeaveType, LeaveRequest, LeaveRequestCreate, LeaveRequestApprove, LeaveRequestReject } from "./models";
+import {
+  LeaveType,
+  LeaveRequest,
+  LeaveRequestCreate,
+  LeaveRequestApprove,
+  LeaveRequestReject,
+  TimeOffsListQuery
+} from "./models";
 
 export class TimeOffs {
   /**
@@ -37,7 +44,7 @@ export class TimeOffs {
   /**
    * Fetches the list of time off requests of employees in the account
    *
-   * @param {object} [query = {}] - Query parameters
+   * @param {TimeOffsListQuery} [query = {}] - Query parameters
    * @returns {Promise<LeaveRequest>} - Response with time off requests list in the response body
    */
   async list(query = {}) {
