@@ -310,7 +310,7 @@ const newHireDetails = await ft.newHires.get(id, options);
 
 - Returns a `Promise` that resolves to a `Freshteam.models.EmployeeDetail` object
 - The first argument is ID of the new hire
-- The second argument is an `object` containing [query parameters accepted by the REST API](https://developers.freshteam.com/api/#retrieve_new_hire_information).
+- The second argument is an `Array` of `string` containing [names of related records to include](https://developers.freshteam.com/api/#retrieve_new_hire_information)
 
   - The property `options.include` can be added as an `Array` of `string` to include additional resources in the response, e.g.:
 

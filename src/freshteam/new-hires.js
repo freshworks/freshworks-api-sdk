@@ -27,12 +27,22 @@ export class NewHires {
   /**
    * Gets the details of a NewHire
    *
+   * For valid values of `include` array, see [REST API docs](https://developers.freshteam.com/api/#retrieve_new_hire_information).
+   *
+   * ```js
+   * // Get standalone record
+   * const hire = await ft.newHires.get(6000053372);
+   *
+   * // Include branch and team in response
+   * const hireIncludes = await ft.newHires.get(6000053372, ["branch", "team"]);
+   * ```
+   *
    * @param {number} id - Identifier of the NewHire
-   * @param {object} options - Additional options to add include properties
+   * @param {string[]} [include] - Additional options to add include properties.
    * @returns {Promise<NewHireDetail>} - Response with NewHire object in the response body
    */
-  async get(id, options) {
-    return this._api.getNewHire(id, options);
+  async get(id, include) {
+    return this._api.getNewHire(id, include);
   }
 
   /**
