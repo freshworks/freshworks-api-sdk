@@ -24,13 +24,13 @@ class NewHireCreate {
   /**
    * Constructs a new <code>NewHireCreate</code>.
    * @alias module:model/NewHireCreate
-   * @param firstName {String}
-   * @param lastName {String}
-   * @param personalEmail {String}
-   * @param joiningDate {Date}
+   * @param first_name {String}
+   * @param last_name {String}
+   * @param personal_email {String}
+   * @param joining_date {Date}
    */
-  constructor(firstName, lastName, personalEmail, joiningDate) {
-    NewHireCreate.initialize(this, firstName, lastName, personalEmail, joiningDate);
+  constructor(first_name, last_name, personal_email, joining_date) {
+    NewHireCreate.initialize(this, first_name, last_name, personal_email, joining_date);
   }
 
   /**
@@ -38,11 +38,11 @@ class NewHireCreate {
    * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
    * Only for internal use.
    */
-  static initialize(obj, firstName, lastName, personalEmail, joiningDate) {
-    obj["first_name"] = firstName;
-    obj["last_name"] = lastName;
-    obj["personal_email"] = personalEmail;
-    obj["joining_date"] = joiningDate;
+  static initialize(obj, first_name, last_name, personal_email, joining_date) {
+    obj["first_name"] = first_name;
+    obj["last_name"] = last_name;
+    obj["personal_email"] = personal_email;
+    obj["joining_date"] = joining_date;
   }
 
   /**

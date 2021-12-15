@@ -5,9 +5,9 @@
 | Name             | Type        | Description | Notes      |
 | ---------------- | ----------- | ----------- | ---------- |
 | **id**           | **Number**  |             | [optional] |
-| **userId**       | **Number**  |             | [optional] |
-| **licenseName**  | **String**  |             | [optional] |
-| **licenseId**    | **String**  |             | [optional] |
+| **user_id**      | **Number**  |             | [optional] |
+| **license_name** | **String**  |             | [optional] |
+| **license_id**   | **String**  |             | [optional] |
 | **restrictions** | **String**  |             | [optional] |
-| **expiryDate**   | **Date**    |             | [optional] |
+| **expiry_date**  | **Date**    |             | [optional] |
 | **deleted**      | **Boolean** |             | [optional] |

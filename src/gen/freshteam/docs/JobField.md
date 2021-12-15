@@ -2,22 +2,22 @@
 
 ## Properties
 
-| Name               | Type                                                                | Description | Notes      |
-| ------------------ | ------------------------------------------------------------------- | ----------- | ---------- |
-| **id**             | **Number**                                                          |             | [optional] |
-| **createdAt**      | **Date**                                                            |             | [optional] |
-| **updatedAt**      | **Date**                                                            |             | [optional] |
-| **jobFormId**      | **Number**                                                          |             | [optional] |
-| **deleted**        | **Boolean**                                                         |             | [optional] |
-| **name**           | **String**                                                          |             | [optional] |
-| **label**          | **String**                                                          |             | [optional] |
-| **fieldType**      | **String**                                                          |             | [optional] |
-| **position**       | **Number**                                                          |             | [optional] |
-| **required**       | **Boolean**                                                         |             | [optional] |
-| **\_default**      | **Boolean**                                                         |             | [optional] |
-| **\_public**       | **Boolean**                                                         |             | [optional] |
-| **restricted**     | **Boolean**                                                         |             | [optional] |
-| **picklistValues** | [**[EmployeeFieldPicklistValues]**](EmployeeFieldPicklistValues.md) |             | [optional] |
+| Name                | Type                                                                | Description | Notes      |
+| ------------------- | ------------------------------------------------------------------- | ----------- | ---------- |
+| **id**              | **Number**                                                          |             | [optional] |
+| **created_at**      | **Date**                                                            |             | [optional] |
+| **updated_at**      | **Date**                                                            |             | [optional] |
+| **job_form_id**     | **Number**                                                          |             | [optional] |
+| **deleted**         | **Boolean**                                                         |             | [optional] |
+| **name**            | **String**                                                          |             | [optional] |
+| **label**           | **String**                                                          |             | [optional] |
+| **field_type**      | **String**                                                          |             | [optional] |
+| **position**        | **Number**                                                          |             | [optional] |
+| **required**        | **Boolean**                                                         |             | [optional] |
+| **\_default**       | **Boolean**                                                         |             | [optional] |
+| **\_public**        | **Boolean**                                                         |             | [optional] |
+| **restricted**      | **Boolean**                                                         |             | [optional] |
+| **picklist_values** | [**[EmployeeFieldPicklistValues]**](EmployeeFieldPicklistValues.md) |             | [optional] |
 
 ## Enum: FieldTypeEnum
 

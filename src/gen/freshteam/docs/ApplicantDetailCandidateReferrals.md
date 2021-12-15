@@ -4,7 +4,7 @@
 
 | Name             | Type       | Description | Notes      |
 | ---------------- | ---------- | ----------- | ---------- |
-| **userId**       | **Number** |             | [optional] |
+| **user_id**      | **Number** |             | [optional] |
 | **relationship** | **String** |             | [optional] |
 
 ## Enum: RelationshipEnum

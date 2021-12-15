@@ -2,29 +2,29 @@
 
 ## Properties
 
-| Name                        | Type                                                                | Description | Notes      |
-| --------------------------- | ------------------------------------------------------------------- | ----------- | ---------- |
-| **id**                      | **Number**                                                          |             | [optional] |
-| **createdAt**               | **Date**                                                            |             | [optional] |
-| **updatedAt**               | **Date**                                                            |             | [optional] |
-| **applicantFormId**         | **Number**                                                          |             | [optional] |
-| **name**                    | **String**                                                          |             | [optional] |
-| **label**                   | **String**                                                          |             | [optional] |
-| **fieldType**               | **String**                                                          |             | [optional] |
-| **position**                | **Number**                                                          |             | [optional] |
-| **\_default**               | **Boolean**                                                         |             | [optional] |
-| **groupLabel**              | **String**                                                          |             | [optional] |
-| **groupPosition**           | **String**                                                          |             | [optional] |
-| **groupName**               | **String**                                                          |             | [optional] |
-| **externalField**           | **Boolean**                                                         |             | [optional] |
-| **recruiterField**          | **Boolean**                                                         |             | [optional] |
-| **vendorField**             | **Boolean**                                                         |             | [optional] |
-| **requiredInVendorForm**    | **Boolean**                                                         |             | [optional] |
-| **requiredInExternalForm**  | **Boolean**                                                         |             | [optional] |
-| **requiredInRecruiterForm** | **Boolean**                                                         |             | [optional] |
-| **viewableBy**              | **String**                                                          |             | [optional] |
-| **baseModel**               | **String**                                                          |             | [optional] |
-| **picklistValues**          | [**[EmployeeFieldPicklistValues]**](EmployeeFieldPicklistValues.md) |             | [optional] |
+| Name                           | Type                                                                | Description | Notes      |
+| ------------------------------ | ------------------------------------------------------------------- | ----------- | ---------- |
+| **id**                         | **Number**                                                          |             | [optional] |
+| **created_at**                 | **Date**                                                            |             | [optional] |
+| **updated_at**                 | **Date**                                                            |             | [optional] |
+| **applicant_form_id**          | **Number**                                                          |             | [optional] |
+| **name**                       | **String**                                                          |             | [optional] |
+| **label**                      | **String**                                                          |             | [optional] |
+| **field_type**                 | **String**                                                          |             | [optional] |
+| **position**                   | **Number**                                                          |             | [optional] |
+| **\_default**                  | **Boolean**                                                         |             | [optional] |
+| **group_label**                | **String**                                                          |             | [optional] |
+| **group_position**             | **String**                                                          |             | [optional] |
+| **group_name**                 | **String**                                                          |             | [optional] |
+| **external_field**             | **Boolean**                                                         |             | [optional] |
+| **recruiter_field**            | **Boolean**                                                         |             | [optional] |
+| **vendor_field**               | **Boolean**                                                         |             | [optional] |
+| **required_in_vendor_form**    | **Boolean**                                                         |             | [optional] |
+| **required_in_external_form**  | **Boolean**                                                         |             | [optional] |
+| **required_in_recruiter_form** | **Boolean**                                                         |             | [optional] |
+| **viewable_by**                | **String**                                                          |             | [optional] |
+| **base_model**                 | **String**                                                          |             | [optional] |
+| **picklist_values**            | [**[EmployeeFieldPicklistValues]**](EmployeeFieldPicklistValues.md) |             | [optional] |
 
 ## Enum: FieldTypeEnum
 

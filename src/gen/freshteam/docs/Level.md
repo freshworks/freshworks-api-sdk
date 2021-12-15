@@ -2,9 +2,9 @@
 
 ## Properties
 
-| Name          | Type       | Description | Notes      |
-| ------------- | ---------- | ----------- | ---------- |
-| **id**        | **Number** |             | [optional] |
-| **createdAt** | **Date**   |             | [optional] |
-| **updatedAt** | **Date**   |             | [optional] |
-| **name**      | **String** |             | [optional] |
+| Name           | Type       | Description | Notes      |
+| -------------- | ---------- | ----------- | ---------- |
+| **id**         | **Number** |             | [optional] |
+| **created_at** | **Date**   |             | [optional] |
+| **updated_at** | **Date**   |             | [optional] |
+| **name**       | **String** |             | [optional] |

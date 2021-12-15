@@ -43,14 +43,14 @@ export default class NewHireApi {
   /**
    * Create an NewHire
    * Create an NewHire
-   * @param {module:model/NewHireCreate} newHire
+   * @param {module:model/NewHireCreate} new_hire
    * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/NewHire} and HTTP response
    */
-  createNewHireWithHttpInfo(newHire) {
-    let postBody = newHire;
-    // verify the required parameter 'newHire' is set
-    if (newHire === undefined || newHire === null) {
-      throw new Error("Missing the required parameter 'newHire' when calling createNewHire");
+  createNewHireWithHttpInfo(new_hire) {
+    let postBody = new_hire;
+    // verify the required parameter 'new_hire' is set
+    if (new_hire === undefined || new_hire === null) {
+      throw new Error("Missing the required parameter 'new_hire' when calling createNewHire");
     }
 
     let pathParams = {};
@@ -81,11 +81,11 @@ export default class NewHireApi {
   /**
    * Create an NewHire
    * Create an NewHire
-   * @param {module:model/NewHireCreate} newHire
+   * @param {module:model/NewHireCreate} new_hire
    * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/NewHire}
    */
-  createNewHire(newHire) {
-    return this.createNewHireWithHttpInfo(newHire).then(function (response_and_data) {
+  createNewHire(new_hire) {
+    return this.createNewHireWithHttpInfo(new_hire).then(function (response_and_data) {
       return response_and_data.data;
     });
   }
@@ -152,15 +152,15 @@ export default class NewHireApi {
   /**
    * Update a NewHire
    * Update a NewHire
-   * @param {module:model/NewHireCreate} newHire
+   * @param {module:model/NewHireCreate} new_hire
    * @param {Number} id the new_hire identifier, as id
    * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/NewHire} and HTTP response
    */
-  updateNewHireWithHttpInfo(newHire, id) {
-    let postBody = newHire;
-    // verify the required parameter 'newHire' is set
-    if (newHire === undefined || newHire === null) {
-      throw new Error("Missing the required parameter 'newHire' when calling updateNewHire");
+  updateNewHireWithHttpInfo(new_hire, id) {
+    let postBody = new_hire;
+    // verify the required parameter 'new_hire' is set
+    if (new_hire === undefined || new_hire === null) {
+      throw new Error("Missing the required parameter 'new_hire' when calling updateNewHire");
     }
     // verify the required parameter 'id' is set
     if (id === undefined || id === null) {
@@ -197,12 +197,12 @@ export default class NewHireApi {
   /**
    * Update a NewHire
    * Update a NewHire
-   * @param {module:model/NewHireCreate} newHire
+   * @param {module:model/NewHireCreate} new_hire
    * @param {Number} id the new_hire identifier, as id
    * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/NewHire}
    */
-  updateNewHire(newHire, id) {
-    return this.updateNewHireWithHttpInfo(newHire, id).then(function (response_and_data) {
+  updateNewHire(new_hire, id) {
+    return this.updateNewHireWithHttpInfo(new_hire, id).then(function (response_and_data) {
       return response_and_data.data;
     });
   }

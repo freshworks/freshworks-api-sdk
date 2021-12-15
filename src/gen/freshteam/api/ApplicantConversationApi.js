@@ -40,16 +40,16 @@ export default class ApplicantConversationApi {
   /**
    * Create an Applicant Conversation
    * Create an Applicant Conversation
-   * @param {module:model/ApplicantConversationCreate} applicantConversation
+   * @param {module:model/ApplicantConversationCreate} applicant_conversation
    * @param {Number} id the applicant identifier, as id
    * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ApplicantConversation} and HTTP response
    */
-  createApplicantConversationWithHttpInfo(applicantConversation, id) {
-    let postBody = applicantConversation;
-    // verify the required parameter 'applicantConversation' is set
-    if (applicantConversation === undefined || applicantConversation === null) {
+  createApplicantConversationWithHttpInfo(applicant_conversation, id) {
+    let postBody = applicant_conversation;
+    // verify the required parameter 'applicant_conversation' is set
+    if (applicant_conversation === undefined || applicant_conversation === null) {
       throw new Error(
-        "Missing the required parameter 'applicantConversation' when calling createApplicantConversation"
+        "Missing the required parameter 'applicant_conversation' when calling createApplicantConversation"
       );
     }
     // verify the required parameter 'id' is set
@@ -87,12 +87,12 @@ export default class ApplicantConversationApi {
   /**
    * Create an Applicant Conversation
    * Create an Applicant Conversation
-   * @param {module:model/ApplicantConversationCreate} applicantConversation
+   * @param {module:model/ApplicantConversationCreate} applicant_conversation
    * @param {Number} id the applicant identifier, as id
    * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ApplicantConversation}
    */
-  createApplicantConversation(applicantConversation, id) {
-    return this.createApplicantConversationWithHttpInfo(applicantConversation, id).then(function (response_and_data) {
+  createApplicantConversation(applicant_conversation, id) {
+    return this.createApplicantConversationWithHttpInfo(applicant_conversation, id).then(function (response_and_data) {
       return response_and_data.data;
     });
   }

@@ -5,11 +5,11 @@
 | Name            | Type         | Description | Notes      |
 | --------------- | ------------ | ----------- | ---------- |
 | **id**          | **Number**   |             | [optional] |
-| **createdAt**   | **Date**     |             | [optional] |
-| **updatedAt**   | **Date**     |             | [optional] |
+| **created_at**  | **Date**     |             | [optional] |
+| **updated_at**  | **Date**     |             | [optional] |
 | **body**        | **String**   |             | [optional] |
-| **bodyText**    | **String**   |             | [optional] |
+| **body_text**   | **String**   |             | [optional] |
 | **\_private**   | **Boolean**  |             | [optional] |
-| **userId**      | **Number**   |             | [optional] |
-| **notifyIds**   | **[Number]** |             | [optional] |
+| **user_id**     | **Number**   |             | [optional] |
+| **notify_ids**  | **[Number]** |             | [optional] |
 | **attachments** | **[File]**   |             | [optional] |

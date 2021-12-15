@@ -2,21 +2,21 @@
 
 ## Properties
 
-| Name            | Type        | Description | Notes      |
-| --------------- | ----------- | ----------- | ---------- |
-| **id**          | **Number**  |             | [optional] |
-| **createdAt**   | **Date**    |             | [optional] |
-| **updatedAt**   | **Date**    |             | [optional] |
-| **deleted**     | **Boolean** |             | [optional] |
-| **name**        | **String**  |             | [optional] |
-| **street**      | **String**  |             | [optional] |
-| **state**       | **String**  |             | [optional] |
-| **city**        | **String**  |             | [optional] |
-| **countryCode** | **String**  |             | [optional] |
-| **zip**         | **String**  |             | [optional] |
-| **timeZone**    | **String**  |             | [optional] |
-| **currency**    | **String**  |             | [optional] |
-| **language**    | **String**  |             | [optional] |
-| **mainOffice**  | **Boolean** |             | [optional] |
-| **contactInfo** | **String**  |             | [optional] |
-| **dateFormat**  | **String**  |             | [optional] |
+| Name             | Type        | Description | Notes      |
+| ---------------- | ----------- | ----------- | ---------- |
+| **id**           | **Number**  |             | [optional] |
+| **created_at**   | **Date**    |             | [optional] |
+| **updated_at**   | **Date**    |             | [optional] |
+| **deleted**      | **Boolean** |             | [optional] |
+| **name**         | **String**  |             | [optional] |
+| **street**       | **String**  |             | [optional] |
+| **state**        | **String**  |             | [optional] |
+| **city**         | **String**  |             | [optional] |
+| **country_code** | **String**  |             | [optional] |
+| **zip**          | **String**  |             | [optional] |
+| **time_zone**    | **String**  |             | [optional] |
+| **currency**     | **String**  |             | [optional] |
+| **language**     | **String**  |             | [optional] |
+| **main_office**  | **Boolean** |             | [optional] |
+| **contact_info** | **String**  |             | [optional] |
+| **date_format**  | **String**  |             | [optional] |

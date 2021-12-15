@@ -28,7 +28,7 @@ ApiKeyAuth.apiKey = "YOUR API KEY";
 
 let apiInstance = new FreshteamApiSdkCodegen.EmployeeFieldsApi();
 let opts = {
-  employeeFields: new FreshteamApiSdkCodegen.InlineObject2() // InlineObject2 |
+  employee_fields: new FreshteamApiSdkCodegen.InlineObject2() // InlineObject2 |
 };
 apiInstance.createEmployeeFiled(opts).then(
   data => {
@@ -42,9 +42,9 @@ apiInstance.createEmployeeFiled(opts).then(
 
 ### Parameters
 
-| Name               | Type                                  | Description | Notes      |
-| ------------------ | ------------------------------------- | ----------- | ---------- |
-| **employeeFields** | [**InlineObject2**](InlineObject2.md) |             | [optional] |
+| Name                | Type                                  | Description | Notes      |
+| ------------------- | ------------------------------------- | ----------- | ---------- |
+| **employee_fields** | [**InlineObject2**](InlineObject2.md) |             | [optional] |
 
 ### Return type
 

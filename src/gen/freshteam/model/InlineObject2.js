@@ -23,11 +23,11 @@ class InlineObject2 {
    * Constructs a new <code>InlineObject2</code>.
    * @alias module:model/InlineObject2
    * @param label {String}
-   * @param sectionName {String}
-   * @param fieldType {module:model/InlineObject2.FieldTypeEnum}
+   * @param section_name {String}
+   * @param field_type {module:model/InlineObject2.FieldTypeEnum}
    */
-  constructor(label, sectionName, fieldType) {
-    InlineObject2.initialize(this, label, sectionName, fieldType);
+  constructor(label, section_name, field_type) {
+    InlineObject2.initialize(this, label, section_name, field_type);
   }
 
   /**
@@ -35,10 +35,10 @@ class InlineObject2 {
    * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
    * Only for internal use.
    */
-  static initialize(obj, label, sectionName, fieldType) {
+  static initialize(obj, label, section_name, field_type) {
     obj["label"] = label;
-    obj["section_name"] = sectionName;
-    obj["field_type"] = fieldType;
+    obj["section_name"] = section_name;
+    obj["field_type"] = field_type;
   }
 
   /**

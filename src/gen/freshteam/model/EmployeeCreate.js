@@ -26,13 +26,13 @@ class EmployeeCreate {
   /**
    * Constructs a new <code>EmployeeCreate</code>.
    * @alias module:model/EmployeeCreate
-   * @param firstName {String}
-   * @param lastName {String}
-   * @param officialEmail {String}
-   * @param roleIds {Array.<Number>}
+   * @param first_name {String}
+   * @param last_name {String}
+   * @param official_email {String}
+   * @param role_ids {Array.<Number>}
    */
-  constructor(firstName, lastName, officialEmail, roleIds) {
-    EmployeeCreate.initialize(this, firstName, lastName, officialEmail, roleIds);
+  constructor(first_name, last_name, official_email, role_ids) {
+    EmployeeCreate.initialize(this, first_name, last_name, official_email, role_ids);
   }
 
   /**
@@ -40,11 +40,11 @@ class EmployeeCreate {
    * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
    * Only for internal use.
    */
-  static initialize(obj, firstName, lastName, officialEmail, roleIds) {
-    obj["first_name"] = firstName;
-    obj["last_name"] = lastName;
-    obj["official_email"] = officialEmail;
-    obj["role_ids"] = roleIds;
+  static initialize(obj, first_name, last_name, official_email, role_ids) {
+    obj["first_name"] = first_name;
+    obj["last_name"] = last_name;
+    obj["official_email"] = official_email;
+    obj["role_ids"] = role_ids;
   }
 
   /**

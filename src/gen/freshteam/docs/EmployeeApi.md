@@ -136,23 +136,23 @@ ApiKeyAuth.apiKey = "YOUR API KEY";
 let apiInstance = new FreshteamApiSdkCodegen.EmployeeApi();
 let opts = {
   status: ["null"], // [String] | the status key
-  firstName: "firstName_example", // String |  First Name of users to query
-  lastName: "lastName_example", // String | Last Name of users to query
-  personalEmail: "personalEmail_example", // String | Personal Email of users to query
-  officialEmail: "officialEmail_example", // String | Official Email of users to query
-  employeeType: "employeeType_example", // String | Employee type of users to query
+  first_name: "first_name_example", // String |  First Name of users to query
+  last_name: "last_name_example", // String | Last Name of users to query
+  personal_email: "personal_email_example", // String | Personal Email of users to query
+  official_email: "official_email_example", // String | Official Email of users to query
+  employee_type: "employee_type_example", // String | Employee type of users to query
   department: [null], // [Number] | the identifier of users departments to query, as id
-  businessUnit: [null], // [Number] | the identifier of users business units to query, as id
+  business_unit: [null], // [Number] | the identifier of users business units to query, as id
   location: [null], // [Number] | the identifier of user location, as id
-  reportingManager: [null], // [Number] | the identifier of user reporting manager, as id
-  employeeId: "employeeId_example", // String | Employee Id of users to query
-  updatedSince: new Date("2013-10-20"), // Date | the identifier of user updated_since
+  reporting_manager: [null], // [Number] | the identifier of user reporting manager, as id
+  employee_id: "employee_id_example", // String | Employee Id of users to query
+  updated_since: new Date("2013-10-20"), // Date | the identifier of user updated_since
   draft: true, // Boolean | the identifier of user draft
   deleted: true, // Boolean | the identifier of user deleted
   terminated: true, // Boolean | the identifier of user terminated
   page: 56, // Number | page number
   sort: "sort_example", // String | Sort By
-  sortType: "sortType_example" // String | Sort Type
+  sort_type: "sort_type_example" // String | Sort Type
 };
 apiInstance.getEmployees(opts).then(
   data => {
@@ -166,26 +166,26 @@ apiInstance.getEmployees(opts).then(
 
 ### Parameters
 
-| Name                 | Type                      | Description                                            | Notes      |
-| -------------------- | ------------------------- | ------------------------------------------------------ | ---------- |
-| **status**           | [**[String]**](String.md) | the status key                                         | [optional] |
-| **firstName**        | **String**                | First Name of users to query                           | [optional] |
-| **lastName**         | **String**                | Last Name of users to query                            | [optional] |
-| **personalEmail**    | **String**                | Personal Email of users to query                       | [optional] |
-| **officialEmail**    | **String**                | Official Email of users to query                       | [optional] |
-| **employeeType**     | **String**                | Employee type of users to query                        | [optional] |
-| **department**       | [**[Number]**](Number.md) | the identifier of users departments to query, as id    | [optional] |
-| **businessUnit**     | [**[Number]**](Number.md) | the identifier of users business units to query, as id | [optional] |
-| **location**         | [**[Number]**](Number.md) | the identifier of user location, as id                 | [optional] |
-| **reportingManager** | [**[Number]**](Number.md) | the identifier of user reporting manager, as id        | [optional] |
-| **employeeId**       | **String**                | Employee Id of users to query                          | [optional] |
-| **updatedSince**     | **Date**                  | the identifier of user updated_since                   | [optional] |
-| **draft**            | **Boolean**               | the identifier of user draft                           | [optional] |
-| **deleted**          | **Boolean**               | the identifier of user deleted                         | [optional] |
-| **terminated**       | **Boolean**               | the identifier of user terminated                      | [optional] |
-| **page**             | **Number**                | page number                                            | [optional] |
-| **sort**             | **String**                | Sort By                                                | [optional] |
-| **sortType**         | **String**                | Sort Type                                              | [optional] |
+| Name                  | Type                      | Description                                            | Notes      |
+| --------------------- | ------------------------- | ------------------------------------------------------ | ---------- |
+| **status**            | [**[String]**](String.md) | the status key                                         | [optional] |
+| **first_name**        | **String**                | First Name of users to query                           | [optional] |
+| **last_name**         | **String**                | Last Name of users to query                            | [optional] |
+| **personal_email**    | **String**                | Personal Email of users to query                       | [optional] |
+| **official_email**    | **String**                | Official Email of users to query                       | [optional] |
+| **employee_type**     | **String**                | Employee type of users to query                        | [optional] |
+| **department**        | [**[Number]**](Number.md) | the identifier of users departments to query, as id    | [optional] |
+| **business_unit**     | [**[Number]**](Number.md) | the identifier of users business units to query, as id | [optional] |
+| **location**          | [**[Number]**](Number.md) | the identifier of user location, as id                 | [optional] |
+| **reporting_manager** | [**[Number]**](Number.md) | the identifier of user reporting manager, as id        | [optional] |
+| **employee_id**       | **String**                | Employee Id of users to query                          | [optional] |
+| **updated_since**     | **Date**                  | the identifier of user updated_since                   | [optional] |
+| **draft**             | **Boolean**               | the identifier of user draft                           | [optional] |
+| **deleted**           | **Boolean**               | the identifier of user deleted                         | [optional] |
+| **terminated**        | **Boolean**               | the identifier of user terminated                      | [optional] |
+| **page**              | **Number**                | page number                                            | [optional] |
+| **sort**              | **String**                | Sort By                                                | [optional] |
+| **sort_type**         | **String**                | Sort Type                                              | [optional] |
 
 ### Return type
 

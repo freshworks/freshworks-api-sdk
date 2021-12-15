@@ -2,15 +2,15 @@
 
 ## Properties
 
-| Name             | Type       | Description | Notes      |
-| ---------------- | ---------- | ----------- | ---------- |
-| **id**           | **Number** |             | [optional] |
-| **userId**       | **Number** |             | [optional] |
-| **name**         | **String** |             | [optional] |
-| **relationship** | **String** |             | [optional] |
-| **dateOfBirth**  | **String** |             | [optional] |
-| **gender**       | **String** |             | [optional] |
-| **deleted**      | **String** |             | [optional] |
+| Name              | Type       | Description | Notes      |
+| ----------------- | ---------- | ----------- | ---------- |
+| **id**            | **Number** |             | [optional] |
+| **user_id**       | **Number** |             | [optional] |
+| **name**          | **String** |             | [optional] |
+| **relationship**  | **String** |             | [optional] |
+| **date_of_birth** | **String** |             | [optional] |
+| **gender**        | **String** |             | [optional] |
+| **deleted**       | **String** |             | [optional] |
 
 ## Enum: RelationshipEnum
 

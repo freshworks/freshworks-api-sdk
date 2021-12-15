@@ -2,12 +2,12 @@
 
 ## Properties
 
-| Name              | Type       | Description | Notes      |
-| ----------------- | ---------- | ----------- | ---------- |
-| **name**          | **String** |             | [optional] |
-| **relationship**  | **String** |             | [optional] |
-| **contactNumber** | **String** |             | [optional] |
-| **address**       | **String** |             | [optional] |
+| Name               | Type       | Description | Notes      |
+| ------------------ | ---------- | ----------- | ---------- |
+| **name**           | **String** |             | [optional] |
+| **relationship**   | **String** |             | [optional] |
+| **contact_number** | **String** |             | [optional] |
+| **address**        | **String** |             | [optional] |
 
 ## Enum: RelationshipEnum
 

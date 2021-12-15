@@ -6,5 +6,5 @@
 | --------------- | ------------ | ----------- | ---------- |
 | **body**        | **String**   |             |
 | **\_private**   | **Boolean**  |             | [optional] |
-| **notifyIds**   | **[Number]** |             | [optional] |
+| **notify_ids**  | **[Number]** |             | [optional] |
 | **attachments** | **[File]**   |             | [optional] |

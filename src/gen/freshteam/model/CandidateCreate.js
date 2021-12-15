@@ -26,14 +26,14 @@ class CandidateCreate {
   /**
    * Constructs a new <code>CandidateCreate</code>.
    * @alias module:model/CandidateCreate
-   * @param firstName {String}
-   * @param lastName {String}
+   * @param first_name {String}
+   * @param last_name {String}
    * @param email {String}
-   * @param sourceId {Number}
-   * @param sourceCategoryId {Number}
+   * @param source_id {Number}
+   * @param source_category_id {Number}
    */
-  constructor(firstName, lastName, email, sourceId, sourceCategoryId) {
-    CandidateCreate.initialize(this, firstName, lastName, email, sourceId, sourceCategoryId);
+  constructor(first_name, last_name, email, source_id, source_category_id) {
+    CandidateCreate.initialize(this, first_name, last_name, email, source_id, source_category_id);
   }
 
   /**
@@ -41,12 +41,12 @@ class CandidateCreate {
    * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
    * Only for internal use.
    */
-  static initialize(obj, firstName, lastName, email, sourceId, sourceCategoryId) {
-    obj["first_name"] = firstName;
-    obj["last_name"] = lastName;
+  static initialize(obj, first_name, last_name, email, source_id, source_category_id) {
+    obj["first_name"] = first_name;
+    obj["last_name"] = last_name;
     obj["email"] = email;
-    obj["source_id"] = sourceId;
-    obj["source_category_id"] = sourceCategoryId;
+    obj["source_id"] = source_id;
+    obj["source_category_id"] = source_category_id;
   }
 
   /**

@@ -2,16 +2,16 @@
 
 ## Properties
 
-| Name               | Type        | Description | Notes      |
-| ------------------ | ----------- | ----------- | ---------- |
-| **id**             | **Number**  |             | [optional] |
-| **userId**         | **Number**  |             | [optional] |
-| **status**         | **String**  |             | [optional] |
-| **vendor**         | **String**  |             | [optional] |
-| **initiationDate** | **Date**    |             | [optional] |
-| **completionDate** | **Date**    |             | [optional] |
-| **notes**          | **String**  |             | [optional] |
-| **deleted**        | **Boolean** |             | [optional] |
+| Name                | Type        | Description | Notes      |
+| ------------------- | ----------- | ----------- | ---------- |
+| **id**              | **Number**  |             | [optional] |
+| **user_id**         | **Number**  |             | [optional] |
+| **status**          | **String**  |             | [optional] |
+| **vendor**          | **String**  |             | [optional] |
+| **initiation_date** | **Date**    |             | [optional] |
+| **completion_date** | **Date**    |             | [optional] |
+| **notes**           | **String**  |             | [optional] |
+| **deleted**         | **Boolean** |             | [optional] |
 
 ## Enum: StatusEnum
 

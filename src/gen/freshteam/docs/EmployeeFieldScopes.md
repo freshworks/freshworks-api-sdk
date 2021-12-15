@@ -2,8 +2,8 @@
 
 ## Properties
 
-| Name             | Type       | Description | Notes      |
-| ---------------- | ---------- | ----------- | ---------- |
-| **id**           | **Number** |             | [optional] |
-| **scopableType** | **String** |             | [optional] |
-| **scopableId**   | **Number** |             | [optional] |
+| Name              | Type       | Description | Notes      |
+| ----------------- | ---------- | ----------- | ---------- |
+| **id**            | **Number** |             | [optional] |
+| **scopable_type** | **String** |             | [optional] |
+| **scopable_id**   | **Number** |             | [optional] |

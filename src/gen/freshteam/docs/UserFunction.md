@@ -2,10 +2,10 @@
 
 ## Properties
 
-| Name          | Type        | Description | Notes      |
-| ------------- | ----------- | ----------- | ---------- |
-| **id**        | **Number**  |             | [optional] |
-| **createdAt** | **Date**    |             | [optional] |
-| **updatedAt** | **Date**    |             | [optional] |
-| **deleted**   | **Boolean** |             | [optional] |
-| **value**     | **String**  |             | [optional] |
+| Name           | Type        | Description | Notes      |
+| -------------- | ----------- | ----------- | ---------- |
+| **id**         | **Number**  |             | [optional] |
+| **created_at** | **Date**    |             | [optional] |
+| **updated_at** | **Date**    |             | [optional] |
+| **deleted**    | **Boolean** |             | [optional] |
+| **value**      | **String**  |             | [optional] |
