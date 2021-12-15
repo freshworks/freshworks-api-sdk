@@ -1,6 +1,6 @@
 import { EmployeeApi, EmployeeFieldsApi } from "../gen/freshteam";
 import { Client } from "../http-client";
-import { Employee, EmployeeCreate, EmployeeDetail, EmployeeField } from "./models";
+import { Employee, EmployeeCreate, EmployeeDetail, EmployeeField, EmployeeListQuery } from "./models";
 
 export class Employees {
   /**
@@ -20,8 +20,28 @@ export class Employees {
   /**
    * List all employees
    *
+   * ```js
+   * // Get the first page of list of employees with default sort order
+   * const empList = await ft.employees.list()
+   *
+   * // Set sort key and sort type and paginate
+   * // Get list of employees sorted by first_name in ascending order
+   * const page1 = await ft.employees.list({
+   *   sort: "first_name",
+   *   sort_type: "asc",
+   *   page: 1
+   * });
+   *
+   * // Get page 2 of the same query as above
+   * const page2 = await ft.employees.list({
+   *   sort: "first_name",
+   *   sort_type: "asc",
+   *   page: 2
+   * });
+   * ```
+   *
    * @public
-   * @param {object} [query = {}] - Query parameters
+   * @param {EmployeeListQuery} [query] - Query parameters
    * @returns {Promise<Employee[]>} - Response with array of employees in the response body
    */
   async list(query = {}) {
