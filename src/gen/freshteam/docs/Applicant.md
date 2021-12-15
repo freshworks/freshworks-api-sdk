@@ -2,18 +2,18 @@
 
 ## Properties
 
-| Name              | Type                                            | Description | Notes      |
-| ----------------- | ----------------------------------------------- | ----------- | ---------- |
-| **id**            | **Number**                                      |             | [optional] |
-| **createdAt**     | **Date**                                        |             | [optional] |
-| **updatedAt**     | **Date**                                        |             | [optional] |
-| **status**        | **String**                                      |             | [optional] |
-| **stage**         | **String**                                      |             | [optional] |
-| **subStageId**    | **Number**                                      |             | [optional] |
-| **jobId**         | **Number**                                      |             | [optional] |
-| **requisitionId** | **Number**                                      |             | [optional] |
-| **deleted**       | **Boolean**                                     |             | [optional] |
-| **candidate**     | [**ApplicantCandidate**](ApplicantCandidate.md) |             | [optional] |
+| Name               | Type                                            | Description | Notes      |
+| ------------------ | ----------------------------------------------- | ----------- | ---------- |
+| **id**             | **Number**                                      |             | [optional] |
+| **created_at**     | **Date**                                        |             | [optional] |
+| **updated_at**     | **Date**                                        |             | [optional] |
+| **status**         | **String**                                      |             | [optional] |
+| **stage**          | **String**                                      |             | [optional] |
+| **sub_stage_id**   | **Number**                                      |             | [optional] |
+| **job_id**         | **Number**                                      |             | [optional] |
+| **requisition_id** | **Number**                                      |             | [optional] |
+| **deleted**        | **Boolean**                                     |             | [optional] |
+| **candidate**      | [**ApplicantCandidate**](ApplicantCandidate.md) |             | [optional] |
 
 ## Enum: StatusEnum
 

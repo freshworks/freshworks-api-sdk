@@ -2,39 +2,39 @@
 
 ## Properties
 
-| Name                     | Type                                                                | Description | Notes      |
-| ------------------------ | ------------------------------------------------------------------- | ----------- | ---------- |
-| **id**                   | **Number**                                                          |             | [optional] |
-| **createdAt**            | **Date**                                                            |             | [optional] |
-| **updatedAt**            | **Date**                                                            |             | [optional] |
-| **deleted**              | **Boolean**                                                         |             | [optional] |
-| **workNumbers**          | [**[EmployeeWorkPhoneNumber]**](EmployeeWorkPhoneNumber.md)         |             | [optional] |
-| **nickName**             | **String**                                                          |             | [optional] |
-| **dateOfBirth**          | **Date**                                                            |             | [optional] |
-| **gender**               | **String**                                                          |             | [optional] |
-| **designation**          | **String**                                                          |             | [optional] |
-| **phoneNumbers**         | [**[EmployeePhoneNumber]**](EmployeePhoneNumber.md)                 |             | [optional] |
-| **joiningDate**          | **Date**                                                            |             | [optional] |
-| **terminationDate**      | **Date**                                                            |             | [optional] |
-| **firstName**            | **String**                                                          |             | [optional] |
-| **middleName**           | **String**                                                          |             | [optional] |
-| **lastName**             | **String**                                                          |             | [optional] |
-| **employeeId**           | **String**                                                          |             | [optional] |
-| **employeeType**         | **String**                                                          |             | [optional] |
-| **status**               | **String**                                                          |             | [optional] |
-| **officialEmail**        | **String**                                                          |             | [optional] |
-| **personalEmail**        | **String**                                                          |             | [optional] |
-| **branchId**             | **Number**                                                          |             | [optional] |
-| **reportingToId**        | **Number**                                                          |             | [optional] |
-| **hrInchargeId**         | **Number**                                                          |             | [optional] |
-| **teamId**               | **Number**                                                          |             | [optional] |
-| **departmentId**         | **Number**                                                          |             | [optional] |
-| **subDepartmentId**      | **Number**                                                          |             | [optional] |
-| **businessUnitId**       | **Number**                                                          |             | [optional] |
-| **shiftId**              | **Number**                                                          |             | [optional] |
-| **address**              | [**EmployeeAddress**](EmployeeAddress.md)                           |             | [optional] |
-| **communicationAddress** | [**EmployeeCommunicationAddress**](EmployeeCommunicationAddress.md) |             | [optional] |
-| **confirmed**            | **Boolean**                                                         |             | [optional] |
+| Name                      | Type                                                                | Description | Notes      |
+| ------------------------- | ------------------------------------------------------------------- | ----------- | ---------- |
+| **id**                    | **Number**                                                          |             | [optional] |
+| **created_at**            | **Date**                                                            |             | [optional] |
+| **updated_at**            | **Date**                                                            |             | [optional] |
+| **deleted**               | **Boolean**                                                         |             | [optional] |
+| **work_numbers**          | [**[EmployeeWorkPhoneNumber]**](EmployeeWorkPhoneNumber.md)         |             | [optional] |
+| **nick_name**             | **String**                                                          |             | [optional] |
+| **date_of_birth**         | **Date**                                                            |             | [optional] |
+| **gender**                | **String**                                                          |             | [optional] |
+| **designation**           | **String**                                                          |             | [optional] |
+| **phone_numbers**         | [**[EmployeePhoneNumber]**](EmployeePhoneNumber.md)                 |             | [optional] |
+| **joining_date**          | **Date**                                                            |             | [optional] |
+| **termination_date**      | **Date**                                                            |             | [optional] |
+| **first_name**            | **String**                                                          |             | [optional] |
+| **middle_name**           | **String**                                                          |             | [optional] |
+| **last_name**             | **String**                                                          |             | [optional] |
+| **employee_id**           | **String**                                                          |             | [optional] |
+| **employee_type**         | **String**                                                          |             | [optional] |
+| **status**                | **String**                                                          |             | [optional] |
+| **official_email**        | **String**                                                          |             | [optional] |
+| **personal_email**        | **String**                                                          |             | [optional] |
+| **branch_id**             | **Number**                                                          |             | [optional] |
+| **reporting_to_id**       | **Number**                                                          |             | [optional] |
+| **hr_incharge_id**        | **Number**                                                          |             | [optional] |
+| **team_id**               | **Number**                                                          |             | [optional] |
+| **department_id**         | **Number**                                                          |             | [optional] |
+| **sub_department_id**     | **Number**                                                          |             | [optional] |
+| **business_unit_id**      | **Number**                                                          |             | [optional] |
+| **shift_id**              | **Number**                                                          |             | [optional] |
+| **address**               | [**EmployeeAddress**](EmployeeAddress.md)                           |             | [optional] |
+| **communication_address** | [**EmployeeCommunicationAddress**](EmployeeCommunicationAddress.md) |             | [optional] |
+| **confirmed**             | **Boolean**                                                         |             | [optional] |
 
 ## Enum: GenderEnum
 

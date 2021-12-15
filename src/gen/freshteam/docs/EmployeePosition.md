@@ -2,16 +2,16 @@
 
 ## Properties
 
-| Name                      | Type                                            | Description | Notes      |
-| ------------------------- | ----------------------------------------------- | ----------- | ---------- |
-| **id**                    | **Number**                                      |             | [optional] |
-| **userId**                | **Number**                                      |             | [optional] |
-| **company**               | **String**                                      |             | [optional] |
-| **startDate**             | **String**                                      |             | [optional] |
-| **endDate**               | **String**                                      |             | [optional] |
-| **role**                  | **String**                                      |             | [optional] |
-| **salaryValue**           | **String**                                      |             | [optional] |
-| **otherSalaryComponents** | **String**                                      |             | [optional] |
-| **description**           | **String**                                      |             | [optional] |
-| **deleted**               | **Boolean**                                     |             | [optional] |
-| **refernces**             | [**[EmployeeReference]**](EmployeeReference.md) |             | [optional] |
+| Name                        | Type                                            | Description | Notes      |
+| --------------------------- | ----------------------------------------------- | ----------- | ---------- |
+| **id**                      | **Number**                                      |             | [optional] |
+| **user_id**                 | **Number**                                      |             | [optional] |
+| **company**                 | **String**                                      |             | [optional] |
+| **start_date**              | **String**                                      |             | [optional] |
+| **end_date**                | **String**                                      |             | [optional] |
+| **role**                    | **String**                                      |             | [optional] |
+| **salary_value**            | **String**                                      |             | [optional] |
+| **other_salary_components** | **String**                                      |             | [optional] |
+| **description**             | **String**                                      |             | [optional] |
+| **deleted**                 | **Boolean**                                     |             | [optional] |
+| **refernces**               | [**[EmployeeReference]**](EmployeeReference.md) |             | [optional] |

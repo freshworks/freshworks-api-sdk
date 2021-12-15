@@ -42,12 +42,12 @@ export default class EmployeeFieldsApi {
    * Create a Custom Field
    * Create a Custom Field in Employee Form
    * @param {Object} opts Optional parameters
-   * @param {module:model/InlineObject2} opts.employeeFields
+   * @param {module:model/InlineObject2} opts.employee_fields
    * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/EmployeeField} and HTTP response
    */
   createEmployeeFiledWithHttpInfo(opts) {
     opts = opts || {};
-    let postBody = opts["employeeFields"];
+    let postBody = opts["employee_fields"];
 
     let pathParams = {};
     let queryParams = {};
@@ -78,7 +78,7 @@ export default class EmployeeFieldsApi {
    * Create a Custom Field
    * Create a Custom Field in Employee Form
    * @param {Object} opts Optional parameters
-   * @param {module:model/InlineObject2} opts.employeeFields
+   * @param {module:model/InlineObject2} opts.employee_fields
    * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/EmployeeField}
    */
   createEmployeeFiled(opts) {

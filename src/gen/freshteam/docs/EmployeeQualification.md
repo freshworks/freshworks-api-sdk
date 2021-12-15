@@ -2,16 +2,16 @@
 
 ## Properties
 
-| Name              | Type        | Description | Notes      |
-| ----------------- | ----------- | ----------- | ---------- |
-| **id**            | **Number**  |             | [optional] |
-| **userId**        | **Number**  |             | [optional] |
-| **degree**        | **String**  |             | [optional] |
-| **startDate**     | **Date**    |             | [optional] |
-| **endDate**       | **Date**    |             | [optional] |
-| **instituteName** | **String**  |             | [optional] |
-| **course**        | **String**  |             | [optional] |
-| **passOutDate**   | **Date**    |             | [optional] |
-| **description**   | **String**  |             | [optional] |
-| **gradeAverage**  | **String**  |             | [optional] |
-| **deleted**       | **Boolean** |             | [optional] |
+| Name               | Type        | Description | Notes      |
+| ------------------ | ----------- | ----------- | ---------- |
+| **id**             | **Number**  |             | [optional] |
+| **user_id**        | **Number**  |             | [optional] |
+| **degree**         | **String**  |             | [optional] |
+| **start_date**     | **Date**    |             | [optional] |
+| **end_date**       | **Date**    |             | [optional] |
+| **institute_name** | **String**  |             | [optional] |
+| **course**         | **String**  |             | [optional] |
+| **pass_out_date**  | **Date**    |             | [optional] |
+| **description**    | **String**  |             | [optional] |
+| **grade_average**  | **String**  |             | [optional] |
+| **deleted**        | **Boolean** |             | [optional] |

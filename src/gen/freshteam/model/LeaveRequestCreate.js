@@ -22,13 +22,13 @@ class LeaveRequestCreate {
   /**
    * Constructs a new <code>LeaveRequestCreate</code>.
    * @alias module:model/LeaveRequestCreate
-   * @param startDate {Date}
-   * @param endDate {Date}
-   * @param leaveTypeId {Number}
+   * @param start_date {Date}
+   * @param end_date {Date}
+   * @param leave_type_id {Number}
    * @param comments {String}
    */
-  constructor(startDate, endDate, leaveTypeId, comments) {
-    LeaveRequestCreate.initialize(this, startDate, endDate, leaveTypeId, comments);
+  constructor(start_date, end_date, leave_type_id, comments) {
+    LeaveRequestCreate.initialize(this, start_date, end_date, leave_type_id, comments);
   }
 
   /**
@@ -36,10 +36,10 @@ class LeaveRequestCreate {
    * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
    * Only for internal use.
    */
-  static initialize(obj, startDate, endDate, leaveTypeId, comments) {
-    obj["start_date"] = startDate;
-    obj["end_date"] = endDate;
-    obj["leave_type_id"] = leaveTypeId;
+  static initialize(obj, start_date, end_date, leave_type_id, comments) {
+    obj["start_date"] = start_date;
+    obj["end_date"] = end_date;
+    obj["leave_type_id"] = leave_type_id;
     obj["comments"] = comments;
   }
 

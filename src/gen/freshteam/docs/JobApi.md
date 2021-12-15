@@ -188,9 +188,9 @@ let opts = {
   department: [null], // [Number] | the identifier of jobs department to query, as id
   location: [null], // [Number] | the identifier of jobs location to query, as id
   remote: [null], // [Boolean] | remote flag of jobs to query
-  locationCity: ["null"], // [String] | jobs city to query
-  locationCountry: ["null"], // [String] | jobs country to query
-  locationState: ["null"] // [String] | jobs state to query
+  location_city: ["null"], // [String] | jobs city to query
+  location_country: ["null"], // [String] | jobs country to query
+  location_state: ["null"] // [String] | jobs state to query
 };
 apiInstance.getJobs(opts).then(
   data => {
@@ -204,17 +204,17 @@ apiInstance.getJobs(opts).then(
 
 ### Parameters
 
-| Name                | Type                        | Description                                       | Notes      |
-| ------------------- | --------------------------- | ------------------------------------------------- | ---------- |
-| **status**          | [**[String]**](String.md)   | the status key                                    | [optional] |
-| **title**           | **String**                  | Title of jobs to query                            | [optional] |
-| **type**            | **String**                  | type of jobs to query                             | [optional] |
-| **department**      | [**[Number]**](Number.md)   | the identifier of jobs department to query, as id | [optional] |
-| **location**        | [**[Number]**](Number.md)   | the identifier of jobs location to query, as id   | [optional] |
-| **remote**          | [**[Boolean]**](Boolean.md) | remote flag of jobs to query                      | [optional] |
-| **locationCity**    | [**[String]**](String.md)   | jobs city to query                                | [optional] |
-| **locationCountry** | [**[String]**](String.md)   | jobs country to query                             | [optional] |
-| **locationState**   | [**[String]**](String.md)   | jobs state to query                               | [optional] |
+| Name                 | Type                        | Description                                       | Notes      |
+| -------------------- | --------------------------- | ------------------------------------------------- | ---------- |
+| **status**           | [**[String]**](String.md)   | the status key                                    | [optional] |
+| **title**            | **String**                  | Title of jobs to query                            | [optional] |
+| **type**             | **String**                  | type of jobs to query                             | [optional] |
+| **department**       | [**[Number]**](Number.md)   | the identifier of jobs department to query, as id | [optional] |
+| **location**         | [**[Number]**](Number.md)   | the identifier of jobs location to query, as id   | [optional] |
+| **remote**           | [**[Boolean]**](Boolean.md) | remote flag of jobs to query                      | [optional] |
+| **location_city**    | [**[String]**](String.md)   | jobs city to query                                | [optional] |
+| **location_country** | [**[String]**](String.md)   | jobs country to query                             | [optional] |
+| **location_state**   | [**[String]**](String.md)   | jobs state to query                               | [optional] |
 
 ### Return type
 

@@ -2,13 +2,13 @@
 
 ## Properties
 
-| Name                  | Type         | Description | Notes      |
-| --------------------- | ------------ | ----------- | ---------- |
-| **startDate**         | **Date**     |             |
-| **endDate**           | **Date**     |             |
-| **optionalLeaveDays** | **[Date]**   |             | [optional] |
-| **notifyTo**          | **[String]** |             | [optional] |
-| **addToCalendar**     | **Boolean**  |             | [optional] |
-| **autoDeclineEvents** | **Boolean**  |             | [optional] |
-| **leaveTypeId**       | **Number**   |             |
-| **comments**          | **String**   |             |
+| Name                    | Type         | Description | Notes      |
+| ----------------------- | ------------ | ----------- | ---------- |
+| **start_date**          | **Date**     |             |
+| **end_date**            | **Date**     |             |
+| **optional_leave_days** | **[Date]**   |             | [optional] |
+| **notify_to**           | **[String]** |             | [optional] |
+| **add_to_calendar**     | **Boolean**  |             | [optional] |
+| **auto_decline_events** | **Boolean**  |             | [optional] |
+| **leave_type_id**       | **Number**   |             |
+| **comments**            | **String**   |             |

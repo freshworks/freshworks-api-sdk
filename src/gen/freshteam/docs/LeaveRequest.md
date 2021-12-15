@@ -2,26 +2,26 @@
 
 ## Properties
 
-| Name                   | Type       | Description | Notes      |
-| ---------------------- | ---------- | ----------- | ---------- |
-| **id**                 | **Number** |             | [optional] |
-| **createdAt**          | **Date**   |             | [optional] |
-| **updatedAt**          | **Date**   |             | [optional] |
-| **userId**             | **Number** |             | [optional] |
-| **startDate**          | **Date**   |             | [optional] |
-| **endDate**            | **Date**   |             | [optional] |
-| **status**             | **String** |             | [optional] |
-| **leaveUnits**         | **Number** |             | [optional] |
-| **optionalLeaveUnits** | **Number** |             | [optional] |
-| **leaveTypeId**        | **Number** |             | [optional] |
-| **statusComments**     | **String** |             | [optional] |
-| **approvedById**       | **Number** |             | [optional] |
-| **appliedById**        | **Number** |             | [optional] |
-| **cancelledById**      | **Number** |             | [optional] |
-| **rejectedById**       | **Number** |             | [optional] |
-| **comments**           | **String** |             | [optional] |
-| **rejectedAt**         | **Date**   |             | [optional] |
-| **cancelledAt**        | **Date**   |             | [optional] |
+| Name                     | Type       | Description | Notes      |
+| ------------------------ | ---------- | ----------- | ---------- |
+| **id**                   | **Number** |             | [optional] |
+| **created_at**           | **Date**   |             | [optional] |
+| **updated_at**           | **Date**   |             | [optional] |
+| **user_id**              | **Number** |             | [optional] |
+| **start_date**           | **Date**   |             | [optional] |
+| **end_date**             | **Date**   |             | [optional] |
+| **status**               | **String** |             | [optional] |
+| **leave_units**          | **Number** |             | [optional] |
+| **optional_leave_units** | **Number** |             | [optional] |
+| **leave_type_id**        | **Number** |             | [optional] |
+| **status_comments**      | **String** |             | [optional] |
+| **approved_by_id**       | **Number** |             | [optional] |
+| **applied_by_id**        | **Number** |             | [optional] |
+| **cancelled_by_id**      | **Number** |             | [optional] |
+| **rejected_by_id**       | **Number** |             | [optional] |
+| **comments**             | **String** |             | [optional] |
+| **rejected_at**          | **Date**   |             | [optional] |
+| **cancelled_at**         | **Date**   |             | [optional] |
 
 ## Enum: StatusEnum
 

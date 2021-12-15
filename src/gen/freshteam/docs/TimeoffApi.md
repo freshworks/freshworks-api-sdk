@@ -35,7 +35,7 @@ ApiKeyAuth.apiKey = "YOUR API KEY";
 let apiInstance = new FreshteamApiSdkCodegen.TimeoffApi();
 let id = 56; // Number | the timeoff type identifier, as id
 let opts = {
-  leaveRequest: new FreshteamApiSdkCodegen.InlineObject() // InlineObject |
+  leave_request: new FreshteamApiSdkCodegen.InlineObject() // InlineObject |
 };
 apiInstance.approveTimeoff(id, opts).then(
   () => {
@@ -49,10 +49,10 @@ apiInstance.approveTimeoff(id, opts).then(
 
 ### Parameters
 
-| Name             | Type                                | Description                        | Notes      |
-| ---------------- | ----------------------------------- | ---------------------------------- | ---------- |
-| **id**           | **Number**                          | the timeoff type identifier, as id |
-| **leaveRequest** | [**InlineObject**](InlineObject.md) |                                    | [optional] |
+| Name              | Type                                | Description                        | Notes      |
+| ----------------- | ----------------------------------- | ---------------------------------- | ---------- |
+| **id**            | **Number**                          | the timeoff type identifier, as id |
+| **leave_request** | [**InlineObject**](InlineObject.md) |                                    | [optional] |
 
 ### Return type
 
@@ -119,7 +119,7 @@ null (empty response body)
 
 ## createTimeOff
 
-> LeaveRequest createTimeOff(leaveRequest)
+> LeaveRequest createTimeOff(leave_request)
 
 Apply leave request for logged in user
 
@@ -137,8 +137,8 @@ ApiKeyAuth.apiKey = "YOUR API KEY";
 //ApiKeyAuth.apiKeyPrefix = 'Token';
 
 let apiInstance = new FreshteamApiSdkCodegen.TimeoffApi();
-let leaveRequest = new FreshteamApiSdkCodegen.LeaveRequestCreate(); // LeaveRequestCreate |
-apiInstance.createTimeOff(leaveRequest).then(
+let leave_request = new FreshteamApiSdkCodegen.LeaveRequestCreate(); // LeaveRequestCreate |
+apiInstance.createTimeOff(leave_request).then(
   data => {
     console.log("API called successfully. Returned data: " + data);
   },
@@ -150,9 +150,9 @@ apiInstance.createTimeOff(leaveRequest).then(
 
 ### Parameters
 
-| Name             | Type                                            | Description | Notes |
-| ---------------- | ----------------------------------------------- | ----------- | ----- |
-| **leaveRequest** | [**LeaveRequestCreate**](LeaveRequestCreate.md) |             |
+| Name              | Type                                            | Description | Notes |
+| ----------------- | ----------------------------------------------- | ----------- | ----- |
+| **leave_request** | [**LeaveRequestCreate**](LeaveRequestCreate.md) |             |
 
 ### Return type
 
@@ -337,10 +337,10 @@ let apiInstance = new FreshteamApiSdkCodegen.TimeoffApi();
 let opts = {
   status: ["null"], // [String] | the status key
   user: ["null"], // [String] | the identifier of user, id
-  leaveType: ["null"], // [String] | the identifier of leave_type, as id
+  leave_type: ["null"], // [String] | the identifier of leave_type, as id
   location: ["null"], // [String] | the identifier of user location, as id
-  startDate: new Date("2013-10-20"), // Date | The start date for the timeoff request. Must be used together with `end_date`.
-  endDate: new Date("2013-10-20") // Date | The end date for the timeoff request. Must be used together with `start_date` and should be greater than `start date`.
+  start_date: new Date("2013-10-20"), // Date | The start date for the timeoff request. Must be used together with `end_date`.
+  end_date: new Date("2013-10-20") // Date | The end date for the timeoff request. Must be used together with `start_date` and should be greater than `start date`.
 };
 apiInstance.getTimeoffs(opts).then(
   data => {
@@ -354,14 +354,14 @@ apiInstance.getTimeoffs(opts).then(
 
 ### Parameters
 
-| Name          | Type                      | Description                                                                                                                                | Notes      |
-| ------------- | ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ | ---------- |
-| **status**    | [**[String]**](String.md) | the status key                                                                                                                             | [optional] |
-| **user**      | [**[String]**](String.md) | the identifier of user, id                                                                                                                 | [optional] |
-| **leaveType** | [**[String]**](String.md) | the identifier of leave_type, as id                                                                                                        | [optional] |
-| **location**  | [**[String]**](String.md) | the identifier of user location, as id                                                                                                     | [optional] |
-| **startDate** | **Date**                  | The start date for the timeoff request. Must be used together with &#x60;end_date&#x60;.                                                   | [optional] |
-| **endDate**   | **Date**                  | The end date for the timeoff request. Must be used together with &#x60;start_date&#x60; and should be greater than &#x60;start date&#x60;. | [optional] |
+| Name           | Type                      | Description                                                                                                                                | Notes      |
+| -------------- | ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ | ---------- |
+| **status**     | [**[String]**](String.md) | the status key                                                                                                                             | [optional] |
+| **user**       | [**[String]**](String.md) | the identifier of user, id                                                                                                                 | [optional] |
+| **leave_type** | [**[String]**](String.md) | the identifier of leave_type, as id                                                                                                        | [optional] |
+| **location**   | [**[String]**](String.md) | the identifier of user location, as id                                                                                                     | [optional] |
+| **start_date** | **Date**                  | The start date for the timeoff request. Must be used together with &#x60;end_date&#x60;.                                                   | [optional] |
+| **end_date**   | **Date**                  | The end date for the timeoff request. Must be used together with &#x60;start_date&#x60; and should be greater than &#x60;start date&#x60;. | [optional] |
 
 ### Return type
 
@@ -398,7 +398,7 @@ ApiKeyAuth.apiKey = "YOUR API KEY";
 let apiInstance = new FreshteamApiSdkCodegen.TimeoffApi();
 let id = 56; // Number | the timeoff type identifier, as id
 let opts = {
-  leaveRequest: new FreshteamApiSdkCodegen.InlineObject1() // InlineObject1 |
+  leave_request: new FreshteamApiSdkCodegen.InlineObject1() // InlineObject1 |
 };
 apiInstance.rejectTimeoff(id, opts).then(
   () => {
@@ -412,10 +412,10 @@ apiInstance.rejectTimeoff(id, opts).then(
 
 ### Parameters
 
-| Name             | Type                                  | Description                        | Notes      |
-| ---------------- | ------------------------------------- | ---------------------------------- | ---------- |
-| **id**           | **Number**                            | the timeoff type identifier, as id |
-| **leaveRequest** | [**InlineObject1**](InlineObject1.md) |                                    | [optional] |
+| Name              | Type                                  | Description                        | Notes      |
+| ----------------- | ------------------------------------- | ---------------------------------- | ---------- |
+| **id**            | **Number**                            | the timeoff type identifier, as id |
+| **leave_request** | [**InlineObject1**](InlineObject1.md) |                                    | [optional] |
 
 ### Return type
 

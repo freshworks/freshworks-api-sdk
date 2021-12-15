@@ -213,9 +213,9 @@ export default class JobApi {
    * @param {Array.<Number>} opts.department the identifier of jobs department to query, as id
    * @param {Array.<Number>} opts.location the identifier of jobs location to query, as id
    * @param {Array.<Boolean>} opts.remote remote flag of jobs to query
-   * @param {Array.<String>} opts.locationCity jobs city to query
-   * @param {Array.<String>} opts.locationCountry jobs country to query
-   * @param {Array.<String>} opts.locationState jobs state to query
+   * @param {Array.<String>} opts.location_city jobs city to query
+   * @param {Array.<String>} opts.location_country jobs country to query
+   * @param {Array.<String>} opts.location_state jobs state to query
    * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Job>} and HTTP response
    */
   getJobsWithHttpInfo(opts) {
@@ -230,9 +230,9 @@ export default class JobApi {
       department: this.apiClient.buildCollectionParam(opts["department"], "csv"),
       location: this.apiClient.buildCollectionParam(opts["location"], "csv"),
       remote: this.apiClient.buildCollectionParam(opts["remote"], "csv"),
-      location_city: this.apiClient.buildCollectionParam(opts["locationCity"], "csv"),
-      location_country: this.apiClient.buildCollectionParam(opts["locationCountry"], "csv"),
-      location_state: this.apiClient.buildCollectionParam(opts["locationState"], "csv")
+      location_city: this.apiClient.buildCollectionParam(opts["location_city"], "csv"),
+      location_country: this.apiClient.buildCollectionParam(opts["location_country"], "csv"),
+      location_state: this.apiClient.buildCollectionParam(opts["location_state"], "csv")
     };
     let headerParams = {};
     let formParams = {};
@@ -267,9 +267,9 @@ export default class JobApi {
    * @param {Array.<Number>} opts.department the identifier of jobs department to query, as id
    * @param {Array.<Number>} opts.location the identifier of jobs location to query, as id
    * @param {Array.<Boolean>} opts.remote remote flag of jobs to query
-   * @param {Array.<String>} opts.locationCity jobs city to query
-   * @param {Array.<String>} opts.locationCountry jobs country to query
-   * @param {Array.<String>} opts.locationState jobs state to query
+   * @param {Array.<String>} opts.location_city jobs city to query
+   * @param {Array.<String>} opts.location_country jobs country to query
+   * @param {Array.<String>} opts.location_state jobs state to query
    * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Job>}
    */
   getJobs(opts) {

@@ -2,11 +2,11 @@
 
 ## Properties
 
-| Name          | Type        | Description | Notes      |
-| ------------- | ----------- | ----------- | ---------- |
-| **id**        | **Number**  |             | [optional] |
-| **userId**    | **Number**  |             | [optional] |
-| **name**      | **String**  |             | [optional] |
-| **grade**     | **String**  |             | [optional] |
-| **awardedBy** | **String**  |             | [optional] |
-| **deleted**   | **Boolean** |             | [optional] |
+| Name           | Type        | Description | Notes      |
+| -------------- | ----------- | ----------- | ---------- |
+| **id**         | **Number**  |             | [optional] |
+| **user_id**    | **Number**  |             | [optional] |
+| **name**       | **String**  |             | [optional] |
+| **grade**      | **String**  |             | [optional] |
+| **awarded_by** | **String**  |             | [optional] |
+| **deleted**    | **Boolean** |             | [optional] |

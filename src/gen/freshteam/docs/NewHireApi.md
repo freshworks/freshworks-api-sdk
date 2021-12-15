@@ -10,7 +10,7 @@ All URIs are relative to *https://adityasharma2519.freshteam.com/api*
 
 ## createNewHire
 
-> NewHire createNewHire(newHire)
+> NewHire createNewHire(new_hire)
 
 Create an NewHire
 
@@ -28,8 +28,8 @@ ApiKeyAuth.apiKey = "YOUR API KEY";
 //ApiKeyAuth.apiKeyPrefix = 'Token';
 
 let apiInstance = new FreshteamApiSdkCodegen.NewHireApi();
-let newHire = new FreshteamApiSdkCodegen.NewHireCreate(); // NewHireCreate |
-apiInstance.createNewHire(newHire).then(
+let new_hire = new FreshteamApiSdkCodegen.NewHireCreate(); // NewHireCreate |
+apiInstance.createNewHire(new_hire).then(
   data => {
     console.log("API called successfully. Returned data: " + data);
   },
@@ -41,9 +41,9 @@ apiInstance.createNewHire(newHire).then(
 
 ### Parameters
 
-| Name        | Type                                  | Description | Notes |
-| ----------- | ------------------------------------- | ----------- | ----- |
-| **newHire** | [**NewHireCreate**](NewHireCreate.md) |             |
+| Name         | Type                                  | Description | Notes |
+| ------------ | ------------------------------------- | ----------- | ----- |
+| **new_hire** | [**NewHireCreate**](NewHireCreate.md) |             |
 
 ### Return type
 
@@ -114,7 +114,7 @@ apiInstance.getNewHire(id, opts).then(
 
 ## updateNewHire
 
-> NewHire updateNewHire(newHire, id)
+> NewHire updateNewHire(new_hire, id)
 
 Update a NewHire
 
@@ -132,9 +132,9 @@ ApiKeyAuth.apiKey = "YOUR API KEY";
 //ApiKeyAuth.apiKeyPrefix = 'Token';
 
 let apiInstance = new FreshteamApiSdkCodegen.NewHireApi();
-let newHire = new FreshteamApiSdkCodegen.NewHireCreate(); // NewHireCreate |
+let new_hire = new FreshteamApiSdkCodegen.NewHireCreate(); // NewHireCreate |
 let id = 56; // Number | the new_hire identifier, as id
-apiInstance.updateNewHire(newHire, id).then(
+apiInstance.updateNewHire(new_hire, id).then(
   data => {
     console.log("API called successfully. Returned data: " + data);
   },
@@ -146,10 +146,10 @@ apiInstance.updateNewHire(newHire, id).then(
 
 ### Parameters
 
-| Name        | Type                                  | Description                    | Notes |
-| ----------- | ------------------------------------- | ------------------------------ | ----- |
-| **newHire** | [**NewHireCreate**](NewHireCreate.md) |                                |
-| **id**      | **Number**                            | the new_hire identifier, as id |
+| Name         | Type                                  | Description                    | Notes |
+| ------------ | ------------------------------------- | ------------------------------ | ----- |
+| **new_hire** | [**NewHireCreate**](NewHireCreate.md) |                                |
+| **id**       | **Number**                            | the new_hire identifier, as id |
 
 ### Return type
 

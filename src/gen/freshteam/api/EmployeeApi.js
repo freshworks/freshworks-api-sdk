@@ -154,23 +154,23 @@ export default class EmployeeApi {
    * List of active employees from directory
    * @param {Object} opts Optional parameters
    * @param {Array.<module:model/String>} opts.status the status key
-   * @param {String} opts.firstName  First Name of users to query
-   * @param {String} opts.lastName Last Name of users to query
-   * @param {String} opts.personalEmail Personal Email of users to query
-   * @param {String} opts.officialEmail Official Email of users to query
-   * @param {String} opts.employeeType Employee type of users to query
+   * @param {String} opts.first_name  First Name of users to query
+   * @param {String} opts.last_name Last Name of users to query
+   * @param {String} opts.personal_email Personal Email of users to query
+   * @param {String} opts.official_email Official Email of users to query
+   * @param {String} opts.employee_type Employee type of users to query
    * @param {Array.<Number>} opts.department the identifier of users departments to query, as id
-   * @param {Array.<Number>} opts.businessUnit the identifier of users business units to query, as id
+   * @param {Array.<Number>} opts.business_unit the identifier of users business units to query, as id
    * @param {Array.<Number>} opts.location the identifier of user location, as id
-   * @param {Array.<Number>} opts.reportingManager the identifier of user reporting manager, as id
-   * @param {String} opts.employeeId Employee Id of users to query
-   * @param {Date} opts.updatedSince the identifier of user updated_since
+   * @param {Array.<Number>} opts.reporting_manager the identifier of user reporting manager, as id
+   * @param {String} opts.employee_id Employee Id of users to query
+   * @param {Date} opts.updated_since the identifier of user updated_since
    * @param {Boolean} opts.draft the identifier of user draft
    * @param {Boolean} opts.deleted the identifier of user deleted
    * @param {Boolean} opts.terminated the identifier of user terminated
    * @param {Number} opts.page page number
    * @param {module:model/String} opts.sort Sort By
-   * @param {module:model/String} opts.sortType Sort Type
+   * @param {module:model/String} opts.sort_type Sort Type
    * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Employee>} and HTTP response
    */
   getEmployeesWithHttpInfo(opts) {
@@ -180,23 +180,23 @@ export default class EmployeeApi {
     let pathParams = {};
     let queryParams = {
       status: this.apiClient.buildCollectionParam(opts["status"], "csv"),
-      first_name: opts["firstName"],
-      last_name: opts["lastName"],
-      personal_email: opts["personalEmail"],
-      official_email: opts["officialEmail"],
-      employee_type: opts["employeeType"],
+      first_name: opts["first_name"],
+      last_name: opts["last_name"],
+      personal_email: opts["personal_email"],
+      official_email: opts["official_email"],
+      employee_type: opts["employee_type"],
       department: this.apiClient.buildCollectionParam(opts["department"], "csv"),
-      business_unit: this.apiClient.buildCollectionParam(opts["businessUnit"], "csv"),
+      business_unit: this.apiClient.buildCollectionParam(opts["business_unit"], "csv"),
       location: this.apiClient.buildCollectionParam(opts["location"], "csv"),
-      reporting_manager: this.apiClient.buildCollectionParam(opts["reportingManager"], "csv"),
-      employee_id: opts["employeeId"],
-      updated_since: opts["updatedSince"],
+      reporting_manager: this.apiClient.buildCollectionParam(opts["reporting_manager"], "csv"),
+      employee_id: opts["employee_id"],
+      updated_since: opts["updated_since"],
       draft: opts["draft"],
       deleted: opts["deleted"],
       terminated: opts["terminated"],
       page: opts["page"],
       sort: opts["sort"],
-      sort_type: opts["sortType"]
+      sort_type: opts["sort_type"]
     };
     let headerParams = {};
     let formParams = {};
@@ -226,23 +226,23 @@ export default class EmployeeApi {
    * List of active employees from directory
    * @param {Object} opts Optional parameters
    * @param {Array.<module:model/String>} opts.status the status key
-   * @param {String} opts.firstName  First Name of users to query
-   * @param {String} opts.lastName Last Name of users to query
-   * @param {String} opts.personalEmail Personal Email of users to query
-   * @param {String} opts.officialEmail Official Email of users to query
-   * @param {String} opts.employeeType Employee type of users to query
+   * @param {String} opts.first_name  First Name of users to query
+   * @param {String} opts.last_name Last Name of users to query
+   * @param {String} opts.personal_email Personal Email of users to query
+   * @param {String} opts.official_email Official Email of users to query
+   * @param {String} opts.employee_type Employee type of users to query
    * @param {Array.<Number>} opts.department the identifier of users departments to query, as id
-   * @param {Array.<Number>} opts.businessUnit the identifier of users business units to query, as id
+   * @param {Array.<Number>} opts.business_unit the identifier of users business units to query, as id
    * @param {Array.<Number>} opts.location the identifier of user location, as id
-   * @param {Array.<Number>} opts.reportingManager the identifier of user reporting manager, as id
-   * @param {String} opts.employeeId Employee Id of users to query
-   * @param {Date} opts.updatedSince the identifier of user updated_since
+   * @param {Array.<Number>} opts.reporting_manager the identifier of user reporting manager, as id
+   * @param {String} opts.employee_id Employee Id of users to query
+   * @param {Date} opts.updated_since the identifier of user updated_since
    * @param {Boolean} opts.draft the identifier of user draft
    * @param {Boolean} opts.deleted the identifier of user deleted
    * @param {Boolean} opts.terminated the identifier of user terminated
    * @param {Number} opts.page page number
    * @param {module:model/String} opts.sort Sort By
-   * @param {module:model/String} opts.sortType Sort Type
+   * @param {module:model/String} opts.sort_type Sort Type
    * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Employee>}
    */
   getEmployees(opts) {

@@ -2,8 +2,8 @@
 
 ## Properties
 
-| Name             | Type                                                          | Description | Notes      |
-| ---------------- | ------------------------------------------------------------- | ----------- | ---------- |
-| **customFields** | [**NewHireCreateCustomFields**](NewHireCreateCustomFields.md) |             | [optional] |
-| **candidateId**  | **Number**                                                    |             | [optional] |
-| **candidate**    | [**ApplicantCreateCandidate**](ApplicantCreateCandidate.md)   |             | [optional] |
+| Name              | Type                                                          | Description | Notes      |
+| ----------------- | ------------------------------------------------------------- | ----------- | ---------- |
+| **custom_fields** | [**NewHireCreateCustomFields**](NewHireCreateCustomFields.md) |             | [optional] |
+| **candidate_id**  | **Number**                                                    |             | [optional] |
+| **candidate**     | [**ApplicantCreateCandidate**](ApplicantCreateCandidate.md)   |             | [optional] |

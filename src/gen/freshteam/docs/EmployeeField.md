@@ -2,25 +2,25 @@
 
 ## Properties
 
-| Name               | Type                                                                | Description | Notes      |
-| ------------------ | ------------------------------------------------------------------- | ----------- | ---------- |
-| **id**             | **Number**                                                          |             | [optional] |
-| **createdAt**      | **Date**                                                            |             | [optional] |
-| **updatedAt**      | **Date**                                                            |             | [optional] |
-| **deleted**        | **Boolean**                                                         |             | [optional] |
-| **employeeFormId** | **Number**                                                          |             | [optional] |
-| **name**           | **String**                                                          |             | [optional] |
-| **label**          | **String**                                                          |             | [optional] |
-| **fieldType**      | **String**                                                          |             | [optional] |
-| **position**       | **Number**                                                          |             | [optional] |
-| **required**       | **Boolean**                                                         |             | [optional] |
-| **\_default**      | **Boolean**                                                         |             | [optional] |
-| **viewableBy**     | **String**                                                          |             | [optional] |
-| **editableBy**     | **String**                                                          |             | [optional] |
-| **tab**            | **String**                                                          |             | [optional] |
-| **fieldScopes**    | [**[EmployeeFieldScopes]**](EmployeeFieldScopes.md)                 |             | [optional] |
-| **sectionLabel**   | **String**                                                          |             | [optional] |
-| **picklistValues** | [**[EmployeeFieldPicklistValues]**](EmployeeFieldPicklistValues.md) |             | [optional] |
+| Name                 | Type                                                                | Description | Notes      |
+| -------------------- | ------------------------------------------------------------------- | ----------- | ---------- |
+| **id**               | **Number**                                                          |             | [optional] |
+| **created_at**       | **Date**                                                            |             | [optional] |
+| **updated_at**       | **Date**                                                            |             | [optional] |
+| **deleted**          | **Boolean**                                                         |             | [optional] |
+| **employee_form_id** | **Number**                                                          |             | [optional] |
+| **name**             | **String**                                                          |             | [optional] |
+| **label**            | **String**                                                          |             | [optional] |
+| **field_type**       | **String**                                                          |             | [optional] |
+| **position**         | **Number**                                                          |             | [optional] |
+| **required**         | **Boolean**                                                         |             | [optional] |
+| **\_default**        | **Boolean**                                                         |             | [optional] |
+| **viewable_by**      | **String**                                                          |             | [optional] |
+| **editable_by**      | **String**                                                          |             | [optional] |
+| **tab**              | **String**                                                          |             | [optional] |
+| **field_scopes**     | [**[EmployeeFieldScopes]**](EmployeeFieldScopes.md)                 |             | [optional] |
+| **section_label**    | **String**                                                          |             | [optional] |
+| **picklist_values**  | [**[EmployeeFieldPicklistValues]**](EmployeeFieldPicklistValues.md) |             | [optional] |
 
 ## Enum: FieldTypeEnum
 

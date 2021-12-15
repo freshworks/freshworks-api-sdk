@@ -2,20 +2,20 @@
 
 ## Properties
 
-| Name                 | Type        | Description | Notes      |
-| -------------------- | ----------- | ----------- | ---------- |
-| **id**               | **Number**  |             | [optional] |
-| **createdAt**        | **Date**    |             | [optional] |
-| **updatedAt**        | **Date**    |             | [optional] |
-| **deleted**          | **Boolean** |             | [optional] |
-| **name**             | **String**  |             | [optional] |
-| **description**      | **String**  |             | [optional] |
-| **applicableFor**    | **String**  |             | [optional] |
-| **\_default**        | **Boolean** |             | [optional] |
-| **autoApprove**      | **Boolean** |             | [optional] |
-| **autoApproveAfter** | **Number**  |             | [optional] |
-| **autoApproveLimit** | **Number**  |             | [optional] |
-| **maritalStatus**    | **String**  |             | [optional] |
+| Name                   | Type        | Description | Notes      |
+| ---------------------- | ----------- | ----------- | ---------- |
+| **id**                 | **Number**  |             | [optional] |
+| **created_at**         | **Date**    |             | [optional] |
+| **updated_at**         | **Date**    |             | [optional] |
+| **deleted**            | **Boolean** |             | [optional] |
+| **name**               | **String**  |             | [optional] |
+| **description**        | **String**  |             | [optional] |
+| **applicable_for**     | **String**  |             | [optional] |
+| **\_default**          | **Boolean** |             | [optional] |
+| **auto_approve**       | **Boolean** |             | [optional] |
+| **auto_approve_after** | **Number**  |             | [optional] |
+| **auto_approve_limit** | **Number**  |             | [optional] |
+| **marital_status**     | **String**  |             | [optional] |
 
 ## Enum: ApplicableForEnum
 

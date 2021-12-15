@@ -46,12 +46,12 @@ export default class TimeoffApi {
    * Approve Timeoff Request details
    * @param {Number} id the timeoff type identifier, as id
    * @param {Object} opts Optional parameters
-   * @param {module:model/InlineObject} opts.leaveRequest
+   * @param {module:model/InlineObject} opts.leave_request
    * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
    */
   approveTimeoffWithHttpInfo(id, opts) {
     opts = opts || {};
-    let postBody = opts["leaveRequest"];
+    let postBody = opts["leave_request"];
     // verify the required parameter 'id' is set
     if (id === undefined || id === null) {
       throw new Error("Missing the required parameter 'id' when calling approveTimeoff");
@@ -89,7 +89,7 @@ export default class TimeoffApi {
    * Approve Timeoff Request details
    * @param {Number} id the timeoff type identifier, as id
    * @param {Object} opts Optional parameters
-   * @param {module:model/InlineObject} opts.leaveRequest
+   * @param {module:model/InlineObject} opts.leave_request
    * @return {Promise} a {@link https://www.promisejs.org/|Promise}
    */
   approveTimeoff(id, opts) {
@@ -153,14 +153,14 @@ export default class TimeoffApi {
   /**
    * Apply leave request for logged in user
    * Apply leave request for logged in user
-   * @param {module:model/LeaveRequestCreate} leaveRequest
+   * @param {module:model/LeaveRequestCreate} leave_request
    * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LeaveRequest} and HTTP response
    */
-  createTimeOffWithHttpInfo(leaveRequest) {
-    let postBody = leaveRequest;
-    // verify the required parameter 'leaveRequest' is set
-    if (leaveRequest === undefined || leaveRequest === null) {
-      throw new Error("Missing the required parameter 'leaveRequest' when calling createTimeOff");
+  createTimeOffWithHttpInfo(leave_request) {
+    let postBody = leave_request;
+    // verify the required parameter 'leave_request' is set
+    if (leave_request === undefined || leave_request === null) {
+      throw new Error("Missing the required parameter 'leave_request' when calling createTimeOff");
     }
 
     let pathParams = {};
@@ -191,11 +191,11 @@ export default class TimeoffApi {
   /**
    * Apply leave request for logged in user
    * Apply leave request for logged in user
-   * @param {module:model/LeaveRequestCreate} leaveRequest
+   * @param {module:model/LeaveRequestCreate} leave_request
    * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LeaveRequest}
    */
-  createTimeOff(leaveRequest) {
-    return this.createTimeOffWithHttpInfo(leaveRequest).then(function (response_and_data) {
+  createTimeOff(leave_request) {
+    return this.createTimeOffWithHttpInfo(leave_request).then(function (response_and_data) {
       return response_and_data.data;
     });
   }
@@ -354,10 +354,10 @@ export default class TimeoffApi {
    * @param {Object} opts Optional parameters
    * @param {Array.<module:model/String>} opts.status the status key
    * @param {Array.<String>} opts.user the identifier of user, id
-   * @param {Array.<String>} opts.leaveType the identifier of leave_type, as id
+   * @param {Array.<String>} opts.leave_type the identifier of leave_type, as id
    * @param {Array.<String>} opts.location the identifier of user location, as id
-   * @param {Date} opts.startDate The start date for the timeoff request. Must be used together with `end_date`.
-   * @param {Date} opts.endDate The end date for the timeoff request. Must be used together with `start_date` and should be greater than `start date`.
+   * @param {Date} opts.start_date The start date for the timeoff request. Must be used together with `end_date`.
+   * @param {Date} opts.end_date The end date for the timeoff request. Must be used together with `start_date` and should be greater than `start date`.
    * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/LeaveRequest>} and HTTP response
    */
   getTimeoffsWithHttpInfo(opts) {
@@ -368,10 +368,10 @@ export default class TimeoffApi {
     let queryParams = {
       status: this.apiClient.buildCollectionParam(opts["status"], "csv"),
       user: this.apiClient.buildCollectionParam(opts["user"], "csv"),
-      leave_type: this.apiClient.buildCollectionParam(opts["leaveType"], "csv"),
+      leave_type: this.apiClient.buildCollectionParam(opts["leave_type"], "csv"),
       location: this.apiClient.buildCollectionParam(opts["location"], "csv"),
-      start_date: opts["startDate"],
-      end_date: opts["endDate"]
+      start_date: opts["start_date"],
+      end_date: opts["end_date"]
     };
     let headerParams = {};
     let formParams = {};
@@ -402,10 +402,10 @@ export default class TimeoffApi {
    * @param {Object} opts Optional parameters
    * @param {Array.<module:model/String>} opts.status the status key
    * @param {Array.<String>} opts.user the identifier of user, id
-   * @param {Array.<String>} opts.leaveType the identifier of leave_type, as id
+   * @param {Array.<String>} opts.leave_type the identifier of leave_type, as id
    * @param {Array.<String>} opts.location the identifier of user location, as id
-   * @param {Date} opts.startDate The start date for the timeoff request. Must be used together with `end_date`.
-   * @param {Date} opts.endDate The end date for the timeoff request. Must be used together with `start_date` and should be greater than `start date`.
+   * @param {Date} opts.start_date The start date for the timeoff request. Must be used together with `end_date`.
+   * @param {Date} opts.end_date The end date for the timeoff request. Must be used together with `start_date` and should be greater than `start date`.
    * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/LeaveRequest>}
    */
   getTimeoffs(opts) {
@@ -419,12 +419,12 @@ export default class TimeoffApi {
    * Reject Timeoff Request details
    * @param {Number} id the timeoff type identifier, as id
    * @param {Object} opts Optional parameters
-   * @param {module:model/InlineObject1} opts.leaveRequest
+   * @param {module:model/InlineObject1} opts.leave_request
    * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
    */
   rejectTimeoffWithHttpInfo(id, opts) {
     opts = opts || {};
-    let postBody = opts["leaveRequest"];
+    let postBody = opts["leave_request"];
     // verify the required parameter 'id' is set
     if (id === undefined || id === null) {
       throw new Error("Missing the required parameter 'id' when calling rejectTimeoff");
@@ -462,7 +462,7 @@ export default class TimeoffApi {
    * Reject Timeoff Request details
    * @param {Number} id the timeoff type identifier, as id
    * @param {Object} opts Optional parameters
-   * @param {module:model/InlineObject1} opts.leaveRequest
+   * @param {module:model/InlineObject1} opts.leave_request
    * @return {Promise} a {@link https://www.promisejs.org/|Promise}
    */
   rejectTimeoff(id, opts) {

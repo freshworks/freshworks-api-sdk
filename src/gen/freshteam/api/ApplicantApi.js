@@ -157,31 +157,31 @@ export default class ApplicantApi {
    * @param {Object} opts Optional parameters
    * @param {Array.<module:model/String>} opts.status the status key
    * @param {Array.<Number>} opts.stage the identifier of Stage of applicants, as Id
-   * @param {Array.<Number>} opts.followersId the identifier of followers of applicant, as Id
-   * @param {String} opts.candidateFirstName  First Name of candidate to query
-   * @param {String} opts.candidateLastName Last Name of candidate to query
-   * @param {String} opts.candidateEmail Email of candidate to query
-   * @param {Array.<Number>} opts.candidateSource the identifier of source of candidate, as Id
-   * @param {Array.<Number>} opts.candidateSourceCategory the identifier of source_category of candidate, as Id
-   * @param {Array.<Number>} opts.candidateOwner the identifier of owner of candidate, as Id
-   * @param {Array.<String>} opts.candidateCity candidate city to query
-   * @param {Array.<String>} opts.candidateCountryCode candidate country code to query
-   * @param {Array.<String>} opts.candidateTags candidate tags to query
-   * @param {Array.<String>} opts.candidateSkills candidate skills to query
-   * @param {Array.<String>} opts.candidatePositionsCompany candidate companies to query
-   * @param {Array.<String>} opts.candidatePositionsTitle candidate positions title to query
-   * @param {Array.<module:model/String>} opts.candidateRating candidate rating to query
-   * @param {Array.<Number>} opts.candidateReferredBy the identifier of referred_by of candidate, as Id
-   * @param {Boolean} opts.candidateHasEmail candidate email exists
-   * @param {Boolean} opts.candidateResponded has candidate responded
-   * @param {Boolean} opts.candidateSpam blocked candidate
-   * @param {Array.<Number>} opts.requisitionId the identifier of requisition of applicants, as Id
-   * @param {Date} opts.createdAt applicant created_at
-   * @param {Date} opts.createdSince applicant created_since
-   * @param {Date} opts.updatedSince applicant updated_since
+   * @param {Array.<Number>} opts.followers_id the identifier of followers of applicant, as Id
+   * @param {String} opts.candidate_first_name  First Name of candidate to query
+   * @param {String} opts.candidate_last_name Last Name of candidate to query
+   * @param {String} opts.candidate_email Email of candidate to query
+   * @param {Array.<Number>} opts.candidate_source the identifier of source of candidate, as Id
+   * @param {Array.<Number>} opts.candidate_source_category the identifier of source_category of candidate, as Id
+   * @param {Array.<Number>} opts.candidate_owner the identifier of owner of candidate, as Id
+   * @param {Array.<String>} opts.candidate_city candidate city to query
+   * @param {Array.<String>} opts.candidate_country_code candidate country code to query
+   * @param {Array.<String>} opts.candidate_tags candidate tags to query
+   * @param {Array.<String>} opts.candidate_skills candidate skills to query
+   * @param {Array.<String>} opts.candidate_positions_company candidate companies to query
+   * @param {Array.<String>} opts.candidate_positions_title candidate positions title to query
+   * @param {Array.<module:model/String>} opts.candidate_rating candidate rating to query
+   * @param {Array.<Number>} opts.candidate_referred_by the identifier of referred_by of candidate, as Id
+   * @param {Boolean} opts.candidate_has_email candidate email exists
+   * @param {Boolean} opts.candidate_responded has candidate responded
+   * @param {Boolean} opts.candidate_spam blocked candidate
+   * @param {Array.<Number>} opts.requisition_id the identifier of requisition of applicants, as Id
+   * @param {Date} opts.created_at applicant created_at
+   * @param {Date} opts.created_since applicant created_since
+   * @param {Date} opts.updated_since applicant updated_since
    * @param {Boolean} opts.deleted the identifier of applicant deleted
    * @param {module:model/String} opts.sort Sort By
-   * @param {module:model/String} opts.sortType Sort Type
+   * @param {module:model/String} opts.sort_type Sort Type
    * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Applicant>} and HTTP response
    */
   getApplicantsWithHttpInfo(id, opts) {
@@ -198,31 +198,31 @@ export default class ApplicantApi {
     let queryParams = {
       status: this.apiClient.buildCollectionParam(opts["status"], "csv"),
       stage: this.apiClient.buildCollectionParam(opts["stage"], "csv"),
-      followers_id: this.apiClient.buildCollectionParam(opts["followersId"], "csv"),
-      candidate_first_name: opts["candidateFirstName"],
-      candidate_last_name: opts["candidateLastName"],
-      candidate_email: opts["candidateEmail"],
-      candidate_source: this.apiClient.buildCollectionParam(opts["candidateSource"], "csv"),
-      candidate_source_category: this.apiClient.buildCollectionParam(opts["candidateSourceCategory"], "csv"),
-      candidate_owner: this.apiClient.buildCollectionParam(opts["candidateOwner"], "csv"),
-      candidate_city: this.apiClient.buildCollectionParam(opts["candidateCity"], "csv"),
-      candidate_country_code: this.apiClient.buildCollectionParam(opts["candidateCountryCode"], "csv"),
-      candidate_tags: this.apiClient.buildCollectionParam(opts["candidateTags"], "csv"),
-      candidate_skills: this.apiClient.buildCollectionParam(opts["candidateSkills"], "csv"),
-      candidate_positions_company: this.apiClient.buildCollectionParam(opts["candidatePositionsCompany"], "csv"),
-      candidate_positions_title: this.apiClient.buildCollectionParam(opts["candidatePositionsTitle"], "csv"),
-      candidate_rating: this.apiClient.buildCollectionParam(opts["candidateRating"], "csv"),
-      candidate_referred_by: this.apiClient.buildCollectionParam(opts["candidateReferredBy"], "csv"),
-      candidate_has_email: opts["candidateHasEmail"],
-      candidate_responded: opts["candidateResponded"],
-      candidate_spam: opts["candidateSpam"],
-      requisition_id: this.apiClient.buildCollectionParam(opts["requisitionId"], "csv"),
-      created_at: opts["createdAt"],
-      created_since: opts["createdSince"],
-      updated_since: opts["updatedSince"],
+      followers_id: this.apiClient.buildCollectionParam(opts["followers_id"], "csv"),
+      candidate_first_name: opts["candidate_first_name"],
+      candidate_last_name: opts["candidate_last_name"],
+      candidate_email: opts["candidate_email"],
+      candidate_source: this.apiClient.buildCollectionParam(opts["candidate_source"], "csv"),
+      candidate_source_category: this.apiClient.buildCollectionParam(opts["candidate_source_category"], "csv"),
+      candidate_owner: this.apiClient.buildCollectionParam(opts["candidate_owner"], "csv"),
+      candidate_city: this.apiClient.buildCollectionParam(opts["candidate_city"], "csv"),
+      candidate_country_code: this.apiClient.buildCollectionParam(opts["candidate_country_code"], "csv"),
+      candidate_tags: this.apiClient.buildCollectionParam(opts["candidate_tags"], "csv"),
+      candidate_skills: this.apiClient.buildCollectionParam(opts["candidate_skills"], "csv"),
+      candidate_positions_company: this.apiClient.buildCollectionParam(opts["candidate_positions_company"], "csv"),
+      candidate_positions_title: this.apiClient.buildCollectionParam(opts["candidate_positions_title"], "csv"),
+      candidate_rating: this.apiClient.buildCollectionParam(opts["candidate_rating"], "csv"),
+      candidate_referred_by: this.apiClient.buildCollectionParam(opts["candidate_referred_by"], "csv"),
+      candidate_has_email: opts["candidate_has_email"],
+      candidate_responded: opts["candidate_responded"],
+      candidate_spam: opts["candidate_spam"],
+      requisition_id: this.apiClient.buildCollectionParam(opts["requisition_id"], "csv"),
+      created_at: opts["created_at"],
+      created_since: opts["created_since"],
+      updated_since: opts["updated_since"],
       deleted: opts["deleted"],
       sort: opts["sort"],
-      sort_type: opts["sortType"]
+      sort_type: opts["sort_type"]
     };
     let headerParams = {};
     let formParams = {};
@@ -254,31 +254,31 @@ export default class ApplicantApi {
    * @param {Object} opts Optional parameters
    * @param {Array.<module:model/String>} opts.status the status key
    * @param {Array.<Number>} opts.stage the identifier of Stage of applicants, as Id
-   * @param {Array.<Number>} opts.followersId the identifier of followers of applicant, as Id
-   * @param {String} opts.candidateFirstName  First Name of candidate to query
-   * @param {String} opts.candidateLastName Last Name of candidate to query
-   * @param {String} opts.candidateEmail Email of candidate to query
-   * @param {Array.<Number>} opts.candidateSource the identifier of source of candidate, as Id
-   * @param {Array.<Number>} opts.candidateSourceCategory the identifier of source_category of candidate, as Id
-   * @param {Array.<Number>} opts.candidateOwner the identifier of owner of candidate, as Id
-   * @param {Array.<String>} opts.candidateCity candidate city to query
-   * @param {Array.<String>} opts.candidateCountryCode candidate country code to query
-   * @param {Array.<String>} opts.candidateTags candidate tags to query
-   * @param {Array.<String>} opts.candidateSkills candidate skills to query
-   * @param {Array.<String>} opts.candidatePositionsCompany candidate companies to query
-   * @param {Array.<String>} opts.candidatePositionsTitle candidate positions title to query
-   * @param {Array.<module:model/String>} opts.candidateRating candidate rating to query
-   * @param {Array.<Number>} opts.candidateReferredBy the identifier of referred_by of candidate, as Id
-   * @param {Boolean} opts.candidateHasEmail candidate email exists
-   * @param {Boolean} opts.candidateResponded has candidate responded
-   * @param {Boolean} opts.candidateSpam blocked candidate
-   * @param {Array.<Number>} opts.requisitionId the identifier of requisition of applicants, as Id
-   * @param {Date} opts.createdAt applicant created_at
-   * @param {Date} opts.createdSince applicant created_since
-   * @param {Date} opts.updatedSince applicant updated_since
+   * @param {Array.<Number>} opts.followers_id the identifier of followers of applicant, as Id
+   * @param {String} opts.candidate_first_name  First Name of candidate to query
+   * @param {String} opts.candidate_last_name Last Name of candidate to query
+   * @param {String} opts.candidate_email Email of candidate to query
+   * @param {Array.<Number>} opts.candidate_source the identifier of source of candidate, as Id
+   * @param {Array.<Number>} opts.candidate_source_category the identifier of source_category of candidate, as Id
+   * @param {Array.<Number>} opts.candidate_owner the identifier of owner of candidate, as Id
+   * @param {Array.<String>} opts.candidate_city candidate city to query
+   * @param {Array.<String>} opts.candidate_country_code candidate country code to query
+   * @param {Array.<String>} opts.candidate_tags candidate tags to query
+   * @param {Array.<String>} opts.candidate_skills candidate skills to query
+   * @param {Array.<String>} opts.candidate_positions_company candidate companies to query
+   * @param {Array.<String>} opts.candidate_positions_title candidate positions title to query
+   * @param {Array.<module:model/String>} opts.candidate_rating candidate rating to query
+   * @param {Array.<Number>} opts.candidate_referred_by the identifier of referred_by of candidate, as Id
+   * @param {Boolean} opts.candidate_has_email candidate email exists
+   * @param {Boolean} opts.candidate_responded has candidate responded
+   * @param {Boolean} opts.candidate_spam blocked candidate
+   * @param {Array.<Number>} opts.requisition_id the identifier of requisition of applicants, as Id
+   * @param {Date} opts.created_at applicant created_at
+   * @param {Date} opts.created_since applicant created_since
+   * @param {Date} opts.updated_since applicant updated_since
    * @param {Boolean} opts.deleted the identifier of applicant deleted
    * @param {module:model/String} opts.sort Sort By
-   * @param {module:model/String} opts.sortType Sort Type
+   * @param {module:model/String} opts.sort_type Sort Type
    * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Applicant>}
    */
   getApplicants(id, opts) {

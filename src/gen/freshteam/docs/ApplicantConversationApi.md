@@ -8,7 +8,7 @@ All URIs are relative to *https://adityasharma2519.freshteam.com/api*
 
 ## createApplicantConversation
 
-> ApplicantConversation createApplicantConversation(applicantConversation, id)
+> ApplicantConversation createApplicantConversation(applicant_conversation, id)
 
 Create an Applicant Conversation
 
@@ -26,9 +26,9 @@ ApiKeyAuth.apiKey = "YOUR API KEY";
 //ApiKeyAuth.apiKeyPrefix = 'Token';
 
 let apiInstance = new FreshteamApiSdkCodegen.ApplicantConversationApi();
-let applicantConversation = new FreshteamApiSdkCodegen.ApplicantConversationCreate(); // ApplicantConversationCreate |
+let applicant_conversation = new FreshteamApiSdkCodegen.ApplicantConversationCreate(); // ApplicantConversationCreate |
 let id = 56; // Number | the applicant identifier, as id
-apiInstance.createApplicantConversation(applicantConversation, id).then(
+apiInstance.createApplicantConversation(applicant_conversation, id).then(
   data => {
     console.log("API called successfully. Returned data: " + data);
   },
@@ -40,10 +40,10 @@ apiInstance.createApplicantConversation(applicantConversation, id).then(
 
 ### Parameters
 
-| Name                      | Type                                                              | Description                     | Notes |
-| ------------------------- | ----------------------------------------------------------------- | ------------------------------- | ----- |
-| **applicantConversation** | [**ApplicantConversationCreate**](ApplicantConversationCreate.md) |                                 |
-| **id**                    | **Number**                                                        | the applicant identifier, as id |
+| Name                       | Type                                                              | Description                     | Notes |
+| -------------------------- | ----------------------------------------------------------------- | ------------------------------- | ----- |
+| **applicant_conversation** | [**ApplicantConversationCreate**](ApplicantConversationCreate.md) |                                 |
+| **id**                     | **Number**                                                        | the applicant identifier, as id |
 
 ### Return type
 
