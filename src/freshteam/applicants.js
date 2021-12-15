@@ -1,6 +1,13 @@
 import { ApplicantApi } from "../gen/freshteam";
 import { Client } from "../http-client";
-import { Applicant, ApplicantArchive, ApplicantDetail, ApplicantSubStage, ApplicantUpdate } from "./models";
+import {
+  Applicant,
+  ApplicantArchive,
+  ApplicantDetail,
+  ApplicantSubStage,
+  ApplicantUpdate,
+  ApplicantListQuery
+} from "./models";
 
 export class Applicants {
   /**
@@ -24,7 +31,7 @@ export class Applicants {
    * ```
    *
    * @param {number} jobPostingId - ID of the job posting to search applicants for
-   * @param {object} query - Options to filter applicants
+   * @param {ApplicantListQuery} query - Options to filter applicants
    * @returns {Promise<Applicant[]>} - Response with applicants list in the response body
    */
   async list(jobPostingId, query) {
