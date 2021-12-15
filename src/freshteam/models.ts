@@ -164,6 +164,46 @@ export interface TimeOffsListQuery {
   // page?: number;
 }
 
+export interface ApplicantListQuery {
+  /**
+   * Status key
+   *
+   * Available values : open, on_hold, rejected, archived, moved, dropped
+   */
+  status?: string[];
+  stage?: number[];
+  followers_id?: number[];
+  candidate_first_name?: string;
+  candidate_last_name?: string;
+  candidate_email?: string;
+  candidate_source?: number[];
+  candidate_source_category?: number[];
+  candidate_owner?: number[];
+  candidate_city?: string[];
+  candidate_country_code?: string[];
+  candidate_tags?: string[];
+  candidate_positions_company?: string[];
+  candidate_positions_title?: string[];
+  candidate_rating?: string[];
+  candidate_referred_by?: number[];
+  candidate_has_email?: boolean;
+  candidate_responded?: boolean;
+  candidate_spam?: boolean;
+  updated_since?: Date;
+  /**
+   * Field to sort results on.
+   *
+   * Available values : first_name, last_name, rating, created_at, updated_at.
+   */
+  sort?: string;
+  /**
+   * If the sort value is specified, sort_type specifies whether the list must be sorted in ascending or descending order. If sort_type is specified with no sort value, the list is sorted based on the first_name attribute.
+   *
+   * Valid values: `asc`, `desc`
+   */
+  sort_type?: string;
+}
+
 export {
   // Applicant models
   Applicant,
