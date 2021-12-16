@@ -85,8 +85,13 @@ module.exports = {
         ]
       },
       {
-        text: "API reference",
-        link: "/api/"
+        text: "Reference",
+        children: [
+          { text: "API reference", link: "/api/"},
+          { text: "Classes", children: [
+            { text: "Freshteam", link: "/api/classes/freshteam.Freshteam.html" }
+          ]}
+        ]
       }
     ],
     sidebar: {
