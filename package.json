@@ -27,6 +27,12 @@
   },
   "author": "Freshworks Inc",
   "license": "MIT",
+  "homepage": "https://developers.freshworks.com/api-sdk/",
+  "keywords": [
+    "freshworks",
+    "freshteam",
+    "api-client"
+  ],
   "devDependencies": {
     "@types/jest": "^26.0.24",
     "@typescript-eslint/eslint-plugin": "^5.1.0",
