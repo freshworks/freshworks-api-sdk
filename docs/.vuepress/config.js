@@ -2,10 +2,15 @@ module.exports = {
   lang: "en-US",
   title: "Freshworks API SDK",
   description: "User manual and documentation for Freshworks API SDK for Node.js",
+
   base: "/api-sdk/",
+  dest: "docs/dist/api-sdk",
+  public: "docs/public",
+
+  head: [["link", { rel: "icon", href: "/api-sdk/freshworks-Mark.svg" }]],
 
   themeConfig: {
-    logo: "https://vuejs.org/images/logo.png",
+    logo: "/freshworks-Mark.svg",
     contributors: false,
     navbar: [
       {
@@ -15,9 +20,9 @@ module.exports = {
       {
         text: "Freshteam",
         children: [
-          { text: "Usage guide", link: "/freshteam/" },
+          { text: "Overview", link: "/freshteam/" },
           {
-            text: "API methods",
+            text: "Features",
             children: [
               {
                 text: "Applicants",
@@ -88,7 +93,7 @@ module.exports = {
       "/freshteam": [
         "/freshteam/README.md",
         {
-          text: "APIs",
+          text: "Features",
           children: [
             "/freshteam/applicants.md",
             "/freshteam/branches.md",
