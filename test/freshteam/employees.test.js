@@ -1,11 +1,10 @@
 import { Freshteam } from "../../src";
 import nock from "nock";
-import getEmployee200 from "./responses/get-employee-200";
-import getEmployees200 from "./responses/get-employees-200";
-import createEmployee201 from "./responses/create-employee-201";
-import getEmployeeFields200 from "./responses/get-employee-fields-200";
-import createEmployeeField201 from "./responses/create-employee-field-201";
-import updateEmployee200 from "./responses/update-employee-200";
+import getEmployees200 from "./responses/employees/get-employees-200";
+import createEmployee201 from "./responses/employees/create-employee-201";
+import getEmployeeFields200 from "./responses/employees/get-employee-fields-200";
+import createEmployeeField201 from "./responses/employees/create-employee-field-201";
+import updateEmployee200 from "./responses/employees/update-employee-200";
 
 const FT_DOMAIN = "example.freshteam.com";
 const FT_API_KEY = "f_xkcd_222";
@@ -18,7 +17,7 @@ describe("Employees API", function () {
   describe("get employee by id: /api/employees/:id", function () {
     it("should get employee information successfully", async function () {
       const id = 6000122460;
-      mock.get(`/api/employees/${id}`).reply(200, getEmployee200);
+      mock.get(`/api/employees/${id}`).reply(200, getEmployees200[1]);
       const empDetail = await ft.employees.get(id);
       expect(empDetail).toBeInstanceOf(Freshteam.models.EmployeeDetail);
       expect(empDetail.id).toEqual(id);
