@@ -5,3 +5,7 @@ package-lock.json
 api-docs/
 out/
 build/
+docs/public/api
+docs/dist
+docs/.vuepress/
+!docs/.vuepress/config.js

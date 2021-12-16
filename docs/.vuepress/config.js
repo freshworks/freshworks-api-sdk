@@ -87,10 +87,8 @@ module.exports = {
       {
         text: "Reference",
         children: [
-          { text: "API reference", link: "/api/"},
-          { text: "Classes", children: [
-            { text: "Freshteam", link: "/api/classes/freshteam.Freshteam.html" }
-          ]}
+          { text: "API reference", link: "/api/" },
+          { text: "Classes", children: [{ text: "Freshteam", link: "/api/classes/freshteam.Freshteam.html" }] }
         ]
       }
     ],

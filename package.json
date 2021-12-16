@@ -13,7 +13,7 @@
   "scripts": {
     "build:client": "./codegen/generate.sh --generate",
     "build:docs": "typedoc && vuepress build docs",
-    "docs:dev":  "vuepress dev docs",
+    "docs:dev": "vuepress dev docs",
     "build:lib": "rm -rf dist && tsc",
     "build": "npm run build:lib && npm run build:docs",
     "start": "tsc --watch",
