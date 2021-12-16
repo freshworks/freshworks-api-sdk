@@ -41,7 +41,7 @@ describe("Employees API", function () {
     it("should list all employees information successfully with page number as query", async function () {
       const pageNumber = 2;
       mock.get(`/api/employees?page=${pageNumber}`).reply(200, []);
-      const empList = await ft.employees.list({ page: 2 });
+      const empList = await ft.employees.list({ page: pageNumber });
       expect(empList).toBeInstanceOf(Array);
     });
   });
