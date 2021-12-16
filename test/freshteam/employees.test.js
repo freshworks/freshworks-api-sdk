@@ -36,6 +36,15 @@ describe("Employees API", function () {
     });
   });
 
+  describe("get employees by pagination: /api/employees?page={integer}", function () {
+    it("should list all employees information successfully with page number as query", async function () {
+      const pageNumber = 2;
+      mock.get(`/api/employees?page=${pageNumber}`).reply(200, []);
+      const empList = await ft.employees.list({ page: pageNumber });
+      expect(empList).toBeInstanceOf(Array);
+    });
+  });
+
   describe("create employee: /api/employees", function () {
     it("should create an employee with EmployeeCreate object as parameter", async function () {
       const employee = new Freshteam.models.EmployeeCreate("John", "Smith", "john@freshteam.com", 6000243350);
