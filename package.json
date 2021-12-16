@@ -1,6 +1,6 @@
 {
   "name": "@freshworks/api-sdk",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Node.js SDK for Freshworks HTTP APIs",
   "engines": {
     "node": ">=12.x"
