@@ -17,7 +17,7 @@ const ft = new Freshteam(domain, apiKey);
 Call a method, e.g., list all employees (who match a search criteria):
 
 ```js
-const employees = await ft.employees.list({ firstName: "Arthur", lastName: "Dent" });
+const employees = await ft.employees.list({ first_name: "Arthur", last_name: "Dent" });
 ```
 
 ## Models
