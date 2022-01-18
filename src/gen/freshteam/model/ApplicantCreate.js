@@ -53,6 +53,12 @@ class ApplicantCreate {
       if (data.hasOwnProperty("candidate_id")) {
         obj["candidate_id"] = ApiClient.convertToType(data["candidate_id"], "Number");
       }
+      if (data.hasOwnProperty("applicant_source_id")) {
+        obj["applicant_source_id"] = ApiClient.convertToType(data["applicant_source_id"], "Number");
+      }
+      if (data.hasOwnProperty("applicant_source_category_id")) {
+        obj["applicant_source_category_id"] = ApiClient.convertToType(data["applicant_source_category_id"], "Number");
+      }
       if (data.hasOwnProperty("candidate")) {
         obj["candidate"] = ApplicantCreateCandidate.constructFromObject(data["candidate"]);
       }
@@ -70,6 +76,16 @@ ApplicantCreate.prototype["custom_fields"] = undefined;
  * @member {Number} candidate_id
  */
 ApplicantCreate.prototype["candidate_id"] = undefined;
+
+/**
+ * @member {Number} applicant_source_id
+ */
+ApplicantCreate.prototype["applicant_source_id"] = undefined;
+
+/**
+ * @member {Number} applicant_source_category_id
+ */
+ApplicantCreate.prototype["applicant_source_category_id"] = undefined;
 
 /**
  * @member {module:model/ApplicantCreateCandidate} candidate

@@ -150,6 +150,114 @@ export default class NewHireApi {
   }
 
   /**
+   * New Hires List
+   * List of New Hires
+   * @param {Object} opts Optional parameters
+   * @param {Array.<module:model/String>} opts.status the status key
+   * @param {String} opts.first_name  First Name of users to query
+   * @param {String} opts.last_name Last Name of users to query
+   * @param {String} opts.personal_email Personal Email of users to query
+   * @param {String} opts.official_email Official Email of users to query
+   * @param {String} opts.employee_type Employee type of users to query
+   * @param {Array.<Number>} opts.department the identifier of users departments to query, as id
+   * @param {Array.<Number>} opts.business_unit the identifier of users business units to query, as id
+   * @param {Array.<Number>} opts.location the identifier of user location, as id
+   * @param {Array.<Number>} opts.reporting_manager the identifier of user reporting manager, as id
+   * @param {String} opts.employee_id Employee Id of users to query
+   * @param {Date} opts.updated_since the identifier of user updated_since
+   * @param {Boolean} opts.draft the identifier of user draft
+   * @param {Boolean} opts.deleted the identifier of user deleted
+   * @param {Boolean} opts.terminated the identifier of user terminated
+   * @param {Boolean} opts.no_show the identifier of no show
+   * @param {Date} opts.joining_date the identifier of date of joining of the user
+   * @param {Number} opts.page page number
+   * @param {module:model/String} opts.sort Sort By
+   * @param {module:model/String} opts.sort_type Sort Type
+   * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/NewHire>} and HTTP response
+   */
+  getNewHiresWithHttpInfo(opts) {
+    opts = opts || {};
+    let postBody = null;
+
+    let pathParams = {};
+    let queryParams = {
+      status: this.apiClient.buildCollectionParam(opts["status"], "csv"),
+      first_name: opts["first_name"],
+      last_name: opts["last_name"],
+      personal_email: opts["personal_email"],
+      official_email: opts["official_email"],
+      employee_type: opts["employee_type"],
+      department: this.apiClient.buildCollectionParam(opts["department"], "csv"),
+      business_unit: this.apiClient.buildCollectionParam(opts["business_unit"], "csv"),
+      location: this.apiClient.buildCollectionParam(opts["location"], "csv"),
+      reporting_manager: this.apiClient.buildCollectionParam(opts["reporting_manager"], "csv"),
+      employee_id: opts["employee_id"],
+      updated_since: opts["updated_since"],
+      draft: opts["draft"],
+      deleted: opts["deleted"],
+      terminated: opts["terminated"],
+      no_show: opts["no_show"],
+      joining_date: opts["joining_date"],
+      page: opts["page"],
+      sort: opts["sort"],
+      sort_type: opts["sort_type"]
+    };
+    let headerParams = {};
+    let formParams = {};
+
+    let authNames = ["ApiKeyAuth"];
+    let contentTypes = [];
+    let accepts = ["application/json"];
+    let returnType = [NewHire];
+    return this.apiClient.callApi(
+      "/new_hires",
+      "GET",
+      pathParams,
+      queryParams,
+      headerParams,
+      formParams,
+      postBody,
+      authNames,
+      contentTypes,
+      accepts,
+      returnType,
+      null
+    );
+  }
+
+  /**
+   * New Hires List
+   * List of New Hires
+   * @param {Object} opts Optional parameters
+   * @param {Array.<module:model/String>} opts.status the status key
+   * @param {String} opts.first_name  First Name of users to query
+   * @param {String} opts.last_name Last Name of users to query
+   * @param {String} opts.personal_email Personal Email of users to query
+   * @param {String} opts.official_email Official Email of users to query
+   * @param {String} opts.employee_type Employee type of users to query
+   * @param {Array.<Number>} opts.department the identifier of users departments to query, as id
+   * @param {Array.<Number>} opts.business_unit the identifier of users business units to query, as id
+   * @param {Array.<Number>} opts.location the identifier of user location, as id
+   * @param {Array.<Number>} opts.reporting_manager the identifier of user reporting manager, as id
+   * @param {String} opts.employee_id Employee Id of users to query
+   * @param {Date} opts.updated_since the identifier of user updated_since
+   * @param {Boolean} opts.draft the identifier of user draft
+   * @param {Boolean} opts.deleted the identifier of user deleted
+   * @param {Boolean} opts.terminated the identifier of user terminated
+   * @param {Boolean} opts.no_show the identifier of no show
+   * @param {Date} opts.joining_date the identifier of date of joining of the user
+   * @param {Number} opts.page page number
+   * @param {module:model/String} opts.sort Sort By
+   * @param {module:model/String} opts.sort_type Sort Type
+   * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/NewHire>}
+   */
+  getNewHires(opts) {
+    return this.getNewHiresWithHttpInfo(opts).then(function (response_and_data) {
+      return response_and_data.data;
+    });
+  }
+
+  /**
    * Update a NewHire
    * Update a NewHire
    * @param {module:model/NewHireCreate} new_hire

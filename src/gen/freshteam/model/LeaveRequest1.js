@@ -14,17 +14,17 @@
 import ApiClient from "../ApiClient";
 
 /**
- * The InlineObject model module.
- * @module model/InlineObject
+ * The LeaveRequest1 model module.
+ * @module model/LeaveRequest1
  * @version 1.0.0
  */
-class InlineObject {
+class LeaveRequest1 {
   /**
-   * Constructs a new <code>InlineObject</code>.
-   * @alias module:model/InlineObject
+   * Constructs a new <code>LeaveRequest1</code>.
+   * @alias module:model/LeaveRequest1
    */
   constructor() {
-    InlineObject.initialize(this);
+    LeaveRequest1.initialize(this);
   }
 
   /**
@@ -35,15 +35,15 @@ class InlineObject {
   static initialize(obj) {}
 
   /**
-   * Constructs a <code>InlineObject</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>LeaveRequest1</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/InlineObject} obj Optional instance to populate.
-   * @return {module:model/InlineObject} The populated <code>InlineObject</code> instance.
+   * @param {module:model/LeaveRequest1} obj Optional instance to populate.
+   * @return {module:model/LeaveRequest1} The populated <code>LeaveRequest1</code> instance.
    */
   static constructFromObject(data, obj) {
     if (data) {
-      obj = obj || new InlineObject();
+      obj = obj || new LeaveRequest1();
 
       if (data.hasOwnProperty("comments")) {
         obj["comments"] = ApiClient.convertToType(data["comments"], "String");
@@ -56,6 +56,6 @@ class InlineObject {
 /**
  * @member {String} comments
  */
-InlineObject.prototype["comments"] = undefined;
+LeaveRequest1.prototype["comments"] = undefined;
 
-export default InlineObject;
+export default LeaveRequest1;

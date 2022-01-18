@@ -57,8 +57,8 @@ class SubStages {
       if (data.hasOwnProperty("default")) {
         obj["default"] = ApiClient.convertToType(data["default"], "Boolean");
       }
-      if (data.hasOwnProperty("satge")) {
-        obj["satge"] = ApiClient.convertToType(data["satge"], "String");
+      if (data.hasOwnProperty("stage")) {
+        obj["stage"] = ApiClient.convertToType(data["stage"], "String");
       }
       if (data.hasOwnProperty("deleted")) {
         obj["deleted"] = ApiClient.convertToType(data["deleted"], "Boolean");
@@ -89,13 +89,50 @@ SubStages.prototype["position"] = undefined;
 SubStages.prototype["default"] = undefined;
 
 /**
- * @member {String} satge
+ * @member {module:model/SubStages.StageEnum} stage
  */
-SubStages.prototype["satge"] = undefined;
+SubStages.prototype["stage"] = undefined;
 
 /**
  * @member {Boolean} deleted
  */
 SubStages.prototype["deleted"] = undefined;
+
+/**
+ * Allowed values for the <code>stage</code> property.
+ * @enum {String}
+ * @readonly
+ */
+SubStages["StageEnum"] = {
+  /**
+   * value: "candidature"
+   * @const
+   */
+  candidature: "candidature",
+
+  /**
+   * value: "screening"
+   * @const
+   */
+  screening: "screening",
+
+  /**
+   * value: "on_site"
+   * @const
+   */
+  on_site: "on_site",
+
+  /**
+   * value: "offer"
+   * @const
+   */
+  offer: "offer",
+
+  /**
+   * value: "hire"
+   * @const
+   */
+  hire: "hire"
+};
 
 export default SubStages;

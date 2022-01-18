@@ -14,9 +14,10 @@
 import ApiClient from "./ApiClient";
 import Address from "./model/Address";
 import Applicant from "./model/Applicant";
+import Applicant1 from "./model/Applicant1";
 import ApplicantCandidate from "./model/ApplicantCandidate";
-import ApplicantConversation from "./model/ApplicantConversation";
-import ApplicantConversationCreate from "./model/ApplicantConversationCreate";
+import ApplicantComment from "./model/ApplicantComment";
+import ApplicantCommentCreate from "./model/ApplicantCommentCreate";
 import ApplicantCreate from "./model/ApplicantCreate";
 import ApplicantCreateCandidate from "./model/ApplicantCreateCandidate";
 import ApplicantDetail from "./model/ApplicantDetail";
@@ -26,8 +27,11 @@ import ApplicantDetailCandidateProfileLinks from "./model/ApplicantDetailCandida
 import ApplicantDetailCandidateReferrals from "./model/ApplicantDetailCandidateReferrals";
 import ApplicantDetailCandidateResumes from "./model/ApplicantDetailCandidateResumes";
 import ApplicantDetailFollowers from "./model/ApplicantDetailFollowers";
+import ApplicantEmail from "./model/ApplicantEmail";
+import ApplicantEmailCreate from "./model/ApplicantEmailCreate";
 import ApplicantField from "./model/ApplicantField";
 import ApplicantUpdate from "./model/ApplicantUpdate";
+import Attachment from "./model/Attachment";
 import BonusType from "./model/BonusType";
 import Branch from "./model/Branch";
 import BusinessUnit from "./model/BusinessUnit";
@@ -61,6 +65,7 @@ import EmployeeEmergencyContact from "./model/EmployeeEmergencyContact";
 import EmployeeField from "./model/EmployeeField";
 import EmployeeFieldPicklistValues from "./model/EmployeeFieldPicklistValues";
 import EmployeeFieldScopes from "./model/EmployeeFieldScopes";
+import EmployeeFields from "./model/EmployeeFields";
 import EmployeeGovernmentDocument from "./model/EmployeeGovernmentDocument";
 import EmployeeHonor from "./model/EmployeeHonor";
 import EmployeeLeaveType from "./model/EmployeeLeaveType";
@@ -76,24 +81,22 @@ import EmployeeTimeoff from "./model/EmployeeTimeoff";
 import EmployeeWorkPhoneNumber from "./model/EmployeeWorkPhoneNumber";
 import FieldOption from "./model/FieldOption";
 import GrantType from "./model/GrantType";
-import InlineObject from "./model/InlineObject";
-import InlineObject1 from "./model/InlineObject1";
-import InlineObject2 from "./model/InlineObject2";
-import InlineObject3 from "./model/InlineObject3";
-import InlineObject4 from "./model/InlineObject4";
 import InlineResponse400 from "./model/InlineResponse400";
 import InlineResponse401 from "./model/InlineResponse401";
 import InlineResponse403 from "./model/InlineResponse403";
 import InlineResponse404 from "./model/InlineResponse404";
 import InlineResponse422 from "./model/InlineResponse422";
 import InlineResponse500 from "./model/InlineResponse500";
+import InterviewDetail from "./model/InterviewDetail";
 import InterviewProcess from "./model/InterviewProcess";
+import Interviewer from "./model/Interviewer";
 import Job from "./model/Job";
 import JobDetail from "./model/JobDetail";
 import JobDetailSalary from "./model/JobDetailSalary";
 import JobField from "./model/JobField";
 import JobSalary from "./model/JobSalary";
 import LeaveRequest from "./model/LeaveRequest";
+import LeaveRequest1 from "./model/LeaveRequest1";
 import LeaveRequestCreate from "./model/LeaveRequestCreate";
 import LeaveType from "./model/LeaveType";
 import Level from "./model/Level";
@@ -125,12 +128,14 @@ import UserLite from "./model/UserLite";
 import VariablePayFrequency from "./model/VariablePayFrequency";
 import WorkHourRate from "./model/WorkHourRate";
 import ApplicantApi from "./api/ApplicantApi";
-import ApplicantConversationApi from "./api/ApplicantConversationApi";
+import ApplicantCommentApi from "./api/ApplicantCommentApi";
+import ApplicantEmailApi from "./api/ApplicantEmailApi";
 import BusinessUnitsApi from "./api/BusinessUnitsApi";
 import CandidateApi from "./api/CandidateApi";
 import DepartmentsApi from "./api/DepartmentsApi";
 import EmployeeApi from "./api/EmployeeApi";
 import EmployeeFieldsApi from "./api/EmployeeFieldsApi";
+import InterviewApi from "./api/InterviewApi";
 import JobApi from "./api/JobApi";
 import JobFieldsApi from "./api/JobFieldsApi";
 import LevelsApi from "./api/LevelsApi";
@@ -193,20 +198,25 @@ export {
    */
   Applicant,
   /**
+   * The Applicant1 model constructor.
+   * @property {module:model/Applicant1}
+   */
+  Applicant1,
+  /**
    * The ApplicantCandidate model constructor.
    * @property {module:model/ApplicantCandidate}
    */
   ApplicantCandidate,
   /**
-   * The ApplicantConversation model constructor.
-   * @property {module:model/ApplicantConversation}
+   * The ApplicantComment model constructor.
+   * @property {module:model/ApplicantComment}
    */
-  ApplicantConversation,
+  ApplicantComment,
   /**
-   * The ApplicantConversationCreate model constructor.
-   * @property {module:model/ApplicantConversationCreate}
+   * The ApplicantCommentCreate model constructor.
+   * @property {module:model/ApplicantCommentCreate}
    */
-  ApplicantConversationCreate,
+  ApplicantCommentCreate,
   /**
    * The ApplicantCreate model constructor.
    * @property {module:model/ApplicantCreate}
@@ -253,6 +263,16 @@ export {
    */
   ApplicantDetailFollowers,
   /**
+   * The ApplicantEmail model constructor.
+   * @property {module:model/ApplicantEmail}
+   */
+  ApplicantEmail,
+  /**
+   * The ApplicantEmailCreate model constructor.
+   * @property {module:model/ApplicantEmailCreate}
+   */
+  ApplicantEmailCreate,
+  /**
    * The ApplicantField model constructor.
    * @property {module:model/ApplicantField}
    */
@@ -262,6 +282,11 @@ export {
    * @property {module:model/ApplicantUpdate}
    */
   ApplicantUpdate,
+  /**
+   * The Attachment model constructor.
+   * @property {module:model/Attachment}
+   */
+  Attachment,
   /**
    * The BonusType model constructor.
    * @property {module:model/BonusType}
@@ -428,6 +453,11 @@ export {
    */
   EmployeeFieldScopes,
   /**
+   * The EmployeeFields model constructor.
+   * @property {module:model/EmployeeFields}
+   */
+  EmployeeFields,
+  /**
    * The EmployeeGovernmentDocument model constructor.
    * @property {module:model/EmployeeGovernmentDocument}
    */
@@ -503,31 +533,6 @@ export {
    */
   GrantType,
   /**
-   * The InlineObject model constructor.
-   * @property {module:model/InlineObject}
-   */
-  InlineObject,
-  /**
-   * The InlineObject1 model constructor.
-   * @property {module:model/InlineObject1}
-   */
-  InlineObject1,
-  /**
-   * The InlineObject2 model constructor.
-   * @property {module:model/InlineObject2}
-   */
-  InlineObject2,
-  /**
-   * The InlineObject3 model constructor.
-   * @property {module:model/InlineObject3}
-   */
-  InlineObject3,
-  /**
-   * The InlineObject4 model constructor.
-   * @property {module:model/InlineObject4}
-   */
-  InlineObject4,
-  /**
    * The InlineResponse400 model constructor.
    * @property {module:model/InlineResponse400}
    */
@@ -558,10 +563,20 @@ export {
    */
   InlineResponse500,
   /**
+   * The InterviewDetail model constructor.
+   * @property {module:model/InterviewDetail}
+   */
+  InterviewDetail,
+  /**
    * The InterviewProcess model constructor.
    * @property {module:model/InterviewProcess}
    */
   InterviewProcess,
+  /**
+   * The Interviewer model constructor.
+   * @property {module:model/Interviewer}
+   */
+  Interviewer,
   /**
    * The Job model constructor.
    * @property {module:model/Job}
@@ -592,6 +607,11 @@ export {
    * @property {module:model/LeaveRequest}
    */
   LeaveRequest,
+  /**
+   * The LeaveRequest1 model constructor.
+   * @property {module:model/LeaveRequest1}
+   */
+  LeaveRequest1,
   /**
    * The LeaveRequestCreate model constructor.
    * @property {module:model/LeaveRequestCreate}
@@ -748,10 +768,15 @@ export {
    */
   ApplicantApi,
   /**
-   * The ApplicantConversationApi service constructor.
-   * @property {module:api/ApplicantConversationApi}
+   * The ApplicantCommentApi service constructor.
+   * @property {module:api/ApplicantCommentApi}
    */
-  ApplicantConversationApi,
+  ApplicantCommentApi,
+  /**
+   * The ApplicantEmailApi service constructor.
+   * @property {module:api/ApplicantEmailApi}
+   */
+  ApplicantEmailApi,
   /**
    * The BusinessUnitsApi service constructor.
    * @property {module:api/BusinessUnitsApi}
@@ -777,6 +802,11 @@ export {
    * @property {module:api/EmployeeFieldsApi}
    */
   EmployeeFieldsApi,
+  /**
+   * The InterviewApi service constructor.
+   * @property {module:api/InterviewApi}
+   */
+  InterviewApi,
   /**
    * The JobApi service constructor.
    * @property {module:api/JobApi}

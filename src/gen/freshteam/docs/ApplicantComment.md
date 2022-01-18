@@ -1,4 +1,4 @@
-# FreshteamApiSdkCodegen.ApplicantConversation
+# FreshteamApiSdkCodegen.ApplicantComment
 
 ## Properties
 

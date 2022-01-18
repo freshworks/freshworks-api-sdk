@@ -14,20 +14,20 @@
 import ApiClient from "../ApiClient";
 
 /**
- * The InlineObject2 model module.
- * @module model/InlineObject2
+ * The EmployeeFields model module.
+ * @module model/EmployeeFields
  * @version 1.0.0
  */
-class InlineObject2 {
+class EmployeeFields {
   /**
-   * Constructs a new <code>InlineObject2</code>.
-   * @alias module:model/InlineObject2
+   * Constructs a new <code>EmployeeFields</code>.
+   * @alias module:model/EmployeeFields
    * @param label {String}
    * @param section_name {String}
-   * @param field_type {module:model/InlineObject2.FieldTypeEnum}
+   * @param field_type {module:model/EmployeeFields.FieldTypeEnum}
    */
   constructor(label, section_name, field_type) {
-    InlineObject2.initialize(this, label, section_name, field_type);
+    EmployeeFields.initialize(this, label, section_name, field_type);
   }
 
   /**
@@ -42,15 +42,15 @@ class InlineObject2 {
   }
 
   /**
-   * Constructs a <code>InlineObject2</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>EmployeeFields</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/InlineObject2} obj Optional instance to populate.
-   * @return {module:model/InlineObject2} The populated <code>InlineObject2</code> instance.
+   * @param {module:model/EmployeeFields} obj Optional instance to populate.
+   * @return {module:model/EmployeeFields} The populated <code>EmployeeFields</code> instance.
    */
   static constructFromObject(data, obj) {
     if (data) {
-      obj = obj || new InlineObject2();
+      obj = obj || new EmployeeFields();
 
       if (data.hasOwnProperty("label")) {
         obj["label"] = ApiClient.convertToType(data["label"], "String");
@@ -72,29 +72,29 @@ class InlineObject2 {
 /**
  * @member {String} label
  */
-InlineObject2.prototype["label"] = undefined;
+EmployeeFields.prototype["label"] = undefined;
 
 /**
  * @member {Boolean} required
  */
-InlineObject2.prototype["required"] = undefined;
+EmployeeFields.prototype["required"] = undefined;
 
 /**
  * @member {String} section_name
  */
-InlineObject2.prototype["section_name"] = undefined;
+EmployeeFields.prototype["section_name"] = undefined;
 
 /**
- * @member {module:model/InlineObject2.FieldTypeEnum} field_type
+ * @member {module:model/EmployeeFields.FieldTypeEnum} field_type
  */
-InlineObject2.prototype["field_type"] = undefined;
+EmployeeFields.prototype["field_type"] = undefined;
 
 /**
  * Allowed values for the <code>field_type</code> property.
  * @enum {String}
  * @readonly
  */
-InlineObject2["FieldTypeEnum"] = {
+EmployeeFields["FieldTypeEnum"] = {
   /**
    * value: "text"
    * @const
@@ -108,4 +108,4 @@ InlineObject2["FieldTypeEnum"] = {
   number: "number"
 };
 
-export default InlineObject2;
+export default EmployeeFields;

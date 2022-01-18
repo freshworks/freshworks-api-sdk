@@ -1,4 +1,4 @@
-# FreshteamApiSdkCodegen.InlineObject2
+# FreshteamApiSdkCodegen.EmployeeFields
 
 ## Properties
 

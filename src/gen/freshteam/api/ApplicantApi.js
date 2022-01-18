@@ -13,10 +13,9 @@
 
 import ApiClient from "../ApiClient";
 import Applicant from "../model/Applicant";
+import Applicant1 from "../model/Applicant1";
 import ApplicantDetail from "../model/ApplicantDetail";
 import ApplicantUpdate from "../model/ApplicantUpdate";
-import InlineObject3 from "../model/InlineObject3";
-import InlineObject4 from "../model/InlineObject4";
 import InlineResponse400 from "../model/InlineResponse400";
 import InlineResponse401 from "../model/InlineResponse401";
 import InlineResponse403 from "../model/InlineResponse403";
@@ -46,7 +45,7 @@ export default class ApplicantApi {
    * Archive Applicant
    * @param {Number} id the applicant identifier, as id
    * @param {Object} opts Optional parameters
-   * @param {module:model/InlineObject3} opts.applicant
+   * @param {module:model/Applicant} opts.applicant
    * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ApplicantDetail} and HTTP response
    */
   archiveApplicantWithHttpInfo(id, opts) {
@@ -89,7 +88,7 @@ export default class ApplicantApi {
    * Archive Applicant
    * @param {Number} id the applicant identifier, as id
    * @param {Object} opts Optional parameters
-   * @param {module:model/InlineObject3} opts.applicant
+   * @param {module:model/Applicant} opts.applicant
    * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ApplicantDetail}
    */
   archiveApplicant(id, opts) {
@@ -161,8 +160,8 @@ export default class ApplicantApi {
    * @param {String} opts.candidate_first_name  First Name of candidate to query
    * @param {String} opts.candidate_last_name Last Name of candidate to query
    * @param {String} opts.candidate_email Email of candidate to query
-   * @param {Array.<Number>} opts.candidate_source the identifier of source of candidate, as Id
-   * @param {Array.<Number>} opts.candidate_source_category the identifier of source_category of candidate, as Id
+   * @param {Array.<Number>} opts.candidate_source the identifier of source of candidate or source of the candidate's job application, as Id
+   * @param {Array.<Number>} opts.candidate_source_category the identifier of source_category of candidate or source_category of the candidate's job application, as Id
    * @param {Array.<Number>} opts.candidate_owner the identifier of owner of candidate, as Id
    * @param {Array.<String>} opts.candidate_city candidate city to query
    * @param {Array.<String>} opts.candidate_country_code candidate country code to query
@@ -180,6 +179,7 @@ export default class ApplicantApi {
    * @param {Date} opts.created_since applicant created_since
    * @param {Date} opts.updated_since applicant updated_since
    * @param {Boolean} opts.deleted the identifier of applicant deleted
+   * @param {Number} opts.page page number
    * @param {module:model/String} opts.sort Sort By
    * @param {module:model/String} opts.sort_type Sort Type
    * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Applicant>} and HTTP response
@@ -198,29 +198,30 @@ export default class ApplicantApi {
     let queryParams = {
       status: this.apiClient.buildCollectionParam(opts["status"], "csv"),
       stage: this.apiClient.buildCollectionParam(opts["stage"], "csv"),
-      followers_id: this.apiClient.buildCollectionParam(opts["followers_id"], "csv"),
+      followers_id: this.apiClient.buildCollectionParam(opts["followers_id"], "multi"),
       candidate_first_name: opts["candidate_first_name"],
       candidate_last_name: opts["candidate_last_name"],
       candidate_email: opts["candidate_email"],
-      candidate_source: this.apiClient.buildCollectionParam(opts["candidate_source"], "csv"),
-      candidate_source_category: this.apiClient.buildCollectionParam(opts["candidate_source_category"], "csv"),
-      candidate_owner: this.apiClient.buildCollectionParam(opts["candidate_owner"], "csv"),
+      candidate_source: this.apiClient.buildCollectionParam(opts["candidate_source"], "multi"),
+      candidate_source_category: this.apiClient.buildCollectionParam(opts["candidate_source_category"], "multi"),
+      candidate_owner: this.apiClient.buildCollectionParam(opts["candidate_owner"], "multi"),
       candidate_city: this.apiClient.buildCollectionParam(opts["candidate_city"], "csv"),
-      candidate_country_code: this.apiClient.buildCollectionParam(opts["candidate_country_code"], "csv"),
-      candidate_tags: this.apiClient.buildCollectionParam(opts["candidate_tags"], "csv"),
-      candidate_skills: this.apiClient.buildCollectionParam(opts["candidate_skills"], "csv"),
-      candidate_positions_company: this.apiClient.buildCollectionParam(opts["candidate_positions_company"], "csv"),
-      candidate_positions_title: this.apiClient.buildCollectionParam(opts["candidate_positions_title"], "csv"),
-      candidate_rating: this.apiClient.buildCollectionParam(opts["candidate_rating"], "csv"),
-      candidate_referred_by: this.apiClient.buildCollectionParam(opts["candidate_referred_by"], "csv"),
+      candidate_country_code: this.apiClient.buildCollectionParam(opts["candidate_country_code"], "multi"),
+      candidate_tags: this.apiClient.buildCollectionParam(opts["candidate_tags"], "multi"),
+      candidate_skills: this.apiClient.buildCollectionParam(opts["candidate_skills"], "multi"),
+      candidate_positions_company: this.apiClient.buildCollectionParam(opts["candidate_positions_company"], "multi"),
+      candidate_positions_title: this.apiClient.buildCollectionParam(opts["candidate_positions_title"], "multi"),
+      candidate_rating: this.apiClient.buildCollectionParam(opts["candidate_rating"], "multi"),
+      candidate_referred_by: this.apiClient.buildCollectionParam(opts["candidate_referred_by"], "multi"),
       candidate_has_email: opts["candidate_has_email"],
       candidate_responded: opts["candidate_responded"],
       candidate_spam: opts["candidate_spam"],
-      requisition_id: this.apiClient.buildCollectionParam(opts["requisition_id"], "csv"),
+      requisition_id: this.apiClient.buildCollectionParam(opts["requisition_id"], "multi"),
       created_at: opts["created_at"],
       created_since: opts["created_since"],
       updated_since: opts["updated_since"],
       deleted: opts["deleted"],
+      page: opts["page"],
       sort: opts["sort"],
       sort_type: opts["sort_type"]
     };
@@ -258,8 +259,8 @@ export default class ApplicantApi {
    * @param {String} opts.candidate_first_name  First Name of candidate to query
    * @param {String} opts.candidate_last_name Last Name of candidate to query
    * @param {String} opts.candidate_email Email of candidate to query
-   * @param {Array.<Number>} opts.candidate_source the identifier of source of candidate, as Id
-   * @param {Array.<Number>} opts.candidate_source_category the identifier of source_category of candidate, as Id
+   * @param {Array.<Number>} opts.candidate_source the identifier of source of candidate or source of the candidate's job application, as Id
+   * @param {Array.<Number>} opts.candidate_source_category the identifier of source_category of candidate or source_category of the candidate's job application, as Id
    * @param {Array.<Number>} opts.candidate_owner the identifier of owner of candidate, as Id
    * @param {Array.<String>} opts.candidate_city candidate city to query
    * @param {Array.<String>} opts.candidate_country_code candidate country code to query
@@ -277,6 +278,7 @@ export default class ApplicantApi {
    * @param {Date} opts.created_since applicant created_since
    * @param {Date} opts.updated_since applicant updated_since
    * @param {Boolean} opts.deleted the identifier of applicant deleted
+   * @param {Number} opts.page page number
    * @param {module:model/String} opts.sort Sort By
    * @param {module:model/String} opts.sort_type Sort Type
    * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Applicant>}
@@ -292,7 +294,7 @@ export default class ApplicantApi {
    * Applicant sub stage update
    * @param {Number} id the applicant identifier, as id
    * @param {Object} opts Optional parameters
-   * @param {module:model/InlineObject4} opts.applicant
+   * @param {module:model/Applicant1} opts.applicant
    * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ApplicantDetail} and HTTP response
    */
   moveSubStageWithHttpInfo(id, opts) {
@@ -335,7 +337,7 @@ export default class ApplicantApi {
    * Applicant sub stage update
    * @param {Number} id the applicant identifier, as id
    * @param {Object} opts Optional parameters
-   * @param {module:model/InlineObject4} opts.applicant
+   * @param {module:model/Applicant1} opts.applicant
    * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ApplicantDetail}
    */
   moveSubStage(id, opts) {

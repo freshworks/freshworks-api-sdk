@@ -12,7 +12,6 @@
  */
 
 import ApiClient from "../ApiClient";
-import ApplicantCandidate from "./ApplicantCandidate";
 
 /**
  * The Applicant model module.
@@ -46,35 +45,11 @@ class Applicant {
     if (data) {
       obj = obj || new Applicant();
 
-      if (data.hasOwnProperty("id")) {
-        obj["id"] = ApiClient.convertToType(data["id"], "Number");
+      if (data.hasOwnProperty("department_ids")) {
+        obj["department_ids"] = ApiClient.convertToType(data["department_ids"], ["Number"]);
       }
-      if (data.hasOwnProperty("created_at")) {
-        obj["created_at"] = ApiClient.convertToType(data["created_at"], "Date");
-      }
-      if (data.hasOwnProperty("updated_at")) {
-        obj["updated_at"] = ApiClient.convertToType(data["updated_at"], "Date");
-      }
-      if (data.hasOwnProperty("status")) {
-        obj["status"] = ApiClient.convertToType(data["status"], "String");
-      }
-      if (data.hasOwnProperty("stage")) {
-        obj["stage"] = ApiClient.convertToType(data["stage"], "String");
-      }
-      if (data.hasOwnProperty("sub_stage_id")) {
-        obj["sub_stage_id"] = ApiClient.convertToType(data["sub_stage_id"], "Number");
-      }
-      if (data.hasOwnProperty("job_id")) {
-        obj["job_id"] = ApiClient.convertToType(data["job_id"], "Number");
-      }
-      if (data.hasOwnProperty("requisition_id")) {
-        obj["requisition_id"] = ApiClient.convertToType(data["requisition_id"], "Number");
-      }
-      if (data.hasOwnProperty("deleted")) {
-        obj["deleted"] = ApiClient.convertToType(data["deleted"], "Boolean");
-      }
-      if (data.hasOwnProperty("candidate")) {
-        obj["candidate"] = ApplicantCandidate.constructFromObject(data["candidate"]);
+      if (data.hasOwnProperty("tags")) {
+        obj["tags"] = ApiClient.convertToType(data["tags"], ["String"]);
       }
     }
     return obj;
@@ -82,133 +57,13 @@ class Applicant {
 }
 
 /**
- * @member {Number} id
+ * @member {Array.<Number>} department_ids
  */
-Applicant.prototype["id"] = undefined;
+Applicant.prototype["department_ids"] = undefined;
 
 /**
- * @member {Date} created_at
+ * @member {Array.<String>} tags
  */
-Applicant.prototype["created_at"] = undefined;
-
-/**
- * @member {Date} updated_at
- */
-Applicant.prototype["updated_at"] = undefined;
-
-/**
- * @member {module:model/Applicant.StatusEnum} status
- */
-Applicant.prototype["status"] = undefined;
-
-/**
- * @member {module:model/Applicant.StageEnum} stage
- */
-Applicant.prototype["stage"] = undefined;
-
-/**
- * @member {Number} sub_stage_id
- */
-Applicant.prototype["sub_stage_id"] = undefined;
-
-/**
- * @member {Number} job_id
- */
-Applicant.prototype["job_id"] = undefined;
-
-/**
- * @member {Number} requisition_id
- */
-Applicant.prototype["requisition_id"] = undefined;
-
-/**
- * @member {Boolean} deleted
- */
-Applicant.prototype["deleted"] = undefined;
-
-/**
- * @member {module:model/ApplicantCandidate} candidate
- */
-Applicant.prototype["candidate"] = undefined;
-
-/**
- * Allowed values for the <code>status</code> property.
- * @enum {String}
- * @readonly
- */
-Applicant["StatusEnum"] = {
-  /**
-   * value: "open"
-   * @const
-   */
-  open: "open",
-
-  /**
-   * value: "on_hold"
-   * @const
-   */
-  on_hold: "on_hold",
-
-  /**
-   * value: "rejected"
-   * @const
-   */
-  rejected: "rejected",
-
-  /**
-   * value: "archived"
-   * @const
-   */
-  archived: "archived",
-
-  /**
-   * value: "moved"
-   * @const
-   */
-  moved: "moved",
-
-  /**
-   * value: "dropped"
-   * @const
-   */
-  dropped: "dropped"
-};
-
-/**
- * Allowed values for the <code>stage</code> property.
- * @enum {String}
- * @readonly
- */
-Applicant["StageEnum"] = {
-  /**
-   * value: "candidature"
-   * @const
-   */
-  candidature: "candidature",
-
-  /**
-   * value: "screening"
-   * @const
-   */
-  screening: "screening",
-
-  /**
-   * value: "on_site"
-   * @const
-   */
-  on_site: "on_site",
-
-  /**
-   * value: "offer"
-   * @const
-   */
-  offer: "offer",
-
-  /**
-   * value: "hire"
-   * @const
-   */
-  hire: "hire"
-};
+Applicant.prototype["tags"] = undefined;
 
 export default Applicant;

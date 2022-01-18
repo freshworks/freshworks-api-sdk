@@ -4,12 +4,12 @@ All URIs are relative to *https://adityasharma2519.freshteam.com/api*
 
 | Method                                                              | HTTP request              | Description           |
 | ------------------------------------------------------------------- | ------------------------- | --------------------- |
-| [**createEmployeeFiled**](EmployeeFieldsApi.md#createEmployeeFiled) | **POST** /employee_fields | Create a Custom Field |
+| [**createEmployeeField**](EmployeeFieldsApi.md#createEmployeeField) | **POST** /employee_fields | Create a Custom Field |
 | [**getEmployeeFields**](EmployeeFieldsApi.md#getEmployeeFields)     | **GET** /employee_fields  | Employee Fields List  |
 
-## createEmployeeFiled
+## createEmployeeField
 
-> EmployeeField createEmployeeFiled(opts)
+> EmployeeField createEmployeeField(opts)
 
 Create a Custom Field
 
@@ -28,9 +28,9 @@ ApiKeyAuth.apiKey = "YOUR API KEY";
 
 let apiInstance = new FreshteamApiSdkCodegen.EmployeeFieldsApi();
 let opts = {
-  employee_fields: new FreshteamApiSdkCodegen.InlineObject2() // InlineObject2 |
+  employee_fields: new FreshteamApiSdkCodegen.EmployeeFields() // EmployeeFields |
 };
-apiInstance.createEmployeeFiled(opts).then(
+apiInstance.createEmployeeField(opts).then(
   data => {
     console.log("API called successfully. Returned data: " + data);
   },
@@ -42,9 +42,9 @@ apiInstance.createEmployeeFiled(opts).then(
 
 ### Parameters
 
-| Name                | Type                                  | Description | Notes      |
-| ------------------- | ------------------------------------- | ----------- | ---------- |
-| **employee_fields** | [**InlineObject2**](InlineObject2.md) |             | [optional] |
+| Name                | Type                                    | Description | Notes      |
+| ------------------- | --------------------------------------- | ----------- | ---------- |
+| **employee_fields** | [**EmployeeFields**](EmployeeFields.md) |             | [optional] |
 
 ### Return type
 
@@ -65,7 +65,7 @@ apiInstance.createEmployeeFiled(opts).then(
 
 Employee Fields List
 
-List of active employees fields in the form
+List of active employee fields in the form
 
 ### Example
 

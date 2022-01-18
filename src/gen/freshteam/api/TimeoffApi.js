@@ -12,8 +12,6 @@
  */
 
 import ApiClient from "../ApiClient";
-import InlineObject from "../model/InlineObject";
-import InlineObject1 from "../model/InlineObject1";
 import InlineResponse400 from "../model/InlineResponse400";
 import InlineResponse401 from "../model/InlineResponse401";
 import InlineResponse403 from "../model/InlineResponse403";
@@ -21,6 +19,7 @@ import InlineResponse404 from "../model/InlineResponse404";
 import InlineResponse422 from "../model/InlineResponse422";
 import InlineResponse500 from "../model/InlineResponse500";
 import LeaveRequest from "../model/LeaveRequest";
+import LeaveRequest1 from "../model/LeaveRequest1";
 import LeaveRequestCreate from "../model/LeaveRequestCreate";
 import LeaveType from "../model/LeaveType";
 
@@ -46,7 +45,7 @@ export default class TimeoffApi {
    * Approve Timeoff Request details
    * @param {Number} id the timeoff type identifier, as id
    * @param {Object} opts Optional parameters
-   * @param {module:model/InlineObject} opts.leave_request
+   * @param {module:model/LeaveRequest} opts.leave_request
    * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
    */
   approveTimeoffWithHttpInfo(id, opts) {
@@ -89,7 +88,7 @@ export default class TimeoffApi {
    * Approve Timeoff Request details
    * @param {Number} id the timeoff type identifier, as id
    * @param {Object} opts Optional parameters
-   * @param {module:model/InlineObject} opts.leave_request
+   * @param {module:model/LeaveRequest} opts.leave_request
    * @return {Promise} a {@link https://www.promisejs.org/|Promise}
    */
   approveTimeoff(id, opts) {
@@ -358,6 +357,9 @@ export default class TimeoffApi {
    * @param {Array.<String>} opts.location the identifier of user location, as id
    * @param {Date} opts.start_date The start date for the timeoff request. Must be used together with `end_date`.
    * @param {Date} opts.end_date The end date for the timeoff request. Must be used together with `start_date` and should be greater than `start date`.
+   * @param {Number} opts.page page number
+   * @param {module:model/String} opts.sort Sort By
+   * @param {module:model/String} opts.sort_type Sort Type
    * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/LeaveRequest>} and HTTP response
    */
   getTimeoffsWithHttpInfo(opts) {
@@ -371,7 +373,10 @@ export default class TimeoffApi {
       leave_type: this.apiClient.buildCollectionParam(opts["leave_type"], "csv"),
       location: this.apiClient.buildCollectionParam(opts["location"], "csv"),
       start_date: opts["start_date"],
-      end_date: opts["end_date"]
+      end_date: opts["end_date"],
+      page: opts["page"],
+      sort: opts["sort"],
+      sort_type: opts["sort_type"]
     };
     let headerParams = {};
     let formParams = {};
@@ -406,6 +411,9 @@ export default class TimeoffApi {
    * @param {Array.<String>} opts.location the identifier of user location, as id
    * @param {Date} opts.start_date The start date for the timeoff request. Must be used together with `end_date`.
    * @param {Date} opts.end_date The end date for the timeoff request. Must be used together with `start_date` and should be greater than `start date`.
+   * @param {Number} opts.page page number
+   * @param {module:model/String} opts.sort Sort By
+   * @param {module:model/String} opts.sort_type Sort Type
    * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/LeaveRequest>}
    */
   getTimeoffs(opts) {
@@ -419,7 +427,7 @@ export default class TimeoffApi {
    * Reject Timeoff Request details
    * @param {Number} id the timeoff type identifier, as id
    * @param {Object} opts Optional parameters
-   * @param {module:model/InlineObject1} opts.leave_request
+   * @param {module:model/LeaveRequest1} opts.leave_request
    * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
    */
   rejectTimeoffWithHttpInfo(id, opts) {
@@ -462,7 +470,7 @@ export default class TimeoffApi {
    * Reject Timeoff Request details
    * @param {Number} id the timeoff type identifier, as id
    * @param {Object} opts Optional parameters
-   * @param {module:model/InlineObject1} opts.leave_request
+   * @param {module:model/LeaveRequest1} opts.leave_request
    * @return {Promise} a {@link https://www.promisejs.org/|Promise}
    */
   rejectTimeoff(id, opts) {

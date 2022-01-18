@@ -35,7 +35,7 @@ ApiKeyAuth.apiKey = "YOUR API KEY";
 let apiInstance = new FreshteamApiSdkCodegen.TimeoffApi();
 let id = 56; // Number | the timeoff type identifier, as id
 let opts = {
-  leave_request: new FreshteamApiSdkCodegen.InlineObject() // InlineObject |
+  leave_request: new FreshteamApiSdkCodegen.LeaveRequest() // LeaveRequest |
 };
 apiInstance.approveTimeoff(id, opts).then(
   () => {
@@ -52,7 +52,7 @@ apiInstance.approveTimeoff(id, opts).then(
 | Name              | Type                                | Description                        | Notes      |
 | ----------------- | ----------------------------------- | ---------------------------------- | ---------- |
 | **id**            | **Number**                          | the timeoff type identifier, as id |
-| **leave_request** | [**InlineObject**](InlineObject.md) |                                    | [optional] |
+| **leave_request** | [**LeaveRequest**](LeaveRequest.md) |                                    | [optional] |
 
 ### Return type
 
@@ -340,7 +340,10 @@ let opts = {
   leave_type: ["null"], // [String] | the identifier of leave_type, as id
   location: ["null"], // [String] | the identifier of user location, as id
   start_date: new Date("2013-10-20"), // Date | The start date for the timeoff request. Must be used together with `end_date`.
-  end_date: new Date("2013-10-20") // Date | The end date for the timeoff request. Must be used together with `start_date` and should be greater than `start date`.
+  end_date: new Date("2013-10-20"), // Date | The end date for the timeoff request. Must be used together with `start_date` and should be greater than `start date`.
+  page: 56, // Number | page number
+  sort: "sort_example", // String | Sort By
+  sort_type: "sort_type_example" // String | Sort Type
 };
 apiInstance.getTimeoffs(opts).then(
   data => {
@@ -362,6 +365,9 @@ apiInstance.getTimeoffs(opts).then(
 | **location**   | [**[String]**](String.md) | the identifier of user location, as id                                                                                                     | [optional] |
 | **start_date** | **Date**                  | The start date for the timeoff request. Must be used together with &#x60;end_date&#x60;.                                                   | [optional] |
 | **end_date**   | **Date**                  | The end date for the timeoff request. Must be used together with &#x60;start_date&#x60; and should be greater than &#x60;start date&#x60;. | [optional] |
+| **page**       | **Number**                | page number                                                                                                                                | [optional] |
+| **sort**       | **String**                | Sort By                                                                                                                                    | [optional] |
+| **sort_type**  | **String**                | Sort Type                                                                                                                                  | [optional] |
 
 ### Return type
 
@@ -398,7 +404,7 @@ ApiKeyAuth.apiKey = "YOUR API KEY";
 let apiInstance = new FreshteamApiSdkCodegen.TimeoffApi();
 let id = 56; // Number | the timeoff type identifier, as id
 let opts = {
-  leave_request: new FreshteamApiSdkCodegen.InlineObject1() // InlineObject1 |
+  leave_request: new FreshteamApiSdkCodegen.LeaveRequest1() // LeaveRequest1 |
 };
 apiInstance.rejectTimeoff(id, opts).then(
   () => {
@@ -415,7 +421,7 @@ apiInstance.rejectTimeoff(id, opts).then(
 | Name              | Type                                  | Description                        | Notes      |
 | ----------------- | ------------------------------------- | ---------------------------------- | ---------- |
 | **id**            | **Number**                            | the timeoff type identifier, as id |
-| **leave_request** | [**InlineObject1**](InlineObject1.md) |                                    | [optional] |
+| **leave_request** | [**LeaveRequest1**](LeaveRequest1.md) |                                    | [optional] |
 
 ### Return type
 
