@@ -14,17 +14,17 @@
 import ApiClient from "../ApiClient";
 
 /**
- * The InlineObject4 model module.
- * @module model/InlineObject4
+ * The Applicant1 model module.
+ * @module model/Applicant1
  * @version 1.0.0
  */
-class InlineObject4 {
+class Applicant1 {
   /**
-   * Constructs a new <code>InlineObject4</code>.
-   * @alias module:model/InlineObject4
+   * Constructs a new <code>Applicant1</code>.
+   * @alias module:model/Applicant1
    */
   constructor() {
-    InlineObject4.initialize(this);
+    Applicant1.initialize(this);
   }
 
   /**
@@ -35,15 +35,15 @@ class InlineObject4 {
   static initialize(obj) {}
 
   /**
-   * Constructs a <code>InlineObject4</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>Applicant1</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/InlineObject4} obj Optional instance to populate.
-   * @return {module:model/InlineObject4} The populated <code>InlineObject4</code> instance.
+   * @param {module:model/Applicant1} obj Optional instance to populate.
+   * @return {module:model/Applicant1} The populated <code>Applicant1</code> instance.
    */
   static constructFromObject(data, obj) {
     if (data) {
-      obj = obj || new InlineObject4();
+      obj = obj || new Applicant1();
 
       if (data.hasOwnProperty("sub_stage_id")) {
         obj["sub_stage_id"] = ApiClient.convertToType(data["sub_stage_id"], "Number");
@@ -65,21 +65,21 @@ class InlineObject4 {
 /**
  * @member {Number} sub_stage_id
  */
-InlineObject4.prototype["sub_stage_id"] = undefined;
+Applicant1.prototype["sub_stage_id"] = undefined;
 
 /**
  * @member {Number} decline_reason_id
  */
-InlineObject4.prototype["decline_reason_id"] = undefined;
+Applicant1.prototype["decline_reason_id"] = undefined;
 
 /**
  * @member {String} comment
  */
-InlineObject4.prototype["comment"] = undefined;
+Applicant1.prototype["comment"] = undefined;
 
 /**
  * @member {Date} date_of_joining
  */
-InlineObject4.prototype["date_of_joining"] = undefined;
+Applicant1.prototype["date_of_joining"] = undefined;
 
-export default InlineObject4;
+export default Applicant1;

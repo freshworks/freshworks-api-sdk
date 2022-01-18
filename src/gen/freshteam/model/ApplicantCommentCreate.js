@@ -14,18 +14,18 @@
 import ApiClient from "../ApiClient";
 
 /**
- * The ApplicantConversationCreate model module.
- * @module model/ApplicantConversationCreate
+ * The ApplicantCommentCreate model module.
+ * @module model/ApplicantCommentCreate
  * @version 1.0.0
  */
-class ApplicantConversationCreate {
+class ApplicantCommentCreate {
   /**
-   * Constructs a new <code>ApplicantConversationCreate</code>.
-   * @alias module:model/ApplicantConversationCreate
+   * Constructs a new <code>ApplicantCommentCreate</code>.
+   * @alias module:model/ApplicantCommentCreate
    * @param body {String}
    */
   constructor(body) {
-    ApplicantConversationCreate.initialize(this, body);
+    ApplicantCommentCreate.initialize(this, body);
   }
 
   /**
@@ -38,15 +38,15 @@ class ApplicantConversationCreate {
   }
 
   /**
-   * Constructs a <code>ApplicantConversationCreate</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>ApplicantCommentCreate</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/ApplicantConversationCreate} obj Optional instance to populate.
-   * @return {module:model/ApplicantConversationCreate} The populated <code>ApplicantConversationCreate</code> instance.
+   * @param {module:model/ApplicantCommentCreate} obj Optional instance to populate.
+   * @return {module:model/ApplicantCommentCreate} The populated <code>ApplicantCommentCreate</code> instance.
    */
   static constructFromObject(data, obj) {
     if (data) {
-      obj = obj || new ApplicantConversationCreate();
+      obj = obj || new ApplicantCommentCreate();
 
       if (data.hasOwnProperty("body")) {
         obj["body"] = ApiClient.convertToType(data["body"], "String");
@@ -68,21 +68,21 @@ class ApplicantConversationCreate {
 /**
  * @member {String} body
  */
-ApplicantConversationCreate.prototype["body"] = undefined;
+ApplicantCommentCreate.prototype["body"] = undefined;
 
 /**
  * @member {Boolean} private
  */
-ApplicantConversationCreate.prototype["private"] = undefined;
+ApplicantCommentCreate.prototype["private"] = undefined;
 
 /**
  * @member {Array.<Number>} notify_ids
  */
-ApplicantConversationCreate.prototype["notify_ids"] = undefined;
+ApplicantCommentCreate.prototype["notify_ids"] = undefined;
 
 /**
  * @member {Array.<File>} attachments
  */
-ApplicantConversationCreate.prototype["attachments"] = undefined;
+ApplicantCommentCreate.prototype["attachments"] = undefined;
 
-export default ApplicantConversationCreate;
+export default ApplicantCommentCreate;

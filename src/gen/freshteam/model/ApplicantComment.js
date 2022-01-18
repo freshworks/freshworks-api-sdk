@@ -14,17 +14,17 @@
 import ApiClient from "../ApiClient";
 
 /**
- * The ApplicantConversation model module.
- * @module model/ApplicantConversation
+ * The ApplicantComment model module.
+ * @module model/ApplicantComment
  * @version 1.0.0
  */
-class ApplicantConversation {
+class ApplicantComment {
   /**
-   * Constructs a new <code>ApplicantConversation</code>.
-   * @alias module:model/ApplicantConversation
+   * Constructs a new <code>ApplicantComment</code>.
+   * @alias module:model/ApplicantComment
    */
   constructor() {
-    ApplicantConversation.initialize(this);
+    ApplicantComment.initialize(this);
   }
 
   /**
@@ -35,15 +35,15 @@ class ApplicantConversation {
   static initialize(obj) {}
 
   /**
-   * Constructs a <code>ApplicantConversation</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>ApplicantComment</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/ApplicantConversation} obj Optional instance to populate.
-   * @return {module:model/ApplicantConversation} The populated <code>ApplicantConversation</code> instance.
+   * @param {module:model/ApplicantComment} obj Optional instance to populate.
+   * @return {module:model/ApplicantComment} The populated <code>ApplicantComment</code> instance.
    */
   static constructFromObject(data, obj) {
     if (data) {
-      obj = obj || new ApplicantConversation();
+      obj = obj || new ApplicantComment();
 
       if (data.hasOwnProperty("id")) {
         obj["id"] = ApiClient.convertToType(data["id"], "Number");
@@ -80,46 +80,46 @@ class ApplicantConversation {
 /**
  * @member {Number} id
  */
-ApplicantConversation.prototype["id"] = undefined;
+ApplicantComment.prototype["id"] = undefined;
 
 /**
  * @member {Date} created_at
  */
-ApplicantConversation.prototype["created_at"] = undefined;
+ApplicantComment.prototype["created_at"] = undefined;
 
 /**
  * @member {Date} updated_at
  */
-ApplicantConversation.prototype["updated_at"] = undefined;
+ApplicantComment.prototype["updated_at"] = undefined;
 
 /**
  * @member {String} body
  */
-ApplicantConversation.prototype["body"] = undefined;
+ApplicantComment.prototype["body"] = undefined;
 
 /**
  * @member {String} body_text
  */
-ApplicantConversation.prototype["body_text"] = undefined;
+ApplicantComment.prototype["body_text"] = undefined;
 
 /**
  * @member {Boolean} private
  */
-ApplicantConversation.prototype["private"] = undefined;
+ApplicantComment.prototype["private"] = undefined;
 
 /**
  * @member {Number} user_id
  */
-ApplicantConversation.prototype["user_id"] = undefined;
+ApplicantComment.prototype["user_id"] = undefined;
 
 /**
  * @member {Array.<Number>} notify_ids
  */
-ApplicantConversation.prototype["notify_ids"] = undefined;
+ApplicantComment.prototype["notify_ids"] = undefined;
 
 /**
  * @member {Array.<File>} attachments
  */
-ApplicantConversation.prototype["attachments"] = undefined;
+ApplicantComment.prototype["attachments"] = undefined;
 
-export default ApplicantConversation;
+export default ApplicantComment;

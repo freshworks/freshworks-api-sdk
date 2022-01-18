@@ -13,7 +13,7 @@
 
 import ApiClient from "../ApiClient";
 import EmployeeField from "../model/EmployeeField";
-import InlineObject2 from "../model/InlineObject2";
+import EmployeeFields from "../model/EmployeeFields";
 import InlineResponse400 from "../model/InlineResponse400";
 import InlineResponse401 from "../model/InlineResponse401";
 import InlineResponse403 from "../model/InlineResponse403";
@@ -42,10 +42,10 @@ export default class EmployeeFieldsApi {
    * Create a Custom Field
    * Create a Custom Field in Employee Form
    * @param {Object} opts Optional parameters
-   * @param {module:model/InlineObject2} opts.employee_fields
+   * @param {module:model/EmployeeFields} opts.employee_fields
    * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/EmployeeField} and HTTP response
    */
-  createEmployeeFiledWithHttpInfo(opts) {
+  createEmployeeFieldWithHttpInfo(opts) {
     opts = opts || {};
     let postBody = opts["employee_fields"];
 
@@ -78,18 +78,18 @@ export default class EmployeeFieldsApi {
    * Create a Custom Field
    * Create a Custom Field in Employee Form
    * @param {Object} opts Optional parameters
-   * @param {module:model/InlineObject2} opts.employee_fields
+   * @param {module:model/EmployeeFields} opts.employee_fields
    * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/EmployeeField}
    */
-  createEmployeeFiled(opts) {
-    return this.createEmployeeFiledWithHttpInfo(opts).then(function (response_and_data) {
+  createEmployeeField(opts) {
+    return this.createEmployeeFieldWithHttpInfo(opts).then(function (response_and_data) {
       return response_and_data.data;
     });
   }
 
   /**
    * Employee Fields List
-   * List of active employees fields in the form
+   * List of active employee fields in the form
    * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/EmployeeField>} and HTTP response
    */
   getEmployeeFieldsWithHttpInfo() {
@@ -122,7 +122,7 @@ export default class EmployeeFieldsApi {
 
   /**
    * Employee Fields List
-   * List of active employees fields in the form
+   * List of active employee fields in the form
    * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/EmployeeField>}
    */
   getEmployeeFields() {

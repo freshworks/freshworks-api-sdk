@@ -1,4 +1,4 @@
-# FreshteamApiSdkCodegen.InlineObject4
+# FreshteamApiSdkCodegen.Applicant1
 
 ## Properties
 

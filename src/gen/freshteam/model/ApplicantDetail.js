@@ -93,6 +93,12 @@ class ApplicantDetail {
       if (data.hasOwnProperty("requisition_id")) {
         obj["requisition_id"] = ApiClient.convertToType(data["requisition_id"], "Number");
       }
+      if (data.hasOwnProperty("applicant_source_id")) {
+        obj["applicant_source_id"] = ApiClient.convertToType(data["applicant_source_id"], "Number");
+      }
+      if (data.hasOwnProperty("applicant_source_category_id")) {
+        obj["applicant_source_category_id"] = ApiClient.convertToType(data["applicant_source_category_id"], "Number");
+      }
       if (data.hasOwnProperty("custom_fields")) {
         obj["custom_fields"] = NewHireCreateCustomFields.constructFromObject(data["custom_fields"]);
       }
@@ -181,6 +187,16 @@ ApplicantDetail.prototype["job_title"] = undefined;
  * @member {Number} requisition_id
  */
 ApplicantDetail.prototype["requisition_id"] = undefined;
+
+/**
+ * @member {Number} applicant_source_id
+ */
+ApplicantDetail.prototype["applicant_source_id"] = undefined;
+
+/**
+ * @member {Number} applicant_source_category_id
+ */
+ApplicantDetail.prototype["applicant_source_category_id"] = undefined;
 
 /**
  * @member {module:model/NewHireCreateCustomFields} custom_fields

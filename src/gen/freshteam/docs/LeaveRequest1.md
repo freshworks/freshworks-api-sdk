@@ -1,4 +1,4 @@
-# FreshteamApiSdkCodegen.InlineObject
+# FreshteamApiSdkCodegen.LeaveRequest1
 
 ## Properties
 

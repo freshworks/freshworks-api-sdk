@@ -216,6 +216,9 @@ export default class JobApi {
    * @param {Array.<String>} opts.location_city jobs city to query
    * @param {Array.<String>} opts.location_country jobs country to query
    * @param {Array.<String>} opts.location_state jobs state to query
+   * @param {Number} opts.page page number
+   * @param {module:model/String} opts.sort Sort By
+   * @param {module:model/String} opts.sort_type Sort Type
    * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Job>} and HTTP response
    */
   getJobsWithHttpInfo(opts) {
@@ -232,7 +235,10 @@ export default class JobApi {
       remote: this.apiClient.buildCollectionParam(opts["remote"], "csv"),
       location_city: this.apiClient.buildCollectionParam(opts["location_city"], "csv"),
       location_country: this.apiClient.buildCollectionParam(opts["location_country"], "csv"),
-      location_state: this.apiClient.buildCollectionParam(opts["location_state"], "csv")
+      location_state: this.apiClient.buildCollectionParam(opts["location_state"], "csv"),
+      page: opts["page"],
+      sort: opts["sort"],
+      sort_type: opts["sort_type"]
     };
     let headerParams = {};
     let formParams = {};
@@ -270,6 +276,9 @@ export default class JobApi {
    * @param {Array.<String>} opts.location_city jobs city to query
    * @param {Array.<String>} opts.location_country jobs country to query
    * @param {Array.<String>} opts.location_state jobs state to query
+   * @param {Number} opts.page page number
+   * @param {module:model/String} opts.sort Sort By
+   * @param {module:model/String} opts.sort_type Sort Type
    * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Job>}
    */
   getJobs(opts) {

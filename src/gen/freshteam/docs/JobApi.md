@@ -190,7 +190,10 @@ let opts = {
   remote: [null], // [Boolean] | remote flag of jobs to query
   location_city: ["null"], // [String] | jobs city to query
   location_country: ["null"], // [String] | jobs country to query
-  location_state: ["null"] // [String] | jobs state to query
+  location_state: ["null"], // [String] | jobs state to query
+  page: 56, // Number | page number
+  sort: "sort_example", // String | Sort By
+  sort_type: "sort_type_example" // String | Sort Type
 };
 apiInstance.getJobs(opts).then(
   data => {
@@ -215,6 +218,9 @@ apiInstance.getJobs(opts).then(
 | **location_city**    | [**[String]**](String.md)   | jobs city to query                                | [optional] |
 | **location_country** | [**[String]**](String.md)   | jobs country to query                             | [optional] |
 | **location_state**   | [**[String]**](String.md)   | jobs state to query                               | [optional] |
+| **page**             | **Number**                  | page number                                       | [optional] |
+| **sort**             | **String**                  | Sort By                                           | [optional] |
+| **sort_type**        | **String**                  | Sort Type                                         | [optional] |
 
 ### Return type
 

@@ -32,7 +32,7 @@ ApiKeyAuth.apiKey = "YOUR API KEY";
 let apiInstance = new FreshteamApiSdkCodegen.ApplicantApi();
 let id = 56; // Number | the applicant identifier, as id
 let opts = {
-  applicant: new FreshteamApiSdkCodegen.InlineObject3() // InlineObject3 |
+  applicant: new FreshteamApiSdkCodegen.Applicant() // Applicant |
 };
 apiInstance.archiveApplicant(id, opts).then(
   data => {
@@ -46,10 +46,10 @@ apiInstance.archiveApplicant(id, opts).then(
 
 ### Parameters
 
-| Name          | Type                                  | Description                     | Notes      |
-| ------------- | ------------------------------------- | ------------------------------- | ---------- |
-| **id**        | **Number**                            | the applicant identifier, as id |
-| **applicant** | [**InlineObject3**](InlineObject3.md) |                                 | [optional] |
+| Name          | Type                          | Description                     | Notes      |
+| ------------- | ----------------------------- | ------------------------------- | ---------- |
+| **id**        | **Number**                    | the applicant identifier, as id |
+| **applicant** | [**Applicant**](Applicant.md) |                                 | [optional] |
 
 ### Return type
 
@@ -142,8 +142,8 @@ let opts = {
   candidate_first_name: "candidate_first_name_example", // String |  First Name of candidate to query
   candidate_last_name: "candidate_last_name_example", // String | Last Name of candidate to query
   candidate_email: "candidate_email_example", // String | Email of candidate to query
-  candidate_source: [null], // [Number] | the identifier of source of candidate, as Id
-  candidate_source_category: [null], // [Number] | the identifier of source_category of candidate, as Id
+  candidate_source: [null], // [Number] | the identifier of source of candidate or source of the candidate's job application, as Id
+  candidate_source_category: [null], // [Number] | the identifier of source_category of candidate or source_category of the candidate's job application, as Id
   candidate_owner: [null], // [Number] | the identifier of owner of candidate, as Id
   candidate_city: ["null"], // [String] | candidate city to query
   candidate_country_code: ["null"], // [String] | candidate country code to query
@@ -161,6 +161,7 @@ let opts = {
   created_since: new Date("2013-10-20"), // Date | applicant created_since
   updated_since: new Date("2013-10-20"), // Date | applicant updated_since
   deleted: true, // Boolean | the identifier of applicant deleted
+  page: 56, // Number | page number
   sort: "sort_example", // String | Sort By
   sort_type: "sort_type_example" // String | Sort Type
 };
@@ -176,36 +177,37 @@ apiInstance.getApplicants(id, opts).then(
 
 ### Parameters
 
-| Name                            | Type                      | Description                                           | Notes      |
-| ------------------------------- | ------------------------- | ----------------------------------------------------- | ---------- |
-| **id**                          | **Number**                | the job_posting identifier, as id                     |
-| **status**                      | [**[String]**](String.md) | the status key                                        | [optional] |
-| **stage**                       | [**[Number]**](Number.md) | the identifier of Stage of applicants, as Id          | [optional] |
-| **followers_id**                | [**[Number]**](Number.md) | the identifier of followers of applicant, as Id       | [optional] |
-| **candidate_first_name**        | **String**                | First Name of candidate to query                      | [optional] |
-| **candidate_last_name**         | **String**                | Last Name of candidate to query                       | [optional] |
-| **candidate_email**             | **String**                | Email of candidate to query                           | [optional] |
-| **candidate_source**            | [**[Number]**](Number.md) | the identifier of source of candidate, as Id          | [optional] |
-| **candidate_source_category**   | [**[Number]**](Number.md) | the identifier of source_category of candidate, as Id | [optional] |
-| **candidate_owner**             | [**[Number]**](Number.md) | the identifier of owner of candidate, as Id           | [optional] |
-| **candidate_city**              | [**[String]**](String.md) | candidate city to query                               | [optional] |
-| **candidate_country_code**      | [**[String]**](String.md) | candidate country code to query                       | [optional] |
-| **candidate_tags**              | [**[String]**](String.md) | candidate tags to query                               | [optional] |
-| **candidate_skills**            | [**[String]**](String.md) | candidate skills to query                             | [optional] |
-| **candidate_positions_company** | [**[String]**](String.md) | candidate companies to query                          | [optional] |
-| **candidate_positions_title**   | [**[String]**](String.md) | candidate positions title to query                    | [optional] |
-| **candidate_rating**            | [**[String]**](String.md) | candidate rating to query                             | [optional] |
-| **candidate_referred_by**       | [**[Number]**](Number.md) | the identifier of referred_by of candidate, as Id     | [optional] |
-| **candidate_has_email**         | **Boolean**               | candidate email exists                                | [optional] |
-| **candidate_responded**         | **Boolean**               | has candidate responded                               | [optional] |
-| **candidate_spam**              | **Boolean**               | blocked candidate                                     | [optional] |
-| **requisition_id**              | [**[Number]**](Number.md) | the identifier of requisition of applicants, as Id    | [optional] |
-| **created_at**                  | **Date**                  | applicant created_at                                  | [optional] |
-| **created_since**               | **Date**                  | applicant created_since                               | [optional] |
-| **updated_since**               | **Date**                  | applicant updated_since                               | [optional] |
-| **deleted**                     | **Boolean**               | the identifier of applicant deleted                   | [optional] |
-| **sort**                        | **String**                | Sort By                                               | [optional] |
-| **sort_type**                   | **String**                | Sort Type                                             | [optional] |
+| Name                            | Type                      | Description                                                                                                     | Notes      |
+| ------------------------------- | ------------------------- | --------------------------------------------------------------------------------------------------------------- | ---------- |
+| **id**                          | **Number**                | the job_posting identifier, as id                                                                               |
+| **status**                      | [**[String]**](String.md) | the status key                                                                                                  | [optional] |
+| **stage**                       | [**[Number]**](Number.md) | the identifier of Stage of applicants, as Id                                                                    | [optional] |
+| **followers_id**                | [**[Number]**](Number.md) | the identifier of followers of applicant, as Id                                                                 | [optional] |
+| **candidate_first_name**        | **String**                | First Name of candidate to query                                                                                | [optional] |
+| **candidate_last_name**         | **String**                | Last Name of candidate to query                                                                                 | [optional] |
+| **candidate_email**             | **String**                | Email of candidate to query                                                                                     | [optional] |
+| **candidate_source**            | [**[Number]**](Number.md) | the identifier of source of candidate or source of the candidate&#39;s job application, as Id                   | [optional] |
+| **candidate_source_category**   | [**[Number]**](Number.md) | the identifier of source_category of candidate or source_category of the candidate&#39;s job application, as Id | [optional] |
+| **candidate_owner**             | [**[Number]**](Number.md) | the identifier of owner of candidate, as Id                                                                     | [optional] |
+| **candidate_city**              | [**[String]**](String.md) | candidate city to query                                                                                         | [optional] |
+| **candidate_country_code**      | [**[String]**](String.md) | candidate country code to query                                                                                 | [optional] |
+| **candidate_tags**              | [**[String]**](String.md) | candidate tags to query                                                                                         | [optional] |
+| **candidate_skills**            | [**[String]**](String.md) | candidate skills to query                                                                                       | [optional] |
+| **candidate_positions_company** | [**[String]**](String.md) | candidate companies to query                                                                                    | [optional] |
+| **candidate_positions_title**   | [**[String]**](String.md) | candidate positions title to query                                                                              | [optional] |
+| **candidate_rating**            | [**[String]**](String.md) | candidate rating to query                                                                                       | [optional] |
+| **candidate_referred_by**       | [**[Number]**](Number.md) | the identifier of referred_by of candidate, as Id                                                               | [optional] |
+| **candidate_has_email**         | **Boolean**               | candidate email exists                                                                                          | [optional] |
+| **candidate_responded**         | **Boolean**               | has candidate responded                                                                                         | [optional] |
+| **candidate_spam**              | **Boolean**               | blocked candidate                                                                                               | [optional] |
+| **requisition_id**              | [**[Number]**](Number.md) | the identifier of requisition of applicants, as Id                                                              | [optional] |
+| **created_at**                  | **Date**                  | applicant created_at                                                                                            | [optional] |
+| **created_since**               | **Date**                  | applicant created_since                                                                                         | [optional] |
+| **updated_since**               | **Date**                  | applicant updated_since                                                                                         | [optional] |
+| **deleted**                     | **Boolean**               | the identifier of applicant deleted                                                                             | [optional] |
+| **page**                        | **Number**                | page number                                                                                                     | [optional] |
+| **sort**                        | **String**                | Sort By                                                                                                         | [optional] |
+| **sort_type**                   | **String**                | Sort Type                                                                                                       | [optional] |
 
 ### Return type
 
@@ -242,7 +244,7 @@ ApiKeyAuth.apiKey = "YOUR API KEY";
 let apiInstance = new FreshteamApiSdkCodegen.ApplicantApi();
 let id = 56; // Number | the applicant identifier, as id
 let opts = {
-  applicant: new FreshteamApiSdkCodegen.InlineObject4() // InlineObject4 |
+  applicant: new FreshteamApiSdkCodegen.Applicant1() // Applicant1 |
 };
 apiInstance.moveSubStage(id, opts).then(
   data => {
@@ -256,10 +258,10 @@ apiInstance.moveSubStage(id, opts).then(
 
 ### Parameters
 
-| Name          | Type                                  | Description                     | Notes      |
-| ------------- | ------------------------------------- | ------------------------------- | ---------- |
-| **id**        | **Number**                            | the applicant identifier, as id |
-| **applicant** | [**InlineObject4**](InlineObject4.md) |                                 | [optional] |
+| Name          | Type                            | Description                     | Notes      |
+| ------------- | ------------------------------- | ------------------------------- | ---------- |
+| **id**        | **Number**                      | the applicant identifier, as id |
+| **applicant** | [**Applicant1**](Applicant1.md) |                                 | [optional] |
 
 ### Return type
 

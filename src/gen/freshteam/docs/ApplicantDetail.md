@@ -2,26 +2,28 @@
 
 ## Properties
 
-| Name               | Type                                                          | Description | Notes      |
-| ------------------ | ------------------------------------------------------------- | ----------- | ---------- |
-| **id**             | **Number**                                                    |             | [optional] |
-| **created_at**     | **Date**                                                      |             | [optional] |
-| **updated_at**     | **Date**                                                      |             | [optional] |
-| **status**         | **String**                                                    |             | [optional] |
-| **deleted**        | **Boolean**                                                   |             | [optional] |
-| **stage**          | **String**                                                    |             | [optional] |
-| **sub_stage_id**   | **Number**                                                    |             | [optional] |
-| **on_hold_at**     | **Date**                                                      |             | [optional] |
-| **on_hold_till**   | **Date**                                                      |             | [optional] |
-| **rejected_at**    | **Date**                                                      |             | [optional] |
-| **archived_at**    | **Date**                                                      |             | [optional] |
-| **moved_at**       | **Date**                                                      |             | [optional] |
-| **job_id**         | **Number**                                                    |             | [optional] |
-| **job_title**      | **String**                                                    |             | [optional] |
-| **requisition_id** | **Number**                                                    |             | [optional] |
-| **custom_fields**  | [**NewHireCreateCustomFields**](NewHireCreateCustomFields.md) |             | [optional] |
-| **candidate**      | [**ApplicantDetailCandidate**](ApplicantDetailCandidate.md)   |             | [optional] |
-| **followers**      | [**[ApplicantDetailFollowers]**](ApplicantDetailFollowers.md) |             | [optional] |
+| Name                             | Type                                                          | Description | Notes      |
+| -------------------------------- | ------------------------------------------------------------- | ----------- | ---------- |
+| **id**                           | **Number**                                                    |             | [optional] |
+| **created_at**                   | **Date**                                                      |             | [optional] |
+| **updated_at**                   | **Date**                                                      |             | [optional] |
+| **status**                       | **String**                                                    |             | [optional] |
+| **deleted**                      | **Boolean**                                                   |             | [optional] |
+| **stage**                        | **String**                                                    |             | [optional] |
+| **sub_stage_id**                 | **Number**                                                    |             | [optional] |
+| **on_hold_at**                   | **Date**                                                      |             | [optional] |
+| **on_hold_till**                 | **Date**                                                      |             | [optional] |
+| **rejected_at**                  | **Date**                                                      |             | [optional] |
+| **archived_at**                  | **Date**                                                      |             | [optional] |
+| **moved_at**                     | **Date**                                                      |             | [optional] |
+| **job_id**                       | **Number**                                                    |             | [optional] |
+| **job_title**                    | **String**                                                    |             | [optional] |
+| **requisition_id**               | **Number**                                                    |             | [optional] |
+| **applicant_source_id**          | **Number**                                                    |             | [optional] |
+| **applicant_source_category_id** | **Number**                                                    |             | [optional] |
+| **custom_fields**                | [**NewHireCreateCustomFields**](NewHireCreateCustomFields.md) |             | [optional] |
+| **candidate**                    | [**ApplicantDetailCandidate**](ApplicantDetailCandidate.md)   |             | [optional] |
+| **followers**                    | [**[ApplicantDetailFollowers]**](ApplicantDetailFollowers.md) |             | [optional] |
 
 ## Enum: StatusEnum
 
