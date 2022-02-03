@@ -15,9 +15,7 @@
   },
   "host": "adityasharma2519.freshteam.com",
   "basePath": "/api/",
-  "schemes": [
-    "https"
-  ],
+  "schemes": ["https"],
   "security": [
     {
       "ApiKeyAuth": []
@@ -26,15 +24,11 @@
   "paths": {
     "/employees": {
       "get": {
-        "tags": [
-          "Employee"
-        ],
+        "tags": ["Employee"],
         "summary": "Employees List",
         "description": "List of active employees from directory",
         "operationId": "get_employees",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [
           {
             "name": "status",
@@ -44,10 +38,7 @@
             "type": "array",
             "items": {
               "type": "string",
-              "enum": [
-                "active",
-                "inactive"
-              ]
+              "enum": ["active", "inactive"]
             },
             "collectionFormat": "csv"
           },
@@ -183,11 +174,7 @@
             "description": "Sort By",
             "required": false,
             "type": "string",
-            "enum": [
-              "first_name",
-              "last_name",
-              "employee_id"
-            ]
+            "enum": ["first_name", "last_name", "employee_id"]
           },
           {
             "name": "sort_type",
@@ -195,10 +182,7 @@
             "description": "Sort Type",
             "required": false,
             "type": "string",
-            "enum": [
-              "asc",
-              "desc"
-            ]
+            "enum": ["asc", "desc"]
           }
         ],
         "responses": {
@@ -506,15 +490,11 @@
         }
       },
       "post": {
-        "tags": [
-          "Employee"
-        ],
+        "tags": ["Employee"],
         "summary": "Create an Employee",
         "description": "Create an Employee",
         "operationId": "create_employee",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [
           {
             "in": "body",
@@ -829,15 +809,11 @@
     },
     "/employees/{id}": {
       "get": {
-        "tags": [
-          "Employee"
-        ],
+        "tags": ["Employee"],
         "summary": "Details of Employee",
         "description": "Get the Details of Employee in the Account",
         "operationId": "get_employee",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [
           {
             "name": "id",
@@ -1243,15 +1219,11 @@
         }
       },
       "put": {
-        "tags": [
-          "Employee"
-        ],
+        "tags": ["Employee"],
         "summary": "Update an Employee",
         "description": "Update an Employee",
         "operationId": "update_employee",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [
           {
             "name": "id",
@@ -1616,9 +1588,7 @@
     },
     "/employees/{id}/send_invite": {
       "put": {
-        "tags": [
-          "Employee"
-        ],
+        "tags": ["Employee"],
         "summary": "Send Invite Email",
         "description": "Send Invite Email",
         "operationId": "send_invite",
@@ -1935,15 +1905,11 @@
     },
     "/new_hires": {
       "get": {
-        "tags": [
-          "New Hire"
-        ],
+        "tags": ["New Hire"],
         "summary": "New Hires List",
         "description": "List of New Hires",
         "operationId": "get_new_hires",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [
           {
             "name": "status",
@@ -1953,12 +1919,7 @@
             "type": "array",
             "items": {
               "type": "string",
-              "enum": [
-                "hired",
-                "initiated",
-                "submitted",
-                "reviewed"
-              ]
+              "enum": ["hired", "initiated", "submitted", "reviewed"]
             },
             "collectionFormat": "csv"
           },
@@ -2109,12 +2070,7 @@
             "description": "Sort By",
             "required": false,
             "type": "string",
-            "enum": [
-              "first_name",
-              "last_name",
-              "employee_id",
-              "joining_date"
-            ]
+            "enum": ["first_name", "last_name", "employee_id", "joining_date"]
           },
           {
             "name": "sort_type",
@@ -2122,10 +2078,7 @@
             "description": "Sort Type",
             "required": false,
             "type": "string",
-            "enum": [
-              "asc",
-              "desc"
-            ]
+            "enum": ["asc", "desc"]
           }
         ],
         "responses": {
@@ -2433,15 +2386,11 @@
         }
       },
       "post": {
-        "tags": [
-          "New Hire"
-        ],
+        "tags": ["New Hire"],
         "summary": "Create an NewHire",
         "description": "Create an NewHire",
         "operationId": "create_new_hire",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [
           {
             "in": "body",
@@ -2756,15 +2705,11 @@
     },
     "/new_hires/{id}": {
       "get": {
-        "tags": [
-          "New Hire"
-        ],
+        "tags": ["New Hire"],
         "summary": "Details of NewHire",
         "description": "Get the Details of NewHire in the Account",
         "operationId": "get_new_hire",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [
           {
             "name": "id",
@@ -3170,15 +3115,11 @@
         }
       },
       "put": {
-        "tags": [
-          "New Hire"
-        ],
+        "tags": ["New Hire"],
         "summary": "Update a NewHire",
         "description": "Update a NewHire",
         "operationId": "update_new_hire",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [
           {
             "name": "id",
@@ -3543,15 +3484,11 @@
     },
     "/teams": {
       "get": {
-        "tags": [
-          "Teams"
-        ],
+        "tags": ["Teams"],
         "summary": "Teams List",
         "description": "List of Teams in the Account",
         "operationId": "get_teams",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [],
         "responses": {
           "200": {
@@ -3860,15 +3797,11 @@
     },
     "/teams/{id}": {
       "get": {
-        "tags": [
-          "Teams"
-        ],
+        "tags": ["Teams"],
         "summary": "Get Team Details",
         "description": "Get the Details of Team in the Account",
         "operationId": "get_team",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [
           {
             "name": "id",
@@ -4225,15 +4158,11 @@
     },
     "/business_units": {
       "get": {
-        "tags": [
-          "Business Units"
-        ],
+        "tags": ["Business Units"],
         "summary": "Business Units List",
         "description": "List of Business Units in the Account",
         "operationId": "get_business_units",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [],
         "responses": {
           "200": {
@@ -4542,15 +4471,11 @@
     },
     "/business_units/{id}": {
       "get": {
-        "tags": [
-          "Business Units"
-        ],
+        "tags": ["Business Units"],
         "summary": "Get Business Unit Details",
         "description": "Get the Details of Business Unit in the Account",
         "operationId": "get_business_unit",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [
           {
             "name": "id",
@@ -4907,15 +4832,11 @@
     },
     "/branches": {
       "get": {
-        "tags": [
-          "Locations"
-        ],
+        "tags": ["Locations"],
         "summary": "Locations List",
         "description": "List of Locations in the Account",
         "operationId": "get_branches",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [],
         "responses": {
           "200": {
@@ -5224,15 +5145,11 @@
     },
     "/branches/{id}": {
       "get": {
-        "tags": [
-          "Locations"
-        ],
+        "tags": ["Locations"],
         "summary": "Get Location Details",
         "description": "Get the Details of Location in the Account",
         "operationId": "get_branch",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [
           {
             "name": "id",
@@ -5589,15 +5506,11 @@
     },
     "/sub_departments": {
       "get": {
-        "tags": [
-          "Sub Departments"
-        ],
+        "tags": ["Sub Departments"],
         "summary": "Sub Departments List",
         "description": "List of Sub Departments in the Account",
         "operationId": "get_sub_departments",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [],
         "responses": {
           "200": {
@@ -5906,15 +5819,11 @@
     },
     "/sub_departments/{id}": {
       "get": {
-        "tags": [
-          "Sub Departments"
-        ],
+        "tags": ["Sub Departments"],
         "summary": "Get Sub Department Details",
         "description": "Get the Details of Sub Department in the Account",
         "operationId": "get_sub_department",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [
           {
             "name": "id",
@@ -6271,15 +6180,11 @@
     },
     "/departments": {
       "get": {
-        "tags": [
-          "Departments"
-        ],
+        "tags": ["Departments"],
         "summary": "Departments List",
         "description": "List of Departments in the Account",
         "operationId": "get_departments",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [],
         "responses": {
           "200": {
@@ -6588,15 +6493,11 @@
     },
     "/departments/{id}": {
       "get": {
-        "tags": [
-          "Departments"
-        ],
+        "tags": ["Departments"],
         "summary": "Get Department Details",
         "description": "Get the Details of Department in the Account",
         "operationId": "get_department",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [
           {
             "name": "id",
@@ -6953,15 +6854,11 @@
     },
     "/levels": {
       "get": {
-        "tags": [
-          "Levels"
-        ],
+        "tags": ["Levels"],
         "summary": "List of levels",
         "description": "List of levels",
         "operationId": "get_levels",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [],
         "responses": {
           "200": {
@@ -7270,9 +7167,7 @@
     },
     "/levels/{id}": {
       "get": {
-        "tags": [
-          "Levels"
-        ],
+        "tags": ["Levels"],
         "summary": "Get level details",
         "description": "get level details",
         "operationId": "get_level",
@@ -7632,15 +7527,11 @@
     },
     "/roles": {
       "get": {
-        "tags": [
-          "Roles"
-        ],
+        "tags": ["Roles"],
         "summary": "List of roles",
         "description": "List of roles",
         "operationId": "get_roles",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [],
         "responses": {
           "200": {
@@ -7949,9 +7840,7 @@
     },
     "/roles/{id}": {
       "get": {
-        "tags": [
-          "Roles"
-        ],
+        "tags": ["Roles"],
         "summary": "Get role details",
         "description": "get role details",
         "operationId": "get_role",
@@ -8311,15 +8200,11 @@
     },
     "/candidate_sources": {
       "get": {
-        "tags": [
-          "Sources"
-        ],
+        "tags": ["Sources"],
         "summary": "List of candidate sources",
         "description": "List of candidate sources",
         "operationId": "get_candidate_sources",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [],
         "responses": {
           "200": {
@@ -8583,15 +8468,11 @@
         }
       },
       "post": {
-        "tags": [
-          "Source"
-        ],
+        "tags": ["Source"],
         "summary": "Create candidate source",
         "description": "Create candidate source",
         "operationId": "create_candidate_sources",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [
           {
             "in": "body",
@@ -8906,15 +8787,11 @@
     },
     "/candidate_source_categories": {
       "get": {
-        "tags": [
-          "Source Categories"
-        ],
+        "tags": ["Source Categories"],
         "summary": "List of source categories",
         "description": "List of source categories",
         "operationId": "get_source_categories",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [],
         "responses": {
           "200": {
@@ -9223,15 +9100,11 @@
     },
     "/user_functions": {
       "get": {
-        "tags": [
-          "User Functions"
-        ],
+        "tags": ["User Functions"],
         "summary": "List of user functions",
         "description": "List of User Functions",
         "operationId": "get_user_functions",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [],
         "responses": {
           "200": {
@@ -9540,9 +9413,7 @@
     },
     "/user_functions/{id}": {
       "get": {
-        "tags": [
-          "User Functions"
-        ],
+        "tags": ["User Functions"],
         "summary": "Get user function details",
         "description": "get user function details",
         "operationId": "get_user_function",
@@ -9902,15 +9773,11 @@
     },
     "/time_off_types": {
       "get": {
-        "tags": [
-          "Timeoff"
-        ],
+        "tags": ["Timeoff"],
         "summary": "List of user TimeOff Types",
         "description": "List of TimeOff Types",
         "operationId": "get_timeoff_types",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [],
         "responses": {
           "200": {
@@ -10219,9 +10086,7 @@
     },
     "/time_off_types/{id}": {
       "get": {
-        "tags": [
-          "Timeoff"
-        ],
+        "tags": ["Timeoff"],
         "summary": "Get Timeoff Type details",
         "description": "get Timeoff type details",
         "operationId": "get_timeoff_type",
@@ -10581,15 +10446,11 @@
     },
     "/time_offs": {
       "get": {
-        "tags": [
-          "Timeoff"
-        ],
+        "tags": ["Timeoff"],
         "summary": "List of TimeOff Requests of Users in the Account",
         "description": "List of TimeOff Requests",
         "operationId": "get_timeoffs",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [
           {
             "name": "status",
@@ -10599,12 +10460,7 @@
             "type": "array",
             "items": {
               "type": "string",
-              "enum": [
-                "pending",
-                "approved",
-                "cancelled",
-                "declined"
-              ]
+              "enum": ["pending", "approved", "cancelled", "declined"]
             },
             "collectionFormat": "csv"
           },
@@ -10670,9 +10526,7 @@
             "description": "Sort By",
             "required": false,
             "type": "string",
-            "enum": [
-              "start_date"
-            ]
+            "enum": ["start_date"]
           },
           {
             "name": "sort_type",
@@ -10680,10 +10534,7 @@
             "description": "Sort Type",
             "required": false,
             "type": "string",
-            "enum": [
-              "asc",
-              "desc"
-            ]
+            "enum": ["asc", "desc"]
           }
         ],
         "responses": {
@@ -10991,9 +10842,7 @@
         }
       },
       "post": {
-        "tags": [
-          "Timeoff"
-        ],
+        "tags": ["Timeoff"],
         "summary": "Apply leave request for logged in user",
         "description": "Apply leave request for logged in user",
         "operationId": "createTimeOff",
@@ -11225,9 +11074,7 @@
     },
     "/time_offs/{id}": {
       "get": {
-        "tags": [
-          "Timeoff"
-        ],
+        "tags": ["Timeoff"],
         "summary": "Get Timeoff Request details",
         "description": "get Timeoff Request details",
         "operationId": "get_timeoff",
@@ -11587,9 +11434,7 @@
     },
     "/time_offs/{id}/cancel": {
       "put": {
-        "tags": [
-          "Timeoff"
-        ],
+        "tags": ["Timeoff"],
         "summary": "Cancel Timeoff Request",
         "description": "Cancel Timeoff Request details",
         "operationId": "cancel_timeoff",
@@ -11903,9 +11748,7 @@
     },
     "/time_offs/{id}/approve": {
       "put": {
-        "tags": [
-          "Timeoff"
-        ],
+        "tags": ["Timeoff"],
         "summary": "Approve Timeoff Request",
         "description": "Approve Timeoff Request details",
         "operationId": "approve_timeoff",
@@ -12227,9 +12070,7 @@
     },
     "/time_offs/{id}/reject": {
       "put": {
-        "tags": [
-          "Timeoff"
-        ],
+        "tags": ["Timeoff"],
         "summary": "Reject Timeoff Request",
         "description": "Reject Timeoff Request details",
         "operationId": "reject_timeoff",
@@ -12551,15 +12392,11 @@
     },
     "/employee_fields": {
       "get": {
-        "tags": [
-          "Employee Fields"
-        ],
+        "tags": ["Employee Fields"],
         "summary": "Employee Fields List",
         "description": "List of active employee fields in the form",
         "operationId": "get_employee_fields",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [],
         "responses": {
           "200": {
@@ -14986,9 +14823,7 @@
         }
       },
       "post": {
-        "tags": [
-          "Employee Fields"
-        ],
+        "tags": ["Employee Fields"],
         "summary": "Create a Custom Field",
         "description": "Create a Custom Field in Employee Form",
         "operationId": "create_employee_field",
@@ -15349,15 +15184,11 @@
     },
     "/job_postings": {
       "get": {
-        "tags": [
-          "Job"
-        ],
+        "tags": ["Job"],
         "summary": "Jobs List",
         "description": "List of jobs",
         "operationId": "get_jobs",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [
           {
             "name": "status",
@@ -15367,14 +15198,7 @@
             "type": "array",
             "items": {
               "type": "string",
-              "enum": [
-                "draft",
-                "published",
-                "internal",
-                "private",
-                "on_hold",
-                "closed"
-              ]
+              "enum": ["draft", "published", "internal", "private", "on_hold", "closed"]
             },
             "collectionFormat": "csv"
           },
@@ -15473,9 +15297,7 @@
             "description": "Sort By",
             "required": false,
             "type": "string",
-            "enum": [
-              "title"
-            ]
+            "enum": ["title"]
           },
           {
             "name": "sort_type",
@@ -15483,10 +15305,7 @@
             "description": "Sort Type",
             "required": false,
             "type": "string",
-            "enum": [
-              "asc",
-              "desc"
-            ]
+            "enum": ["asc", "desc"]
           }
         ],
         "responses": {
@@ -15839,15 +15658,11 @@
     },
     "/job_postings/{id}": {
       "get": {
-        "tags": [
-          "Job"
-        ],
+        "tags": ["Job"],
         "summary": "Details of Job",
         "description": "Get the Details of Job",
         "operationId": "get_job",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [
           {
             "name": "id",
@@ -16204,15 +16019,11 @@
     },
     "/job_postings/{id}/applicants": {
       "get": {
-        "tags": [
-          "Applicant"
-        ],
+        "tags": ["Applicant"],
         "summary": "Applicants List",
         "description": "Get all Applicants",
         "operationId": "get_applicants",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [
           {
             "name": "id",
@@ -16229,14 +16040,7 @@
             "type": "array",
             "items": {
               "type": "string",
-              "enum": [
-                "open",
-                "on_hold",
-                "rejected",
-                "archived",
-                "moved",
-                "dropped"
-              ]
+              "enum": ["open", "on_hold", "rejected", "archived", "moved", "dropped"]
             },
             "collectionFormat": "csv"
           },
@@ -16395,13 +16199,7 @@
             "type": "array",
             "items": {
               "type": "string",
-              "enum": [
-                "below_average",
-                "average",
-                "good",
-                "very_good",
-                "exceptional"
-              ]
+              "enum": ["below_average", "average", "good", "very_good", "exceptional"]
             },
             "collectionFormat": "multi"
           },
@@ -16494,13 +16292,7 @@
             "description": "Sort By",
             "required": false,
             "type": "string",
-            "enum": [
-              "first_name",
-              "last_name",
-              "rating",
-              "created_at",
-              "updated_at"
-            ]
+            "enum": ["first_name", "last_name", "rating", "created_at", "updated_at"]
           },
           {
             "name": "sort_type",
@@ -16508,10 +16300,7 @@
             "description": "Sort Type",
             "required": false,
             "type": "string",
-            "enum": [
-              "asc",
-              "desc"
-            ]
+            "enum": ["asc", "desc"]
           }
         ],
         "responses": {
@@ -16819,15 +16608,11 @@
         }
       },
       "post": {
-        "tags": [
-          "Job"
-        ],
+        "tags": ["Job"],
         "summary": "Create an Applicant",
         "description": "Create an Applicant",
         "operationId": "create_applicant",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [
           {
             "name": "id",
@@ -17149,15 +16934,11 @@
     },
     "/applicants/{id}": {
       "get": {
-        "tags": [
-          "Applicant"
-        ],
+        "tags": ["Applicant"],
         "summary": "Get an Applicant",
         "description": "Get an Applicant",
         "operationId": "get_applicant",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [
           {
             "name": "id",
@@ -17512,18 +17293,12 @@
         }
       },
       "put": {
-        "tags": [
-          "Applicant"
-        ],
+        "tags": ["Applicant"],
         "summary": "Update an Applicant",
         "description": "Update an Applicant",
         "operationId": "update_applicant",
-        "consumes": [
-          "application/json"
-        ],
-        "produces": [
-          "application/json"
-        ],
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
         "parameters": [
           {
             "name": "id",
@@ -17845,18 +17620,12 @@
     },
     "/applicants/{id}/archive": {
       "put": {
-        "tags": [
-          "Applicant"
-        ],
+        "tags": ["Applicant"],
         "summary": "Archive Applicant",
         "description": "Archive Applicant",
         "operationId": "archive_applicant",
-        "consumes": [
-          "application/json"
-        ],
-        "produces": [
-          "application/json"
-        ],
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
         "parameters": [
           {
             "name": "id",
@@ -18178,18 +17947,12 @@
     },
     "/applicants/{id}/move_sub_stage": {
       "put": {
-        "tags": [
-          "Applicant"
-        ],
+        "tags": ["Applicant"],
         "summary": "sub stage update",
         "description": "Applicant sub stage update",
         "operationId": "move_sub_stage",
-        "consumes": [
-          "application/json"
-        ],
-        "produces": [
-          "application/json"
-        ],
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
         "parameters": [
           {
             "name": "id",
@@ -18511,15 +18274,11 @@
     },
     "/job_postings/{id}/applicant_fields": {
       "get": {
-        "tags": [
-          "Job"
-        ],
+        "tags": ["Job"],
         "summary": "Applicant Fields List",
         "description": "List of active applicant fields in the form",
         "operationId": "get_applicant_fields",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [
           {
             "name": "id",
@@ -18902,15 +18661,11 @@
     },
     "/job_posting_fields": {
       "get": {
-        "tags": [
-          "Job Fields"
-        ],
+        "tags": ["Job Fields"],
         "summary": "Job Fields List",
         "description": "List of active job fields in the form",
         "operationId": "get_job_fields",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [],
         "responses": {
           "200": {
@@ -19293,15 +19048,11 @@
     },
     "/candidates/{id}": {
       "get": {
-        "tags": [
-          "Candidate"
-        ],
+        "tags": ["Candidate"],
         "summary": "Details of a candidate",
         "description": "Get the details of a candidate",
         "operationId": "get_candidate",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [
           {
             "name": "id",
@@ -19318,11 +19069,7 @@
             "type": "array",
             "items": {
               "type": "string",
-              "enum": [
-                "skills",
-                "qualifications",
-                "positions"
-              ]
+              "enum": ["skills", "qualifications", "positions"]
             },
             "collectionFormat": "csv"
           }
@@ -19672,18 +19419,12 @@
         }
       },
       "put": {
-        "tags": [
-          "Candidate"
-        ],
+        "tags": ["Candidate"],
         "summary": "Update a Candidate",
         "description": "Update a Candidate",
         "operationId": "update_candidate",
-        "consumes": [
-          "application/json"
-        ],
-        "produces": [
-          "application/json"
-        ],
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
         "parameters": [
           {
             "name": "id",
@@ -20048,18 +19789,12 @@
     },
     "/applicants/{id}/comments": {
       "post": {
-        "tags": [
-          "Applicant Comment"
-        ],
+        "tags": ["Applicant Comment"],
         "summary": "Create an Applicant Comment",
         "description": "Create an Applicant Comment",
         "operationId": "create_applicant_comment",
-        "consumes": [
-          "application/json"
-        ],
-        "produces": [
-          "application/json"
-        ],
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
         "parameters": [
           {
             "name": "id",
@@ -20381,18 +20116,12 @@
     },
     "/applicants/{id}/emails": {
       "post": {
-        "tags": [
-          "Applicant Email"
-        ],
+        "tags": ["Applicant Email"],
         "summary": "Create an Applicant Email",
         "description": "Create an Applicant Email",
         "operationId": "create_applicant_email",
-        "consumes": [
-          "application/json"
-        ],
-        "produces": [
-          "application/json"
-        ],
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
         "parameters": [
           {
             "name": "id",
@@ -20714,15 +20443,11 @@
     },
     "/interviews/{id}": {
       "get": {
-        "tags": [
-          "Interview"
-        ],
+        "tags": ["Interview"],
         "summary": "Details of Interview",
         "description": "Get the Details of an Interview",
         "operationId": "get_interview",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [
           {
             "name": "id",
@@ -21146,10 +20871,7 @@
         "gender": {
           "type": "string",
           "example": "Iowa",
-          "enum": [
-            "male",
-            "female"
-          ]
+          "enum": ["male", "female"]
         },
         "designation": {
           "type": "string",
@@ -21194,10 +20916,7 @@
         "status": {
           "type": "string",
           "example": "capability",
-          "enum": [
-            "active",
-            "inactive"
-          ]
+          "enum": ["active", "inactive"]
         },
         "official_email": {
           "type": "string",
@@ -21349,10 +21068,7 @@
         "gender": {
           "type": "string",
           "example": "AI",
-          "enum": [
-            "male",
-            "female"
-          ]
+          "enum": ["male", "female"]
         },
         "designation": {
           "type": "string",
@@ -21397,11 +21113,7 @@
         "status": {
           "type": "string",
           "example": "Wallis",
-          "enum": [
-            "hired",
-            "initiated",
-            "submitted"
-          ]
+          "enum": ["hired", "initiated", "submitted"]
         },
         "official_email": {
           "type": "string",
@@ -21902,31 +21614,17 @@
         "viewable_by": {
           "type": "string",
           "example": "utilize",
-          "enum": [
-            "all",
-            "self",
-            "self_hr",
-            "hr"
-          ]
+          "enum": ["all", "self", "self_hr", "hr"]
         },
         "editable_by": {
           "type": "string",
           "example": "Towels",
-          "enum": [
-            "self",
-            "hr"
-          ]
+          "enum": ["self", "hr"]
         },
         "tab": {
           "type": "string",
           "example": "transmitting",
-          "enum": [
-            "personal",
-            "job",
-            "employment_education",
-            "compensation",
-            "files"
-          ]
+          "enum": ["personal", "job", "employment_education", "compensation", "files"]
         },
         "field_scopes": {
           "type": "array",
@@ -22113,11 +21811,7 @@
         "eeo_veteran": {
           "type": "string",
           "example": "Market",
-          "enum": [
-            "protected_veteran",
-            "not_protected_veteran",
-            "dont_wish_to_answer"
-          ]
+          "enum": ["protected_veteran", "not_protected_veteran", "dont_wish_to_answer"]
         },
         "eeo_ethnicity": {
           "type": "string",
@@ -22136,11 +21830,7 @@
         "eeo_disabled": {
           "type": "string",
           "example": "Digitized",
-          "enum": [
-            "yes",
-            "no",
-            "dont_wish_to_answer"
-          ]
+          "enum": ["yes", "no", "dont_wish_to_answer"]
         },
         "eeo_job_category": {
           "type": "string",
@@ -22196,18 +21886,12 @@
         "marital_status": {
           "type": "string",
           "example": "USB",
-          "enum": [
-            "single",
-            "married"
-          ]
+          "enum": ["single", "married"]
         },
         "gender": {
           "type": "string",
           "example": "sensor",
-          "enum": [
-            "male",
-            "female"
-          ]
+          "enum": ["male", "female"]
         },
         "blood_group": {
           "type": "string",
@@ -22315,10 +21999,7 @@
         "job_exempt": {
           "type": "string",
           "example": "vortals",
-          "enum": [
-            "exempted",
-            "not_exempted"
-          ]
+          "enum": ["exempted", "not_exempted"]
         },
         "scheduled_weekly_hours": {
           "type": "integer",
@@ -22405,10 +22086,7 @@
         "status": {
           "type": "string",
           "example": "Intranet",
-          "enum": [
-            "active",
-            "inactive"
-          ]
+          "enum": ["active", "inactive"]
         },
         "official_email": {
           "type": "string",
@@ -23129,11 +22807,7 @@
         "eeo_veteran": {
           "type": "string",
           "example": "Market",
-          "enum": [
-            "protected_veteran",
-            "not_protected_veteran",
-            "dont_wish_to_answer"
-          ]
+          "enum": ["protected_veteran", "not_protected_veteran", "dont_wish_to_answer"]
         },
         "eeo_ethnicity": {
           "type": "string",
@@ -23152,11 +22826,7 @@
         "eeo_disabled": {
           "type": "string",
           "example": "Digitized",
-          "enum": [
-            "yes",
-            "no",
-            "dont_wish_to_answer"
-          ]
+          "enum": ["yes", "no", "dont_wish_to_answer"]
         },
         "eeo_job_category": {
           "type": "string",
@@ -23212,18 +22882,12 @@
         "marital_status": {
           "type": "string",
           "example": "USB",
-          "enum": [
-            "single",
-            "married"
-          ]
+          "enum": ["single", "married"]
         },
         "gender": {
           "type": "string",
           "example": "sensor",
-          "enum": [
-            "male",
-            "female"
-          ]
+          "enum": ["male", "female"]
         },
         "blood_group": {
           "type": "string",
@@ -23331,10 +22995,7 @@
         "job_exempt": {
           "type": "string",
           "example": "vortals",
-          "enum": [
-            "exempted",
-            "not_exempted"
-          ]
+          "enum": ["exempted", "not_exempted"]
         },
         "scheduled_weekly_hours": {
           "type": "integer",
@@ -23421,11 +23082,7 @@
         "status": {
           "type": "string",
           "example": "hired",
-          "enum": [
-            "hired",
-            "initiated",
-            "submitted"
-          ]
+          "enum": ["hired", "initiated", "submitted"]
         },
         "official_email": {
           "type": "string",
@@ -24160,12 +23817,7 @@
     },
     "EmployeeCreate": {
       "type": "object",
-      "required": [
-        "first_name",
-        "last_name",
-        "official_email",
-        "role_ids"
-      ],
+      "required": ["first_name", "last_name", "official_email", "role_ids"],
       "properties": {
         "first_name": {
           "type": "string",
@@ -24304,10 +23956,7 @@
         "gender": {
           "type": "string",
           "example": "Operations",
-          "enum": [
-            "male",
-            "female"
-          ]
+          "enum": ["male", "female"]
         },
         "address": {
           "$ref": "#/definitions/Address"
@@ -24332,9 +23981,7 @@
         "middle_name": "L",
         "last_name": "Smith",
         "official_email": "john@freshteam.com",
-        "role_ids": [
-          1
-        ],
+        "role_ids": [1],
         "employee_id": "E001",
         "employee_type": "full_time",
         "personal_email": "john@new.com",
@@ -24387,12 +24034,7 @@
     },
     "NewHireCreate": {
       "type": "object",
-      "required": [
-        "first_name",
-        "joining_date",
-        "last_name",
-        "personal_email"
-      ],
+      "required": ["first_name", "joining_date", "last_name", "personal_email"],
       "properties": {
         "first_name": {
           "type": "string",
@@ -24533,10 +24175,7 @@
         "gender": {
           "type": "string",
           "example": "Buckinghamshire",
-          "enum": [
-            "male",
-            "female"
-          ]
+          "enum": ["male", "female"]
         },
         "address": {
           "$ref": "#/definitions/Address"
@@ -24978,10 +24617,7 @@
         "gender": {
           "type": "string",
           "example": "Analyst",
-          "enum": [
-            "male",
-            "female"
-          ]
+          "enum": ["male", "female"]
         },
         "deleted": {
           "type": "string",
@@ -25094,13 +24730,7 @@
         "status": {
           "type": "string",
           "example": "paradigms",
-          "enum": [
-            "not_initiated",
-            "initiated",
-            "in_progress",
-            "completed",
-            "cancelled"
-          ]
+          "enum": ["not_initiated", "initiated", "in_progress", "completed", "cancelled"]
         },
         "vendor": {
           "type": "string",
@@ -25325,13 +24955,7 @@
         "vesting_schedule": {
           "type": "string",
           "example": "initiatives",
-          "enum": [
-            "years",
-            "months",
-            "weeks",
-            "days",
-            "hours"
-          ]
+          "enum": ["years", "months", "weeks", "days", "hours"]
         },
         "vesting_rate": {
           "type": "integer",
@@ -25917,12 +25541,7 @@
         "name": {
           "type": "string",
           "example": "THX",
-          "enum": [
-            "Mobile",
-            "Fax",
-            "Others",
-            "Work"
-          ]
+          "enum": ["Mobile", "Fax", "Others", "Work"]
         },
         "number": {
           "type": "string",
@@ -25940,12 +25559,7 @@
         "name": {
           "type": "string",
           "example": "intuitive",
-          "enum": [
-            "Home",
-            "Main",
-            "Others",
-            "Mobile"
-          ]
+          "enum": ["Home", "Main", "Others", "Mobile"]
         },
         "number": {
           "type": "string",
@@ -25990,11 +25604,7 @@
         "applicable_for": {
           "type": "string",
           "example": "Costa",
-          "enum": [
-            "male",
-            "female",
-            "all"
-          ]
+          "enum": ["male", "female", "all"]
         },
         "default": {
           "type": "boolean",
@@ -26015,11 +25625,7 @@
         "marital_status": {
           "type": "string",
           "example": "violet",
-          "enum": [
-            "single",
-            "married",
-            "all"
-          ]
+          "enum": ["single", "married", "all"]
         }
       },
       "example": {
@@ -26073,12 +25679,7 @@
         "status": {
           "type": "string",
           "example": "Tasty",
-          "enum": [
-            "pending",
-            "approved",
-            "declined",
-            "cancelled"
-          ]
+          "enum": ["pending", "approved", "declined", "cancelled"]
         },
         "leave_units": {
           "type": "integer",
@@ -26153,12 +25754,7 @@
     },
     "LeaveRequestCreate": {
       "type": "object",
-      "required": [
-        "comments",
-        "end_date",
-        "leave_type_id",
-        "start_date"
-      ],
+      "required": ["comments", "end_date", "leave_type_id", "start_date"],
       "properties": {
         "start_date": {
           "type": "string",
@@ -26207,12 +25803,8 @@
       "example": {
         "start_date": "2019-06-29",
         "end_date": "2019-07-01",
-        "optional_leave_days": [
-          "2019-06-30"
-        ],
-        "notify_to": [
-          "freshteam@freshworks.com"
-        ],
+        "optional_leave_days": ["2019-06-30"],
+        "notify_to": ["freshteam@freshworks.com"],
         "add_to_calendar": false,
         "auto_decline_events": false,
         "leave_type_id": 2,
@@ -26632,9 +26224,7 @@
     },
     "SourceCreate": {
       "type": "object",
-      "required": [
-        "label"
-      ],
+      "required": ["label"],
       "properties": {
         "label": {
           "type": "string",
@@ -26922,13 +26512,7 @@
         "stage": {
           "type": "string",
           "example": "candidature",
-          "enum": [
-            "candidature",
-            "screening",
-            "on_site",
-            "offer",
-            "hire"
-          ]
+          "enum": ["candidature", "screening", "on_site", "offer", "hire"]
         },
         "deleted": {
           "type": "boolean",
@@ -27181,25 +26765,12 @@
         "status": {
           "type": "string",
           "example": "moved",
-          "enum": [
-            "open",
-            "on_hold",
-            "rejected",
-            "archived",
-            "moved",
-            "dropped"
-          ]
+          "enum": ["open", "on_hold", "rejected", "archived", "moved", "dropped"]
         },
         "stage": {
           "type": "string",
           "example": "candidature",
-          "enum": [
-            "candidature",
-            "screening",
-            "on_site",
-            "offer",
-            "hire"
-          ]
+          "enum": ["candidature", "screening", "on_site", "offer", "hire"]
         },
         "sub_stage_id": {
           "type": "integer",
@@ -27272,14 +26843,7 @@
         "status": {
           "type": "string",
           "example": "moved",
-          "enum": [
-            "open",
-            "on_hold",
-            "rejected",
-            "archived",
-            "moved",
-            "dropped"
-          ]
+          "enum": ["open", "on_hold", "rejected", "archived", "moved", "dropped"]
         },
         "deleted": {
           "type": "boolean",
@@ -27288,13 +26852,7 @@
         "stage": {
           "type": "string",
           "example": "candidature",
-          "enum": [
-            "candidature",
-            "screening",
-            "on_site",
-            "offer",
-            "hire"
-          ]
+          "enum": ["candidature", "screening", "on_site", "offer", "hire"]
         },
         "sub_stage_id": {
           "type": "integer",
@@ -27612,10 +27170,7 @@
         "gender": {
           "type": "string",
           "example": "female",
-          "enum": [
-            "male",
-            "female"
-          ]
+          "enum": ["male", "female"]
         },
         "owner_id": {
           "type": "integer",
@@ -27655,20 +27210,14 @@
         },
         "tags": {
           "type": "array",
-          "example": [
-            "abc",
-            "def"
-          ],
+          "example": ["abc", "def"],
           "items": {
             "type": "string"
           }
         },
         "skills": {
           "type": "array",
-          "example": [
-            "abc",
-            "def"
-          ],
+          "example": ["abc", "def"],
           "items": {
             "type": "string"
           }
@@ -27731,13 +27280,7 @@
     },
     "CandidateCreate": {
       "type": "object",
-      "required": [
-        "email",
-        "first_name",
-        "last_name",
-        "source_category_id",
-        "source_id"
-      ],
+      "required": ["email", "first_name", "last_name", "source_category_id", "source_id"],
       "properties": {
         "id": {
           "type": "integer",
@@ -27776,10 +27319,7 @@
         "gender": {
           "type": "string",
           "example": "female",
-          "enum": [
-            "male",
-            "female"
-          ]
+          "enum": ["male", "female"]
         },
         "owner_id": {
           "type": "integer",
@@ -27819,20 +27359,14 @@
         },
         "tags": {
           "type": "array",
-          "example": [
-            "abc",
-            "def"
-          ],
+          "example": ["abc", "def"],
           "items": {
             "type": "string"
           }
         },
         "skills": {
           "type": "array",
-          "example": [
-            "abc",
-            "def"
-          ],
+          "example": ["abc", "def"],
           "items": {
             "type": "string"
           }
@@ -27952,16 +27486,12 @@
         "updated_at": "2020-05-10T12:46:23.000Z",
         "private": false,
         "user_id": 12,
-        "notify_ids": [
-          1
-        ]
+        "notify_ids": [1]
       }
     },
     "ApplicantCommentCreate": {
       "type": "object",
-      "required": [
-        "body"
-      ],
+      "required": ["body"],
       "properties": {
         "body": {
           "type": "string",
@@ -27991,9 +27521,7 @@
       "example": {
         "body": "Conversation Description",
         "priavet": false,
-        "notify_ids": [
-          12
-        ]
+        "notify_ids": [12]
       }
     },
     "ApplicantEmail": {
@@ -28073,20 +27601,13 @@
         "body_text": "Body Text",
         "from": "careers@domain.freshteam.com",
         "reply_to": "careers@domain.freshteam.com",
-        "cc_emails": [
-          "\"John Smith\" <john.smith@freshteam.com>"
-        ],
-        "bcc_emails": [
-          "\"John Smith\" <john.smith@freshteam.com>"
-        ]
+        "cc_emails": ["\"John Smith\" <john.smith@freshteam.com>"],
+        "bcc_emails": ["\"John Smith\" <john.smith@freshteam.com>"]
       }
     },
     "ApplicantEmailCreate": {
       "type": "object",
-      "required": [
-        "body",
-        "subject"
-      ],
+      "required": ["body", "subject"],
       "properties": {
         "body": {
           "type": "string",
@@ -28121,12 +27642,8 @@
         "body": "Email Description",
         "subject": "Email Subject",
         "private": false,
-        "cc_ids": [
-          10
-        ],
-        "bcc_ids": [
-          11
-        ]
+        "cc_ids": [10],
+        "bcc_ids": [11]
       }
     },
     "InterviewDetail": {
@@ -28161,17 +27678,7 @@
           "type": "integer",
           "format": "int64",
           "example": 60,
-          "x-enum": [
-            15,
-            30,
-            45,
-            60,
-            90,
-            120,
-            150,
-            180,
-            240
-          ]
+          "x-enum": [15, 30, 45, 60, 90, 120, 150, 180, 240]
         },
         "location": {
           "type": "string",
@@ -28192,13 +27699,7 @@
         "status": {
           "type": "string",
           "example": "scheduled",
-          "x-enum": [
-            "scheduled",
-            "waiting_for_feedback",
-            "completed",
-            "cancelled",
-            "no_show"
-          ]
+          "x-enum": ["scheduled", "waiting_for_feedback", "completed", "cancelled", "no_show"]
         },
         "cancelled_at": {
           "type": "string",
@@ -28440,13 +27941,7 @@
         "status": {
           "type": "string",
           "example": "scheduled",
-          "x-enum": [
-            "scheduled",
-            "waiting_for_feedback",
-            "completed",
-            "cancelled",
-            "no_show"
-          ]
+          "x-enum": ["scheduled", "waiting_for_feedback", "completed", "cancelled", "no_show"]
         },
         "interviewer_declined": {
           "type": "boolean",
@@ -28578,11 +28073,7 @@
     },
     "employee_fields": {
       "type": "object",
-      "required": [
-        "field_type",
-        "label",
-        "section_name"
-      ],
+      "required": ["field_type", "label", "section_name"],
       "properties": {
         "label": {
           "type": "string"
@@ -28595,10 +28086,7 @@
         },
         "field_type": {
           "type": "string",
-          "enum": [
-            "text",
-            "number"
-          ]
+          "enum": ["text", "number"]
         }
       }
     },
@@ -28614,10 +28102,7 @@
         },
         "tags": {
           "type": "array",
-          "example": [
-            "abc",
-            "def"
-          ],
+          "example": ["abc", "def"],
           "items": {
             "type": "string"
           }
@@ -28817,10 +28302,7 @@
         "gender": {
           "type": "string",
           "example": "male",
-          "enum": [
-            "male",
-            "female"
-          ]
+          "enum": ["male", "female"]
         },
         "first_name": {
           "type": "string",
@@ -28902,13 +28384,7 @@
         "relationship": {
           "type": "string",
           "example": "personal",
-          "enum": [
-            "personal",
-            "former_colleague",
-            "mail_forward",
-            "social",
-            "other"
-          ]
+          "enum": ["personal", "former_colleague", "mail_forward", "social", "other"]
         }
       }
     },
@@ -28950,10 +28426,7 @@
         "gender": {
           "type": "string",
           "example": "Analyst",
-          "enum": [
-            "male",
-            "female"
-          ]
+          "enum": ["male", "female"]
         },
         "first_name": {
           "type": "string",
@@ -29030,20 +28503,14 @@
         },
         "tags": {
           "type": "array",
-          "example": [
-            "abc",
-            "def"
-          ],
+          "example": ["abc", "def"],
           "items": {
             "type": "string"
           }
         },
         "skills": {
           "type": "array",
-          "example": [
-            "abc",
-            "def"
-          ],
+          "example": ["abc", "def"],
           "items": {
             "type": "string"
           }
@@ -29108,10 +28575,7 @@
         "gender": {
           "type": "string",
           "example": "Analyst",
-          "enum": [
-            "male",
-            "female"
-          ]
+          "enum": ["male", "female"]
         },
         "first_name": {
           "type": "string",
