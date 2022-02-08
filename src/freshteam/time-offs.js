@@ -1,12 +1,6 @@
 import { TimeoffApi } from "../gen/freshteam";
 import { Client } from "../http-client";
-import {
-  LeaveType,
-  LeaveRequest,
-  LeaveRequestCreate,
-  LeaveRequestReject,
-  TimeOffsListQuery
-} from "./models";
+import { LeaveType, LeaveRequest, LeaveRequestCreate, LeaveRequestReject, TimeOffsListQuery } from "./models";
 
 export class TimeOffs {
   /**
