@@ -222,7 +222,7 @@ export {
   EmployeeCreate,
   EmployeeDetail,
   EmployeeField,
-  InlineObject2 as EmployeeFieldCreate,
+  EmployeeFields as EmployeeFieldCreate,
   // Time Off models
   LeaveType,
   LeaveRequest,

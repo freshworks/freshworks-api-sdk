@@ -80,7 +80,7 @@ export class Employees {
   }
 
   /**
-   * List all employee fields
+   * List all employee fields in employee form
    *
    * @returns {Promise<EmployeeField[]>} - Response with list of employee fields
    */
@@ -89,12 +89,12 @@ export class Employees {
   }
 
   /**
-   * Create employee field
+   * Create a custom field in employee form
    *
    * @param {EmployeeFieldCreate} field - Request body
    * @returns {Promise<EmployeeField>}
    */
   async createField(field) {
-    return this._fieldsApi.createEmployeeFiled(field); // It's a typo in the spec
+    return this._fieldsApi.createEmployeeField(field);
   }
 }
