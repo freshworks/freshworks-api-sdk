@@ -36,11 +36,35 @@ describe("Employees API", function () {
     });
   });
 
-  describe("get employees by pagination: /api/employees?page={integer}", function () {
-    it("should list all employees information successfully with page number as query", async function () {
-      const pageNumber = 2;
-      mock.get(`/api/employees?page=${pageNumber}`).reply(200, []);
-      const empList = await ft.employees.list({ page: pageNumber });
+
+  describe("get employees with pagination: /api/employees", function () {
+    it("should support `page` query param", async function () {
+      const page = 2;
+      mock.get(`/api/employees?page=${page}`).reply(200, []);
+      const empList = await ft.employees.list({ page });
+      expect(empList).toBeInstanceOf(Array);
+    });
+
+    it("should support `sort` query param", async function () {
+      const sort = "first_name";
+      mock.get(`/api/employees?sort=${sort}`).reply(200, []);
+      const empList = await ft.employees.list({ sort });
+      expect(empList).toBeInstanceOf(Array);
+    });
+
+    it("should support `sort_type` query param", async function () {
+      const sort_type = "desc";
+      mock.get(`/api/employees?sort_type=${sort_type}`).reply(200, []);
+      const empList = await ft.employees.list({ sort_type });
+      expect(empList).toBeInstanceOf(Array);
+    });
+
+    it("should support all pagination query params when supplied together", async function () {
+      const page = 2;
+      const sort = "title";
+      const sort_type = "desc";
+      mock.get(`/api/employees?sort=${sort}&sort_type=${sort_type}&page=${page}`).reply(200, []);
+      const empList = await ft.employees.list({ page, sort, sort_type });
       expect(empList).toBeInstanceOf(Array);
     });
   });
