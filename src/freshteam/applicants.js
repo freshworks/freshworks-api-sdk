@@ -2,7 +2,6 @@ import { ApplicantApi } from "../gen/freshteam";
 import { Client } from "../http-client";
 import {
   Applicant,
-  ApplicantArchive,
   ApplicantDetail,
   ApplicantSubStage,
   ApplicantUpdate,
@@ -63,7 +62,7 @@ export class Applicants {
    * Archive an applicant
    *
    * @param {object} id - Identifier of the applicant
-   * @param {ApplicantArchive} options - Properties to filter the applicant
+   * @param {Applicant} options - Properties to filter the applicant
    * @returns {Promise<ApplicantDetail>} - Response with applicant fields list in the response body
    */
   async archive(id, options) {

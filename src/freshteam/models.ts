@@ -189,6 +189,9 @@ export interface ApplicantListQuery {
   candidate_has_email?: boolean;
   candidate_responded?: boolean;
   candidate_spam?: boolean;
+  requisition_id?: number[];
+  created_at?: Date;
+  created_since?: Date;
   updated_since?: Date;
   /**
    * Field to sort results on.
@@ -202,6 +205,10 @@ export interface ApplicantListQuery {
    * Valid values: `asc`, `desc`
    */
   sort_type?: string;
+  /**
+   * Page number starting from which the response data is retrieved. Each `page` contains maximum 50 entries. Use this parameter to paginate results.
+   */
+  page?: number;
 }
 
 export {
@@ -209,8 +216,7 @@ export {
   Applicant,
   ApplicantDetail,
   ApplicantUpdate,
-  InlineObject3 as ApplicantArchive,
-  InlineObject4 as ApplicantSubStage,
+  Applicant1 as ApplicantSubStage,
   // Employee models
   Employee,
   EmployeeCreate,
