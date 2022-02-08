@@ -103,19 +103,18 @@ export interface JobPostingsListQuery {
    * Limits the response to job posting objects whose branch.country_code value matches the parameter value.
    */
   location_country?: string[];
-  // Uncomment below when https://github.com/freshworksinc/freshworks-api-sdk/issues/43 is fixed
-  // /**
-  //  * Field to sort results on
-  //  */
-  // sort?: string;
-  // /**
-  //  * If the sort value is specified, sort_type specifies whether the list must be sorted in ascending or descending order. If sort_type is specified with no sort value, the list is sorted based on the first_name attribute. Valid values: `asc`, `desc`
-  //  */
-  // sort_type?: string;
-  // /**
-  //  * Page number starting from which the response data is retrieved. Each `page` contains maximum 50 entries. Use this parameter to paginate results.
-  //  */
-  // page?: number;
+  /**
+   * Field to sort results on
+   */
+  sort?: string;
+  /**
+   * If the sort value is specified, sort_type specifies whether the list must be sorted in ascending or descending order. If sort_type is specified with no sort value, the list is sorted based on the first_name attribute. Valid values: `asc`, `desc`
+   */
+  sort_type?: string;
+  /**
+   * Page number starting from which the response data is retrieved. Each `page` contains maximum 50 entries. Use this parameter to paginate results.
+   */
+  page?: number;
 }
 
 export interface TimeOffsListQuery {
