@@ -36,7 +36,6 @@ describe("Employees API", function () {
     });
   });
 
-
   describe("get employees with pagination: /api/employees", function () {
     it("should support `page` query param", async function () {
       const page = 2;

@@ -1,12 +1,6 @@
 import { ApplicantApi } from "../gen/freshteam";
 import { Client } from "../http-client";
-import {
-  Applicant,
-  ApplicantDetail,
-  ApplicantSubStage,
-  ApplicantUpdate,
-  ApplicantListQuery
-} from "./models";
+import { Applicant, ApplicantDetail, ApplicantSubStage, ApplicantUpdate, ApplicantListQuery } from "./models";
 
 export class Applicants {
   /**
