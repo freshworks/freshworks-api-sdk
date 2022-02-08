@@ -4,7 +4,6 @@ import {
   LeaveType,
   LeaveRequest,
   LeaveRequestCreate,
-  LeaveRequestApprove,
   LeaveRequestReject,
   TimeOffsListQuery
 } from "./models";
@@ -85,11 +84,13 @@ export class TimeOffs {
    * Approve a leave request by id
    *
    * @param {number} id - Identifier of the time off request
-   * @param {LeaveRequestApprove} options - Additional properties to approve the time off request
+   * @param {LeaveRequest} options - Additional properties to approve the time off request
    * @returns {Promise<null>} - Returns null if successful
    */
-  async approve(id, options) {
-    return this._api.cancelTimeoff(id, options);
+  async approve(id, options = {}) {
+    return this._api.cancelTimeoff(id, {
+      leave_request: options
+    });
   }
 
   /**
@@ -99,7 +100,9 @@ export class TimeOffs {
    * @param {LeaveRequestReject} options - Additional properties to reject the time off request
    * @returns {Promise<null>} - Returns null if successful
    */
-  async reject(id, options) {
-    return this._api.rejectTimeoff(id, options);
+  async reject(id, options = {}) {
+    return this._api.rejectTimeoff(id, {
+      leave_request: options
+    });
   }
 }

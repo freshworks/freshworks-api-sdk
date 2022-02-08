@@ -227,8 +227,7 @@ export {
   LeaveType,
   LeaveRequest,
   LeaveRequestCreate,
-  InlineObject as LeaveRequestApprove,
-  InlineObject1 as LeaveRequestReject,
+  LeaveRequest1 as LeaveRequestReject,
   // User Function models
   UserFunction,
   // Sub-Department models
