@@ -24,7 +24,7 @@ To use this library in a Freshworks app, add the following to the `"dependencies
 {
   // ...
   "dependencies": {
-    "@freshworks/api-sdk": "0.1.0"
+    "@freshworks/api-sdk": "0.2.0"
   }
 }
 ```
