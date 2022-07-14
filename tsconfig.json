@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "outDir": "dist",
+    "types": ["node"],
 
     // Target Node.js >= v12.x
     "lib": ["es2018"],

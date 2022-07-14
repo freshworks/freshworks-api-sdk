@@ -1,6 +1,6 @@
 ---
 prev: /freshteam/time-offs
-next: /freshteam
+next: /freshservice
 ---
 
 # User functions
