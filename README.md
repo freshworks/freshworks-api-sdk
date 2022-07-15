@@ -4,7 +4,7 @@ Node.js SDK for working with Freshworks HTTP APIs. Currently supports Freshteam 
 
 ## Installation
 
-``` js
+``` sh
 npm install --save @freshworks/api-sdk
 ```
 
@@ -36,6 +36,8 @@ const employees = await ft.employees.list({ first_name: "Arthur", last_name: "De
 ```
 
 ### Freshservice
+
+This section depicts example of interacting with Freshservice API
 
 ```js
 const { Freshservice } = require("@freshworks/api-sdk");

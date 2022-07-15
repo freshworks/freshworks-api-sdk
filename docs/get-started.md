@@ -16,7 +16,7 @@ This project is a Node.js SDK used to interact with [Freshworks public REST APIs
 
 Installing in a Node.js project needs you to install the [`@freshworks/api-sdk`](https://github.com/freshworks/freshworks-api-sdk) package:
 
-``` js
+``` sh
 npm install --save @freshworks/api-sdk
 ```
 
