@@ -1,3 +1,6 @@
+const { searchPlugin } = require('@vuepress/plugin-search')
+const { defaultTheme } = require('@vuepress/theme-default')
+
 module.exports = {
   lang: "en-US",
   title: "Freshworks API SDK",
@@ -9,7 +12,7 @@ module.exports = {
 
   head: [["link", { rel: "icon", href: "/api-sdk/freshworks-Mark.svg" }]],
 
-  themeConfig: {
+  theme: defaultTheme({
     logo: "/freshworks-Mark.svg",
     contributors: false,
     navbar: [
@@ -23,6 +26,7 @@ module.exports = {
           { text: "Overview", link: "/freshteam/" },
           {
             text: "Features",
+            collapsible: true,
             children: [
               {
                 text: "Applicants",
@@ -85,10 +89,43 @@ module.exports = {
         ]
       },
       {
+        text: "Freshservice",
+        collapsible: true,
+        children: [
+          { text: "Overview", link: "/freshservice/" },
+          {
+            text: "Features",
+            collapsible: true,
+            children: [
+              {
+                text: "Tickets",
+                link: "/freshservice/tickets"
+              },
+              {
+                text: "Conversations",
+                link: "/freshservice/conversations"
+              },
+              {
+                text: "Problems",
+                link: "/freshservice/problems"
+              },
+              {
+                text: "Changes",
+                link: "/freshservice/changes"
+              },
+              {
+                text: "Releases",
+                link: "/freshservice/releases"
+              }
+            ]
+          }
+        ]
+      },
+      {
         text: "Reference",
         children: [
-          { text: "API reference", link: "/api/" },
-          { text: "Classes", children: [{ text: "Freshteam", link: "/api/classes/freshteam.Freshteam.html" }] }
+          { text: "API reference", link: "/api/index.html" },
+          { text: "Classes", children: [{ text: "Freshteam", link: "/api/classes/freshteam.Freshteam.html" }, { text: "Freshservice", link: "/api/classes/freshservice.Freshservice.html" }] }
         ]
       }
     ],
@@ -97,6 +134,7 @@ module.exports = {
         "/freshteam/README.md",
         {
           text: "Features",
+          collapsible: true,
           children: [
             "/freshteam/applicants.md",
             "/freshteam/branches.md",
@@ -114,7 +152,30 @@ module.exports = {
             "/freshteam/user-functions.md"
           ]
         }
+      ],
+      "/freshservice": [
+        "/freshservice/README.md",
+        {
+          text: "Features",
+          collapsible: true,
+          children: [
+            "/freshservice/tickets.md",
+            "/freshservice/conversations.md",
+            "/freshservice/problems.md",
+            "/freshservice/changes.md",
+            "/freshservice/releases.md"
+          ]
+        }
       ]
     }
-  }
+  }),
+  plugins: [
+    searchPlugin({
+      // options
+      getExtraFields: (page) => page.frontmatter.tags ?? [],
+      isSearchable: (page) => page.path !== '/',
+      maxSuggestions: 10,
+      hotKeys: ["s","/","f"]
+    }),
+  ],
 };

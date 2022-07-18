@@ -14,15 +14,18 @@ actions:
 
 A Node.js SDK to interact with [Freshworks public REST APIs](https://developers.freshworks.com/documentation/). This SDK can be used from a Node.js application hosted outside the Freshworks ecosystem, as well as from a serverless Freshworks app.
 
-With the initial release, this SDK supports only the [Freshteam REST API](https://developers.freshteam.com/api/).
+With the initial release, this SDK supports only the [Freshteam REST API](https://developers.freshteam.com/api/) and and partially supports[Freshservice REST API](https://api.freshservice.com/v2/).
 
 ## API support
 
 | Product        | Status |
 | -------------- | ------ |
 | Freshteam      | ✅     |
+| Freshservice   | 🏁     |
 | Freshdesk      | -      |
 | Freshworks CRM | -      |
+
+🏁 - Partially supported services
 
 ## License
 
