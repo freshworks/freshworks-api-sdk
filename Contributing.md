@@ -2,21 +2,21 @@
 
 Welcome to Freshworks API SDK contributing guide. Thank you for investing your time in contributing to our project! Any contribution you make will be reflected on [API-SDK Docs](https://developers.freshworks.com/api-sdk/).
 
-Check our [contribution options](contribution-docs/options.md) to see what types of contributions we accept before making changes. Read our [contribution guidelines](contribution-docs/guidelines.md) to adhere to our documentation standards.
+Check our [contribution options](docs/contributing/options.md) to see what types of contributions we accept before making changes. Read our [contribution guidelines](docs/contributing/guidelines.md) to adhere to our documentation standards.
 
 In this guide you will get an overview of the contribution workflow from adding new API specification, adding a new endpoint, adding a new API method, adding test cases, creating a PR, reviewing, and merging the PR.
 
 Use the table of contents icon  on the top left corner of this document to get to a specific section of this guide quickly.
 
-Before you start kindly ensure you have the [prerequisites](contribution-docs/prerequisite.md)
+Before you start kindly ensure you have the [prerequisites](docs/contributing/prerequisite.md)
 
 ## Getting started
 
-To navigate our codebase with confidence, see the introduction to working on API-SDK docs in the [contribution-docs repository](contribution-docs/guidelines.md) 🎊. For more information on writing markdown files on GitHub, kindly checkout this [GitHub Markdown reference](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
+To navigate our codebase with confidence, see the introduction to working on API-SDK docs in the [contributing repository](docs/contributing/guidelines.md) 🎊. For more information on writing markdown files on GitHub, kindly checkout this [GitHub Markdown reference](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
 
 ## Make changes in a codespace
 
-For more information about using a codespace for working on GitHub documentation, see "Working in a codespace." Before making any changes kindly explore supported [contribution options](contribution-docs/options.md)
+For more information about using a codespace for working on GitHub documentation, see "Working in a codespace." Before making any changes kindly explore supported [contribution options](docs/contributing/options.md)
 
 - Create a working branch and start with your changes!
 - Commit your update in your branch. Commit the changes once you are happy with them.

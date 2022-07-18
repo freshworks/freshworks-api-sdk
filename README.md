@@ -1,6 +1,6 @@
 # Freshworks API SDK
 
-Node.js SDK for working with Freshworks HTTP APIs. Currently supports Freshteam and Freshservice.
+Node.js SDK for working with Freshworks HTTP APIs. Currently supports Freshteam and partially supports Freshservice.
 
 ## Installation
 
@@ -13,7 +13,9 @@ npm install --save @freshworks/api-sdk
 | Product      | Status |
 | ------------ | ------ |
 | Freshteam    | ✅     |
-| Freshservice | ✅     |
+| Freshservice | 🏁     |
+
+🏁 - Partially supported services
 
 ## Get started
 
