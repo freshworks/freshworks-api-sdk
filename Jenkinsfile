@@ -1,10 +1,17 @@
 #!groovy
 
-def runNPM(command) {
+def runNPM(command, nodeVersion) {
   def NODE_VERSION = 14;
   utilObj = new Utils();
-  envVersion = utilObj.getEnvVersion(NODE_VERSION);
+  envVersion = utilObj.getEnvVersion(nodeVersion ? nodeVersion : NODE_VERSION);
   utilObj.runCmd(command, envVersion)
+}
+
+def runNPMInAllNodeVersion(command) {
+  def NODE_VERSIONS = [14, 16, 18];
+  NODE_VERSIONS.every(function(nodeVersion){
+    runNPM(command, nodeVersion);
+  });
 }
 
 def uploadAndInvalidate(environment) {
@@ -51,13 +58,13 @@ pipeline {
     stage('Checkout & Setup') {
       steps {
         checkout scm
-        runNPM('npm ci')
+        runNPMInAllNodeVersion('npm ci')
       }
     }
 
     stage('Run unit tests') {
       steps {
-        runNPM('npm test')
+        runNPMInAllNodeVersion('npm test')
       }
     }
 
