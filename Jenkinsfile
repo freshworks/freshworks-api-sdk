@@ -43,7 +43,11 @@ def publishToNpm(environment){
 
 pipeline {
 
-  agent any
+  agent {
+    kubernetes {
+      inheritFrom 'eks-node-executor'
+    }
+  }
 
   environment {
     NPM_TOKEN = credentials('NPM_TOKEN')
