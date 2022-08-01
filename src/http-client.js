@@ -47,3 +47,52 @@ export class Client {
     auth.apiKeyPrefix = opts.authPrefix || "Bearer";
   }
 }
+
+/**
+ * The Response type returned by every API method.
+ *
+ * ```js
+ * // Default success response
+ * const success = new Response();
+ *
+ * // Custom status code
+ * const res = new Response({
+ *  statusCode: 418,
+ *  headers: {
+ *    "Content-Type": "application/json"
+ *  },
+ *  body: {
+ *    "message": "You got that right"
+ *  }
+ * });
+ * ```
+ */
+export class Response {
+  constructor(body = null, opts = {}) {
+    /**
+     * @property {number} [statusCode] - HTTP status code of the Response
+     * @default 200
+     * @type {number}
+     */
+    this.statusCode = opts.statusCode || 200;
+
+    /**
+     * @property {object} [headers] - An object containing all HTTP response headers
+     * @default {}
+     * @type {object}
+     */
+    this.headers = opts.headers || {};
+
+    /**
+     * @property {object | null} [body] - JavaScript object representation of the Response body received from the API
+     * @default null
+     * @type {object|string|null}
+     */
+    this.body = body || opts.body || null;
+  }
+
+  json() {
+    // TODO: Also check for content type before attempting to parse body as JSON
+    return typeof this.body === "string" ? JSON.parse(this.body) : this.body;
+  }
+}
