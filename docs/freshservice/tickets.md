@@ -2,6 +2,7 @@
 prev: /freshservice
 next: /freshservice/conversations
 ---
+
 # Tickets
 
 A ticket can be an incident or a service request. An incident is a disruption to an existing service, and a service request is a formal request from a user for something to be provided. Tickets are assigned to agents based on the agent's expertise and on the subject of the ticket.
@@ -25,11 +26,11 @@ const tickets = await fs.tickets.list();
 ```js
 // Using without query parameters
 const query = {
-"email" : "******@freshservice.com",
-"filter" : "watching",
-"include" : "stats",
-"order_type" : "asc"
-}
+  email: "******@freshservice.com",
+  filter: "watching",
+  include: "stats",
+  order_type: "asc"
+};
 const tickets = await fs.tickets.list(query);
 ```
 
@@ -99,7 +100,7 @@ const newTicket = await fs.tickets.create(ticket);
 Edit an existing Freshservice Ticket
 
 ```js
-const updatedTicket = await fs.tickets.update(id,ticket);
+const updatedTicket = await fs.tickets.update(id, ticket);
 ```
 
 - The first argument is the ticket ID - identifier of the ticket to be updated
@@ -189,9 +190,9 @@ const timeEntries = await fs.tickets.timeEntries(ticket_id);
 // List all time entries for given ticket ID with pagination option
 const ticket_id = 14000239432;
 const opts = {
-"page" : 1,
-"per_page" : 10
-}
+  page: 1,
+  per_page: 10
+};
 const timeEntries = await fs.tickets.timeEntries(ticket_id, opts);
 ```
 
@@ -257,14 +258,14 @@ Create a custom ticket source for tickets in Freshservice
 
 ```js
 const source = {
-  "name": "Email",
-  "position": 1
+  name: "Email",
+  position: 1
 };
 const fieldSource = await fs.tickets.source(source);
 ```
 
-- The source argument is an object of type  [`Freshservice.models.TicketSource`](../api/classes/freshservice_models.TicketSource.html) containing the details of custom ticket source to be created
-- Returns a `Promise` that resolves to a  [`Freshservice.models.TicketSource`](../api/classes/freshservice_models.TicketSource.html) object
+- The source argument is an object of type [`Freshservice.models.TicketSource`](../api/classes/freshservice_models.TicketSource.html) containing the details of custom ticket source to be created
+- Returns a `Promise` that resolves to a [`Freshservice.models.TicketSource`](../api/classes/freshservice_models.TicketSource.html) object
 
 ## Tasks
 
@@ -277,13 +278,13 @@ Create a new task against a ticket in Freshservice
 ```js
 const ticket_id = 14000239432;
 const task = {
-  "parent_type": "Ticket",
-  "due_date": "2021-11-24T11:30:00Z",
-  "notify_before": 3600,
-  "title": "Renew license",
-  "description": "Renew Software license",
-  "start_date": "2021-11-22T16:58:45Z"
-}
+  parent_type: "Ticket",
+  due_date: "2021-11-24T11:30:00Z",
+  notify_before: 3600,
+  title: "Renew license",
+  description: "Renew Software license",
+  start_date: "2021-11-22T16:58:45Z"
+};
 const newTask = await fs.tickets.createTask(task, ticket_id);
 ```
 
@@ -313,9 +314,9 @@ Retrieve a task on a ticket request with the given ID from Freshservice
 // Retrieve all the tasks for ticket with given ticket ID with optional parameter
 const ticket_id = 14000239432;
 const opts = {
-  "page" : 1,
-  "per_page" : 10
-}
+  page: 1,
+  per_page: 10
+};
 const taskList = await fs.tickets.getTasks(ticket_id, opts);
 ```
 
@@ -337,13 +338,13 @@ Update an existing task on an existing ticket request in Freshservice
 const ticket_id = 14000239432;
 const task_id = 48;
 const task = {
-  "parent_type": "Ticket",
-  "due_date": "2021-11-24T11:30:00Z",
-  "notify_before": 3600,
-  "title": "Renew license",
-  "description": "Renew Software license",
-  "start_date": "2021-11-22T16:58:45Z"
-}
+  parent_type: "Ticket",
+  due_date: "2021-11-24T11:30:00Z",
+  notify_before: 3600,
+  title: "Renew license",
+  description: "Renew Software license",
+  start_date: "2021-11-22T16:58:45Z"
+};
 const updateTask = await fs.tickets.updateTask(task, ticket_id, task_id);
 ```
 

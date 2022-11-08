@@ -20,7 +20,6 @@ const FS_API_KEY = "f_xkcd_222";
 
 const mock = nock(`https://${FS_DOMAIN}`);
 
-
 describe("Tickets API Test Suite", function () {
   const fs = new Freshservice(FS_DOMAIN, FS_API_KEY);
 
@@ -46,9 +45,8 @@ describe("Tickets API Test Suite", function () {
       const delTicket = await fs.tickets.delete(ticket_id);
       expect(delTicket).toBeNull;
     });
-
   });
-  
+
   describe("Tickets retrieval with filter params tests", function () {
     it("Running get ticket by ID test - without include param", async function () {
       const ticket_id = 1;
@@ -73,12 +71,16 @@ describe("Tickets API Test Suite", function () {
 
     it("running ticket list test with filter param", async function () {
       const query = {
-        "email" : "andrea@freshservice.com",
-        "filter" : "watching",
-        "include" : "stats",
-        "order_type" : "asc"
-      }
-      mock.get(`/api/v2/tickets?filter=${query.filter}&email=${query.email}&include=${query.include}&order_type=${query.order_type}`).reply(200, ticketsResponse);
+        email: "andrea@freshservice.com",
+        filter: "watching",
+        include: "stats",
+        order_type: "asc"
+      };
+      mock
+        .get(
+          `/api/v2/tickets?filter=${query.filter}&email=${query.email}&include=${query.include}&order_type=${query.order_type}`
+        )
+        .reply(200, ticketsResponse);
       const tickets = await fs.tickets.list(query);
       expect(tickets).toBeInstanceOf(Freshservice.models.Tickets);
     });
@@ -92,7 +94,7 @@ describe("Tickets API Test Suite", function () {
       expect(restoredTicket).toBeNull;
     });
   });
-  
+
   describe("Create a child Ticket test : /api/v2/tickets/{ticket_id}/create_child_ticket", function () {
     it("Create a child ticket for a given parent ticket ID", async function () {
       const parent_ticket_id = 14000239432;
@@ -101,7 +103,7 @@ describe("Tickets API Test Suite", function () {
       expect(childTicket).toBeInstanceOf(Freshservice.models.Ticket);
     });
   });
-  
+
   describe("Time entry test suite : /api/v2/tickets/{ticket_id}/time_entries", function () {
     it("Get time entry for ticket with ticket ID and time entry ID", async function () {
       const ticket_id = 14000239432;
@@ -114,10 +116,12 @@ describe("Tickets API Test Suite", function () {
     it("List all time entries for given ticket ID with pagination", async function () {
       const ticket_id = 14000239432;
       const opts = {
-        "page" : 1,
-        "per_page" : 10
-      }
-      mock.get(`/api/v2/tickets/${ticket_id}/time_entries?per_page=${opts.per_page}&page=${opts.page}`).reply(200, timeEntries200);
+        page: 1,
+        per_page: 10
+      };
+      mock
+        .get(`/api/v2/tickets/${ticket_id}/time_entries?per_page=${opts.per_page}&page=${opts.page}`)
+        .reply(200, timeEntries200);
       const timeEntries = await fs.tickets.timeEntries(ticket_id, opts);
       expect(timeEntries).toBeInstanceOf(Freshservice.models.TimeEntries);
     });
@@ -132,7 +136,7 @@ describe("Tickets API Test Suite", function () {
     it("Create time entry for ticket with given ticket ID", async function () {
       const ticket_id = 14000239432;
       mock.post(`/api/v2/tickets/${ticket_id}/time_entries`).reply(201, timeEntry200);
-      const newTimeEntry = await fs.tickets.createTimeEntry(createTimeEntry,ticket_id);
+      const newTimeEntry = await fs.tickets.createTimeEntry(createTimeEntry, ticket_id);
       expect(newTimeEntry).toBeInstanceOf(Freshservice.models.TimeEntry);
     });
 
@@ -140,7 +144,7 @@ describe("Tickets API Test Suite", function () {
       const ticket_id = 14000239432;
       const time_entry_id = 14702899;
       mock.put(`/api/v2/tickets/${ticket_id}/time_entries/${time_entry_id}`).reply(200, timeEntry200);
-      const updTimeEntry = await fs.tickets.updateTimeEntry(createTimeEntry,ticket_id, time_entry_id);
+      const updTimeEntry = await fs.tickets.updateTimeEntry(createTimeEntry, ticket_id, time_entry_id);
       expect(updTimeEntry).toBeInstanceOf(Freshservice.models.TimeEntry);
     });
 
@@ -154,24 +158,22 @@ describe("Tickets API Test Suite", function () {
 
     it("Create a ticket field source", async function () {
       const source = {
-        "name": "Email",
-        "position": 1
+        name: "Email",
+        position: 1
       };
       mock.post(`/api/v2/ticket_fields/sources`).reply(201, ticketSource201);
       const newSource = await fs.tickets.source(source);
       expect(newSource).toBeInstanceOf(Freshservice.models.TicketSource);
     });
-
   });
-  
-  describe("Tasks test suite : /api/v2/tickets/{ticket_id}/tasks", function () {
 
+  describe("Tasks test suite : /api/v2/tickets/{ticket_id}/tasks", function () {
     it("Retrieve all the tasks for ticket with given ticket ID with optional parameter", async function () {
       const ticket_id = 14000239432;
       const opts = {
-        "page" : 1,
-        "per_page" : 10
-      }
+        page: 1,
+        per_page: 10
+      };
       mock.get(`/api/v2/tickets/${ticket_id}/tasks?per_page=${opts.per_page}&page=${opts.page}`).reply(200, tasks200);
       const taskList = await fs.tickets.getTasks(ticket_id, opts);
       expect(taskList).toBeInstanceOf(Freshservice.models.Tasks);
@@ -187,13 +189,13 @@ describe("Tickets API Test Suite", function () {
     it("Create tasks for ticket with given ticket ID", async function () {
       const ticket_id = 14000239432;
       const task = {
-        "parent_type": "Ticket",
-        "due_date": "2021-11-24T11:30:00Z",
-        "notify_before": 3600,
-        "title": "Renew license",
-        "description": "Renew Software license",
-        "start_date": "2021-11-22T16:58:45Z"
-      }
+        parent_type: "Ticket",
+        due_date: "2021-11-24T11:30:00Z",
+        notify_before: 3600,
+        title: "Renew license",
+        description: "Renew Software license",
+        start_date: "2021-11-22T16:58:45Z"
+      };
       mock.post(`/api/v2/tickets/${ticket_id}/tasks`).reply(201, tasks200);
       const newTask = await fs.tickets.createTask(task, ticket_id);
       expect(newTask).toBeInstanceOf(Freshservice.models.Task);
@@ -211,13 +213,13 @@ describe("Tickets API Test Suite", function () {
       const ticket_id = 14000239432;
       const task_id = 48;
       const updateTsk = {
-        "parent_type": "Ticket",
-        "due_date": "2021-11-24T11:30:00Z",
-        "notify_before": 3600,
-        "title": "Renew license",
-        "description": "Renew Software license",
-        "start_date": "2021-11-22T16:58:45Z"
-      }
+        parent_type: "Ticket",
+        due_date: "2021-11-24T11:30:00Z",
+        notify_before: 3600,
+        title: "Renew license",
+        description: "Renew Software license",
+        start_date: "2021-11-22T16:58:45Z"
+      };
       mock.put(`/api/v2/tickets/${ticket_id}/tasks/${task_id}`).reply(200, tasks200);
       const uptask = await fs.tickets.updateTask(updateTsk, ticket_id, task_id);
       expect(uptask).toBeInstanceOf(Freshservice.models.Task);
@@ -230,7 +232,6 @@ describe("Tickets API Test Suite", function () {
       const delTask = await fs.tickets.deleteTask(ticket_id, task_id);
       expect(delTask).toBeNull;
     });
-
   });
 
   //test suite end

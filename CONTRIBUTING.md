@@ -6,7 +6,7 @@ Check our [contribution options](docs/contributing/options.md) to see what types
 
 In this guide you will get an overview of the contribution workflow from adding new API specification, adding a new endpoint, adding a new API method, adding test cases, creating a PR, reviewing, and merging the PR.
 
-Use the table of contents icon  on the top left corner of this document to get to a specific section of this guide quickly.
+Use the table of contents icon on the top left corner of this document to get to a specific section of this guide quickly.
 
 Before you start kindly ensure you have the [prerequisites](docs/contributing/prerequisite.md)
 
