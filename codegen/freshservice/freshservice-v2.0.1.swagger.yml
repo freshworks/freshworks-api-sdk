@@ -17713,19 +17713,19 @@ paths:
               choices:
                 type: array
                 items:
-                  required: []
+                  #                  required: true
                   properties: {}
               sections:
                 type: array
                 uniqueItems: true
                 minItems: 1
                 items:
-                  required: []
+                  #                  required: []
                   properties:
                     values:
                       type: array
                       items:
-                        required: []
+                        #                       required: []
                         properties: {}
                     section_fields:
                       type: array
