@@ -2,8 +2,8 @@
 
 ## Properties
 
-| Name               | Type                                  | Description | Notes      |
-| ------------------ | ------------------------------------- | ----------- | ---------- |
-| **id**             | **Number**                            |             | [optional] |
-| **value**          | **String**                            |             | [optional] |
-| **nested_options** | [**[FieldChoices]**](FieldChoices.md) |             | [optional] |
+| Name               | Type         | Description | Notes      |
+| ------------------ | ------------ | ----------- | ---------- |
+| **id**             | **Number**   |             | [optional] |
+| **value**          | **String**   |             | [optional] |
+| **nested_options** | **[Object]** |             | [optional] |
