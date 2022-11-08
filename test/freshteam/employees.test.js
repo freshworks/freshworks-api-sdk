@@ -20,7 +20,7 @@ describe("Employees API", function () {
       const id = 6000122460;
       mock.get(`/api/employees/${id}`).reply(200, getEmployees200[1]);
       const empDetail = await ft.employees.get(id);
-      expect(empDetail).toBeInstanceOf(Response)
+      expect(empDetail).toBeInstanceOf(Response);
       expect(empDetail.json()).toBeInstanceOf(Freshteam.models.EmployeeDetail);
       expect(empDetail.json().id).toEqual(id);
     });

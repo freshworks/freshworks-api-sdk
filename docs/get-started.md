@@ -3,6 +3,7 @@ title: Get started
 prev: /
 next: /freshteam/
 ---
+
 # Get started
 
 This project is a Node.js SDK used to interact with [Freshworks public REST APIs](https://developers.freshworks.com/documentation/). Refer to below sections to get started with.
@@ -16,7 +17,7 @@ This project is a Node.js SDK used to interact with [Freshworks public REST APIs
 
 Installing in a Node.js project needs you to install the [`@freshworks/api-sdk`](https://github.com/freshworks/freshworks-api-sdk) package:
 
-``` sh
+```sh
 npm install --save @freshworks/api-sdk
 ```
 

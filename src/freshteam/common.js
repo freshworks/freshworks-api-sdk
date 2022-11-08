@@ -6,7 +6,7 @@ import { Response } from "../http-client";
  * @param {object} res
  * @returns {Response}
  */
- export function intoResponse(res) {
+export function intoResponse(res) {
   return new Response(res.data, {
     statusCode: res.response.statusCode,
     headers: res.response.headers

@@ -4,7 +4,7 @@ Node.js SDK for working with Freshworks HTTP APIs. Currently supports Freshteam 
 
 ## Installation
 
-``` sh
+```sh
 npm install --save @freshworks/api-sdk
 ```
 
