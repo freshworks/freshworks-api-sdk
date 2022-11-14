@@ -1,5 +1,6 @@
 import { Freshteam } from "../../src";
 import nock from "nock";
+import { Response } from "../../src/http-client";
 
 const FT_DOMAIN = "example.freshteam.com";
 const FT_API_KEY = "f_xkcd_222";
@@ -14,21 +15,24 @@ describe("JobPostings API", function () {
       const page = 2;
       mock.get(`/api/job_postings?page=${page}`).reply(200, []);
       const jobList = await ft.jobPostings.list({ page });
-      expect(jobList).toBeInstanceOf(Array);
+      expect(jobList).toBeInstanceOf(Response);
+      expect(jobList.json()).toBeInstanceOf(Array);
     });
 
     it("should support `sort` query param", async function () {
       const sort = "title";
       mock.get(`/api/job_postings?sort=${sort}`).reply(200, []);
       const jobList = await ft.jobPostings.list({ sort });
-      expect(jobList).toBeInstanceOf(Array);
+      expect(jobList).toBeInstanceOf(Response);
+      expect(jobList.json()).toBeInstanceOf(Array);
     });
 
     it("should support `sort_type` query param", async function () {
       const sort_type = "desc";
       mock.get(`/api/job_postings?sort_type=${sort_type}`).reply(200, []);
       const jobList = await ft.jobPostings.list({ sort_type });
-      expect(jobList).toBeInstanceOf(Array);
+      expect(jobList).toBeInstanceOf(Response);
+      expect(jobList.json()).toBeInstanceOf(Array);
     });
 
     it("should support all pagination query params when supplied together", async function () {
@@ -37,7 +41,8 @@ describe("JobPostings API", function () {
       const sort_type = "desc";
       mock.get(`/api/job_postings?sort=${sort}&sort_type=${sort_type}&page=${page}`).reply(200, []);
       const jobList = await ft.jobPostings.list({ page, sort, sort_type });
-      expect(jobList).toBeInstanceOf(Array);
+      expect(jobList).toBeInstanceOf(Response);
+      expect(jobList.json()).toBeInstanceOf(Array);
     });
   });
 });
