@@ -1,5 +1,6 @@
 import { LocationsApi } from "../gen/freshteam";
-import { Client } from "../http-client";
+import { Client, Response } from "../http-client";
+import { intoResponse } from "./common";
 import { Branch } from "./models";
 
 export class Branches {
@@ -18,19 +19,19 @@ export class Branches {
   /**
    * Fetches the list of branches
    *
-   * @returns {Promise<Branch[]>} - Response with branches list in the response body
+   * @returns {Promise<Response<Branch[]>} - Response with branches list in the response body
    */
   async list() {
-    return this._api.getBranches();
+    return this._api.getBranchesWithHttpInfo().then(res => intoResponse(res));
   }
 
   /**
    * Get the details of a branch
    *
    * @param {number} id - Identifier of the branch
-   * @returns {Promise<Branch>} - Response with branch object in the response body
+   * @returns {Promise<Response<Branch>>} - Response with branch object in the response body
    */
   async get(id) {
-    return this._api.getBranch(id);
+    return this._api.getBranchWithHttpInfo(id).then(res => intoResponse(res));
   }
 }
