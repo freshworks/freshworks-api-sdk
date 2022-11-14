@@ -9,14 +9,16 @@ next: /freshteam/new-hires
 
 ```js
 const levels = await ft.levels.list();
+// use levels.json() to access data
 ```
 
-- Returns a `Promise` that resolves to an `Array` of `Freshteam.models.Level` objects
+- Returns a `Response` object that resolves to an `Array` of `Freshteam.models.Level` objects
 
 ## Get level by ID
 
 ```js
 const level = await ft.levels.get(id);
+// use level.json() to access data
 ```
 
-- Returns a `Promise` that resolves to a `Freshteam.models.Level` object
+- Returns a `Response` object that resolves to a `Freshteam.models.Level` object
