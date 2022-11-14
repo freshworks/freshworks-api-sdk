@@ -1,5 +1,6 @@
 import { TimeoffApi } from "../gen/freshteam";
-import { Client } from "../http-client";
+import { Client, Response } from "../http-client";
+import { intoResponse } from "./common";
 import { LeaveType, LeaveRequest, LeaveRequestCreate, LeaveRequestReject, TimeOffsListQuery } from "./models";
 
 export class TimeOffs {
@@ -18,60 +19,60 @@ export class TimeOffs {
   /**
    * Fetches the list of time off types in the account
    *
-   * @returns {Promise<LeaveType[]>} - Array of time off types
+   * @returns {Promise<Response<LeaveType[]>>} - Array of time off types
    */
   async types() {
-    return this._api.getTimeoffTypes();
+    return this._api.getTimeoffTypesWithHttpInfo().then(res => intoResponse(res));
   }
 
   /**
    * Fetches the time off request type by ID
    *
    * @param {number} id - Identifier of the time off type
-   * @returns {Promise<LeaveType>} - The time off type
+   * @returns {Promise<Response<LeaveType>>} - The time off type
    */
   async type(id) {
-    return this._api.getTimeoffType(id);
+    return this._api.getTimeoffTypeWithHttpInfo(id).then(res => intoResponse(res));
   }
 
   /**
    * Fetches the list of time off requests of employees in the account
    *
    * @param {TimeOffsListQuery} [query = {}] - Query parameters
-   * @returns {Promise<LeaveRequest>} - Response with time off requests list in the response body
+   * @returns {Promise<Response<LeaveRequest>>} - Response with time off requests list in the response body
    */
   async list(query = {}) {
-    return this._api.getTimeoffs(query);
+    return this._api.getTimeoffsWithHttpInfo(query).then(res => intoResponse(res));
   }
 
   /**
    * Create a leave request
    *
    * @param {LeaveRequestCreate} leaveRequest - A leave request object
-   * @returns {Promise<LeaveRequest>} - A leave request object
+   * @returns {Promise<Response<LeaveRequest>>} - A leave request object
    */
   async create(leaveRequest) {
-    return this._api.createTimeOff(leaveRequest);
+    return this._api.createTimeOffWithHttpInfo(leaveRequest).then(res => intoResponse(res));
   }
 
   /**
    * Fetches a leave request by id
    *
    * @param {number} id - Identifier of the time off request
-   * @returns {Promise<LeaveRequest>} - A leave request object
+   * @returns {Promise<Response<LeaveRequest>>} - A leave request object
    */
   async get(id) {
-    return this._api.getTimeoff(id);
+    return this._api.getTimeoffWithHttpInfo(id).then(res => intoResponse(res));
   }
 
   /**
    * Cancels a leave request by id
    *
    * @param {number} id - Identifier of the time off request
-   * @returns {Promise<null>} - Returns null if successful
+   * @returns {Promise<Response<null>>} - Returns null if successful
    */
   async cancel(id) {
-    return this._api.cancelTimeoff(id);
+    return this._api.cancelTimeoffWithHttpInfo(id).then(res => intoResponse(res));
   }
 
   /**
@@ -79,12 +80,12 @@ export class TimeOffs {
    *
    * @param {number} id - Identifier of the time off request
    * @param {LeaveRequest} options - Additional properties to approve the time off request
-   * @returns {Promise<null>} - Returns null if successful
+   * @returns {Promise<Response<null>>} - Returns null if successful
    */
   async approve(id, options = {}) {
-    return this._api.cancelTimeoff(id, {
+    return this._api.cancelTimeoffWithHttpInfo(id, {
       leave_request: options
-    });
+    }).then(res => intoResponse(res));
   }
 
   /**
@@ -92,11 +93,11 @@ export class TimeOffs {
    *
    * @param {number} id - Identifier of the time off request
    * @param {LeaveRequestReject} options - Additional properties to reject the time off request
-   * @returns {Promise<null>} - Returns null if successful
+   * @returns {Promise<Response<null>>} - Returns null if successful
    */
   async reject(id, options = {}) {
-    return this._api.rejectTimeoff(id, {
+    return this._api.rejectTimeoffWithHttpInfo(id, {
       leave_request: options
-    });
+    }).then(res => intoResponse(res));
   }
 }

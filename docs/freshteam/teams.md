@@ -9,6 +9,7 @@ next: /freshteam/time-offs
 
 ```js
 const teams = await ft.teams.list();
+// use teams.json() to access data
 ```
 
 - Returns a `Promise` that resolves to an `Array` of `Freshteam.models.Team` objects
@@ -17,6 +18,7 @@ const teams = await ft.teams.list();
 
 ```js
 const team = await ft.teams.get(id);
+// use team.json() to access data
 ```
 
 - Returns a `Promise` that resolves to a `Freshteam.models.Team` object
