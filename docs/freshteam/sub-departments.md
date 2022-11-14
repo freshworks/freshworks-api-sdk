@@ -9,6 +9,7 @@ next: /freshteam/teams
 
 ```js
 const subDepts = await ft.subDepartments.list();
+// use subDepts.json() to access data
 ```
 
 - Returns a `Promise` that resolves to an `Array` of `Freshteam.models.SubDepartment` objects
@@ -17,6 +18,7 @@ const subDepts = await ft.subDepartments.list();
 
 ```js
 const subDept = await ft.subDepartments.get(id);
+// use subDept.json() to access data
 ```
 
 - Returns a `Promise` that resolves to a `Freshteam.models.SubDepartment` object

@@ -1,5 +1,6 @@
 import { NewHireApi } from "../gen/freshteam";
-import { Client } from "../http-client";
+import { Client, Response } from "../http-client";
+import { intoResponse } from "./common";
 import { NewHire, NewHireCreate, NewHireDetail } from "./models";
 
 export class NewHires {
@@ -18,10 +19,10 @@ export class NewHires {
    * Creates a NewHire
    *
    * @param {NewHireCreate} newHire - Details of a NewHire
-   * @returns {Promise<NewHire>} - New Hire object
+   * @returns {Promise<Response<NewHire>>} - New Hire object
    */
   async create(newHire) {
-    return this._api.createNewHire(newHire);
+    return this._api.createNewHireWithHttpInfo(newHire).then(res => intoResponse(res));
   }
 
   /**
@@ -39,10 +40,10 @@ export class NewHires {
    *
    * @param {number} id - Identifier of the NewHire
    * @param {string[]} [include] - Additional options to add include properties.
-   * @returns {Promise<NewHireDetail>} - Response with NewHire object in the response body
+   * @returns {Promise<Response<NewHireDetail>>} - Response with NewHire object in the response body
    */
   async get(id, include) {
-    return this._api.getNewHire(id, include);
+    return this._api.getNewHireWithHttpInfo(id, include).then(res => intoResponse(res));
   }
 
   /**
@@ -50,9 +51,9 @@ export class NewHires {
    *
    * @param {number} id - Identifier of the NewHire
    * @param {NewHireCreate} newHire - NewHire details
-   * @returns {Promise<NewHire>} - NewHire object
+   * @returns {Promise<Response<NewHire>>} - NewHire object
    */
   async update(id, newHire) {
-    return this._api.updateNewHire(newHire, id);
+    return this._api.updateNewHireWithHttpInfo(newHire, id).then(res => intoResponse(res));
   }
 }

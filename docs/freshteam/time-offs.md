@@ -9,6 +9,7 @@ next: /freshteam/user-functions
 
 ```js
 const leaveTypes = await ft.timeOffs.types();
+// use leaveTypes.json() to access data
 ```
 
 - Returns a `Promise` that resolves to an `Array` of `Freshteam.models.LeaveType` objects
@@ -17,6 +18,7 @@ const leaveTypes = await ft.timeOffs.types();
 
 ```js
 const leaveType = await ft.timeOffs.type(id);
+// use leaveType.json() to access data
 ```
 
 - Returns a `Promise` that resolves to a `Freshteam.models.LeaveType` object
@@ -25,6 +27,7 @@ const leaveType = await ft.timeOffs.type(id);
 
 ```js
 const leaveReqList = await ft.timeOffs.list(query);
+// use leaveReqList.json() to access data
 ```
 
 - Returns a `Promise` that resolves to an `Array` of `Freshteam.models.LeaveRequest` objects
@@ -34,6 +37,7 @@ const leaveReqList = await ft.timeOffs.list(query);
 
 ```js
 const newLeaveReq = await ft.timeOffs.create(leaveRequest);
+// use newLeaveReq.json() to access data
 ```
 
 - Returns a `Promise` that resolves to a `Freshteam.models.LeaveRequest` object
@@ -43,6 +47,7 @@ const newLeaveReq = await ft.timeOffs.create(leaveRequest);
 
 ```js
 const leave = await ft.timeOffs.get(id);
+// use leave.json() to access data
 ```
 
 - Returns a `Promise` that resolves to a `Freshteam.models.LeaveRequest` object
@@ -51,6 +56,7 @@ const leave = await ft.timeOffs.get(id);
 
 ```js
 const res = await ft.timeOffs.approve(id, options);
+// use res.json() to access data
 ```
 
 - Returns a `Promise` that resolves to `null` if request was successful
@@ -60,6 +66,7 @@ const res = await ft.timeOffs.approve(id, options);
 
 ```js
 const res = await ft.timeOffs.reject(id, options);
+// use res.json() to access data
 ```
 
 - Returns a `Promise` that resolves to `null` if request was successful
@@ -69,6 +76,7 @@ const res = await ft.timeOffs.reject(id, options);
 
 ```js
 const res = await ft.timeOffs.cancel(id);
+// use res.json() to access data
 ```
 
 - Returns a `Promise` that resolves to `null` if request was successful

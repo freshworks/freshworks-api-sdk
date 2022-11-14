@@ -1,5 +1,6 @@
 import { TeamsApi } from "../gen/freshteam";
-import { Client } from "../http-client";
+import { Client, Response } from "../http-client";
+import { intoResponse } from "./common";
 import { Team } from "./models";
 
 export class Teams {
@@ -18,19 +19,19 @@ export class Teams {
   /**
    * Fetches the list of teams in the account
    *
-   * @returns {Promise<Team[]>} - Response with teams list in the response body
+   * @returns {Promise<Response<Team[]>>} - Response with teams list in the response body
    */
   async list() {
-    return this._api.getTeams();
+    return this._api.getTeamsWithHttpInfo().then(res => intoResponse(res));
   }
 
   /**
    * Get the details of a team
    *
    * @param {number} id - Identifier of the team
-   * @returns {Promise<Team>} - Response with Team object in the response body
+   * @returns {Promise<Response<Team>} - Response with Team object in the response body
    */
   async get(id) {
-    return this._api.getTeam(id);
+    return this._api.getTeamWithHttpInfo(id).then(res => intoResponse(res));
   }
 }

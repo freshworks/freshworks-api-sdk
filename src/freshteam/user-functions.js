@@ -1,5 +1,6 @@
 import { UserFunctionsApi } from "../gen/freshteam";
-import { Client } from "../http-client";
+import { Client, Response } from "../http-client";
+import { intoResponse } from "./common";
 import { UserFunction } from "./models";
 
 export class UserFunctions {
@@ -18,19 +19,19 @@ export class UserFunctions {
   /**
    * Fetches the list of user functions
    *
-   * @returns {Promise<UserFunction[]>} Array of user functions
+   * @returns {Promise<Response<UserFunction[]>>} Array of user functions
    */
   async list() {
-    return this._api.getUserFunctions();
+    return this._api.getUserFunctionsWithHttpInfo().then(res => intoResponse(res));
   }
 
   /**
    * Get the details of a user function
    *
    * @param {number} id - Identifier of the user function
-   * @returns {Promise<UserFunction>} - User function object
+   * @returns {Promise<Response<UserFunction>>} - User function object
    */
   async get(id) {
-    return this._api.getUserFunction(id);
+    return this._api.getUserFunctionWithHttpInfo(id).then(res => intoResponse(res));
   }
 }
