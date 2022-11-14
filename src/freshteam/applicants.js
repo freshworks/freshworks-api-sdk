@@ -1,6 +1,8 @@
 import { ApplicantApi } from "../gen/freshteam";
 import { Client } from "../http-client";
 import { Applicant, ApplicantDetail, ApplicantSubStage, ApplicantUpdate, ApplicantListQuery } from "./models";
+import { intoResponse } from "./common";
+import { Response } from "../http-client";
 
 export class Applicants {
   /**
@@ -25,20 +27,20 @@ export class Applicants {
    *
    * @param {number} jobPostingId - ID of the job posting to search applicants for
    * @param {ApplicantListQuery} query - Options to filter applicants
-   * @returns {Promise<Applicant[]>} - Response with applicants list in the response body
+   * @returns {Promise<Response<Applicant[]>} - Response with applicants list in the response body
    */
   async list(jobPostingId, query) {
-    return this._api.getApplicants(jobPostingId, query);
+    return this._api.getApplicantsWithHttpInfo(jobPostingId, query).then(res => intoResponse(res));
   }
 
   /**
    * Get an applicant by applicant ID
    *
    * @param {number} id - Identifier of the applicant
-   * @returns {Promise<ApplicantDetail>} - Response with applicant object in the response body
+   * @returns {Promise<Response<ApplicantDetail>} - Response with applicant object in the response body
    */
   async get(id) {
-    return this._api.getApplicant(id);
+    return this._api.getApplicantWithHttpInfo(id).then(res => intoResponse(res));
   }
 
   /**
@@ -46,10 +48,10 @@ export class Applicants {
    *
    * @param {number} id - Identifier of the applicant
    * @param {ApplicantUpdate} applicant - Properties for the applicant
-   * @returns {Promise<ApplicantDetail>} - Response with applicant object in the response body
+   * @returns {Promise<Response<ApplicantDetail>} - Response with applicant object in the response body
    */
   async update(id, applicant) {
-    return this._api.updateApplicant(applicant, id);
+    return this._api.updateApplicantWithHttpInfo(applicant, id).then(res => intoResponse(res));
   }
 
   /**
@@ -57,10 +59,10 @@ export class Applicants {
    *
    * @param {object} id - Identifier of the applicant
    * @param {Applicant} options - Properties to filter the applicant
-   * @returns {Promise<ApplicantDetail>} - Response with applicant fields list in the response body
+   * @returns {Promise<Response<ApplicantDetail>} - Response with applicant fields list in the response body
    */
   async archive(id, options) {
-    return this._api.archiveApplicant(id, { applicant: options });
+    return this._api.archiveApplicantWithHttpInfo(id, { applicant: options }).then(res => intoResponse(res));
   }
 
   /**
@@ -68,9 +70,9 @@ export class Applicants {
    *
    * @param {number} id - Identifier of the applicant
    * @param {ApplicantSubStage} options - Properties to update sub stage
-   * @returns {Promise<ApplicantDetail>} - Response with applicant fields list in the response body
+   * @returns {Promise<Response<ApplicantDetail>} - Response with applicant fields list in the response body
    */
   async updateSubStage(id, options) {
-    return this._api.moveSubStage(id, { applicant: options });
+    return this._api.moveSubStageWithHttpInfo(id, { applicant: options }).then(res => intoResponse(res));
   }
 }
