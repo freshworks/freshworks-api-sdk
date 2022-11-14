@@ -1,5 +1,6 @@
 import { BusinessUnitsApi } from "../gen/freshteam";
-import { Client } from "../http-client";
+import { Client, Response } from "../http-client";
+import { intoResponse } from "./common";
 import { BusinessUnit } from "./models";
 
 export class BusinessUnits {
@@ -18,19 +19,19 @@ export class BusinessUnits {
   /**
    * Fetches the list of business units in the account
    *
-   * @returns {Promise<BusinessUnit[]>} - Response with business units list in the response body
+   * @returns {Promise<Response<BusinessUnit[]>>} - Response with business units list in the response body
    */
   async list() {
-    return this._api.getBusinessUnits();
+    return this._api.getBusinessUnitsWithHttpInfo().then(res => intoResponse(res));
   }
 
   /**
    * Get the details of a business unit
    *
    * @param {number} id - Identifier of the business unit
-   * @returns {Promise<BusinessUnit>} - Response with business unit object in the response body
+   * @returns {Promise<Response<BusinessUnit>} - Response with business unit object in the response body
    */
   async get(id) {
-    return this._api.getBusinessUnit(id);
+    return this._api.getBusinessUnitWithHttpInfo(id).then(res => intoResponse(res));
   }
 }

@@ -9,14 +9,16 @@ next: /freshteam/candidate-sources
 
 ```js
 const buList = await ft.businessUnits.list();
+// use buList.json() to access data
 ```
 
-- Returns a `Promise` that resolves to an `Array` of `Freshteam.models.BusinessUnit` objects
+- Returns a `Response` object that resolves to an `Array` of `Freshteam.models.BusinessUnit` objects
 
 ## Get business unit by ID
 
 ```js
 const bu = await ft.businessUnits.get(id);
+// use bu.json() to access data
 ```
 
-- Returns a `Promise` that resolves to a `Freshteam.models.BusinessUnit` object
+- Returns a `Response` object that resolves to a `Freshteam.models.BusinessUnit` object
