@@ -1,5 +1,5 @@
 import { DepartmentsApi } from "../gen/freshteam";
-import { Client } from "../http-client";
+import { Client, Response } from "../http-client";
 import { Department } from "./models";
 
 export class Departments {
@@ -18,19 +18,19 @@ export class Departments {
   /**
    * Fetches the list of departments
    *
-   * @returns {Promise<Department[]>} - Response with departments list in the response body
+   * @returns {Promise<Response<Department[]>>} - Response with departments list in the response body
    */
   async list() {
-    return this._api.getDepartments();
+    return this._api.getDepartmentsWithHttpInfo();
   }
 
   /**
    * Get the details of a department
    *
    * @param {number} id - Identifier of the department
-   * @returns {Promise<Department>} - Response with department object in the response body
+   * @returns {Promise<Response<Department>>} - Response with department object in the response body
    */
   async get(id) {
-    return this._api.getDepartment(id);
+    return this._api.getDepartmentWithHttpInfo(id);
   }
 }
