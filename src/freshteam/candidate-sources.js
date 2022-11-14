@@ -1,5 +1,5 @@
 import { SourceApi, SourcesApi, SourceCategoriesApi } from "../gen/freshteam";
-import { Client } from "../http-client";
+import { Client, Response } from "../http-client";
 import { Source, SourceCreate, SourceCategory } from "./models";
 
 export class CandidateSources {
@@ -26,28 +26,28 @@ export class CandidateSources {
   /**
    * Fetches the list of candidate sources
    *
-   * @returns {Promise<Source>} - Response with candidate sources list in the response body
+   * @returns {Promise<Response<Source>>} - Response with candidate sources list in the response body
    */
   async list() {
-    return this._sourcesApi.getCandidateSources();
+    return this._sourcesApi.getCandidateSourcesWithHttpInfo();
   }
 
   /**
    * Create a candidate source
    *
    * @param {SourceCreate} candidateSource - Properties of candidate source
-   * @returns {Promise<Source>} - Response with candidate source object in the response body
+   * @returns {Promise<Response<Source>>} - Response with candidate source object in the response body
    */
   async create(candidateSource) {
-    return this._sourceApi.createCandidateSources(candidateSource);
+    return this._sourceApi.createCandidateSourcesWithHttpInfo(candidateSource);
   }
 
   /**
    * Fetches the list of candidate source categories
    *
-   * @returns {Promise<SourceCategory[]>} - Response with candidate source categories list in the response body
+   * @returns {Promise<Response<SourceCategory[]>>} - Response with candidate source categories list in the response body
    */
   async listCategories() {
-    return this._categoriesApi.getSourceCategories();
+    return this._categoriesApi.getSourceCategoriesWithHttpInfo();
   }
 }
