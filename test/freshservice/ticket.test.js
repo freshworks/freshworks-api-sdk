@@ -12,6 +12,7 @@ import tasks200 from "./responses/ticket/tasks200";
 import timeEntry200 from "./responses/ticket/timeEntry200";
 import { options } from "superagent";
 import { TicketSource } from "../../src/gen/freshservice";
+import { Response } from "../../src/http-client";
 
 //const FS_DOMAIN = "devrel.freshservice.com";
 //const FS_API_KEY = "yMLFs4Ni9qGOqF4BRKQ3";
@@ -28,15 +29,17 @@ describe("Tickets API Test Suite", function () {
       mock.post(`/api/v2/tickets`, createTicket).reply(201, ticketsResponse);
       const newTicket = await fs.tickets.create(createTicket);
       // console.log(newTicket);
-      expect(newTicket).toBeInstanceOf(Freshservice.models.Ticket);
+      expect(newTicket).toBeInstanceOf(Response);
+      expect(newTicket.json()).toBeInstanceOf(Freshservice.models.Ticket);
     });
 
     it("Updating an existing ticket", async function () {
       const ticket_id = 14000239432;
       mock.put(`/api/v2/tickets/${ticket_id}`).reply(200, updateTicket200);
       const updTicket = await fs.tickets.update(ticket_id, updateTicket);
-      expect(updTicket).toBeInstanceOf(Freshservice.models.Ticket);
-      expect(updTicket.ticket.id).toEqual(ticket_id);
+      expect(updTicket).toBeInstanceOf(Response);
+      expect(updTicket.json()).toBeInstanceOf(Freshservice.models.Ticket);
+      expect(updTicket.json().ticket.id).toEqual(ticket_id);
     });
 
     it("Deleting an existing ticket", async function () {
@@ -52,7 +55,8 @@ describe("Tickets API Test Suite", function () {
       const ticket_id = 1;
       mock.get(`/api/v2/tickets/${ticket_id}`).reply(200, ticketsResponse);
       const ticket = await fs.tickets.get(ticket_id);
-      expect(ticket).toBeInstanceOf(Freshservice.models.Tickets);
+      expect(ticket).toBeInstanceOf(Response);
+      expect(ticket.json()).toBeInstanceOf(Freshservice.models.Tickets);
     });
 
     it("Running get ticket by ID test - include stats", async function () {
@@ -60,13 +64,15 @@ describe("Tickets API Test Suite", function () {
       const ticket_id = 1;
       mock.get(`/api/v2/tickets/${ticket_id}?include=${include}`).reply(200, ticketsResponse);
       const ticket = await fs.tickets.get(ticket_id, { include });
-      expect(ticket).toBeInstanceOf(Freshservice.models.Tickets);
+      expect(ticket).toBeInstanceOf(Response);
+      expect(ticket.json()).toBeInstanceOf(Freshservice.models.Tickets);
     });
 
     it("running ticket list test", async function () {
       mock.get(`/api/v2/tickets`).reply(200, ticketsResponse);
       const tickets = await fs.tickets.list();
-      expect(tickets).toBeInstanceOf(Freshservice.models.Tickets);
+      expect(tickets).toBeInstanceOf(Response);
+      expect(tickets.json()).toBeInstanceOf(Freshservice.models.Tickets);
     });
 
     it("running ticket list test with filter param", async function () {
@@ -82,7 +88,8 @@ describe("Tickets API Test Suite", function () {
         )
         .reply(200, ticketsResponse);
       const tickets = await fs.tickets.list(query);
-      expect(tickets).toBeInstanceOf(Freshservice.models.Tickets);
+      expect(tickets).toBeInstanceOf(Response);
+      expect(tickets.json()).toBeInstanceOf(Freshservice.models.Tickets);
     });
   });
 
@@ -100,7 +107,8 @@ describe("Tickets API Test Suite", function () {
       const parent_ticket_id = 14000239432;
       mock.post(`/api/v2/tickets/${parent_ticket_id}/create_child_ticket`).reply(201, ticketsResponse);
       const childTicket = await fs.tickets.createChildTicket(createTicket, parent_ticket_id);
-      expect(childTicket).toBeInstanceOf(Freshservice.models.Ticket);
+      expect(childTicket).toBeInstanceOf(Response);
+      expect(childTicket.json()).toBeInstanceOf(Freshservice.models.Ticket);
     });
   });
 
@@ -110,7 +118,8 @@ describe("Tickets API Test Suite", function () {
       const time_entry_id = 14702899;
       mock.get(`/api/v2/tickets/${ticket_id}/time_entries/${time_entry_id}`).reply(200, timeEntry200);
       const timeEntry = await fs.tickets.timeEntry(ticket_id, time_entry_id);
-      expect(timeEntry).toBeInstanceOf(Freshservice.models.TimeEntry);
+      expect(timeEntry).toBeInstanceOf(Response);
+      expect(timeEntry.json()).toBeInstanceOf(Freshservice.models.TimeEntry);
     });
 
     it("List all time entries for given ticket ID with pagination", async function () {
@@ -123,21 +132,24 @@ describe("Tickets API Test Suite", function () {
         .get(`/api/v2/tickets/${ticket_id}/time_entries?per_page=${opts.per_page}&page=${opts.page}`)
         .reply(200, timeEntries200);
       const timeEntries = await fs.tickets.timeEntries(ticket_id, opts);
-      expect(timeEntries).toBeInstanceOf(Freshservice.models.TimeEntries);
+      expect(timeEntries).toBeInstanceOf(Response);
+      expect(timeEntries.json()).toBeInstanceOf(Freshservice.models.TimeEntries);
     });
 
     it("List all time entries for given ticket ID with default pagination", async function () {
       const ticket_id = 14000239432;
       mock.get(`/api/v2/tickets/${ticket_id}/time_entries`).reply(200, timeEntries200);
       const timeEntries = await fs.tickets.timeEntries(ticket_id);
-      expect(timeEntries).toBeInstanceOf(Freshservice.models.TimeEntries);
+      expect(timeEntries).toBeInstanceOf(Response);
+      expect(timeEntries.json()).toBeInstanceOf(Freshservice.models.TimeEntries);
     });
 
     it("Create time entry for ticket with given ticket ID", async function () {
       const ticket_id = 14000239432;
       mock.post(`/api/v2/tickets/${ticket_id}/time_entries`).reply(201, timeEntry200);
       const newTimeEntry = await fs.tickets.createTimeEntry(createTimeEntry, ticket_id);
-      expect(newTimeEntry).toBeInstanceOf(Freshservice.models.TimeEntry);
+      expect(newTimeEntry).toBeInstanceOf(Response);
+      expect(newTimeEntry.json()).toBeInstanceOf(Freshservice.models.TimeEntry);
     });
 
     it("Update time entry for ticket with given ticket ID and time entry ID", async function () {
@@ -145,7 +157,8 @@ describe("Tickets API Test Suite", function () {
       const time_entry_id = 14702899;
       mock.put(`/api/v2/tickets/${ticket_id}/time_entries/${time_entry_id}`).reply(200, timeEntry200);
       const updTimeEntry = await fs.tickets.updateTimeEntry(createTimeEntry, ticket_id, time_entry_id);
-      expect(updTimeEntry).toBeInstanceOf(Freshservice.models.TimeEntry);
+      expect(updTimeEntry).toBeInstanceOf(Response);
+      expect(updTimeEntry.json()).toBeInstanceOf(Freshservice.models.TimeEntry);
     });
 
     it("Delete time entry for ticket with given ticket ID and time entry ID", async function () {
@@ -163,7 +176,8 @@ describe("Tickets API Test Suite", function () {
       };
       mock.post(`/api/v2/ticket_fields/sources`).reply(201, ticketSource201);
       const newSource = await fs.tickets.source(source);
-      expect(newSource).toBeInstanceOf(Freshservice.models.TicketSource);
+      expect(newSource).toBeInstanceOf(Response);
+      expect(newSource.json()).toBeInstanceOf(Freshservice.models.TicketSource);
     });
   });
 
@@ -176,14 +190,16 @@ describe("Tickets API Test Suite", function () {
       };
       mock.get(`/api/v2/tickets/${ticket_id}/tasks?per_page=${opts.per_page}&page=${opts.page}`).reply(200, tasks200);
       const taskList = await fs.tickets.getTasks(ticket_id, opts);
-      expect(taskList).toBeInstanceOf(Freshservice.models.Tasks);
+      expect(taskList).toBeInstanceOf(Response);
+      expect(taskList.json()).toBeInstanceOf(Freshservice.models.Tasks);
     });
 
     it("Retrieve all the tasks for ticket with given ticket ID without query parameters", async function () {
       const ticket_id = 14000239432;
       mock.get(`/api/v2/tickets/${ticket_id}/tasks`).reply(200, tasks200);
       const taskList = await fs.tickets.getTasks(ticket_id);
-      expect(taskList).toBeInstanceOf(Freshservice.models.Tasks);
+      expect(taskList).toBeInstanceOf(Response);
+      expect(taskList.json()).toBeInstanceOf(Freshservice.models.Tasks);
     });
 
     it("Create tasks for ticket with given ticket ID", async function () {
@@ -198,7 +214,8 @@ describe("Tickets API Test Suite", function () {
       };
       mock.post(`/api/v2/tickets/${ticket_id}/tasks`).reply(201, tasks200);
       const newTask = await fs.tickets.createTask(task, ticket_id);
-      expect(newTask).toBeInstanceOf(Freshservice.models.Task);
+      expect(newTask).toBeInstanceOf(Response);
+      expect(newTask.json()).toBeInstanceOf(Freshservice.models.Task);
     });
 
     it("View task on a ticket with given ticket ID with given task ID", async function () {
@@ -206,7 +223,8 @@ describe("Tickets API Test Suite", function () {
       const task_id = 48;
       mock.get(`/api/v2/tickets/${ticket_id}/tasks/${task_id}`).reply(200, tasks200);
       const taskDetail = await fs.tickets.getTask(ticket_id, task_id);
-      expect(taskDetail).toBeInstanceOf(Freshservice.models.Task);
+      expect(taskDetail).toBeInstanceOf(Response);
+      expect(taskDetail.json()).toBeInstanceOf(Freshservice.models.Task);
     });
 
     it("Update task on a ticket with given ticket ID and task ID", async function () {
@@ -222,7 +240,8 @@ describe("Tickets API Test Suite", function () {
       };
       mock.put(`/api/v2/tickets/${ticket_id}/tasks/${task_id}`).reply(200, tasks200);
       const uptask = await fs.tickets.updateTask(updateTsk, ticket_id, task_id);
-      expect(uptask).toBeInstanceOf(Freshservice.models.Task);
+      expect(uptask).toBeInstanceOf(Response);
+      expect(uptask.json()).toBeInstanceOf(Freshservice.models.Task);
     });
 
     it("Delete task on a ticket with given ticket ID and task ID", async function () {
