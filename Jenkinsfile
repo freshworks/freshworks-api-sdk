@@ -9,9 +9,9 @@ def runNPM(command, nodeVersion) {
 
 def runNPMInAllNodeVersion(command) {
   def NODE_VERSIONS = [14, 16, 18];
-  NODE_VERSIONS.every(nodeVersion ->
+  NODE_VERSIONS.every{nodeVersion ->
     runNPM(command, nodeVersion);
-    );
+  }
 }
 
 def uploadAndInvalidate(environment) {
