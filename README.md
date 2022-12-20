@@ -34,7 +34,9 @@ const ft = new Freshteam(domain, apiKey);
 Call a method, e.g., list all employees (who match a search criteria):
 
 ```js
-const employees = await ft.employees.list({ first_name: "Arthur", last_name: "Dent" });
+const res = await ft.employees.list({ first_name: "Arthur", last_name: "Dent" });
+// Access the response body as an Array of `Employee` objects
+const employees = res.json();
 ```
 
 ### Freshservice
@@ -47,16 +49,14 @@ const { Freshservice } = require("@freshworks/api-sdk");
 const fs = new Freshservice(domain, apiKey);
 ```
 
-Call a method, e.g., remove a Freshservice Ticket
+Call a method, e.g., fetch a Freshservice Ticket
 
 ```js
-// Delete ticket with given ticket ID
-const ticket_id = 14000239432;
-const delTicket = await fs.tickets.delete(ticket_id);
+// Get a tick with given ticket ID
+const res = await fs.tickets.get(14000239432);
+// Access the response body as a `Ticket` object
+const ticket = res.json();
 ```
-
-- The first argument is the ticket ID - identifier of the ticket to be deleted
-- Returns a `Promise`
 
 ## Documentation
 

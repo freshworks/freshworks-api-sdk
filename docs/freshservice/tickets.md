@@ -53,8 +53,8 @@ Get the details of a Freshservice Ticket
 
 ```js
 // Using without query parameters included
-const ticket_id = 99999;
-const ticket = await fs.tickets.get(ticket_id);
+const ticketId = 99999;
+const ticket = await fs.tickets.get(ticketId);
 // use ticket.json() to access object elements
 // use ticket.header access returned headers
 // use ticket.statusCode access returned HTTP status code
@@ -62,9 +62,9 @@ const ticket = await fs.tickets.get(ticket_id);
 
 ```js
 // Using with query parameters included
-const ticket_id = 99999;
+const ticketId = 99999;
 const include = "stats";
-const ticket = await fs.tickets.get(ticket_id, { include });
+const ticket = await fs.tickets.get(ticketId, { include });
 // use ticket.json() to access object elements
 // use ticket.header access returned headers
 // use ticket.statusCode access returned HTTP status code
@@ -133,8 +133,8 @@ Remove a Freshservice Ticket
 
 ```js
 // Delete ticket with given ticket ID
-const ticket_id = 14000239432;
-const delTicket = await fs.tickets.delete(ticket_id);
+const ticketId = 14000239432;
+const delTicket = await fs.tickets.delete(ticketId);
 ```
 
 - The first argument is the ticket ID - identifier of the ticket to be deleted
@@ -146,8 +146,8 @@ Restore a deleted Freshservice Ticket
 
 ```js
 // Restore ticket with given ticket ID
-const ticket_id = 14000239432;
-const restoredTicket = await fs.tickets.restoreTicket(ticket_id);
+const ticketId = 14000239432;
+const restoredTicket = await fs.tickets.restoreTicket(ticketId);
 // use restoredTicket.json() to access object elements
 ```
 
@@ -160,7 +160,7 @@ Create a new child Ticket on an existing Freshservice Ticket
 
 ```js
 // Create a child ticket for a given parent ticket ID
-const ticket_id = 14000239432;
+const ticketId = 14000239432;
 const childTicket = {
   "cc_emails": [
     "test@freshservice.com"
@@ -185,13 +185,13 @@ const childTicket = {
     }
   ]
 }
-const newChildTicket = await fs.tickets.createChildTicket(childTicket, ticket_id);
+const newChildTicket = await fs.tickets.createChildTicket(ticketId, childTicket);
 // use newChildTicket.json() to access object elements
 
 ```
 
-- The First argument is an object of type [`Freshservice.models.Ticket`](../api/classes/freshservice_models.Ticket.html) consisting details of the child ticket to be created
-- The second argument is the ticket ID - identifier of the parent ticket for which child ticket is to be created
+- The first argument is the ticket ID - identifier of the parent ticket for which child ticket is to be created
+- The second argument is an object of type [`Freshservice.models.Ticket`](../api/classes/freshservice_models.Ticket.html) consisting details of the child ticket to be created
 - Returns a `Promise` that resolves to a [`Freshservice.models.Ticket`](../api/classes/freshservice_models.Ticket.html) object
 
 ## Time Entries
@@ -204,19 +204,19 @@ View all time entries on a ticket with the given ID from Freshservice
 
 ```js
 // List all time entries for given ticket ID with default pagination option i.e., page = 1 and per_page = 30
-const ticket_id = 14000239432;
-const timeEntries = await fs.tickets.timeEntries(ticket_id);
+const ticketId = 14000239432;
+const timeEntries = await fs.tickets.timeEntries(ticketId);
 // use timeEntries.json() to access object elements
 ```
 
 ```js
 // List all time entries for given ticket ID with pagination option
-const ticket_id = 14000239432;
+const ticketId = 14000239432;
 const opts = {
   page: 1,
   per_page: 10
 };
-const timeEntries = await fs.tickets.timeEntries(ticket_id, opts);
+const timeEntries = await fs.tickets.timeEntries(ticketId, opts);
 // use timeEntries.json() to access object elements
 ```
 
@@ -230,9 +230,9 @@ View all time entries on ticket with the given ticket ID from Freshservice
 
 ```js
 // Get time entry for ticket with ticket ID and time entry ID
-const ticket_id = 14000239432;
-const time_entry_id = 14702899;
-const timeEntry = await fs.tickets.timeEntry(ticket_id, time_entry_id);
+const ticketId = 14000239432;
+const timeEntryId = 14702899;
+const timeEntry = await fs.tickets.timeEntry(ticketId, timeEntryId);
 // use timeEntry.json() to access object elements
 ```
 
@@ -245,12 +245,12 @@ const timeEntry = await fs.tickets.timeEntry(ticket_id, time_entry_id);
 Create a new time entry on a freshservice ticket
 
 ```js
-const newTimeEntry = await fs.tickets.createTimeEntry(time_entry, ticket_id);
+const newTimeEntry = await fs.tickets.createTimeEntry(ticketId, timeEntry);
 // use newTimeEntry.json() to access object elements
 ```
 
-- The first argument is an object of type [`Freshservice.models.TimeEntry`](.../api/classes/freshservice_models.TimeEntry.html) containing the details of time entry to be created
-- The second argument is ID of the ticket for which time entries are to be added
+- The first argument is ID of the ticket for which time entries are to be added
+- The second argument is an object of type [`Freshservice.models.TimeEntry`](.../api/classes/freshservice_models.TimeEntry.html) containing the details of time entry to be created
 - Returns a `Promise` that resolves to a [`Freshservice.models.TimeEntry`](.../api/classes/freshservice_models.TimeEntry.html) object
 
 ### Update a time entry
@@ -258,13 +258,13 @@ const newTimeEntry = await fs.tickets.createTimeEntry(time_entry, ticket_id);
 Update time entry for ticket with given ticket ID and time entry ID
 
 ```js
-const updatedTimeEntry = await fs.tickets.updateTimeEntry(time_entry, ticket_id, time_entry_id);
+const updatedTimeEntry = await fs.tickets.updateTimeEntry(ticketId, timeEntryId, timeEntry);
 // use updatedTimeEntry.json() to access object elements
 ```
 
-- The first argument is an object of type [`Freshservice.models.TimeEntry`](.../api/classes/freshservice_models.TimeEntry.html) containing the details of time entry to be updated
-- The second argument is ID for the ticket for which time entries are to be updated
-- The third argument is ID of the time entry which is to be updated
+- The first argument is ID for the ticket for which time entries are to be updated
+- The second argument is ID of the time entry which is to be updated
+- The third argument is an object of type [`Freshservice.models.TimeEntry`](.../api/classes/freshservice_models.TimeEntry.html) containing the details of time entry to be updated
 - Returns a `Promise` that resolves to a [`Freshservice.models.TimeEntry`](.../api/classes/freshservice_models.TimeEntry.html) object
 
 ### Delete a Time Entry
@@ -272,7 +272,7 @@ const updatedTimeEntry = await fs.tickets.updateTimeEntry(time_entry, ticket_id,
 Remove a time entry on a freshservice ticket
 
 ```js
-const deleteTimeEntry = await fs.tickets.deleteTimeEntry(ticket_id, time_entry_id);
+const deleteTimeEntry = await fs.tickets.deleteTimeEntry(ticketId, timeEntryId);
 // use deleteTimeEntry.json() to access object elements
 ```
 
@@ -289,7 +289,7 @@ const source = {
   name: "Email",
   position: 1
 };
-const fieldSource = await fs.tickets.source(source);
+const fieldSource = await fs.tickets.createSource(source);
 // use fieldSource.json() to access object elements
 ```
 
@@ -305,7 +305,7 @@ This section lists all API that can be used to create, edit or otherwise manipul
 Create a new task against a ticket in Freshservice
 
 ```js
-const ticket_id = 14000239432;
+const ticketId = 14000239432;
 const task = {
   parent_type: "Ticket",
   due_date: "2021-11-24T11:30:00Z",
@@ -314,12 +314,12 @@ const task = {
   description: "Renew Software license",
   start_date: "2021-11-22T16:58:45Z"
 };
-const newTask = await fs.tickets.createTask(task, ticket_id);
+const newTask = await fs.tickets.createTask(ticketId, task);
 // use newTask.json() to access object elements
 ```
 
-- The first argument is an object of type [`Freshservice.models.Task`](../api/classes/freshservice_models.Task.html) containing details of task to be created
-- The second argument is the ticket ID - identifier of the ticket for which task is to be created
+- The first argument is the ticket ID - identifier of the ticket for which task is to be created
+- The second argument is an object of type [`Freshservice.models.Task`](../api/classes/freshservice_models.Task.html) containing details of task to be created
 - Returns a `Promise` that resolves to a [`Freshservice.models.Task`](../api/classes/freshservice_models.Task.html) object
 
 ### View task on a ticket
@@ -327,9 +327,9 @@ const newTask = await fs.tickets.createTask(task, ticket_id);
 Retrieve a task on a ticket request with the given ID from Freshservice
 
 ```js
-const ticket_id = 14000239432;
-const task_id = 48;
-const taskDetail = await fs.tickets.getTask(ticket_id, task_id);
+const ticketId = 14000239432;
+const taskId = 48;
+const taskDetail = await fs.tickets.getTask(ticketId, taskId);
 // use taskDetail.json() to access object elements
 ```
 
@@ -343,19 +343,19 @@ Retrieve a task on a ticket request with the given ID from Freshservice
 
 ```js
 // Retrieve all the tasks for ticket with given ticket ID with optional parameter
-const ticket_id = 14000239432;
+const ticketId = 14000239432;
 const opts = {
   page: 1,
   per_page: 10
 };
-const taskList = await fs.tickets.getTasks(ticket_id, opts);
+const taskList = await fs.tickets.getTasks(ticketId, opts);
 // use taskList.json() to access object elements
 ```
 
 ```js
 // Retrieve all the tasks for ticket with given ticket ID without optional parameter
-const ticket_id = 14000239432;
-const taskList = await fs.tickets.getTasks(ticket_id);
+const ticketId = 14000239432;
+const taskList = await fs.tickets.getTasks(ticketId);
 // use taskList.json() to access object elements
 ```
 
@@ -368,8 +368,8 @@ const taskList = await fs.tickets.getTasks(ticket_id);
 Update an existing task on an existing ticket request in Freshservice
 
 ```js
-const ticket_id = 14000239432;
-const task_id = 48;
+const ticketId = 14000239432;
+const taskId = 48;
 const task = {
   parent_type: "Ticket",
   due_date: "2021-11-24T11:30:00Z",
@@ -378,13 +378,13 @@ const task = {
   description: "Renew Software license",
   start_date: "2021-11-22T16:58:45Z"
 };
-const updateTask = await fs.tickets.updateTask(task, ticket_id, task_id);
+const updateTask = await fs.tickets.updateTask(ticketId, taskId, task);
 // use updateTask.json() to access object elements
 ```
 
-- The first argument is an object of type [`Freshservice.models.Task`](../api/classes/freshservice_models.Task.html) containing details of task to be updated
-- The second argument is the ticket ID - identifier of the ticket for which task is to be updated
+- The first argument is the ticket ID - identifier of the ticket for which task is to be updated
 - The second argument is identifier of the task which is to be updated
+- The third argument is an object of type [`Freshservice.models.Task`](../api/classes/freshservice_models.Task.html) containing details of task to be updated
 - Returns a `Promise` that resolves to a [`Freshservice.models.Task`](../api/classes/freshservice_models.Task.html) object
 
 ### Delete task on a ticket
@@ -392,9 +392,9 @@ const updateTask = await fs.tickets.updateTask(task, ticket_id, task_id);
 Delete the task on a ticket request with the given ID from Freshservice
 
 ```js
-const ticket_id = 14000239432;
-const task_id = 48;
-const deleteTask = await fs.tickets.deleteTask(ticket_id, task_id);
+const ticketId = 14000239432;
+const taskId = 48;
+const deleteTask = await fs.tickets.deleteTask(ticketId, taskId);
 // use deleteTask.json() to access object elements
 ```
 

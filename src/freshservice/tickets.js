@@ -18,10 +18,10 @@ export class TicketUtil {
 
   /**
    * List all Tickets - Fetch the list of all Tickets in FreshService
-   * @param {TicketsQuery} query - Options to filter applicants
+   * @param {TicketsQuery} [query] - Options to filter applicants
    * @returns {Promise<Response<Tickets>>} - Response with applicants list in the response body
    */
-  async list(query) {
+  async list(query = {}) {
     return this._api.listTicketsWithHttpInfo(query).then(res => intoResponse(res));
   }
 
@@ -37,11 +37,11 @@ export class TicketUtil {
   /**
    *  View a Ticket - Get the details of a FreshService Ticket
    * @param {Number} id - Identifier of the ticket
-   * @param {Object} opts Optional parameters
-   * @param {String} opts.include Query param to include certain fields in response. E.g. '?include=stats' Will return the ticket’s closed_at, resolved_at and first_responded_at time. '?include=requester' Will return the requester's email, id, mobile, name, and phone. Supported options - [conversations, requester, problem, stats, assets, change, related_tickets]
+   * @param {Object} [opts] Optional parameters
+   * @param {String} [opts.include] Query param to include certain fields in response. E.g. '?include=stats' Will return the ticket’s closed_at, resolved_at and first_responded_at time. '?include=requester' Will return the requester's email, id, mobile, name, and phone. Supported options - [conversations, requester, problem, stats, assets, change, related_tickets]
    * @returns {Promise<Response<Tickets>>} - Response with applicants list in the response body
    */
-  async get(id, opts) {
+  async get(id, opts = {}) {
     return this._api.getTicketWithHttpInfo(id, opts).then(res => intoResponse(res));
   }
 
@@ -75,63 +75,63 @@ export class TicketUtil {
 
   /**
    * Create a new child Ticket on an existing Freshservice Ticket
-   * @param {Ticket} ticket - details of child ticket to be created
-   * @param {Number} id - ID of ticket request for which child ticket needs to be created (Parent Ticker ID)
+   * @param {Number} parentId - ID of ticket request for which child ticket needs to be created (Parent Ticket ID)
+   * @param {Ticket} childTicket - details of child ticket to be created
    * @returns {Promise<Response<Ticket>>} - Returns a promise with data of type Freshservice.models.Ticket
    */
-  async createChildTicket(ticket, id) {
-    return this._api.createChildTicketWithHttpInfo(ticket, id).then(res => intoResponse(res));
+  async createChildTicket(parentId, childTicket) {
+    return this._api.createChildTicketWithHttpInfo(childTicket, parentId).then(res => intoResponse(res));
   }
 
   /**
    * View a time entry on a ticket with the given ID from Freshservice
-   * @param {Number} ticket_id - ID of ticket
-   * @param {Number} time_entry_id - ID of the time entry
+   * @param {Number} ticketId - ID of ticket
+   * @param {Number} timeEntryId - ID of the time entry
    * @returns {Promise<Response<TimeEntry>>} - Returns a promise with data of type Freshservice.models.TimeEntry
    */
-  async timeEntry(ticket_id, time_entry_id) {
-    return this._api.getTicketTimeEntryWithHttpInfo(ticket_id, time_entry_id).then(res => intoResponse(res));
+  async timeEntry(ticketId, timeEntryId) {
+    return this._api.getTicketTimeEntryWithHttpInfo(ticketId, timeEntryId).then(res => intoResponse(res));
   }
 
   /**
    * View all time entries on ticket with the given ID from Freshservice
-   * @param {Number} ticket_id
-   * @param {PaginationQuery} opts - Options to filter TimeEntry results in pagewise manner. Default page is 1 and default number of entries are 30.
+   * @param {Number} ticketId
+   * @param {PaginationQuery} [opts] - Options to filter TimeEntry results in pagewise manner. Default page is 1 and default number of entries are 30.
    * @returns {Promise<Response<TimeEntries>>} -  Returns a promise with data of type Freshservice.models.TimeEntries
    */
-  async timeEntries(ticket_id, opts) {
-    return this._api.listTicketTimeEntriesWithHttpInfo(ticket_id, opts).then(res => intoResponse(res));
+  async timeEntries(ticketId, opts = {}) {
+    return this._api.listTicketTimeEntriesWithHttpInfo(ticketId, opts).then(res => intoResponse(res));
   }
 
   /**
    * Create a new time entry on a freshservice ticket
-   * @param {TimeEntry} time_entry -  details of time entry to be created
-   * @param {Number} ticket_id - ID of ticket request for which time entries are to be added
+   * @param {Number} ticketId - ID of ticket request for which time entries are to be added
+   * @param {TimeEntry} timeEntry -  details of time entry to be created
    * @returns {Promise<Response<TimeEntry>>} - Returns promise with type Freshservice.models.TimeEntry
    */
-  async createTimeEntry(time_entry, ticket_id) {
-    return this._api.createTicketTimeEntryWithHttpInfo(time_entry, ticket_id).then(res => intoResponse(res));
+  async createTimeEntry(ticketId, timeEntry) {
+    return this._api.createTicketTimeEntryWithHttpInfo(timeEntry, ticketId).then(res => intoResponse(res));
   }
 
   /**
    * Create a new time entry on a freshservice ticket
-   * @param {TimeEntry} time_entry -  details of time entry to be updated
-   * @param {Number} ticket_id - ID of ticket request for which time entries are to be retrieved
-   * @param {Number} time_entry_id - ID of the time entry to be updated
+   * @param {Number} ticketId - ID of ticket request for which time entries are to be retrieved
+   * @param {Number} timeEntryId - ID of the time entry to be updated
+   * @param {TimeEntry} timeEntry -  details of time entry to be updated
    * @returns {Promise<Response<TimeEntry>>} - Returns promise with type Freshservice.models.TimeEntry
    */
-  async updateTimeEntry(time_entry, ticket_id, time_entry_id) {
-    return this._api.updateTicketTimeEntryWithHttpInfo(time_entry, ticket_id, time_entry_id).then(res => intoResponse(res));
+  async updateTimeEntry(ticketId, timeEntryId, timeEntry) {
+    return this._api.updateTicketTimeEntryWithHttpInfo(timeEntry, ticketId, timeEntryId).then(res => intoResponse(res));
   }
 
   /**
    * Remove a time entry on a freshservice ticket
-   * @param {Number} ticket_id - ID of ticket request for which time entries are to be retrieved
-   * @param {Number} time_entry_id - ID of the time entry to be updated
+   * @param {Number} ticketId - ID of ticket request for which time entries are to be retrieved
+   * @param {Number} timeEntryId - ID of the time entry to be updated
    * @returns {Promise<Response>} - Returns promise with no content and status 200 OK
    */
-  async deleteTimeEntry(ticket_id, time_entry_id) {
-    return this._api.deleteTicketTimeEntryWithHttpInfo(ticket_id, time_entry_id).then(res => intoResponse(res));
+  async deleteTimeEntry(ticketId, timeEntryId) {
+    return this._api.deleteTicketTimeEntryWithHttpInfo(ticketId, timeEntryId).then(res => intoResponse(res));
   }
 
   /**
@@ -139,58 +139,58 @@ export class TicketUtil {
    * @param {TicketSource} source
    * @returns {Promise<Response<TicketSource>>}
    */
-  async source(source) {
+  async createSource(source) {
     return this._api.createTicketFieldSourceWithHttpInfo(source).then(res => intoResponse(res));
   }
 
   /**
    * Retrieve the tasks on a ticket request with the given ID from Freshservice
-   * @param {Number} ticket_id - ID of ticket request for which tasks are to be retrieved
+   * @param {Number} ticketId - ID of ticket request for which tasks are to be retrieved
    * @param {PaginationQuery} opts - optional parameters
    * @returns {Promise<Response<Tasks>>} - Returns a promise with data type Freshservice.models.Tasks
    */
-  async getTasks(ticket_id, opts) {
-    return this._api.listTicketTasksWithHttpInfo(ticket_id, opts).then(res => intoResponse(res));
+  async getTasks(ticketId, opts = {}) {
+    return this._api.listTicketTasksWithHttpInfo(ticketId, opts).then(res => intoResponse(res));
   }
 
   /**
    *
+   * @param {Number} ticketId -  ID of ticket request for which tasks are to be created
    * @param {Task} task - details of task to be created
-   * @param {Number} ticket_id -  ID of ticket request for which tasks are to be created
    * @returns {Promise<Response<Task>} - Returns a promise with data type Task
    */
-  async createTask(task, ticket_id) {
-    return this._api.createTicketTaskWithHttpInfo(task, ticket_id).then(res => intoResponse(res));
+  async createTask(ticketId, task) {
+    return this._api.createTicketTaskWithHttpInfo(task, ticketId).then(res => intoResponse(res));
   }
 
   /**
    * Retrieve a task on a ticket with the given ID from Freshservice
-   * @param {Number} ticket_id - is a Ticket identifier for which task is to be retrieved
-   * @param {Number} task_id - is identifier of the task which is to be retrieved
+   * @param {Number} ticketId - is a Ticket identifier for which task is to be retrieved
+   * @param {Number} taskId - is identifier of the task which is to be retrieved
    * @returns {Promise<Response<Task>>} - Returns a promise with data type Task
    */
-  async getTask(ticket_id, task_id) {
-    return this._api.getTicketTaskWithHttpInfo(ticket_id, task_id).then(res => intoResponse(res));
+  async getTask(ticketId, taskId) {
+    return this._api.getTicketTaskWithHttpInfo(ticketId, taskId).then(res => intoResponse(res));
   }
 
   /**
    * Update an existing task on an existing ticket request in Freshservice
+   * @param {Number} ticketId - is a Ticket identifier for which task is to be retrieved
+   * @param {Number} taskId - is identifier of the task which is to be retrieved
    * @param {Task} task - details of task to be updated
-   * @param {Number} ticket_id - is a Ticket identifier for which task is to be retrieved
-   * @param {Number} task_id - is identifier of the task which is to be retrieved
    * @returns {Promise<Response<Task>>} - Returns a promise with data type Freshservice.models.Task
    */
-  async updateTask(task, ticket_id, task_id) {
-    return this._api.updateTicketTaskWithHttpInfo(task, ticket_id, task_id).then(res => intoResponse(res));
+  async updateTask(ticketId, taskId, task) {
+    return this._api.updateTicketTaskWithHttpInfo(task, ticketId, taskId).then(res => intoResponse(res));
   }
 
   /**
    * Delete the task on a ticket with the given ID from Freshservice
-   * @param {Number} ticket_id - is a Ticket identifier for which task is to be deleted
-   * @param {Number} task_id - is identifier of the task which is to be deleted
+   * @param {Number} ticketId - is a Ticket identifier for which task is to be deleted
+   * @param {Number} taskId - is identifier of the task which is to be deleted
    * @returns {Promise<Response>} - Returns a promise
    */
-  async deleteTask(ticket_id, task_id) {
-    return this._api.deleteTicketTaskWithHttpInfo(ticket_id, task_id).then(res => intoResponse(res));
+  async deleteTask(ticketId, taskId) {
+    return this._api.deleteTicketTaskWithHttpInfo(ticketId, taskId).then(res => intoResponse(res));
   }
 }
