@@ -1,5 +1,5 @@
-const { searchPlugin } = require('@vuepress/plugin-search')
-const { defaultTheme } = require('@vuepress/theme-default')
+import { searchPlugin } from '@vuepress/plugin-search'
+import { defaultTheme } from '@vuepress/theme-default'
 
 module.exports = {
   lang: "en-US",
