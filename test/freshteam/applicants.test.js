@@ -57,5 +57,4 @@ describe("Applicants API", function () {
       expect(applicantsList.json()).toBeInstanceOf(ApplicantDetail);
     });
   });
-
 });

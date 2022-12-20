@@ -83,9 +83,11 @@ export class TimeOffs {
    * @returns {Promise<Response<null>>} - Returns null if successful
    */
   async approve(id, options = {}) {
-    return this._api.cancelTimeoffWithHttpInfo(id, {
-      leave_request: options
-    }).then(res => intoResponse(res));
+    return this._api
+      .cancelTimeoffWithHttpInfo(id, {
+        leave_request: options
+      })
+      .then(res => intoResponse(res));
   }
 
   /**
@@ -96,8 +98,10 @@ export class TimeOffs {
    * @returns {Promise<Response<null>>} - Returns null if successful
    */
   async reject(id, options = {}) {
-    return this._api.rejectTimeoffWithHttpInfo(id, {
-      leave_request: options
-    }).then(res => intoResponse(res));
+    return this._api
+      .rejectTimeoffWithHttpInfo(id, {
+        leave_request: options
+      })
+      .then(res => intoResponse(res));
   }
 }
