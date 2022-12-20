@@ -14,9 +14,7 @@ import { options } from "superagent";
 import { TicketSource } from "../../src/gen/freshservice";
 import { Response } from "../../src/http-client";
 
-//const FS_DOMAIN = "devrel.freshservice.com";
-//const FS_API_KEY = "yMLFs4Ni9qGOqF4BRKQ3";
-const FS_DOMAIN = "stoplight.io/mocks/freshworks/freshservice/15247970";
+const FS_DOMAIN = "intergalactic-example.freshservice.com";
 const FS_API_KEY = "f_xkcd_222";
 
 const mock = nock(`https://${FS_DOMAIN}`);
@@ -106,7 +104,7 @@ describe("Tickets API Test Suite", function () {
     it("Create a child ticket for a given parent ticket ID", async function () {
       const parent_ticket_id = 14000239432;
       mock.post(`/api/v2/tickets/${parent_ticket_id}/create_child_ticket`).reply(201, ticketsResponse);
-      const childTicket = await fs.tickets.createChildTicket(createTicket, parent_ticket_id);
+      const childTicket = await fs.tickets.createChildTicket(parent_ticket_id, createTicket);
       expect(childTicket).toBeInstanceOf(Response);
       expect(childTicket.json()).toBeInstanceOf(Freshservice.models.Ticket);
     });
@@ -147,7 +145,7 @@ describe("Tickets API Test Suite", function () {
     it("Create time entry for ticket with given ticket ID", async function () {
       const ticket_id = 14000239432;
       mock.post(`/api/v2/tickets/${ticket_id}/time_entries`).reply(201, timeEntry200);
-      const newTimeEntry = await fs.tickets.createTimeEntry(createTimeEntry, ticket_id);
+      const newTimeEntry = await fs.tickets.createTimeEntry(ticket_id, createTimeEntry);
       expect(newTimeEntry).toBeInstanceOf(Response);
       expect(newTimeEntry.json()).toBeInstanceOf(Freshservice.models.TimeEntry);
     });
@@ -156,7 +154,7 @@ describe("Tickets API Test Suite", function () {
       const ticket_id = 14000239432;
       const time_entry_id = 14702899;
       mock.put(`/api/v2/tickets/${ticket_id}/time_entries/${time_entry_id}`).reply(200, timeEntry200);
-      const updTimeEntry = await fs.tickets.updateTimeEntry(createTimeEntry, ticket_id, time_entry_id);
+      const updTimeEntry = await fs.tickets.updateTimeEntry(ticket_id, time_entry_id, createTimeEntry);
       expect(updTimeEntry).toBeInstanceOf(Response);
       expect(updTimeEntry.json()).toBeInstanceOf(Freshservice.models.TimeEntry);
     });
@@ -175,7 +173,7 @@ describe("Tickets API Test Suite", function () {
         position: 1
       };
       mock.post(`/api/v2/ticket_fields/sources`).reply(201, ticketSource201);
-      const newSource = await fs.tickets.source(source);
+      const newSource = await fs.tickets.createSource(source);
       expect(newSource).toBeInstanceOf(Response);
       expect(newSource.json()).toBeInstanceOf(Freshservice.models.TicketSource);
     });
@@ -213,7 +211,7 @@ describe("Tickets API Test Suite", function () {
         start_date: "2021-11-22T16:58:45Z"
       };
       mock.post(`/api/v2/tickets/${ticket_id}/tasks`).reply(201, tasks200);
-      const newTask = await fs.tickets.createTask(task, ticket_id);
+      const newTask = await fs.tickets.createTask(ticket_id, task);
       expect(newTask).toBeInstanceOf(Response);
       expect(newTask.json()).toBeInstanceOf(Freshservice.models.Task);
     });
@@ -230,7 +228,7 @@ describe("Tickets API Test Suite", function () {
     it("Update task on a ticket with given ticket ID and task ID", async function () {
       const ticket_id = 14000239432;
       const task_id = 48;
-      const updateTsk = {
+      const updateTask = {
         parent_type: "Ticket",
         due_date: "2021-11-24T11:30:00Z",
         notify_before: 3600,
@@ -239,7 +237,7 @@ describe("Tickets API Test Suite", function () {
         start_date: "2021-11-22T16:58:45Z"
       };
       mock.put(`/api/v2/tickets/${ticket_id}/tasks/${task_id}`).reply(200, tasks200);
-      const uptask = await fs.tickets.updateTask(updateTsk, ticket_id, task_id);
+      const uptask = await fs.tickets.updateTask(ticket_id, task_id, updateTask);
       expect(uptask).toBeInstanceOf(Response);
       expect(uptask.json()).toBeInstanceOf(Freshservice.models.Task);
     });
