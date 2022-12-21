@@ -34,19 +34,6 @@ To use this library in a Freshworks app, add the following to the `"dependencies
 }
 ```
 
-#### Apps on platform-version 2.2
-
-For apps on platform-version up to `2.2`, allow the app to communicate with the domain for the product's REST API that you would be using (currently, only Freshteam and Freshservice). To do this, update the `"whitelisted-domains"` array in `manifest.json`:
-
-```js
-{
-  // ...
-  "whitelisted-domains": ["https://*.freshteam.com", "https://*.freshservice.com"]
-}
-```
-
-#### Running
-
 The Freshworks CLI (`fdk`) will fetch the dependency next time you run `fdk run`.
 
 ## Sample code
