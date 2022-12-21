@@ -95,7 +95,7 @@ describe("Tickets API Test Suite", function () {
     it("Restoring a ticket with given ticket ID", async function () {
       const ticket_id = 14000239432;
       mock.get(`/api/v2/tickets/${ticket_id}/restore`).reply(204);
-      const restoredTicket = await fs.tickets.restoreTicket(ticket_id);
+      const restoredTicket = await fs.tickets.restore(ticket_id);
       expect(restoredTicket).toBeNull;
     });
   });

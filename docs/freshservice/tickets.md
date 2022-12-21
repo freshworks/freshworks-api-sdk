@@ -147,7 +147,7 @@ Restore a deleted Freshservice Ticket
 ```js
 // Restore ticket with given ticket ID
 const ticketId = 14000239432;
-const restoredTicket = await fs.tickets.restoreTicket(ticketId);
+const restoredTicket = await fs.tickets.restore(ticketId);
 // use restoredTicket.json() to access object elements
 ```
 
