@@ -69,7 +69,7 @@ export class TicketUtil {
    * @param {Number} id - ID of the ticket to be restored
    * @return {Promise<Response>} - returns a Promise
    */
-  async restoreTicket(id) {
+  async restore(id) {
     return this._api.restoreTicketWithHttpInfo(id).then(res => intoResponse(res));
   }
 
